@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Building List
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.0.1
 // @description  gives the calculated production upkeep for the buildings
 // @author       You
