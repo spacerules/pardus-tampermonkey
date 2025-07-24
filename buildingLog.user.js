@@ -2,7 +2,7 @@
 // @name         Building List
 // @namespace    http://tampermonkey.net/
 // @version      1.0
-// @description  try to take over the world!
+// @description  gives the calculated production upkeep for the buildings
 // @author       You
 // @match        http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
