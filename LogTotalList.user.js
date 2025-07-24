@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Log Total List
 // @namespace    http://tampermonkey.net/
-// @version      2025-07-23
+// @version      1.0
 // @description  adds a total to th;e log files
 // @author       Spacerules
 // @match        http*://*.pardus.at/*
