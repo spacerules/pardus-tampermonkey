@@ -2,7 +2,7 @@
 // @name         Pardus Log Total List
 // @namespace    http://tampermonkey.net/
 // @version      1.0.1
-// @description  adds a total to th;e log files
+// @description  adds a total to the log files
 // @author       Spacerules
 // @match        http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
