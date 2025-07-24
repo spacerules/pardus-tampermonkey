@@ -2,10 +2,10 @@
 // @name         Pardus Log Total List
 // @namespace    http://tampermonkey.net/
 // @version      2025-07-23
-// @description  try to take over the world!
+// @description  adds a total to th;e log files
 // @author       Spacerules
 // @match        http*://*.pardus.at/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=pardus.at
+// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // ==/UserScript==
 
