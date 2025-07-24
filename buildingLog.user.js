@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Building List
 // @namespace    http://tampermonkey.net/
-// @version      2025-07-23
+// @version      1.0
 // @description  try to take over the world!
 // @author       You
 // @match        http*://*.pardus.at/*
