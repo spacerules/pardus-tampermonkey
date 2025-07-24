@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Building List
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @description  gives the calculated production upkeep for the buildings
 // @author       You
 // @match        http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingLog.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingLog.user.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingList.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingList.user.js
 // ==/UserScript==
 
 (function() {
