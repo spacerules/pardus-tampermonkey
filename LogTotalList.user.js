@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pardus Log Total List
-// @namespace    http://tampermonkey.net/
+// @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.0.1
 // @description  adds a total to the log files
 // @author       Spacerules
