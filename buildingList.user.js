@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Building List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.1
+// @version      1.1.0
 // @description  gives the calculated production upkeep for the buildings
 // @author       You
 // @match        http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
-// @grant        none
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_registerMenuCommand
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingList.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingList.user.js
 // ==/UserScript==
@@ -15,7 +17,7 @@
     'use strict';
 
 function log(...args) {
-    const debug = false;
+    const debug = true;
     if (debug) {
         console.log(...args);
     }
@@ -31,6 +33,7 @@ function pardusBuildingMax(buildingtable) {
   let upkeepColIndex = -1;
   let upkeepStockColIndex = -1;
   let prodColIndex = -1;
+  let comColIndex = -1; //commodities
   let infoColIndex = -1;
 
   // Step 1: Find the "Total" column index
@@ -51,7 +54,8 @@ function pardusBuildingMax(buildingtable) {
       log("It worked: Found 'upkeep' at index", i);
     }
 
-    if (text.includes("production") && prodColIndex == -1) {
+    //get the last production found
+    if (text.includes("production")) {
       prodColIndex = i;
       log("It worked: Found 'prodColIndex' at index", i);
     }
@@ -60,10 +64,28 @@ function pardusBuildingMax(buildingtable) {
       infoColIndex = i;
       log("It worked: Found 'infoColIndex' at index", i);
     }
+
+    if (text.includes("commodities") && comColIndex == -1) {
+      comColIndex = i;
+      log("It worked: Found 'commodity' at index", i);
+    }
   }
 
    // Step 2: loop throug each table row.
      const rows = buildingtable.querySelectorAll(':scope > tbody > tr');
+
+
+     const rowhd = buildingtable.querySelectorAll(':scope > tbody > tr');
+    //add the comment to stock total
+    log(rowhd[0].children);
+    if (settings.excludedCommodities && settings.includedCommodities) {
+    rowhd[0].children[upkeepStockColIndex].innerHTML += " (w/o Com | w/ Com)";
+    } else if (!settings.excludedCommodities && settings.includedCommodities) {
+    rowhd[0].children[upkeepStockColIndex].innerHTML += " (w/ Com)";
+    } else if (settings.excludedCommodities && !settings.includedCommodities) {
+    rowhd[0].children[upkeepStockColIndex].innerHTML += " (w/o Com)";
+    }
+
 
     for (let i = 1; i < rows.length; i++) { // skip the header row
         const cells = rows[i].children;
@@ -87,11 +109,27 @@ function pardusBuildingMax(buildingtable) {
         }
         log("upkeeptotal value:", upkeeptotal);
 
+        var comtotal = 0;
+
+        //get the total comodities of each row
+        const comRows = cells[comColIndex]?.querySelectorAll('td') || [];
+
+
+        for (let j = 0; j < comRows.length; j++) { // skip the header row
+            const comcells = comRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
+            log("comcells value:", comRows[j].textContent);
+            const comtotalnum = parseFloat(comcells) || 0; // blank or NaN = 0
+            log(parseFloat(comcells) || 0);
+            comtotal += comtotalnum;
+        }
+        log("upkeeptotal value:", upkeeptotal);
+
         //get the total comodities of each row
         const prodRows = cells[prodColIndex].querySelectorAll('td');
         var prodtotal = 0;
 
         for (let j = 0; j < prodRows.length; j++) { // skip the header row
+            log("1) prodcellcontent: ",prodRows[j].textContent);
             const prodcells = prodRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
             log("prodcells value:", prodRows[j].textContent);
             const prodtotalnum = parseFloat(prodcells) || 0; // blank or NaN = 0
@@ -109,12 +147,21 @@ function pardusBuildingMax(buildingtable) {
             const upkeepcurrentnum = parseFloat(upkeepcells) || 0; // blank or NaN = 0
 
 
-            const ratio1 = (cap * upkeepcurrentnum) / Math.max(upkeeptotal, prodtotal);
-            const ratio2 = (((cap * upkeepcurrentnum) / Math.max(upkeeptotal, prodtotal)).toFixed(0)) - upkeepstockcells;
+            const ratio1 = Math.floor((((cap - comtotal) * upkeepcurrentnum) / Math.max(upkeeptotal, prodtotal))/upkeepcurrentnum)*upkeepcurrentnum;
+            const ratio2 = Math.floor(ratio1)-upkeepstockcells;
+            const ratio3 = Math.floor(((cap * upkeepcurrentnum) / Math.max(upkeeptotal, prodtotal))/upkeepcurrentnum)*upkeepcurrentnum;
+            const ratio4 = Math.floor(ratio3)-upkeepstockcells;
 
-            const rounded1 = ratio1 % 1 === 0 ? ratio1.toFixed(0) : ratio1.toFixed(2);
-            upkeepRows[j].insertAdjacentText('beforeend', " (" + rounded1 + ")");
+            if (settings.excludedCommodities && settings.includedCommodities) {
+            upkeepRows[j].insertAdjacentText('beforeend', " (" + ratio1 + "|" + ratio3 + ")");
+            upkeepStockRows[j].insertAdjacentText('beforeend', " (" + ratio2 + "|" + ratio4 + ")");
+            } else if (!settings.excludedCommodities && settings.includedCommodities) {
+            upkeepRows[j].insertAdjacentText('beforeend', " (" + ratio3 + ")");
+            upkeepStockRows[j].insertAdjacentText('beforeend', " (" + ratio4 + ")");
+            } else if (settings.excludedCommodities && !settings.includedCommodities) {
+            upkeepRows[j].insertAdjacentText('beforeend', " (" + ratio1 + ")");
             upkeepStockRows[j].insertAdjacentText('beforeend', " (" + ratio2 + ")");
+            }
         }
 
         const infotext = cells[infoColIndex].textContent.trim().replace(/,/g, '');
@@ -134,6 +181,62 @@ if (link) {
             log(infotext);
     }
 }
+//global variables
+const defaultSettings = {
+    excludedCommodities: true,
+    includedCommodities: true
+  };
+
+  // Load or initialize settings
+const settings = {
+    excludedCommodities: GM_getValue('excludedCommodities', defaultSettings.excludedCommodities),
+    includedCommodities: GM_getValue('includedCommodities', defaultSettings.includedCommodities)
+  };
+
+function registerSettings(){
+
+  // Register a menu command to edit settings
+  GM_registerMenuCommand("⚙️ Edit Settings", () => {
+    //const excludedCommodities = confirm("Display upkeep Max values WITHOUT accounting for current Comodities?") ? true : false;
+    //const includedCommodities = confirm("Display upkeep Max values INCLUDING accounting for current Comodities?") ? true : false;
+      const choice = prompt(
+        "Choose commodity display mode:\n" +
+        "0 = Turn off\n" +
+        "1 = Exclude current commodities\n" +
+        "2 = Include current commodities\n" +
+        "3 = Display Both with and without current commodities\n" +
+        "4 = Cancel / No change"
+    );
+
+    switch (choice) {
+        case "0":
+            GM_setValue('excludedCommodities', false);
+            GM_setValue('includedCommodities', false);
+            window.top.location.reload();
+            break;
+        case "1":
+            GM_setValue('excludedCommodities', true);
+            GM_setValue('includedCommodities', false);
+            window.top.location.reload();
+            break;
+        case "2":
+            GM_setValue('excludedCommodities', false);
+            GM_setValue('includedCommodities', true);
+            window.top.location.reload();
+            break;
+        case "3":
+            GM_setValue('excludedCommodities', true);
+            GM_setValue('includedCommodities', true);
+            window.top.location.reload();
+            break;
+        default:
+            alert("No changes made to commodity display settings.");
+    }
+
+
+  });
+}
+
 
     // Your code here..
 function pardusBuildingInit() {
@@ -147,6 +250,9 @@ function pardusBuildingInit() {
         if (typeof buildingtable != 'undefined') {
             pardusBuildingMax(buildingtable);
         }
+    }
+    if (loc.match('game.php')) {
+        registerSettings();
     }
      return;
 }
