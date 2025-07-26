@@ -19,7 +19,7 @@
  * 
  * const LOGGING_ENABLED = true;
  * 
- * windowsGroup(LOGGING_ENABLED, 'Script Start');
+ * logGroupStart(LOGGING_ENABLED, 'Script Start');
  * 
  * logInfo(LOGGING_ENABLED, 'Starting task with data:', someData);
  * logWarn(LOGGING_ENABLED, 'Low fuel warning for ship:', shipName);
@@ -27,7 +27,7 @@
  * logSuccess(LOGGING_ENABLED, 'Mission accomplished!');
  * logDebug(LOGGING_ENABLED, 'Debugging ship object:', ship);
  * 
- * windowsGroupEnd(LOGGING_ENABLED);
+ * logGroupEnd(LOGGING_ENABLED);
  */
 
 (function () {
@@ -117,7 +117,7 @@
      * @param {boolean} enabled - Whether to show the group.
      * @param {string} title - The title of the group.
      */
-    window.windowsGroup = (enabled, title) => {
+    window.logGroupStart = (enabled, title) => {
         if (!enabled) return;
         console.groupCollapsed(`📁 %c${title}`, baseStyle + 'color: white; background: #607D8B;');
     };
@@ -126,7 +126,7 @@
      * Ends the most recently opened console group.
      * @param {boolean} enabled - Whether to end the group (noop if disabled).
      */
-    window.windowsGroupEnd = (enabled) => {
+    window.logGroupEnd = (enabled) => {
         if (!enabled) return;
         console.groupEnd();
     };
