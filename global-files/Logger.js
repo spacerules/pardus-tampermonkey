@@ -9,8 +9,8 @@
 // @include      http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/Logger.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/Logger.js
 // ==/UserScript==
 
 
