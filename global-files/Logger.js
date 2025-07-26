@@ -78,7 +78,7 @@
      * @param {...*} args - Arguments to log.
      */
     window.logInfo = (enabled, ...args) =>
-        styledLog(enabled, 'ℹ INFO', baseStyle + 'color: white; background: #2196F3;', ...args);
+        styledLog(enabled, 'ℹ INFO', baseStyle + 'color: black; background: #d6edff;', ...args);
 
     /**
      * Logs a warning message.
@@ -86,7 +86,7 @@
      * @param {...*} args - Arguments to log.
      */
     window.logWarn = (enabled, ...args) =>
-        styledLog(enabled, '⚠ WARN', baseStyle + 'color: black; background: #FFEB3B;', ...args);
+        styledLog(enabled, '⚠ WARN', baseStyle + 'color: black; background: #f7f1b5;', ...args);
 
     /**
      * Logs an error message.
@@ -94,7 +94,7 @@
      * @param {...*} args - Arguments to log.
      */
     window.logError = (enabled, ...args) =>
-        styledLog(enabled, '⛔ ERROR', baseStyle + 'color: white; background: #f44336;', ...args);
+        styledLog(enabled, '⛔ ERROR', baseStyle + 'color: black; background: #f5a59f;', ...args);
 
     /**
      * Logs a success message.
@@ -102,7 +102,7 @@
      * @param {...*} args - Arguments to log.
      */
     window.logSuccess = (enabled, ...args) =>
-        styledLog(enabled, '✔ SUCCESS', baseStyle + 'color: white; background: #4CAF50;', ...args);
+        styledLog(enabled, '✔ SUCCESS', baseStyle + 'color: black; background: #d2fcd3;', ...args);
 
     /**
      * Logs a debug message.
@@ -110,7 +110,7 @@
      * @param {...*} args - Arguments to log.
      */
     window.logDebug = (enabled, ...args) =>
-        styledLog(enabled, '🐞 DEBUG', baseStyle + 'color: white; background: #9E9E9E;', ...args);
+        styledLog(enabled, '🐞 DEBUG', baseStyle + 'color: black; background: #dbdbdb;', ...args);
 
     /**
      * Begins a collapsed console group with a styled label.
@@ -119,7 +119,7 @@
      */
     window.logGroupStart = (enabled, title) => {
         if (!enabled) return;
-        console.groupCollapsed(`📁 %c${title}`, baseStyle + 'color: white; background: #607D8B;');
+        console.groupCollapsed(`📁 %c${title}`, baseStyle + 'color: black; background: #aec6d1;');
     };
 
     /**
