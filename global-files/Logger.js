@@ -19,7 +19,7 @@
  * 
  * const LOGGING_ENABLED = true;
  * 
- * logGroupStart(LOGGING_ENABLED, 'Script Start');
+ * logGroupStart(LOGGING_ENABLED, 'Function: pardusBuildingInit');
  * 
  * logInfo(LOGGING_ENABLED, 'Starting task with data:', someData);
  * logWarn(LOGGING_ENABLED, 'Low fuel warning for ship:', shipName);
@@ -28,6 +28,35 @@
  * logDebug(LOGGING_ENABLED, 'Debugging ship object:', ship);
  * 
  * logGroupEnd(LOGGING_ENABLED);
+ *
+ *
+ * USERSCRIPT EXAMPLE (Note: we have 1 for the file and 1 per function):
+ * 
+ * (function () {
+ *   'use strict';
+ *   const LOGGING_ENABLED = true;
+ *   
+ *   logGroupStart(LOGGING_ENABLED, 'File: myScript.js');
+ * 
+ *   function pardusBuildingInit() {
+ *     // Load Document data into short variables
+ *     var doc = document;
+ *     var loc = doc.location.href;
+ * 
+ *     logGroupStart(LOGGING_ENABLED, 'Function: pardusBuildingInit | loc=' + loc);
+ *	   
+ *     if (loc.match('game.php')) {
+ *       logSuccess(LOGGING_ENABLED,'location matched:', loc);
+ *       registerSettings();
+ *     }
+ * 
+ *     logGroupEnd(LOGGING_ENABLED);
+ *   }
+ *
+ *   pardusBuildingInit();
+ *
+ *   logGroupEnd(LOGGING_ENABLED);
+ * })();
  */
 
 (function () {
