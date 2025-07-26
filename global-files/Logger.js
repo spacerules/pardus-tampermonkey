@@ -93,8 +93,10 @@
      * @param {boolean} enabled - Whether to output the log.
      * @param {...*} args - Arguments to log.
      */
-    window.logError = (enabled, ...args) =>
+    window.logError = (enabled, ...args) => {
         styledLog(enabled, '⛔ ERROR', baseStyle + 'color: black; background: #f5a59f;', ...args);
+        console.trace();
+    }
 
     /**
      * Logs a success message.
