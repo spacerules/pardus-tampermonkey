@@ -23,7 +23,7 @@
   'use strict';
   const LOGGING_ENABLED = false;
 
-  logGroupStart(LOGGING_ENABLED, 'File: myScript.js');
+  logGroupStart(LOGGING_ENABLED, 'File: buildingList.js');
 
   function getColumnNr(firstRowTR, searchString, searchOccurrence = 1){
 
