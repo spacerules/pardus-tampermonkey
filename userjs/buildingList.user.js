@@ -9,8 +9,8 @@
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingList.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/buildingList.user.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/buildingList.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/buildingList.user.js
 // ==/UserScript==
 
 (function() {
