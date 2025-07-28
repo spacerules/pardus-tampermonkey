@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name         Pardus Log Total List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.1
+// @version      1.0.2
 // @description  adds a total to the log files
 // @author       Spacerules
 // @match        http://*.pardus.at/*
 // @match        https://*.pardus.at/*
 // @include      http*://*.pardus.at/overview*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/LogTotalList.user.js
@@ -16,7 +15,6 @@
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
-/* global readCookie, writeCookie */
 
 (function() {
     'use strict';
@@ -26,39 +24,41 @@
 
   logGroupStart(LOGGING_ENABLED, 'File: LogTotalList.js');
 
+    function getColumnNr(firstRowTR, searchString, searchOccurrence = 1) {
+      logGroupStart(LOGGING_ENABLED, 'Function: getColumnNr');
+
+      const searchStrings = searchString.toLowerCase().split('~').map(s => s.trim());
+      let foundOccurrence = 0;
+
+      for (let i = 0; i < firstRowTR.children.length; i++) {
+        const text = firstRowTR.children[i].textContent.trim().toLowerCase();
+
+        if (searchStrings.some(s => text === s)) {
+          foundOccurrence += 1;
+          if (foundOccurrence === searchOccurrence) {
+            logSuccess(LOGGING_ENABLED, `"${searchString}" matched at column index:`, i);
+            logGroupEnd(LOGGING_ENABLED);
+            return i;
+          }
+        }
+      }
+
+      logGroupEnd(LOGGING_ENABLED);
+      return -1;
+    }
+
     function parduslogtotals(logtable) {
         const firstRow = logtable?.querySelector('tr');
         const columnCount = firstRow ? firstRow.children.length : 0;
 
         logDebug('Number of columns:', columnCount);
 
-        let totalColIndex = -1;
-        let actionColIndex = -1;
-        let pilotColIndex = -1;
+        // Step 1: Find the "Total" column index
+        let totalColIndex = getColumnNr(firstRow,'total~price~reward');
+        let actionColIndex = getColumnNr(firstRow,'action');
+        let pilotColIndex = getColumnNr(firstRow,'pilot');
 
         let username = readCookie('user');
-
-        // Step 1: Find the "Total" column index
-        for (let i = 0; i < firstRow.children.length; i++) {
-            const text = firstRow.children[i].textContent.trim().toLowerCase();
-            if (text.includes("total") ||
-                text.includes("price") ||
-                text.includes("reward")) {
-                totalColIndex = i;
-                logSuccess("It worked: Found 'total' at index", i);
-            }
-
-            if (text.includes("action")) {
-                actionColIndex = i;
-                logSuccess("It worked: Found 'action' at index", i);
-            }
-            if (text.includes("pilot")) {
-                pilotColIndex = i;
-                logSuccess("It worked: Found 'pilotColIndex' at index", i);
-            }
-
-
-        }
 
         // Step 2: Sum values in that column
         let totalSum = 0;
