@@ -7,8 +7,8 @@
 // @match        http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/AdjSweetenerPlugin.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/AdjSweetenerPlugin.user.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/AdjSweetenerPlugin.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/AdjSweetenerPlugin.user.js
 // ==/UserScript==
 
 (function() {
