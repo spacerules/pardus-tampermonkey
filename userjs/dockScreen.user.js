@@ -9,8 +9,8 @@
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/dockScreen.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/dockScreen.user.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/dockScreen.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/dockScreen.user.js
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
