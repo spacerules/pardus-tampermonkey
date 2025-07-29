@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Log Total List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.3
+// @version      1.0.4
 // @description  adds a total to the log files
 // @author       Spacerules
 // @match        http://*.pardus.at/*
@@ -88,7 +88,8 @@
                         }
                     } else {
                         if (cellTextAction.toLowerCase().includes("bought") ||
-                            cellTextAction.toLowerCase().includes("repaired")
+                            cellTextAction.toLowerCase().includes("repaired") ||
+                            cellTextAction.toLowerCase().includes("received")
                            ) {
                             const num = parseFloat(cellTexttotal) || 0; // blank or NaN = 0
                             totalSum += num;
