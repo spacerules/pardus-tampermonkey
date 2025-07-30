@@ -1,0 +1,2006 @@
+{
+    "World": {
+        "sectorlist": [
+            {
+                "Sector": "ZU 3-239",
+                "XCoord": 266,
+                "YCoord": 235
+            },
+            {
+                "Sector": "Greenso",
+                "XCoord": 267,
+                "YCoord": 235
+            },
+            {
+                "Sector": "Nex 0006",
+                "XCoord": 269,
+                "YCoord": 235
+            },
+            {
+                "Sector": "Propus",
+                "XCoord": 270,
+                "YCoord": 235
+            },
+            {
+                "Sector": "JO 4-132",
+                "XCoord": 262,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Bewaack",
+                "XCoord": 263,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Miayda",
+                "XCoord": 264,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Silaad",
+                "XCoord": 265,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Fadaphi",
+                "XCoord": 266,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Elnath",
+                "XCoord": 270,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Arexack",
+                "XCoord": 273,
+                "YCoord": 236
+            },
+            {
+                "Sector": "GT 3-328",
+                "XCoord": 274,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Famida",
+                "XCoord": 275,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Uv Seti",
+                "XCoord": 277,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Gresoin",
+                "XCoord": 278,
+                "YCoord": 236
+            },
+            {
+                "Sector": "Xeho",
+                "XCoord": 265,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Oucanfa",
+                "XCoord": 266,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Cegreeth",
+                "XCoord": 267,
+                "YCoord": 237
+            },
+            {
+                "Sector": "AB 5-848",
+                "XCoord": 269,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Algol",
+                "XCoord": 270,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Pass UNI-09",
+                "XCoord": 272,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Dadaex",
+                "XCoord": 273,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Lavebe",
+                "XCoord": 274,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Let",
+                "XCoord": 276,
+                "YCoord": 237
+            },
+            {
+                "Sector": "PA 2-013",
+                "XCoord": 279,
+                "YCoord": 237
+            },
+            {
+                "Sector": "Pass Fed-13",
+                "XCoord": 262,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Edmial",
+                "XCoord": 266,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Vecelia",
+                "XCoord": 270,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Pass UNI-06",
+                "XCoord": 273,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Tigrecan",
+                "XCoord": 275,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Sobein",
+                "XCoord": 276,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Zeaay",
+                "XCoord": 277,
+                "YCoord": 238
+            },
+            {
+                "Sector": "Abeho",
+                "XCoord": 279,
+                "YCoord": 238
+            },
+            {
+                "Sector": "BU 5-773",
+                "XCoord": 276,
+                "YCoord": 239
+            },
+            {
+                "Sector": "Iohofa",
+                "XCoord": 278,
+                "YCoord": 239
+            },
+            {
+                "Sector": "Olaso",
+                "XCoord": 280,
+                "YCoord": 239
+            },
+            {
+                "Sector": "Nionquat",
+                "XCoord": 261,
+                "YCoord": 240
+            },
+            {
+                "Sector": "GV 4-652",
+                "XCoord": 262,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Sohoa",
+                "XCoord": 263,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Baar",
+                "XCoord": 269,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Aandti",
+                "XCoord": 270,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Hooth",
+                "XCoord": 271,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Atlas",
+                "XCoord": 272,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Qumia",
+                "XCoord": 273,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Polaris",
+                "XCoord": 274,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Lagreen",
+                "XCoord": 279,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Veliace",
+                "XCoord": 281,
+                "YCoord": 240
+            },
+            {
+                "Sector": "Nebul",
+                "XCoord": 258,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Famiay",
+                "XCoord": 260,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Betelgeuse",
+                "XCoord": 262,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Tiacan",
+                "XCoord": 265,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Essaa",
+                "XCoord": 266,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Pass FED-07",
+                "XCoord": 267,
+                "YCoord": 241
+            },
+            {
+                "Sector": "UZ 8-466",
+                "XCoord": 269,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Waolex",
+                "XCoord": 270,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Solaqu",
+                "XCoord": 273,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Ioquex",
+                "XCoord": 274,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Pass UNI-07",
+                "XCoord": 276,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Uressce",
+                "XCoord": 278,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Miola",
+                "XCoord": 279,
+                "YCoord": 241
+            },
+            {
+                "Sector": "WI 4-329",
+                "XCoord": 280,
+                "YCoord": 241
+            },
+            {
+                "Sector": "Capella",
+                "XCoord": 257,
+                "YCoord": 242
+            },
+            {
+                "Sector": "Rashkan",
+                "XCoord": 262,
+                "YCoord": 242
+            },
+            {
+                "Sector": "Omicron Eridani",
+                "XCoord": 263,
+                "YCoord": 242
+            },
+            {
+                "Sector": "Ackexa",
+                "XCoord": 265,
+                "YCoord": 242
+            },
+            {
+                "Sector": "YC 3-268",
+                "XCoord": 266,
+                "YCoord": 242
+            },
+            {
+                "Sector": "Gilo",
+                "XCoord": 269,
+                "YCoord": 242
+            },
+            {
+                "Sector": "Pass UNI-08",
+                "XCoord": 279,
+                "YCoord": 242
+            },
+            {
+                "Sector": "Bedaho",
+                "XCoord": 256,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Phekda",
+                "XCoord": 260,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Epsilon Indi",
+                "XCoord": 261,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Nex 0001",
+                "XCoord": 269,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Dainfa",
+                "XCoord": 274,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Aveed",
+                "XCoord": 275,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Exiool",
+                "XCoord": 277,
+                "YCoord": 243
+            },
+            {
+                "Sector": "Zeaex",
+                "XCoord": 255,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Pass FED-05",
+                "XCoord": 265,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Pass FED-06",
+                "XCoord": 266,
+                "YCoord": 244
+            },
+            {
+                "Sector": "BL 6-511",
+                "XCoord": 269,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Ioliaa",
+                "XCoord": 274,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Edethex",
+                "XCoord": 277,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Beta Hydri",
+                "XCoord": 278,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Naos",
+                "XCoord": 279,
+                "YCoord": 244
+            },
+            {
+                "Sector": "CP 2-197",
+                "XCoord": 280,
+                "YCoord": 244
+            },
+            {
+                "Sector": "Inena",
+                "XCoord": 252,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Maia",
+                "XCoord": 254,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Micanex",
+                "XCoord": 256,
+                "YCoord": 245
+            },
+            {
+                "Sector": "LO 2-014",
+                "XCoord": 261,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Becanol",
+                "XCoord": 269,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Anphiex",
+                "XCoord": 270,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Pass UNI-01",
+                "XCoord": 272,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Gretiay",
+                "XCoord": 274,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Sophilia",
+                "XCoord": 275,
+                "YCoord": 245
+            },
+            {
+                "Sector": "DI 9-486",
+                "XCoord": 276,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Vega",
+                "XCoord": 277,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Zaurak",
+                "XCoord": 280,
+                "YCoord": 245
+            },
+            {
+                "Sector": "Pass FED-03",
+                "XCoord": 250,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Alioth",
+                "XCoord": 252,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Canopus",
+                "XCoord": 265,
+                "YCoord": 246
+            },
+            {
+                "Sector": "SD 3-562",
+                "XCoord": 266,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Zelada",
+                "XCoord": 269,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Lasolia",
+                "XCoord": 270,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Liaququ",
+                "XCoord": 274,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Spica",
+                "XCoord": 276,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Daured",
+                "XCoord": 277,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Ackwada",
+                "XCoord": 278,
+                "YCoord": 246
+            },
+            {
+                "Sector": "Menkent",
+                "XCoord": 279,
+                "YCoord": 246
+            },
+            {
+                "Sector": "JS 2-090",
+                "XCoord": 253,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Waayan",
+                "XCoord": 255,
+                "YCoord": 247
+            },
+            {
+                "Sector": "HC 4-962",
+                "XCoord": 256,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Pass FED-04",
+                "XCoord": 258,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Phiagre",
+                "XCoord": 260,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Miphimi",
+                "XCoord": 261,
+                "YCoord": 247
+            },
+            {
+                "Sector": "WO 3-290",
+                "XCoord": 262,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Nex 0002",
+                "XCoord": 263,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Ururur",
+                "XCoord": 264,
+                "YCoord": 247
+            },
+            {
+                "Sector": "BQ 3-927",
+                "XCoord": 265,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Ross",
+                "XCoord": 266,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Famiso",
+                "XCoord": 267,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Edenve",
+                "XCoord": 269,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Faarfa",
+                "XCoord": 270,
+                "YCoord": 247
+            },
+            {
+                "Sector": "Wainze",
+                "XCoord": 276,
+                "YCoord": 247
+            },
+            {
+                "Sector": "PJ 3373",
+                "XCoord": 250,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Olcanze",
+                "XCoord": 261,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Hocancan",
+                "XCoord": 262,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Daaya",
+                "XCoord": 263,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Betiess",
+                "XCoord": 264,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Enaness",
+                "XCoord": 265,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Remo",
+                "XCoord": 266,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Urfaa",
+                "XCoord": 274,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Quexce",
+                "XCoord": 275,
+                "YCoord": 248
+            },
+            {
+                "Sector": "YV 3-386",
+                "XCoord": 276,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Pass UNI-04",
+                "XCoord": 278,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Dsiban",
+                "XCoord": 280,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Izar",
+                "XCoord": 282,
+                "YCoord": 248
+            },
+            {
+                "Sector": "Epsilon Eridani",
+                "XCoord": 249,
+                "YCoord": 249
+            },
+            {
+                "Sector": "Quurze",
+                "XCoord": 251,
+                "YCoord": 249
+            },
+            {
+                "Sector": "Hoanda",
+                "XCoord": 252,
+                "YCoord": 249
+            },
+            {
+                "Sector": "Laedgre",
+                "XCoord": 262,
+                "YCoord": 249
+            },
+            {
+                "Sector": "Nashira",
+                "XCoord": 280,
+                "YCoord": 249
+            },
+            {
+                "Sector": "Wezen",
+                "XCoord": 282,
+                "YCoord": 249
+            },
+            {
+                "Sector": "Enioar",
+                "XCoord": 244,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Pass FED-09",
+                "XCoord": 246,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Faexze",
+                "XCoord": 248,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Sol",
+                "XCoord": 250,
+                "YCoord": 250
+            },
+            {
+                "Sector": "SA 2779",
+                "XCoord": 251,
+                "YCoord": 250
+            },
+            {
+                "Sector": "ZZ 2986",
+                "XCoord": 253,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Iozeio",
+                "XCoord": 260,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Electra",
+                "XCoord": 262,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Fornacis",
+                "XCoord": 265,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Sargas",
+                "XCoord": 266,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Quaack",
+                "XCoord": 267,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Labela",
+                "XCoord": 268,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Cor Caroli",
+                "XCoord": 269,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Gomeisa",
+                "XCoord": 270,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Pass UNI-02",
+                "XCoord": 274,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Pass UNI-03",
+                "XCoord": 275,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Lazebe",
+                "XCoord": 279,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Turais",
+                "XCoord": 281,
+                "YCoord": 250
+            },
+            {
+                "Sector": "Liaface",
+                "XCoord": 244,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Alpha Centauri",
+                "XCoord": 249,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Beta Proxima",
+                "XCoord": 252,
+                "YCoord": 251
+            },
+            {
+                "Sector": "HO 2-296",
+                "XCoord": 259,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Beethti",
+                "XCoord": 260,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Ras Elased",
+                "XCoord": 265,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Cebece",
+                "XCoord": 270,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Olaeth",
+                "XCoord": 279,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Bellatrix",
+                "XCoord": 280,
+                "YCoord": 251
+            },
+            {
+                "Sector": "Inioen",
+                "XCoord": 244,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Ericon",
+                "XCoord": 249,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Olexti",
+                "XCoord": 250,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Lalande",
+                "XCoord": 251,
+                "YCoord": 252
+            },
+            {
+                "Sector": "BL 3961",
+                "XCoord": 252,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Tau Ceti",
+                "XCoord": 253,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Pass FED-01",
+                "XCoord": 255,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Grefaho",
+                "XCoord": 257,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Olphize",
+                "XCoord": 259,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Ebdeeth",
+                "XCoord": 260,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Anaam",
+                "XCoord": 261,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Dubhe",
+                "XCoord": 264,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Enif",
+                "XCoord": 265,
+                "YCoord": 252
+            },
+            {
+                "Sector": "PardusP",
+                "XCoord": 267,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Nhandu",
+                "XCoord": 269,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Etamin",
+                "XCoord": 271,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Kitalpha",
+                "XCoord": 273,
+                "YCoord": 252
+            },
+            {
+                "Sector": "EH 5-382",
+                "XCoord": 274,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Diphda",
+                "XCoord": 275,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Thabit",
+                "XCoord": 276,
+                "YCoord": 252
+            },
+            {
+                "Sector": "WW 2-934",
+                "XCoord": 279,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Sirius",
+                "XCoord": 281,
+                "YCoord": 252
+            },
+            {
+                "Sector": "Gienah Cygni",
+                "XCoord": 282,
+                "YCoord": 252
+            },
+            {
+                "Sector": "VM 3-326",
+                "XCoord": 243,
+                "YCoord": 253
+            },
+            {
+                "Sector": "XH 3819",
+                "XCoord": 249,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Siberion",
+                "XCoord": 252,
+                "YCoord": 253
+            },
+            {
+                "Sector": "WP 3155",
+                "XCoord": 253,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Pass FED-02",
+                "XCoord": 255,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Ayargre",
+                "XCoord": 257,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Zirr",
+                "XCoord": 258,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Canexin",
+                "XCoord": 259,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Retho",
+                "XCoord": 260,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Meram",
+                "XCoord": 261,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Mintaka",
+                "XCoord": 263,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Baham",
+                "XCoord": 269,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Wasat",
+                "XCoord": 273,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Alfirk",
+                "XCoord": 274,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Phao",
+                "XCoord": 275,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Adara",
+                "XCoord": 276,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Homam",
+                "XCoord": 278,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Matar",
+                "XCoord": 281,
+                "YCoord": 253
+            },
+            {
+                "Sector": "UG 5-093",
+                "XCoord": 282,
+                "YCoord": 253
+            },
+            {
+                "Sector": "Wamien",
+                "XCoord": 244,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Pass FED-10",
+                "XCoord": 246,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Lave",
+                "XCoord": 248,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Orerve",
+                "XCoord": 249,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Daceess",
+                "XCoord": 251,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Begreze",
+                "XCoord": 258,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Laolla",
+                "XCoord": 259,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Nex Kataam",
+                "XCoord": 260,
+                "YCoord": 254
+            },
+            {
+                "Sector": "QW 2-014",
+                "XCoord": 261,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Aya",
+                "XCoord": 264,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Nari",
+                "XCoord": 265,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Heze",
+                "XCoord": 266,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Procyon",
+                "XCoord": 267,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Menkar",
+                "XCoord": 268,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Rigel",
+                "XCoord": 269,
+                "YCoord": 254
+            },
+            {
+                "Sector": "HW 3-863",
+                "XCoord": 273,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Nex 0004",
+                "XCoord": 274,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Mebsuta",
+                "XCoord": 275,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Seginus",
+                "XCoord": 276,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Nekkar",
+                "XCoord": 281,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Achird",
+                "XCoord": 282,
+                "YCoord": 254
+            },
+            {
+                "Sector": "Miarin",
+                "XCoord": 248,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Andexa",
+                "XCoord": 250,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Usube",
+                "XCoord": 258,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Tiacken",
+                "XCoord": 259,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Soessze",
+                "XCoord": 260,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Zamith",
+                "XCoord": 261,
+                "YCoord": 255
+            },
+            {
+                "Sector": "DH 3-625",
+                "XCoord": 271,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Rotanev",
+                "XCoord": 273,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Zaniah",
+                "XCoord": 275,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Nusakan",
+                "XCoord": 276,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Pass UNI-05",
+                "XCoord": 278,
+                "YCoord": 255
+            },
+            {
+                "Sector": "BE 3-702",
+                "XCoord": 280,
+                "YCoord": 255
+            },
+            {
+                "Sector": "Phaet",
+                "XCoord": 281,
+                "YCoord": 255
+            },
+            {
+                "Sector": "UF 3-555",
+                "XCoord": 244,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Qumiin",
+                "XCoord": 245,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Ureneth",
+                "XCoord": 246,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Ook",
+                "XCoord": 249,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Urhoho",
+                "XCoord": 257,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Edmize",
+                "XCoord": 259,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Faphida",
+                "XCoord": 260,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Mizar",
+                "XCoord": 261,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Quince",
+                "XCoord": 263,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Nunki",
+                "XCoord": 266,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Becanin",
+                "XCoord": 268,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Exbeur",
+                "XCoord": 270,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Veareth",
+                "XCoord": 271,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Zuben Elakrab",
+                "XCoord": 275,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Yildun",
+                "XCoord": 276,
+                "YCoord": 256
+            },
+            {
+                "Sector": "Leesti",
+                "XCoord": 243,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Xewao",
+                "XCoord": 244,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Ayqugre",
+                "XCoord": 246,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Cesoho",
+                "XCoord": 250,
+                "YCoord": 257
+            },
+            {
+                "Sector": "TG 2-143",
+                "XCoord": 259,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Datiack",
+                "XCoord": 260,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Sodaack",
+                "XCoord": 264,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Facece",
+                "XCoord": 265,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Lahola",
+                "XCoord": 266,
+                "YCoord": 257
+            },
+            {
+                "Sector": "GM 4-572",
+                "XCoord": 267,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Urioed",
+                "XCoord": 268,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Tiliala",
+                "XCoord": 269,
+                "YCoord": 257
+            },
+            {
+                "Sector": "AN 2-956",
+                "XCoord": 270,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Waarze",
+                "XCoord": 271,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Keid",
+                "XCoord": 279,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Cebalrai",
+                "XCoord": 280,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Subra",
+                "XCoord": 281,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Furud",
+                "XCoord": 282,
+                "YCoord": 257
+            },
+            {
+                "Sector": "Faedho",
+                "XCoord": 243,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Pass FED-08",
+                "XCoord": 249,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Nex 0005",
+                "XCoord": 254,
+                "YCoord": 258
+            },
+            {
+                "Sector": "ZP 2-989",
+                "XCoord": 264,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Ophiuchi",
+                "XCoord": 265,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Nex 0003",
+                "XCoord": 266,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Encea",
+                "XCoord": 267,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Pass EMP-06",
+                "XCoord": 275,
+                "YCoord": 258
+            },
+            {
+                "Sector": "Aedce",
+                "XCoord": 245,
+                "YCoord": 259
+            },
+            {
+                "Sector": "RA 3-124",
+                "XCoord": 246,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Quexho",
+                "XCoord": 253,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Canolin",
+                "XCoord": 254,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Pass EMP-01",
+                "XCoord": 259,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Pass EMP-02",
+                "XCoord": 260,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Cabard",
+                "XCoord": 265,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Paan",
+                "XCoord": 266,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Cemiess",
+                "XCoord": 267,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Pass EMP-04",
+                "XCoord": 270,
+                "YCoord": 259
+            },
+            {
+                "Sector": "Pass EMP-05",
+                "XCoord": 271,
+                "YCoord": 259
+            },
+            {
+                "Sector": "JG 2-013",
+                "XCoord": 243,
+                "YCoord": 260
+            },
+            {
+                "Sector": "Tiafa",
+                "XCoord": 244,
+                "YCoord": 260
+            },
+            {
+                "Sector": "FR 3-328",
+                "XCoord": 249,
+                "YCoord": 260
+            },
+            {
+                "Sector": "Liaackti",
+                "XCoord": 250,
+                "YCoord": 260
+            },
+            {
+                "Sector": "Andsoled",
+                "XCoord": 251,
+                "YCoord": 260
+            },
+            {
+                "Sector": "TiveaH",
+                "XCoord": 252,
+                "YCoord": 260
+            },
+            {
+                "Sector": "Veedfa",
+                "XCoord": 253,
+                "YCoord": 260
+            },
+            {
+                "Sector": "Phiandgre",
+                "XCoord": 254,
+                "YCoord": 260
+            },
+            {
+                "Sector": "LN 3-141",
+                "XCoord": 275,
+                "YCoord": 260
+            },
+            {
+                "Sector": "Hobeex",
+                "XCoord": 243,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Ollaffa",
+                "XCoord": 244,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Pass FED-11",
+                "XCoord": 246,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Beurso",
+                "XCoord": 248,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Stein",
+                "XCoord": 249,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Enwaand",
+                "XCoord": 250,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Ladaen",
+                "XCoord": 254,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Iceo",
+                "XCoord": 259,
+                "YCoord": 261
+            },
+            {
+                "Sector": "IP 3-251",
+                "XCoord": 260,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Daurlia",
+                "XCoord": 270,
+                "YCoord": 261
+            },
+            {
+                "Sector": "PI 4-669",
+                "XCoord": 271,
+                "YCoord": 261
+            },
+            {
+                "Sector": "Urlafa",
+                "XCoord": 274,
+                "YCoord": 261
+            },
+            {
+                "Sector": "WG 3-288",
+                "XCoord": 275,
+                "YCoord": 261
+            },
+            {
+                "Sector": "SF 5-674",
+                "XCoord": 243,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Pass FED-12",
+                "XCoord": 246,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Daaze",
+                "XCoord": 248,
+                "YCoord": 262
+            },
+            {
+                "Sector": "PP 5-713",
+                "XCoord": 254,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Pass EMP-07",
+                "XCoord": 256,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Quana",
+                "XCoord": 258,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Zeolen",
+                "XCoord": 260,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Olbea",
+                "XCoord": 261,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Quator",
+                "XCoord": 269,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Delta Pavonis",
+                "XCoord": 271,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Eta Cassiopeia",
+                "XCoord": 272,
+                "YCoord": 262
+            },
+            {
+                "Sector": "SZ 4-419",
+                "XCoord": 273,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Iniolol",
+                "XCoord": 276,
+                "YCoord": 262
+            },
+            {
+                "Sector": "Soolti",
+                "XCoord": 244,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Ceanze",
+                "XCoord": 245,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Edqueth",
+                "XCoord": 253,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Oauress",
+                "XCoord": 254,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Tiexen",
+                "XCoord": 259,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Adaa",
+                "XCoord": 260,
+                "YCoord": 263
+            },
+            {
+                "Sector": "RV 2-578",
+                "XCoord": 262,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Zezela",
+                "XCoord": 268,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Keldon",
+                "XCoord": 271,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Regulus",
+                "XCoord": 274,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Greandin",
+                "XCoord": 276,
+                "YCoord": 263
+            },
+            {
+                "Sector": "Ceina",
+                "XCoord": 253,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Sowace",
+                "XCoord": 254,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Phicanho",
+                "XCoord": 258,
+                "YCoord": 264
+            },
+            {
+                "Sector": "SkaH",
+                "XCoord": 260,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Urandack",
+                "XCoord": 262,
+                "YCoord": 264
+            },
+            {
+                "Sector": "An Dzeve",
+                "XCoord": 266,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Tianbe",
+                "XCoord": 269,
+                "YCoord": 264
+            },
+            {
+                "Sector": "KU 3-616",
+                "XCoord": 271,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Cassand",
+                "XCoord": 274,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Aeg",
+                "XCoord": 275,
+                "YCoord": 264
+            },
+            {
+                "Sector": "Inliaa",
+                "XCoord": 259,
+                "YCoord": 265
+            },
+            {
+                "Sector": "PO 4-991",
+                "XCoord": 261,
+                "YCoord": 265
+            },
+            {
+                "Sector": "Canaab",
+                "XCoord": 266,
+                "YCoord": 265
+            },
+            {
+                "Sector": "Fomalhaut",
+                "XCoord": 268,
+                "YCoord": 265
+            },
+            {
+                "Sector": "Laanex",
+                "XCoord": 270,
+                "YCoord": 265
+            },
+            {
+                "Sector": "Pollux",
+                "XCoord": 272,
+                "YCoord": 265
+            },
+            {
+                "Sector": "Besoex",
+                "XCoord": 273,
+                "YCoord": 265
+            },
+            {
+                "Sector": "Pass EMP-10",
+                "XCoord": 253,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Pass EMP-11",
+                "XCoord": 254,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Kenlada",
+                "XCoord": 260,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Sigma Draconis",
+                "XCoord": 262,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Miayack",
+                "XCoord": 263,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Exinfa",
+                "XCoord": 264,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Lamice",
+                "XCoord": 265,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Grecein",
+                "XCoord": 266,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Pass EMP-03",
+                "XCoord": 267,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Ackandso",
+                "XCoord": 268,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Vewaa",
+                "XCoord": 270,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Wolf",
+                "XCoord": 273,
+                "YCoord": 266
+            },
+            {
+                "Sector": "Zearla",
+                "XCoord": 250,
+                "YCoord": 267
+            },
+            {
+                "Sector": "Greliai",
+                "XCoord": 255,
+                "YCoord": 267
+            },
+            {
+                "Sector": "Pass EMP-08",
+                "XCoord": 258,
+                "YCoord": 267
+            },
+            {
+                "Sector": "Lianla",
+                "XCoord": 260,
+                "YCoord": 267
+            },
+            {
+                "Sector": "VH 3-344",
+                "XCoord": 262,
+                "YCoord": 267
+            },
+            {
+                "Sector": "Edeneth",
+                "XCoord": 263,
+                "YCoord": 267
+            },
+            {
+                "Sector": "Exackcan",
+                "XCoord": 269,
+                "YCoord": 267
+            },
+            {
+                "Sector": "Beeday",
+                "XCoord": 249,
+                "YCoord": 268
+            },
+            {
+                "Sector": "Ackarack",
+                "XCoord": 250,
+                "YCoord": 268
+            },
+            {
+                "Sector": "YS 3-386",
+                "XCoord": 251,
+                "YCoord": 268
+            },
+            {
+                "Sector": "Ayinti",
+                "XCoord": 252,
+                "YCoord": 268
+            },
+            {
+                "Sector": "Anayed",
+                "XCoord": 253,
+                "YCoord": 268
+            },
+            {
+                "Sector": "Tiurio",
+                "XCoord": 255,
+                "YCoord": 268
+            },
+            {
+                "Sector": "DP 2-354",
+                "XCoord": 257,
+                "YCoord": 268
+            },
+            {
+                "Sector": "XC 3-261",
+                "XCoord": 260,
+                "YCoord": 268
+            },
+            {
+                "Sector": "Waiophi",
+                "XCoord": 261,
+                "YCoord": 268
+            },
+            {
+                "Sector": "Watibe",
+                "XCoord": 250,
+                "YCoord": 269
+            },
+            {
+                "Sector": "RX 3-129",
+                "XCoord": 254,
+                "YCoord": 269
+            },
+            {
+                "Sector": "Fawaol",
+                "XCoord": 256,
+                "YCoord": 269
+            },
+            {
+                "Sector": "CC 3-771",
+                "XCoord": 249,
+                "YCoord": 270
+            },
+            {
+                "Sector": "Oldain",
+                "XCoord": 251,
+                "YCoord": 270
+            },
+            {
+                "Sector": "Edvea",
+                "XCoord": 253,
+                "YCoord": 270
+            },
+            {
+                "Sector": "Iowagre",
+                "XCoord": 257,
+                "YCoord": 270
+            },
+            {
+                "Sector": "Hource",
+                "XCoord": 258,
+                "YCoord": 270
+            },
+            {
+                "Sector": "Pass EMP-09",
+                "XCoord": 260,
+                "YCoord": 270
+            },
+            {
+                "Sector": "Miackio",
+                "XCoord": 252,
+                "YCoord": 271
+            },
+            {
+                "Sector": "Belati",
+                "XCoord": 254,
+                "YCoord": 271
+            },
+            {
+                "Sector": "ZS 3-798",
+                "XCoord": 255,
+                "YCoord": 271
+            },
+            {
+                "Sector": "Quaphi",
+                "XCoord": 256,
+                "YCoord": 271
+            }
+        ]
+    }
+}
