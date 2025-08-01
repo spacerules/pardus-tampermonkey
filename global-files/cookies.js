@@ -41,7 +41,7 @@
 		} catch (ex) {
 			logError(ex);
 		}
-		logError(true, nameEQ + " not found as a cookie.");
+		//logError(true, nameEQ + " not found as a cookie.");
 		return " ";
 	}
 
