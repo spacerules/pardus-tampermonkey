@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.0.5
+// @version      0.1.0
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -52,6 +52,8 @@
 
     var imageData = [];
 
+    var SectorName;
+    var SectorCache;
     var SectorBuildingData = [];
     var LoadedBestCommodities = [];
 
@@ -64,6 +66,7 @@
           var tableLoc = document.getElementsByTagName('h' + hNum);
           for(var i=0;i<tableLoc.length;i++){
               if(tableLoc[i].innerHTML.includes("Building")){
+                  SectorName = tableLoc[i].innerHTML;
                   return tableLoc[i].parentElement;
               }
           }
@@ -73,14 +76,16 @@
 
    // Grabbing image data for commodities 
     function fetchAll(){
-         fetch("https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/resources/Commodity.json")
-             .then(res => res.json())
-             .then(data => {
-             for(var i=0; i<data.length; i++){
-                 imageData[data[i].name.toLowerCase()] = data[i].img;
-             }
-             addButton(); // BUTTON IS ADDED ONCE IMAGE GETTING IS DONE
-         });
+        SectorCache = document.getElementsByClassName("cached")[0];
+
+        fetch("https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/resources/Commodity.json")
+            .then(res => res.json())
+            .then(data => {
+            for(var i=0; i<data.length; i++){
+                imageData[data[i].name.toLowerCase()] = data[i].img;
+            }
+            addButton(); // BUTTON IS ADDED ONCE IMAGE GETTING IS DONE
+        });
     }
    
    //Load all data
@@ -251,8 +256,8 @@
         <link rel="stylesheet" href="//static.pardus.at/img/stdhq/main.css">
    </head>
    <body style="text-align:center;background-image:url(//static.pardus.at/img/stdhq/bgoutspace1.gif);">
-       <h1 style="font-size:50px;">Deal Maker 2000</h1>
-       <table border="1" style="width:100%;background:url(//static.pardus.at/img/std/bg.gif);padding:15px;" >
+       <h1 id="header" style="font-size:50px;">${ SectorName.replace("Building Index", "DealMaker 2000") }</h1>
+       <table id="mainDisplay" border="1" style="width:100%;background:url(//static.pardus.at/img/std/bg.gif);padding:15px;" >
            <tr>
                <th> Commodity </th>
                <th > Buying: </th>
@@ -342,6 +347,13 @@
 
       const newWindow = window.open("", "_blank", "width=1200,height=1200");
       newWindow.document.write(webpage);
+      ;
+      var mainDis = newWindow.document.getElementById("mainDisplay");
+      mainDis.parentElement.insertBefore(SectorCache, mainDis);
+      mainDis.parentElement.insertBefore(document.createElement("br"), mainDis);
+      mainDis.parentElement.insertBefore(document.createElement("br"), mainDis);
+
+
       newWindow.document.close();
     }
 
@@ -356,11 +368,6 @@
 
 // BUTTON FOR DISPLAYING DIALOG IS LOADED IN THE FETCH OF
 
-
     }
-
-
-
-
     main();
 })();
