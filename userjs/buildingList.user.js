@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Building List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.1.1
+// @version      1.1.2
 // @description  gives the calculated production upkeep for the buildings
 // @author       Spacerules
 // @match        http://*.pardus.at/game.php
@@ -17,17 +17,18 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/buildingList.user.js
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
 
 (function () {
   'use strict';
-  const LOGGING_ENABLED = false;
 
-  logGroupStart(LOGGING_ENABLED, 'File: buildingList.js');
+  logEnabled(false);
+
+  logGroupStart('File: myScript.js');
 
   function getColumnNr(firstRowTR, searchString, searchOccurrence = 1){
 
-      logGroupStart(LOGGING_ENABLED, 'Function: getColumnNr');
+      logGroupStart('Function: getColumnNr');
       let foundOccurrence = 0;
       for (let i = 0; i < firstRowTR.children.length; i++) {
           const text = firstRowTR.children[i].textContent.trim().toLowerCase();
@@ -35,23 +36,23 @@
               foundOccurrence += 1;
               if (searchOccurrence = foundOccurrence)
               {
-                  logSuccess(LOGGING_ENABLED, searchString +" was found at index:", i);
-                  logGroupEnd(LOGGING_ENABLED);
+                  logSuccess(searchString +" was found at index:", i);
+                  logGroupEnd();
                   return i;
               }
           }
       }
-      logGroupEnd(LOGGING_ENABLED);
+      logGroupEnd();
       return -1;
 
   }
 
   function pardusBuildingMax(buildingtable) {
-    logGroupStart(LOGGING_ENABLED, 'Function: pardusBuildingMax');
+    logGroupStart('Function: pardusBuildingMax');
     const firstRow = buildingtable?.querySelector('tr');
     const columnCount = firstRow ? firstRow.children.length : 0;
 
-    logInfo(LOGGING_ENABLED, 'Number of columns:', columnCount);
+    logInfo('Number of columns:', columnCount);
 
     let capColIndex = -1;
     let upkeepColIndex = -1;
@@ -73,7 +74,7 @@
 
     const rowhd = buildingtable.querySelectorAll(':scope > tbody > tr');
     //add the comment to stock total
-    logDebug(LOGGING_ENABLED, rowhd[0].children);
+    logDebug(rowhd[0].children);
     if (settings.excludedCommodities && settings.includedCommodities) {
       rowhd[0].children[upkeepStockColIndex].innerHTML += " (w/o Com | w/ Com)";
     } else if (!settings.excludedCommodities && settings.includedCommodities) {
@@ -88,7 +89,7 @@
       //get the capacity of each row
       const cellTexttotal = cells[capColIndex].textContent.trim().replace(/,/g, '');
       const cap = parseFloat(cellTexttotal) || 0; // blank or NaN = 0
-      logInfo(LOGGING_ENABLED, "cap value:", cap);
+      logInfo("cap value:", cap);
       var upkeeptotal = 0;
 
       //get the total comodities of each row
@@ -97,12 +98,12 @@
 
       for (let j = 0; j < upkeepRows.length; j++) { // skip the header row
         const upkeepcells = upkeepRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
-        logDebug(LOGGING_ENABLED, "upkeepcells value:", upkeepRows[j].textContent);
+        logDebug("upkeepcells value:", upkeepRows[j].textContent);
         const upkeeptotalnum = parseFloat(upkeepcells) || 0; // blank or NaN = 0
-        logDebug(LOGGING_ENABLED, parseFloat(upkeepcells) || 0);
+        logDebug(parseFloat(upkeepcells) || 0);
         upkeeptotal += upkeeptotalnum;
       }
-      logInfo(LOGGING_ENABLED, "upkeeptotal value:", upkeeptotal);
+      logInfo("upkeeptotal value:", upkeeptotal);
 
       var comtotal = 0;
 
@@ -111,33 +112,33 @@
 
       for (let j = 0; j < comRows.length; j++) { // skip the header row
         const comcells = comRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
-        logDebug(LOGGING_ENABLED, "comcells value:", comRows[j].textContent);
+        logDebug("comcells value:", comRows[j].textContent);
         const comtotalnum = parseFloat(comcells) || 0; // blank or NaN = 0
-        logDebug(LOGGING_ENABLED, parseFloat(comcells) || 0);
+        logDebug(parseFloat(comcells) || 0);
         comtotal += comtotalnum;
       }
-      logInfo(LOGGING_ENABLED, "upkeeptotal value:", upkeeptotal);
+      logInfo("upkeeptotal value:", upkeeptotal);
 
       //get the total comodities of each row
       const prodRows = cells[prodColIndex].querySelectorAll('td');
       var prodtotal = 0;
 
       for (let j = 0; j < prodRows.length; j++) { // skip the header row
-        logDebug(LOGGING_ENABLED, "1) prodcellcontent: ", prodRows[j].textContent);
+        logDebug("1) prodcellcontent: ", prodRows[j].textContent);
         const prodcells = prodRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
-        logDebug(LOGGING_ENABLED, "prodcells value:", prodRows[j].textContent);
+        logDebug("prodcells value:", prodRows[j].textContent);
         const prodtotalnum = parseFloat(prodcells) || 0; // blank or NaN = 0
-        logDebug(LOGGING_ENABLED, parseFloat(prodcells) || 0);
+        logDebug(parseFloat(prodcells) || 0);
         prodtotal += prodtotalnum;
       }
-      logInfo(LOGGING_ENABLED, "prodtotal value:", prodtotal);
+      logInfo("prodtotal value:", prodtotal);
 
       //get set the values to have (max suggested amount rounded to 2 decimals in ())
       //go through upkeep rows again (this is so we dont accidently add stuff we dont want)
       for (let j = 0; j < upkeepRows.length; j++) { // skip the header row
         const upkeepcells = upkeepRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
         const upkeepstockcells = upkeepStockRows[j].textContent.trim().replace(/[^0-9.\-]/g, '');
-        logDebug(LOGGING_ENABLED, "upkeepcells value:", upkeepRows[j].textContent);
+        logDebug("upkeepcells value:", upkeepRows[j].textContent);
         const upkeepcurrentnum = parseFloat(upkeepcells) || 0; // blank or NaN = 0
 
 
@@ -172,10 +173,10 @@
         cells[infoColIndex].appendChild(ratioText);
       }
       //cells[infoColIndex].insertAdjacentText('beforeend', " (" + ratio1 + ")");
-      logInfo(LOGGING_ENABLED, infotext);
+      logInfo(infotext);
     }
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
   }
   //global variables
   const defaultSettings = {
@@ -190,7 +191,7 @@
   };
 
   function registerSettings() {
-    logGroupStart(LOGGING_ENABLED, 'Function: registerSettings');
+    logGroupStart('Function: registerSettings');
     // Register a menu command to edit settings
     GM_registerMenuCommand("⚙️ Edit Settings", () => {
       //const excludedCommodities = confirm("Display upkeep Max values WITHOUT accounting for current Comodities?") ? true : false;
@@ -230,7 +231,7 @@
 
     });
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
   }
 
   // Your code here..
@@ -239,7 +240,7 @@
     var doc = document;
     var loc = doc.location.href;
 
-    logGroupStart(LOGGING_ENABLED, 'Function: pardusBuildingInit | loc=' + loc);
+    logGroupStart('Function: pardusBuildingInit | loc=' + loc);
     //  not used in this script but want to keep it for potential mods.
     //  var search = doc.location.search.substring(doc.location.search.indexOf("=") + 1);
 
@@ -248,17 +249,17 @@
     }
     if (loc.match('overview_buildings.php')) {
       var buildingtable = doc.querySelectorAll('table.messagestyle')[0];
-      logSuccess(LOGGING_ENABLED, 'location matched:', loc);
+      logSuccess('location matched:', loc);
       if (typeof buildingtable != 'undefined') {
         pardusBuildingMax(buildingtable);
       }
     }
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
 
   }
 
   pardusBuildingInit();
 
-  logGroupEnd(LOGGING_ENABLED);
+  logGroupEnd();
 })();
