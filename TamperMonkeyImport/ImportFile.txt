@@ -1,6 +1,6 @@
 {
   "created_by": "Tampermonkey",
-  "version": "1",
+  "version": "2",
   "scripts": [
     {
       "name": "Missions To Rank",
