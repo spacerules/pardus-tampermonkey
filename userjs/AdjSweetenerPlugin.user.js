@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Adjust Sweetener Plugin
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.5
+// @version      1.0.6
 // @description  Moves interface elements to avoid overlap with the map and injects username
 // @author       Spacerules
 // @match        http://*.pardus.at/msgframe.php
@@ -16,36 +16,37 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/AdjSweetenerPlugin.user.js
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable  */
 /* global readCookie */
 (function () {
     'use strict';
 
-    const LOGGING_ENABLED = false;
-    logGroupStart(LOGGING_ENABLED, 'File: AdjSweetenerPlugin.user.js');
+    logEnabled(false);
+
+    logGroupStart('File: AdjSweetenerPlugin.user.js');
 
     function addusername() {
-        logGroupStart(LOGGING_ENABLED, 'Function: addusername');
+        logGroupStart('Function: addusername');
         let username = readCookie('user');
-        logDebug(LOGGING_ENABLED, 'Username:', username);
+        logDebug('Username:', username);
 
         let statuselem = document.getElementById('status_content');
         if (!statuselem) {
-            logWarn(LOGGING_ENABLED, 'status_content not found');
-            logGroupEnd(LOGGING_ENABLED);
+            logWarn('status_content not found');
+            logGroupEnd();
             return;
         }
 
         let tbody = statuselem.querySelector('table tbody');
         if (!tbody) {
-            logWarn(LOGGING_ENABLED, 'No tbody found under #status_content');
-            logGroupEnd(LOGGING_ENABLED);
+            logWarn('No tbody found under #status_content');
+            logGroupEnd();
             return;
         }
 
         if (document.getElementById('tdStatusUserName')) {
-            logDebug(LOGGING_ENABLED, 'Username row already exists.');
-            logGroupEnd(LOGGING_ENABLED);
+            logDebug('Username row already exists.');
+            logGroupEnd();
             return;
         }
 
@@ -60,7 +61,7 @@
 
         newRow.appendChild(newCell);
         tbody.insertBefore(newRow, tbody.firstChild);
-        logGroupEnd(LOGGING_ENABLED);
+        logGroupEnd();
     }
 
     function patchUpdateStatus() {
@@ -76,23 +77,23 @@
 
             uw.updateStatus = function (a) {
                 originalUpdateStatus.call(this, a);
-                logDebug(LOGGING_ENABLED, 'updateStatus patched, reinserting username');
+                logDebug('updateStatus patched, reinserting username');
                 try {
                     addusername();
                 } catch (e) {
-                    logError(LOGGING_ENABLED, 'addusername() failed in updateStatus:', e);
+                    logError('addusername() failed in updateStatus:', e);
                 }
             };
 
             uw.updateStatus._patchedBySweetener = true;
         } else if (!uw.updateStatus) {
-            logWarn(LOGGING_ENABLED, 'updateStatus not yet defined; retrying...');
+            logWarn('updateStatus not yet defined; retrying...');
             setTimeout(patchUpdateStatus, 250);
         }
     }
 
     function updtightwad() {
-        logGroupStart(LOGGING_ENABLED, 'Function: updtightwad');
+        logGroupStart('Function: updtightwad');
         waitForElement('#tightwad_overview', (elem) => {
             elem.style.position = "";
             const br = () => document.createElement('br');
@@ -104,7 +105,7 @@
             tdTabsRight.appendChild(br());
             tdTabsRight.appendChild(br());
         });
-        logGroupEnd(LOGGING_ENABLED);
+        logGroupEnd();
     }
 
     function waitForElement(selector, callback, timeout = 5000) {
@@ -120,7 +121,7 @@
     }
 
     function adjSweetener() {
-        logGroupStart(LOGGING_ENABLED, 'Function: adjSweetener');
+        logGroupStart('Function: adjSweetener');
         waitForElement('body > div', (div) => {
             div.style.position = "";
             div.style.margin = "0px 0px 5px 0px";
@@ -131,18 +132,18 @@
                 thirdTd.insertBefore(div, thirdTd.firstChild);
             }
         });
-        logGroupEnd(LOGGING_ENABLED);
+        logGroupEnd();
     }
 
     function pardusAdjSweetenerInit() {
         const loc = document.location.href;
-        logGroupStart(LOGGING_ENABLED, `Init | loc=${loc}`);
+        logGroupStart(`Init | loc=${loc}`);
 
         if (loc.includes('msgframe.php')) {
-            logSuccess(LOGGING_ENABLED, 'Location matched msgframe.php');
+            logSuccess('Location matched msgframe.php');
             adjSweetener();
         } else if (loc.includes('main.php')) {
-            logSuccess(LOGGING_ENABLED, 'Location matched main.php');
+            logSuccess('Location matched main.php');
 
             // No longer call addusername or observeStatusTable directly
             patchUpdateStatus();
@@ -150,9 +151,9 @@
             updtightwad();
         }
 
-        logGroupEnd(LOGGING_ENABLED);
+        logGroupEnd();
     }
 
     pardusAdjSweetenerInit();
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
 })();
