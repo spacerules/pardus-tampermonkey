@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.0.3
+// @version      0.0.4
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -46,7 +46,7 @@
     const actionType = Object.freeze({
       SELLING: "SELLING",
       BUYING: "BUYING",
-      REJECTED: "REJECTED",
+      NONE: "NONE",
     });
 
     var imageData = [];
@@ -70,8 +70,7 @@
         return undefined;
     }
 
-
-
+   // Grabbing image data for commodities 
     function fetchAll(){
          fetch("https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/resources/Commodity.json")
              .then(res => res.json())
@@ -79,16 +78,15 @@
              for(var i=0; i<data.length; i++){
                  imageData[data[i].name.toLowerCase()] = data[i].img;
              }
-
-             console.log("Fetched JSON:", imageData);
              addButton(); // BUTTON IS ADDED ONCE IMAGE GETTING IS DONE
          });
     }
+   
+   //Load all data
     function loadData() {
         logGroupStart( 'function loadData');
-        // Your code here...
+       
         var tableBase = findStart();
-        //console.log(tableLoc);
 
         for (const child of tableBase.children) { // LOOP though each table in the building index
             if (child.tagName === 'TABLE' && child.id == "") {
@@ -328,23 +326,18 @@
 
         }
 
-
             webpage +=
 `           </table> </body> </html>
 `
 
       const newWindow = window.open("", "_blank", "width=1200,height=1200");
       newWindow.document.write(webpage);
-
-        //console.log(bestCommodities);
-
-
       newWindow.document.close();
+    }
 
-        }
 
-
-    function main(){
+    function main()
+    {
         fetchAll();
 
         logEnabled(false);
