@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.0.4
+// @version      0.0.5
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -46,6 +46,7 @@
     const actionType = Object.freeze({
       SELLING: "SELLING",
       BUYING: "BUYING",
+      FREE_CAP: "FREE CAPACITY",
       NONE: "NONE",
     });
 
@@ -102,6 +103,7 @@
                     SingleBuildingRecord.position = [];
                     SingleBuildingRecord.buildingName = buildingRow.children[0].children[0].alt;
                     SingleBuildingRecord.buildingImage = buildingRow.children[0].children[0].src;
+                    SingleBuildingRecord.freeCapacity = "N/A";
 
                     var positionStr = buildingRow.children[1].innerHTML;
                     SingleBuildingRecord.position.x = parseInt(positionStr.substring(1,positionStr.indexOf(","))); //positions in map
@@ -115,6 +117,7 @@
                         var buildingData = SingleBuildingRecord.data.children[buildingDataI];
                         if(buildingData.children[0] != undefined){
                             var actionName = buildingData.children[0].children[0].children[0].children[0].innerHTML;
+                            //logInfo(actionName);
 
                             if(actionName.toUpperCase().includes(actionType.BUYING) || actionName.toUpperCase().includes(actionType.SELLING)){
                                 var allBuildingInfo = []
@@ -132,6 +135,8 @@
                                 }
                                 allBuildingInfo.item = itemsData; //buildingData.children[0].children[0].children[0].children[1].innerHTML;//name of the action
                                 buildingSales.push(allBuildingInfo)
+                            }else if(actionName.toUpperCase().includes(actionType.FREE_CAP)){
+                                SingleBuildingRecord.freeCapacity = buildingData.children[0].children[0].children[1].innerHTML;
                             }
                         }
                     }
@@ -169,6 +174,7 @@
                     itemName.position = singleCommodityLoc.position;
                     itemName.buildingName = singleCommodityLoc.buildingName;
                     itemName.buildingImage = singleCommodityLoc.buildingImage;
+                    itemName.buildingCap = singleCommodityLoc.freeCapacity;
                     var tempItem = [];
 
                     if(bestCommodities[itemName.name] != undefined){
@@ -276,6 +282,7 @@
     <th>Store</th>
     <th style="width:35px;text-align:center;">Credits</th>
     <th style="width:35px;text-align:center;">Count</th>
+    <th style="width:35px;text-align:center;">Free Cap</th>
   </tr>
 `
             for(var i=0; i < currItem.allSellers.length; i++){
@@ -286,6 +293,7 @@
 <td> <img src="${sellerEntry.buildingImage}" style="height:26px;width:26px;"> ${ sellerEntry.buildingName } at (${sellerEntry.position.x}, ${sellerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.count }</td>
+<td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.buildingCap }</td>
 </tr>
 `
             }
@@ -303,6 +311,7 @@
     <th>Store</th>
     <th style="width:35px;text-align:center;">Credits</th>
     <th style="width:35px;text-align:center;">Count</th>
+    <th style="width:35px;text-align:center;">Free Cap</th>
   </tr>
 `
             for(i=0; i < currItem.allBuyers.length; i++){
@@ -313,6 +322,7 @@
 <td> <img src="${buyerEntry.buildingImage}" style="height:26px;width:26px;"> ${ buyerEntry.buildingName } at (${buyerEntry.position.x}, ${buyerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.count }</td>
+<td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.buildingCap }</td>
 </tr>
 `
             }
