@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ship2opponent
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.0
+// @version      1.0.1
 // @description  try to take over the world!
 // @author       Spacerules
 // @match        http://*.pardus.at/ship2opponent_combat.php
@@ -15,20 +15,19 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/ship2opponent.user.js
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
 /* global readCookie, writeCookie */
 
 (function() {
     'use strict';
 
+  logEnabled(false);
 
-    const LOGGING_ENABLED = false;
-
-    logGroupStart(LOGGING_ENABLED, 'File: ship2opponent.js');
+    logGroupStart('File: ship2opponent.js');
 
   function getAttackCookies(buttonId) {
 
-    logGroupStart(LOGGING_ENABLED, 'Function: getAttackCookies.js | buttonId=' + buttonId);
+    logGroupStart('Function: getAttackCookies.js | buttonId=' + buttonId);
     var cookieResult = readCookie("spacebuttonId" + buttonId);
     if (cookieResult == " ") {
       if (buttonId == 1) {
@@ -39,38 +38,38 @@
         cookieResult = readCookie("spacebuttonId" + buttonId);
       }
     }
-    logInfo(LOGGING_ENABLED, "cookieResult", cookieResult);
-    logGroupEnd(LOGGING_ENABLED);
+    logInfo("cookieResult", cookieResult);
+    logGroupEnd();
     return cookieResult;
   }
 
   function UpdateAttackCookies(buttonId,buttonValue) {
 
-    logGroupStart(LOGGING_ENABLED, 'Function: getAttackCookies.js | buttonId=' + buttonId);
+    logGroupStart('Function: getAttackCookies.js | buttonId=' + buttonId);
     writeCookie("spacebuttonId" + buttonId, buttonValue, 7)
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
   }
 
   function attackWithRounds(roundValue) {
-    logGroupStart(LOGGING_ENABLED, 'Function: attackWithRounds.js | roundValue=' + roundValue);
+    logGroupStart('Function: attackWithRounds.js | roundValue=' + roundValue);
     const select = document.getElementsByName('rounds')[0];
     const submitBtn = document.getElementsByName('ok')[0];
 
-    logInfo(LOGGING_ENABLED, "Incoming roundValue:", roundValue);
+    logInfo("Incoming roundValue:", roundValue);
     if (select && submitBtn) {
         select.value = roundValue;
         submitBtn.click();
     }
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
 }
 
 
     // Your code here...
   function pardusButtonCreate(attacktable) {
 
-    logGroupStart(LOGGING_ENABLED, 'Function: pardusButtonCreate.js');
+    logGroupStart('Function: pardusButtonCreate.js');
     const doc = document;
     const attacktd = attacktable.children[0].children[0].children[0];
     const dropdowndiv = doc.createElement("div");
@@ -116,7 +115,7 @@
     attacktd.insertBefore(buttondiv, attacktd.children[2]);
     attacktd.insertBefore(dropdowndiv, attacktd.children[2]);
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
   }
 
 
@@ -126,7 +125,7 @@
     var doc = document;
     var loc = doc.location.href;
 
-    logGroupStart(LOGGING_ENABLED, 'Function: pardusOpponentInit | loc=' + loc);
+    logGroupStart('Function: pardusOpponentInit | loc=' + loc);
     //  not used in this script but want to keep it for potential mods.
     //  var search = doc.location.search.substring(doc.location.search.indexOf("=") + 1);
 
@@ -136,17 +135,17 @@
     if (loc.match('ship2opponent_combat.php')) {
       var attacktable = doc.getElementsByClassName("messagestyle")[0];
       var disabledButton = doc.getElementsByClassName("disabled")[0];
-      logSuccess(LOGGING_ENABLED, 'location matched:', loc);
+      logSuccess('location matched:', loc);
       if (typeof attacktable != 'undefined' && typeof disabledButton != 'undefined') {
         pardusButtonCreate(attacktable);
       }
     }
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
 
   }
 
     pardusOpponentInit();
 
-    logGroupEnd(LOGGING_ENABLED);
+    logGroupEnd();
 })();
