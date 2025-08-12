@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dock screen updater
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.2
+// @version      1.0.3
 // @description  gives the calculated production upkeep for the buildings
 // @author       Spacerules
 // @match        http://*.pardus.at/logout.php
