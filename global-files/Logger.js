@@ -63,6 +63,8 @@
     'use strict';
 
     const baseStyle = 'padding: 2px 4px; border-radius: 2px; font-weight: bold;';
+	let isEnabled = false;
+	let isTableActive = false;
 
     /**
      * Determines whether the value should be displayed as a table.
@@ -70,6 +72,8 @@
      * @returns {boolean} True if the value is an object or array suitable for console.table.
      */
     function isTabular(value) {
+		if (!isTableActive) return isTableActive;
+		
         return (
             Array.isArray(value) &&
             value.length > 0 &&
@@ -106,24 +110,24 @@
      * @param {boolean} enabled - Whether to output the log.
      * @param {...*} args - Arguments to log.
      */
-    window.logInfo = (enabled, ...args) =>
-        styledLog(enabled, 'ℹ INFO', baseStyle + 'color: black; background: #d6edff;', ...args);
+    window.logInfo = (...args) =>
+        styledLog(isEnabled, 'ℹ INFO', baseStyle + 'color: black; background: #d6edff;', ...args);
 
     /**
      * Logs a warning message.
      * @param {boolean} enabled - Whether to output the log.
      * @param {...*} args - Arguments to log.
      */
-    window.logWarn = (enabled, ...args) =>
-        styledLog(enabled, '⚠ WARN', baseStyle + 'color: black; background: #f7f1b5;', ...args);
+    window.logWarn = (...args) =>
+        styledLog(isEnabled, '⚠ WARN', baseStyle + 'color: black; background: #f7f1b5;', ...args);
 
     /**
      * Logs an error message.
      * @param {boolean} enabled - Whether to output the log.
      * @param {...*} args - Arguments to log.
      */
-    window.logError = (enabled, ...args) => {
-        styledLog(enabled, '⛔ ERROR', baseStyle + 'color: black; background: #f5a59f;', ...args);
+    window.logError = (...args) => {
+        styledLog(isEnabled, '⛔ ERROR', baseStyle + 'color: black; background: #f5a59f;', ...args);
         console.trace();
     }
 
@@ -132,24 +136,24 @@
      * @param {boolean} enabled - Whether to output the log.
      * @param {...*} args - Arguments to log.
      */
-    window.logSuccess = (enabled, ...args) =>
-        styledLog(enabled, '✔ SUCCESS', baseStyle + 'color: black; background: #d2fcd3;', ...args);
+    window.logSuccess = (...args) =>
+        styledLog(isEnabled, '✔ SUCCESS', baseStyle + 'color: black; background: #d2fcd3;', ...args);
 
     /**
      * Logs a debug message.
      * @param {boolean} enabled - Whether to output the log.
      * @param {...*} args - Arguments to log.
      */
-    window.logDebug = (enabled, ...args) =>
-        styledLog(enabled, '🐞 DEBUG', baseStyle + 'color: black; background: #dbdbdb;', ...args);
+    window.logDebug = (...args) =>
+        styledLog(isEnabled, '🐞 DEBUG', baseStyle + 'color: black; background: #dbdbdb;', ...args);
 
     /**
      * Begins a collapsed console group with a styled label.
      * @param {boolean} enabled - Whether to show the group.
      * @param {string} title - The title of the group.
      */
-    window.logGroupStart = (enabled, title) => {
-        if (!enabled) return;
+    window.logGroupStart = (title) => {
+        if (!isEnabled) return;
         console.groupCollapsed(`📁 %c${title}`, baseStyle + 'color: black; background: #aec6d1;');
     };
 
@@ -157,9 +161,25 @@
      * Ends the most recently opened console group.
      * @param {boolean} enabled - Whether to end the group (noop if disabled).
      */
-    window.logGroupEnd = (enabled) => {
-        if (!enabled) return;
+    window.logGroupEnd =  function() {
+        if (!isEnabled) return;
         console.groupEnd();
+    };
+	
+	/**
+     * Ends the most recently opened console group.
+     * @param {boolean} enabled - Whether to end the group (noop if disabled).
+     */
+    window.logEnabled =  (enabled) => {
+        isEnabled = enabled;
+    };
+	
+	/**
+     * Ends the most recently opened console group.
+     * @param {boolean} enabled - Whether to end the group (noop if disabled).
+     */
+    window.logtable =  (enabled) => {
+        isTableActive = enabled;
     };
 
     // Optional: Set default `log` alias for info-level
