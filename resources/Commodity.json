@@ -1,0 +1,366 @@
+[
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Ore",
+    "img": "https://static.pardus.at/img/std/res/ore.png"
+  },
+  {
+    "name": "Metal",
+    "img": "https://static.pardus.at/img/std/res/metal.png"
+  },
+  {
+    "name": "Electronics",
+    "img": "https://static.pardus.at/img/std/res/electronics.png"
+  },
+  {
+    "name": "Robots",
+    "img": "https://static.pardus.at/img/std/res/robots.png"
+  },
+  {
+    "name": "Heavy Plastics",
+    "img": "https://static.pardus.at/img/std/res/heavy-plastics.png"
+  },
+  {
+    "name": "Hand Weapons",
+    "img": "https://static.pardus.at/img/std/res/hand-weapons.png"
+  },
+  {
+    "name": "Battleweapon Parts",
+    "img": "https://static.pardus.at/img/std/res/battleweapon_parts.png"
+  },
+  {
+    "name": "Droid Modules",
+    "img": "https://static.pardus.at/img/std/res/droid_modules.png"
+  },
+  {
+    "name": "Radioactive Cells",
+    "img": "https://static.pardus.at/img/std/res/radioactive_cells.png"
+  },
+  {
+    "name": "Medicines",
+    "img": "https://static.pardus.at/img/std/res/medicines.png"
+  },
+  {
+    "name": "Nebula Gas",
+    "img": "https://static.pardus.at/img/std/res/nebula-gas.png"
+  },
+  {
+    "name": "Chemical Supplies",
+    "img": "https://static.pardus.at/img/std/res/chemical-supplies.png"
+  },
+  {
+    "name": "Gem Stones",
+    "img": "https://static.pardus.at/img/std/res/gem-stones.png"
+  },
+  {
+    "name": "Optical Components",
+    "img": "https://static.pardus.at/img/std/res/optical_components.png"
+  },
+  {
+    "name": "Liquor",
+    "img": "https://static.pardus.at/img/std/res/liquor.png"
+  },
+  {
+    "name": "Hydrogen Fuel",
+    "img": "https://static.pardus.at/img/std/res/hydrogen-fuel.png"
+  },
+  {
+    "name": "Exotic Matter",
+    "img": "https://static.pardus.at/img/std/res/exotic_matter.png"
+  },
+  {
+    "name": "Bio-waste",
+    "img": "https://static.pardus.at/img/std/res/biowaste.png"
+  },
+  {
+    "name": "Slaves",
+    "img": "https://static.pardus.at/img/std/res/slaves.png"
+  },
+  {
+    "name": "Drugs",
+    "img": "https://static.pardus.at/img/std/res/drugs.png"
+  },
+  {
+    "name": "Neural Tissue",
+    "img": "https://static.pardus.at/img/std/res/neural_tissue.png"
+  },
+  {
+    "name": "Stim Chip",
+    "img": "https://static.pardus.at/img/std/res/stim_chip.png"
+  },
+  {
+    "name": "Capri Stim",
+    "img": "https://static.pardus.at/img/std/res/stim_chip_fed.png"
+  },
+  {
+    "name": "Crimson Stim",
+    "img": "https://static.pardus.at/img/std/res/stim_chip_emp.png"
+  },
+  {
+    "name": "Amber Stim",
+    "img": "https://static.pardus.at/img/std/res/stim_chip_uni.png"
+  },
+  {
+    "name": "Nutrient Clods",
+    "img": "https://static.pardus.at/img/std/res/nutrient_clods.png"
+  },
+  {
+    "name": "Cybernetic X-993 Parts",
+    "img": "https://static.pardus.at/img/std/res/cybernetic_x993_parts.png"
+  },
+  {
+    "name": "X-993 Repair-Drone",
+    "img": "https://static.pardus.at/img/std/res/x993_repairdrone.png"
+  },
+  {
+    "name": "Neural Stimulator",
+    "img": "https://static.pardus.at/img/std/res/neural_stimulator.png"
+  },
+  {
+    "name": "Leech Baby",
+    "img": "https://static.pardus.at/img/std/res/leech_baby.png"
+  },
+  {
+    "name": "Exotic Crystal",
+    "img": "https://static.pardus.at/img/std/res/exotic_crystal.png"
+  },
+  {
+    "name": "Blue Sapphire Jewels",
+    "img": "https://static.pardus.at/img/std/res/jewels_fed.png"
+  },
+  {
+    "name": "Ruby Jewels",
+    "img": "https://static.pardus.at/img/std/res/jewels_emp.png"
+  },
+  {
+    "name": "Golden Beryl Jewels",
+    "img": "https://static.pardus.at/img/std/res/jewels_uni.png"
+  },
+  {
+    "name": "Starbase",
+    "img": "https://static.pardus.at/img/std/foregrounds/starbase_f0_s3.png"
+  },
+  {
+    "name": "Class M Planet",
+    "img": "https://static.pardus.at/img/std/foregrounds/planet_m.png"
+  },
+  {
+    "name": "Class A Planet",
+    "img": "https://static.pardus.at/img/std/foregrounds/planet_a.png"
+  },
+  {
+    "name": "Class D Planet",
+    "img": "https://static.pardus.at/img/std/foregrounds/planet_d.png"
+  },
+  {
+    "name": "Class I Planet",
+    "img": "https://static.pardus.at/img/std/foregrounds/planet_i.png"
+  },
+  {
+    "name": "Class G Planet",
+    "img": "https://static.pardus.at/img/std/foregrounds/planet_g.png"
+  },
+  {
+    "name": "Class R Planet",
+    "img": "https://static.pardus.at/img/std/foregrounds/planet_r.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Gem Stones",
+    "img": "https://static.pardus.at/img/std/res/gem-stones.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Slaves",
+    "img": "https://static.pardus.at/img/std/res/slaves.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Nebula Gas",
+    "img": "https://static.pardus.at/img/std/res/nebula-gas.png"
+  },
+  {
+    "name": "Chemical Supplies",
+    "img": "https://static.pardus.at/img/std/res/chemical-supplies.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Ore",
+    "img": "https://static.pardus.at/img/std/res/ore.png"
+  },
+  {
+    "name": "Metal",
+    "img": "https://static.pardus.at/img/std/res/metal.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Radioactive Cells",
+    "img": "https://static.pardus.at/img/std/res/radioactive_cells.png"
+  },
+  {
+    "name": "Trade Outpost",
+    "img": "https://static.pardus.at/img/std/foregrounds/trade_outpost.png"
+  },
+  {
+    "name": "Starbase",
+    "img": "https://static.pardus.at/img/std/foregrounds/starbase_p0_s3.png"
+  },
+  {
+    "name": "Starbase",
+    "img": "https://static.pardus.at/img/std/foregrounds/starbase_p0_s3.png"
+  },
+  {
+    "name": "Starbase",
+    "img": "https://static.pardus.at/img/std/foregrounds/starbase_p0_s3.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Food",
+    "img": "https://static.pardus.at/img/std/res/food.png"
+  },
+  {
+    "name": "Water",
+    "img": "https://static.pardus.at/img/std/res/water.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Hydrogen Fuel",
+    "img": "https://static.pardus.at/img/std/res/hydrogen-fuel.png"
+  },
+  {
+    "name": "Energy",
+    "img": "https://static.pardus.at/img/std/res/energy.png"
+  },
+  {
+    "name": "Animal Embryos",
+    "img": "https://static.pardus.at/img/std/res/animal_embryos.png"
+  },
+  {
+    "name": "Nebula Gas",
+    "img": "https://static.pardus.at/img/std/res/nebula-gas.png"
+  }
+]
