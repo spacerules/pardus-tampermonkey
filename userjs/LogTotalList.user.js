@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Log Total List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.4
+// @version      1.0.5
 // @description  adds a total to the log files
 // @author       Spacerules
 // @match        http://*.pardus.at/*
@@ -15,19 +15,18 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/LogTotalList.user.js
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
 /* global readCookie, writeCookie */
 
 (function() {
     'use strict';
 
+    logEnabled(false);
 
-  const LOGGING_ENABLED = false;
-
-  logGroupStart(LOGGING_ENABLED, 'File: LogTotalList.js');
+  logGroupStart('File: LogTotalList.js');
 
     function getColumnNr(firstRowTR, searchString, searchOccurrence = 1) {
-      logGroupStart(LOGGING_ENABLED, 'Function: getColumnNr');
+      logGroupStart('Function: getColumnNr');
 
       const searchStrings = searchString.toLowerCase().split('~').map(s => s.trim());
       let foundOccurrence = 0;
@@ -38,14 +37,14 @@
         if (searchStrings.some(s => text === s)) {
           foundOccurrence += 1;
           if (foundOccurrence === searchOccurrence) {
-            logSuccess(LOGGING_ENABLED, `"${searchString}" matched at column index:`, i);
-            logGroupEnd(LOGGING_ENABLED);
+            logSuccess(`"${searchString}" matched at column index:`, i);
+            logGroupEnd();
             return i;
           }
         }
       }
 
-      logGroupEnd(LOGGING_ENABLED);
+      logGroupEnd();
       return -1;
     }
 
@@ -153,7 +152,7 @@
         var doc = document;
         var loc = doc.location.href;
 
-        logGroupStart(LOGGING_ENABLED, 'Function: pardusSubtotalInit | loc=' + loc);
+        logGroupStart('Function: pardusSubtotalInit | loc=' + loc);
         //  not used in this script but want to keep it for potential mods.
         //  var search = doc.location.search.substring(doc.location.search.indexOf("=") + 1);
 
@@ -163,17 +162,17 @@
             loc.match('overview_payment_log.php') ||
             loc.match('overview_tl_eq.php')) {
             var logtable = document.querySelectorAll('table.messagestyle')[1];
-            logSuccess(LOGGING_ENABLED, 'location matched:', loc);
+            logSuccess('location matched:', loc);
             if (typeof logtable != 'undefined') {
                 parduslogtotals(logtable);
             }
         }
 
-        logGroupEnd(LOGGING_ENABLED);
+        logGroupEnd();
     }
 
 
   pardusSubtotalInit();
 
-  logGroupEnd(LOGGING_ENABLED);
+  logGroupEnd();
 })();
