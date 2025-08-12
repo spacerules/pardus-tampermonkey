@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.0.2
+// @version      0.0.3
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -231,77 +231,14 @@
         targetDiv.insertBefore(button, targetDiv.firstChild);
 
         button.addEventListener("click", function() {
-             openFakePage2();
+             openFakePage();
 
         });
 
 
     }
+    
     function openFakePage() {
-      var output = "";
-
-        for (var commName in LoadedBestCommodities){
-
-             var currItem = LoadedBestCommodities[commName];
-
-
-//                  bestCommodities[k].totalNetSales
-
-//                  bestCommodities[k].totalDistance
-//                  bestCommodities[k].startPostion ;
-//                  bestCommodities[k].inSector=true;
-                 logInfo(commName,currItem);
-                 output +=
-`<div>
-     <p> <img src="${imageData[commName.toLowerCase()]}" style="height:26px;width:26px;"> ${ commName }; Stores to Buy at: ${LoadedBestCommodities[commName].allSellers.length}  Stores to Sell at: ${LoadedBestCommodities[commName].allBuyers.length}
-     </p>
-
-     <pre style="font-size:16px;font-weight:bold;">     Places to Buy at: </pre>`
-
-                 for(var i=0; i < currItem.allSellers.length; i++){
-                // for( var sellers of currItem.allSellers){
-                     var sellerEntry = currItem.allSellers[i];
-
-                     output+=`
-<pre>        <img src="${sellerEntry.buildingImage}" style="height:26px;width:26px;"> ${ sellerEntry.buildingName } at (${sellerEntry.position.x}, ${sellerEntry.position.y}) contains x${sellerEntry.count} for ${ sellerEntry.price } credits each
-</pre>
-`
-                 }
-                 output +=`
-     <pre style="font-size:16px;font-weight:bold;">     Places to Sell at: </pre>`
-
-                 for(var j=0; j < currItem.allBuyers.length; j++){
-                // for( var sellers of currItem.allSellers){
-                     var buyerEntry = currItem.allBuyers[j];
-
-                     output+=`
-<pre>        <img src="${buyerEntry.buildingImage}" style="height:26px;width:26px;"> ${ buyerEntry.buildingName } at (${buyerEntry.position.x}, ${buyerEntry.position.y}) contains x${buyerEntry.count} for ${ buyerEntry.price } credits each
-</pre>`
-                 }
-
-
-                 output +=`
-</div>`
-             
-        }
-
-
-
-      const newWindow = window.open("", "_blank", "width=700,height=1200");
-      newWindow.document.write('<!DOCTYPE html>' +
-        '<html>' +
-        '<head><title>Deal Maker 2000</title></head>' +
-        '<body><h1>Deal Maker 2000</h1>' + output + ' </body>' +
-        '</html>');
-
-        //console.log(bestCommodities);
-
-
-      newWindow.document.close();
-    }
-
-
-    function openFakePage2() {
         var webpage =
 `<!DOCTYPE html>
 <html>
@@ -410,7 +347,7 @@
     function main(){
         fetchAll();
 
-        logEnabled(true);
+        logEnabled(false);
         loadData();
         LoadedBestCommodities = findBestDeal();
 
