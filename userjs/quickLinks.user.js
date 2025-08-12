@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Quick Links
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.0
+// @version      1.0.1
 // @description  Quick Links
 // @author       Spacerules
 // @match        http://*.pardus.at/main.php
@@ -14,10 +14,12 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/quickLinks.user.js
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
 /* global readCookie, writeCookie */
 (function() {
     'use strict';
+
+  logEnabled(false);
 
 var orionCustomLinks = [
   "https://pardusmapper.com/" + readCookie("uni") + "/" + readCookie("sector"),
