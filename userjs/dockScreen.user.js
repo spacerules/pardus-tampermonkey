@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Quick Links
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.1
+// @version      1.0.2
 // @description  Quick Links
 // @author       Spacerules
 // @match        http://*.pardus.at/main.php
