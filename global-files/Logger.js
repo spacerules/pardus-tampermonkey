@@ -178,7 +178,7 @@
      * Ends the most recently opened console group.
      * @param {boolean} enabled - Whether to end the group (noop if disabled).
      */
-    window.logtable =  (enabled) => {
+    window.logTable =  (enabled) => {
         isTableActive = enabled;
     };
 
