@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.4
+// @version      0.1.5
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -71,7 +71,7 @@
         return undefined;
     }
 
-   // Grabbing image data for commodities 
+   // Grabbing image data for commodities
     function fetchAll(){
         SectorCache = document.getElementsByClassName("cached")[0];
 
@@ -84,11 +84,11 @@
             addButton(); // BUTTON IS ADDED ONCE IMAGE GETTING IS DONE
         });
     }
-   
+
    //Load all data
     function loadData() {
         logGroupStart( 'function loadData');
-       
+
         var tableBase = findStart();
 
         for (const child of tableBase.children) { // LOOP though each table in the building index
@@ -244,7 +244,7 @@
 
 
     }
-    
+
     function openFakePage() {
         var webpage =
 `<!DOCTYPE html>
@@ -332,7 +332,7 @@
                 // for( var sellers of currItem.allSellers){
                 var sellerEntry = currItem.allSellers[i];
                 webpage += `<tr id="trbuy${codedName}" onclick="selectRow(this,'${codedName}', 'buy', ${ sellerEntry.price }, ${ sellerEntry.count }, ${sellerEntry.position.x}, ${sellerEntry.position.y})";>
-<td> <img src="${sellerEntry.buildingImage}" style="height:26px;width:26px;"> ${ sellerEntry.buildingName } at (${sellerEntry.position.x}, ${sellerEntry.position.y})  </td>
+<td> <img src="${sellerEntry.buildingImage}" style="height:26px;width:26px;vertical-align:middle;"> ${ sellerEntry.buildingName } at (${sellerEntry.position.x}, ${sellerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.count }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.buildingCap }</td>
@@ -361,7 +361,7 @@
                 var buyerEntry = currItem.allBuyers[i];
 
                 webpage += `<tr id="trsell${codedName}" onclick="selectRow(this,'${codedName}', 'sell', ${ buyerEntry.price }, ${ buyerEntry.count }, ${buyerEntry.position.x}, ${buyerEntry.position.y})";>
-<td> <img src="${buyerEntry.buildingImage}" style="height:26px;width:26px;"> ${ buyerEntry.buildingName } at (${buyerEntry.position.x}, ${buyerEntry.position.y})  </td>
+<td> <img src="${buyerEntry.buildingImage}" style="height:26px;width:26px;vertical-align:middle;"> ${ buyerEntry.buildingName } at (${buyerEntry.position.x}, ${buyerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.count }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.buildingCap }</td>
