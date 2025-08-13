@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.1
+// @version      0.1.2
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -267,7 +267,7 @@
                        console.log(resetElement);
                        resetElement.style.backgroundColor = "transparent";
                   }
-                  element.style.backgroundColor = "red";
+                  element.style.backgroundColor = "purple";
 
                   if(action == 'buy'){
                       comList[comName].buyingPrice = price;
@@ -283,7 +283,7 @@
                   console.log(comList);
 
 
-                  if(comList[comName].sellingPrice != undefined && comList[comName].sellingPrice != undefined){
+                  if(comList[comName].buyingPrice != undefined && comList[comName].sellingPrice != undefined){
                       var outputElement = document.getElementById("calcData" + comName);
                       outputElement.innerHTML = (comList[comName].sellingPrice - comList[comName].buyingPrice) + " Profit * " +
                                                  Math.min(comList[comName].sellingCount,comList[comName].buyingCount) + " Qty = " +
@@ -402,12 +402,12 @@
     {
         fetchAll();
 
-        logEnabled(false);
+        logEnabled(true);
         loadData();
         LoadedBestCommodities = findBestDeal();
 
 // BUTTON FOR DISPLAYING DIALOG IS LOADED IN THE FETCH OF
     }
-   
+
     main();
 })();
