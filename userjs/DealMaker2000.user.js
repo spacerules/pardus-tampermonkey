@@ -402,7 +402,7 @@
     {
         fetchAll();
 
-        logEnabled(true);
+        logEnabled(false);
         loadData();
         LoadedBestCommodities = findBestDeal();
 
