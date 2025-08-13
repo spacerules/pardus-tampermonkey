@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.2
+// @version      0.1.3
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
