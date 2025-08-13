@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.0
+// @version      0.1.1
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -57,9 +57,6 @@
     var SectorBuildingData = [];
     var LoadedBestCommodities = [];
 
-    function dis(p1,p2){
-        return Math.ceil(Math.abs(Math.hypot(p2.x - p1.x, p2.y - p1.y)));
-    }
     function findStart() {
 
       for(var hNum = 1; hNum < 5; hNum++){
@@ -216,6 +213,7 @@
         logGroupEnd();
         return bestCommodities;
     }
+
     function addButton(){
 
         // Create the button element
@@ -254,13 +252,55 @@
    <head>
         <title>Deal Maker 2000</title>
         <link rel="stylesheet" href="//static.pardus.at/img/stdhq/main.css">
+        <script>
+             var comList = [];
+
+             function dis(p1x,p1y,p2x,p2y){
+                 return Math.ceil(Math.abs(Math.hypot(p2x - p1x, p2y - p1y)));
+             }
+
+             function selectRow(element, comName, action, price, count, x, y){
+                  if(comList[comName] == undefined) comList[comName] = [];
+
+                  console.log("tring " + "#tr" + action + comName);
+                  for(var resetElement of document.querySelectorAll("#tr" + action + comName)) {
+                       console.log(resetElement);
+                       resetElement.style.backgroundColor = "transparent";
+                  }
+                  element.style.backgroundColor = "red";
+
+                  if(action == 'buy'){
+                      comList[comName].buyingPrice = price;
+                      comList[comName].buyingCount = count;
+                      comList[comName].buyingX = x;
+                      comList[comName].buyingY = y;
+                  }else if(action == 'sell'){
+                      comList[comName].sellingPrice = price;
+                      comList[comName].sellingCount = count;
+                      comList[comName].sellingX = x;
+                      comList[comName].sellingY = y;
+                  }
+                  console.log(comList);
+
+
+                  if(comList[comName].sellingPrice != undefined && comList[comName].sellingPrice != undefined){
+                      var outputElement = document.getElementById("calcData" + comName);
+                      outputElement.innerHTML = (comList[comName].sellingPrice - comList[comName].buyingPrice) + " Profit * " +
+                                                 Math.min(comList[comName].sellingCount,comList[comName].buyingCount) + " Qty = " +
+                                                ((comList[comName].sellingPrice - comList[comName].buyingPrice) * Math.min(comList[comName].sellingCount,comList[comName].buyingCount)) +
+                                                "<br> Distance: " + dis(comList[comName].sellingX,comList[comName].sellingY,comList[comName].buyingX,comList[comName].buyingY);
+                  }
+
+             }
+
+        </script>
    </head>
    <body style="text-align:center;background-image:url(//static.pardus.at/img/stdhq/bgoutspace1.gif);">
        <h1 id="header" style="font-size:50px;">${ SectorName.replace("Building Index", "DealMaker 2000") }</h1>
        <table id="mainDisplay" border="1" style="width:100%;background:url(//static.pardus.at/img/std/bg.gif);padding:15px;" >
            <tr>
                <th> Commodity </th>
-               <th > Buying: </th>
+               <th> Buying: </th>
                <th> Selling: </th>
            </tr>
 `;
@@ -269,14 +309,15 @@
         for (var commName in LoadedBestCommodities){
 
             var currItem = LoadedBestCommodities[commName];
+            var codedName = commName.toLowerCase().trim().replace(" ","");
 
             var alterData = alterRow ? ` class="alternating"` : "" ;
             alterRow = !alterRow;
 
             //column1 name
             webpage +=
-`          <tr${alterData}>
-              <td style="text-align:center"><img src="${imageData[commName.toLowerCase()]}" style="height:26px;width:26px;"> <pre style="font-size:16px;font-weight:bold;"> ${commName} </pre> </td>`
+`          <tr ${alterData}">
+              <td style="text-align:center"><img src="${imageData[commName.toLowerCase()]}" style="height:26px;width:26px;"> <pre style="font-size:16px;font-weight:bold;"> ${commName} </pre> <pre id="calcData${commName.toLowerCase().trim().replace(" ","")}"> </pre> </td>`
 
             //column 2 Buyers
             webpage +=
@@ -293,8 +334,7 @@
             for(var i=0; i < currItem.allSellers.length; i++){
                 // for( var sellers of currItem.allSellers){
                 var sellerEntry = currItem.allSellers[i];
-
-                webpage += `<tr>
+                webpage += `<tr id="trbuy${codedName}" onclick="selectRow(this,'${codedName}', 'buy', ${ sellerEntry.price }, ${ sellerEntry.count }, ${sellerEntry.position.x}, ${sellerEntry.position.y})";>
 <td> <img src="${sellerEntry.buildingImage}" style="height:26px;width:26px;"> ${ sellerEntry.buildingName } at (${sellerEntry.position.x}, ${sellerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.count }</td>
@@ -323,7 +363,7 @@
                 // for( var sellers of currItem.allBuyers){
                 var buyerEntry = currItem.allBuyers[i];
 
-                webpage += `<tr>
+                webpage += `<tr id="trsell${codedName}" onclick="selectRow(this,'${codedName}', 'sell', ${ buyerEntry.price }, ${ buyerEntry.count }, ${buyerEntry.position.x}, ${buyerEntry.position.y})";>
 <td> <img src="${buyerEntry.buildingImage}" style="height:26px;width:26px;"> ${ buyerEntry.buildingName } at (${buyerEntry.position.x}, ${buyerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.count }</td>
@@ -367,7 +407,7 @@
         LoadedBestCommodities = findBestDeal();
 
 // BUTTON FOR DISPLAYING DIALOG IS LOADED IN THE FETCH OF
-
     }
+   
     main();
 })();
