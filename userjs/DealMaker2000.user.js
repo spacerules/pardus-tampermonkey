@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.3
+// @version      0.1.4
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -265,7 +265,7 @@
                   for(var resetElement of document.querySelectorAll("#tr" + action + comName)) {
                        resetElement.style.backgroundColor = "transparent";
                   }
-                  element.style.backgroundColor = "purple";
+                  element.style.backgroundColor = "#3c3366";
 
                   if(action == 'buy'){
                       comList[comName].buyingPrice = price;
