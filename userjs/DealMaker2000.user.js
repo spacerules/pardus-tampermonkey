@@ -262,9 +262,7 @@
              function selectRow(element, comName, action, price, count, x, y){
                   if(comList[comName] == undefined) comList[comName] = [];
 
-                  console.log("tring " + "#tr" + action + comName);
                   for(var resetElement of document.querySelectorAll("#tr" + action + comName)) {
-                       console.log(resetElement);
                        resetElement.style.backgroundColor = "transparent";
                   }
                   element.style.backgroundColor = "purple";
@@ -280,7 +278,6 @@
                       comList[comName].sellingX = x;
                       comList[comName].sellingY = y;
                   }
-                  console.log(comList);
 
 
                   if(comList[comName].buyingPrice != undefined && comList[comName].sellingPrice != undefined){
