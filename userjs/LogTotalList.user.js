@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Pardus Log Total List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.5
+// @version      1.0.6
 // @description  adds a total to the log files
 // @author       Spacerules
 // @match        http://*.pardus.at/*
 // @match        https://*.pardus.at/*
 // @include      http*://*.pardus.at/overview*
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/LogTotalList.user.js
