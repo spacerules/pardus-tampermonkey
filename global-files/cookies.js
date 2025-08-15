@@ -1,18 +1,16 @@
 // ==UserScript==
-// @name         glPardusCookies
+// @name         cookies
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.0
+// @version      1.0.1
 // @description  Global cookie get and set scripts
 // @author       spacerules
-// @match        http://*.pardus.at/*
-// @match        https://*.pardus.at/*
-// @include      http*://*.pardus.at/*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.user.js
 // ==/UserScript==
+
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
 (function () {
