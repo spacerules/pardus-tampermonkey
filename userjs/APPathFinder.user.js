@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder (Chebyshev) v5.4 Auto & Minimize
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1
+// @version      0.2
 // @description  Weighted Chebyshev pathfinder across sectors using Sweetener maps. Highlights current sector path automatically. Saves inputs via cookies. Minimize/maximize panel. Auto-runs if start/end are filled. Tracks wormhole jumps.
 // @author       Spacerules
 // @match        http://*.pardus.at/bulletin_board.php
 // @match        https://*.pardus.at/bulletin_board.php
 // @include      http*://pardusmapper.com/*
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/APPathFinder.user.js
