@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Pardus Clock from game.php
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.5.0
+// @version      0.5.1
 // @description  Insert clock into msgframe from game.php
 // @author       Spacerules
 // @match        http://*.pardus.at/msgframe.php
 // @match        https://*.pardus.at/msgframe.php
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/pardusClock.user.js
