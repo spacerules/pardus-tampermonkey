@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Building List
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.1.2
+// @version      1.1.3
 // @description  gives the calculated production upkeep for the buildings
 // @author       Spacerules
 // @match        http://*.pardus.at/game.php
 // @match        https://*.pardus.at/game.php
 // @match        http://*.pardus.at/overview_buildings.php
 // @match        https://*.pardus.at/overview_buildings.php
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        GM_getValue
 // @grant        GM_setValue
