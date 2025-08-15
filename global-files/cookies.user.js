@@ -11,6 +11,8 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.user.js
 // ==/UserScript==
 
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
+
 (function () {
     'use strict';
 
