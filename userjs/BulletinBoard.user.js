@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder UI
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.2
+// @version      0.3
 // @description  UI for multi-sector AP Pathfinder with fixed Ctrl/Shift click
 // @match        http*://pardusmapper.com/*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/APPathfinderCore.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/BulletinBoard.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/BulletinBoard.user.js
 // ==/UserScript==
 
 /* global readCookie, writeCookie */
