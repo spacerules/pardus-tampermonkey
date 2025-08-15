@@ -7,8 +7,8 @@
 // @match        https://*.pardus.at/index_buildings.php
 // @match        http://*.pardus.at/index_buildings.php
 // @include      http*://*.pardus.at/index_buildings.php*
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        GM_setValue
 // @grant        GM_getValue
