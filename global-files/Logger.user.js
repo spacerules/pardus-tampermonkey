@@ -1,16 +1,13 @@
 // ==UserScript==
 // @name         glPardusLogger
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.1
+// @version      1.0.2
 // @description  Global logger for styled console output and structured debugging across all scripts
 // @author       spacerules
-// @match        http://*.pardus.at/*
-// @match        https://*.pardus.at/*
-// @include      http*://*.pardus.at/*
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/Logger.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/Logger.js
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/Logger.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/Logger.user.js
 // ==/UserScript==
 
 
