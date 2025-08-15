@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         glPardusLogger
+// @name         Logger
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.0.2
 // @description  Global logger for styled console output and structured debugging across all scripts
