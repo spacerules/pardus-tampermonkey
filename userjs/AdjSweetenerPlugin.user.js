@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Adjust Sweetener Plugin
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.7
+// @version      1.0.8
 // @description  Moves interface elements to avoid overlap with the map and injects username
 // @author       Spacerules
 // @match        http://*.pardus.at/msgframe.php
