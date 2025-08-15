@@ -4,15 +4,13 @@
 // @version      1.0.1
 // @description  Global cookie get and set scripts
 // @author       spacerules
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/cookies.user.js
 // ==/UserScript==
 
-
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd */
 (function () {
     'use strict';
 
