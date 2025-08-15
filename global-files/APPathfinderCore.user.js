@@ -3,8 +3,15 @@
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.0
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus
+// @author       spacerules
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
 // ==/UserScript==
+
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
 
 (function(){
     'use strict';
