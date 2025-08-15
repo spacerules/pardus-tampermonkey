@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Monster Skill Finder
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.2
+// @version      1.0.3
 // @description  try to take over the world!
 // @author       Spacerules
 // @match        http://*.pardus.at/overview_stats.php
 // @match        https://*.pardus.at/overview_stats.php
 // @match        http://pardus.maxisoft.org/monsterskillfinder.html
 // @match        https://pardus.maxisoft.org/monsterskillfinder.html
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        GM_setValue
 // @grant        GM_getValue
