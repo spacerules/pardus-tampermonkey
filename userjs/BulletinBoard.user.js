@@ -1,14 +1,17 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder Bulletin Board
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.6
+// @version      0.7
 // @description  Show multi-sector AP path info for missions on bulletin board with progress and jump filter
 // @match        http*://*.pardus.at/bulletin_board.php
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/APPathfinderCore.user.js
+// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        GM_setValue
 // @grant        GM_getValue
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/BulletinBoard.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/BulletinBoard.user.js
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
