@@ -1,19 +1,28 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder UI
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.2
+// @version      0.3
 // @description  UI for multi-sector AP Pathfinder with fixed Ctrl/Shift click
 // @match        http*://pardusmapper.com/*
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/APPathfinderCore.user.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/APPathfinderCore.user.js
+// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/mapper.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/mapper.user.js
 // ==/UserScript==
 
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
+/* global readCookie, writeCookie */
+/* global multiSectorPath */
+
 (function(){
     'use strict';
 
+  logEnabled(false);
+  logGroupStart(`File: ${GM_info.script.name}`);
+  
     let lastHighlightedPath = [];
     // ----------------------------
     // Utility: Wait for DOM element
@@ -51,7 +60,7 @@
             panel.querySelector("#pf-end-x").value = data.eX || "";
             panel.querySelector("#pf-end-y").value = data.eY || "";
         } catch(e){
-            console.warn("Failed to load saved inputs", e);
+            logWarn("Failed to load saved inputs", e);
         }
     }
 
@@ -113,7 +122,7 @@
     // Run Pathfinder
     // ----------------------------
     function runPathfinder(panel){
-        if(!window.multiSectorPath) return console.error("multiSectorPath not loaded!");
+        if(!window.multiSectorPath) return logError("multiSectorPath not loaded!");
 
         const sSec = panel.querySelector("#pf-start-sector").value.trim();
         const sX = parseInt(panel.querySelector("#pf-start-x").value, 10);
@@ -143,7 +152,7 @@
             .catch(err => {
                 out.textContent = "Error: " + (err?.message || err);
                 status.textContent = "";
-                console.error(err);
+                logError(err);
             });
     }
 
