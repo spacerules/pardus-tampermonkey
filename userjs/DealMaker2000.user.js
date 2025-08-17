@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.6
+// @version      0.1.7
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -9,7 +9,7 @@
 // @include      http*://*.pardus.at/index_buildings.php*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
-// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
+// @icon         https://avatars.githubusercontent.com/u/7820039?v=4
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/DealMaker2000.user.js
@@ -112,6 +112,8 @@
                     SingleBuildingRecord.position.y = parseInt(positionStr.substring(positionStr.indexOf(",")+1)); //positions in map=
                     SingleBuildingRecord.position.data = positionStr; //positions in map
 
+                    SingleBuildingRecord.owner = buildingRow.children[2].innerText;
+
                     SingleBuildingRecord.data = buildingRow.children[3]; // start of buildings list
                     var buildingSales = []
 
@@ -176,6 +178,7 @@
                     itemName.position = singleCommodityLoc.position;
                     itemName.buildingName = singleCommodityLoc.buildingName;
                     itemName.buildingImage = singleCommodityLoc.buildingImage;
+                    itemName.owner = singleCommodityLoc.owner;
                     itemName.buildingCap = singleCommodityLoc.freeCapacity;
                     var tempItem = [];
 
@@ -246,6 +249,8 @@
     }
 
     function openFakePage() {
+      const nameList = getGM_list();
+
         var webpage =
 `<!DOCTYPE html>
 <html>
@@ -331,7 +336,7 @@
             for(var i=0; i < currItem.allSellers.length; i++){
                 // for( var sellers of currItem.allSellers){
                 var sellerEntry = currItem.allSellers[i];
-                webpage += `<tr id="trbuy${codedName}" onclick="selectRow(this,'${codedName}', 'buy', ${ sellerEntry.price }, ${ sellerEntry.count }, ${sellerEntry.position.x}, ${sellerEntry.position.y})";>
+                webpage += `<tr id="trbuy${codedName}" ${!nameList.includes(sellerEntry.owner) ? '' : 'style="color:#6C6CA8;"'} onclick="selectRow(this,'${codedName}', 'buy', ${ sellerEntry.price }, ${ sellerEntry.count }, ${sellerEntry.position.x}, ${sellerEntry.position.y})";>
 <td> <img src="${sellerEntry.buildingImage}" style="height:26px;width:26px;vertical-align:middle;"> ${ sellerEntry.buildingName } at (${sellerEntry.position.x}, ${sellerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ sellerEntry.count }</td>
@@ -360,7 +365,7 @@
                 // for( var sellers of currItem.allBuyers){
                 var buyerEntry = currItem.allBuyers[i];
 
-                webpage += `<tr id="trsell${codedName}" onclick="selectRow(this,'${codedName}', 'sell', ${ buyerEntry.price }, ${ buyerEntry.count }, ${buyerEntry.position.x}, ${buyerEntry.position.y})";>
+                webpage += `<tr id="trsell${codedName}" ${!nameList.includes(buyerEntry.owner) ? '' : 'style="color:#6C6CA8;"'} onclick="selectRow(this,'${codedName}', 'sell', ${ buyerEntry.price }, ${ buyerEntry.count }, ${buyerEntry.position.x}, ${buyerEntry.position.y})";>
 <td> <img src="${buyerEntry.buildingImage}" style="height:26px;width:26px;vertical-align:middle;"> ${ buyerEntry.buildingName } at (${buyerEntry.position.x}, ${buyerEntry.position.y})  </td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.price }</td>
 <td style="width:35px;text-align:center;font-weight:bold;"> ${ buyerEntry.count }</td>
@@ -394,12 +399,28 @@
       newWindow.document.close();
     }
 
+    function getGM_list()
+    {
+      var stored = GM_getValue("nameList", null); // null = not set yet
+
+      if (stored === null) {
+        var initialList = ["Alice", "Bob", "Charlie"];
+        GM_setValue("nameList", JSON.stringify(initialList));
+        logInfo("Initialized nameList with defaults");
+      } else {
+        logInfo("nameList already exists:", JSON.parse(stored));
+      }
+
+      const nameList = JSON.parse(stored);
+      return nameList;
+
+    }
 
     function main()
     {
         fetchAll();
 
-        logEnabled(false);
+        logEnabled(true);
         loadData();
         LoadedBestCommodities = findBestDeal();
 
