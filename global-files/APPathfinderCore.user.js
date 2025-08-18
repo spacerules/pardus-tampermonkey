@@ -78,7 +78,7 @@
         
         const destSector = baseSectorName(beaconName);
         
-        if (destSector === currentSector) continue;
+        if (destSector === currentSector) return;
         
         const destMap = await loadSector(destSector);
         const wantBase = baseSectorName(currentSector);
