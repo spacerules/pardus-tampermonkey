@@ -1,124 +1,108 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes
+// @name         AP Pathfinder Core with Wormholes + X-holes (Safe)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.4
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with wormholes and X-hole teleportation, safe guards for missing beaconList
 // @author       spacerules
 // @match        http*://*.pardus.at/*
-// @grant        GM_getValue
-// @grant        GM_setValue
-// @grant        GM_deleteValue
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
-(function() {
-    'use strict';
+// --- Utility Functions ---
+function normalizeSectorName(name) {
+    return name.replace(/\s*\(.*?\)\s*/g, "").trim();
+}
+function baseSectorName(beaconName) {
+    return normalizeSectorName(beaconName.split("->").pop().trim());
+}
+function beaconDirection(name) {
+    let match = name.match(/\((N|S|E|W)\)/);
+    return match ? match[1] : null;
+}
+const OPPOSITE = { N: "S", S: "N", E: "W", W: "E" };
+function logDebug(msg) {
+    console.log("[AP-Pathfinder]", msg);
+}
 
-    const OPPOSITE = { N:"S", S:"N", E:"W", W:"E" };
+// --- Load Sector JSON ---
+async function loadSector(sectorName) {
+    try {
+        const resp = await fetch(`https://raw.githubusercontent.com/spacerules/pardus-map-data/main/${sectorName}.json`);
+        if (!resp.ok) return null;
+        return await resp.json();
+    } catch (e) {
+        console.error("Failed to load sector:", sectorName, e);
+        return null;
+    }
+}
 
-    // === Sector Cache ===
-    async function loadSector(sectorName) {
-        let cached = GM_getValue("sector_" + sectorName);
-        if (cached) return JSON.parse(cached);
+// === Wormhole Exit ===
+async function resolveWormholeExit(currentSector, beaconName) {
+    const destSector = baseSectorName(beaconName);
+    const destMap = await loadSector(destSector);
+    if (!destMap) return null;
 
-        try {
-            const resp = await fetch(`https://raw.githubusercontent.com/spacerules/pardus-sector-data/main/${sectorName}.json`);
-            if (!resp.ok) return null;
-            const data = await resp.json();
-            GM_setValue("sector_" + sectorName, JSON.stringify(data));
-            return data;
-        } catch (e) {
-            console.error("Failed to load sector:", sectorName, e);
-            return null;
+    const beacons = Array.isArray(destMap.beaconList) ? destMap.beaconList : [];
+    let candidates = beacons.filter(b => baseSectorName(b.name) === baseSectorName(currentSector));
+
+    if (candidates.length === 1) {
+        return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
+    }
+
+    if (candidates.length > 1) {
+        const hereDir = beaconDirection(beaconName);
+        if (hereDir && OPPOSITE[hereDir]) {
+            const exact = candidates.find(b => beaconDirection(b.name) === OPPOSITE[hereDir]);
+            if (exact) return { sector: destSector, x: exact.x, y: exact.y };
         }
+        return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
     }
 
-    function normalizeSectorName(name) {
-        return name.trim().toLowerCase();
-    }
+    return null;
+}
 
-    function baseSectorName(beaconName) {
-        return beaconName.split(" ")[0]; // crude but works for "Nex 0004 WH"
-    }
+// === X-Hole Exit ===
+async function resolveXholeExit(currentSector, beaconName) {
+    const destSector = baseSectorName(beaconName);
 
-    function beaconDirection(name) {
-        let parts = name.split(" ");
-        return parts.length > 1 ? parts[parts.length-1] : null;
-    }
-
-    function logDebug(msg) {
-        console.log("[AP-Pathfinder]", msg);
-    }
-
-    // === Wormhole Exit ===
-    async function resolveWormholeExit(currentSector, beaconName) {
-        const destSector = baseSectorName(beaconName);
-        const destMap = await loadSector(destSector);
-        if (!destMap || !destMap.beaconList) return null;
-
-        let candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === baseSectorName(currentSector));
-
-        if (candidates.length === 1) {
-            return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
-        }
-
-        if (candidates.length > 1) {
-            const hereDir = beaconDirection(beaconName);
-            if (hereDir && OPPOSITE[hereDir]) {
-                const exact = candidates.find(b => beaconDirection(b.name) === OPPOSITE[hereDir]);
-                if (exact) return { sector: destSector, x: exact.x, y: exact.y };
-            }
-            return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
-        }
-
+    // 🚫 Prevent continuing outward if X-hole loops to same sector
+    if (normalizeSectorName(destSector) === normalizeSectorName(currentSector)) {
+        logDebug(`X-hole exit loops back into ${currentSector}. Path disallowed.`);
         return null;
     }
 
-    // === X-Hole Exit ===
-    async function resolveXholeExit(currentSector, beaconName) {
-        const destSector = baseSectorName(beaconName);
+    const destMap = await loadSector(destSector);
+    if (!destMap) return null;
 
-        // 🚫 Prevent continuing outward if X-hole loops to same sector
-        if (normalizeSectorName(destSector) === normalizeSectorName(currentSector)) {
-            logDebug(`X-hole exit loops back into ${currentSector}. Path disallowed.`);
-            return null;
-        }
+    const beacons = Array.isArray(destMap.beaconList) ? destMap.beaconList : [];
+    let candidates = beacons.filter(b => baseSectorName(b.name) === baseSectorName(currentSector));
 
-        const destMap = await loadSector(destSector);
-        if (!destMap || !destMap.beaconList) return null;
-
-        let candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === baseSectorName(currentSector));
-
-        if (candidates.length === 1) {
-            return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
-        }
-
-        if (candidates.length > 1) {
-            const hereDir = beaconDirection(beaconName);
-            if (hereDir && OPPOSITE[hereDir]) {
-                const exact = candidates.find(b => beaconDirection(b.name) === OPPOSITE[hereDir]);
-                if (exact) return { sector: destSector, x: exact.x, y: exact.y };
-            }
-            return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
-        }
-
-        return null;
+    if (candidates.length === 1) {
+        return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
     }
 
-    // === Core Pathfinding ===
-    async function multiSectorPath(start, goal) {
-        logDebug(`Pathfinding from ${start.sector} (${start.x},${start.y}) to ${goal.sector} (${goal.x},${goal.y})`);
-
-        if (normalizeSectorName(start.sector) === normalizeSectorName(goal.sector)) {
-            return [`Path within ${start.sector}`];
+    if (candidates.length > 1) {
+        const hereDir = beaconDirection(beaconName);
+        if (hereDir && OPPOSITE[hereDir]) {
+            const exact = candidates.find(b => beaconDirection(b.name) === OPPOSITE[hereDir]);
+            if (exact) return { sector: destSector, x: exact.x, y: exact.y };
         }
-
-        // stub: implement A* or BFS across sectors
-        return [`Cross-sector path ${start.sector} -> ${goal.sector}`];
+        return { sector: destSector, x: candidates[0].x, y: candidates[0].y };
     }
 
-    // === Expose ===
-    window.multiSectorPath = multiSectorPath;
-    window.resolveWormholeExit = resolveWormholeExit;
-    window.resolveXholeExit = resolveXholeExit;
+    return null;
+}
 
-})();
+// --- Multi-Sector Path Stub (simplified BFS for demo) ---
+window.multiSectorPath = async function(startSector, startX, startY, targetSector, targetX, targetY) {
+    logDebug(`Finding path from ${startSector} (${startX},${startY}) to ${targetSector} (${targetX},${targetY})`);
+
+    // This is just a stub — insert your BFS/Dijkstra here.
+    // For demo we just return start->target sector as 2 hops.
+    return [
+        { sector: startSector, x: startX, y: startY },
+        { sector: targetSector, x: targetX, y: targetY }
+    ];
+};
+
+logDebug("AP Pathfinder Core with Wormholes + X-holes (Safe) loaded.");
