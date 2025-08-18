@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AP Pathfinder Core with X-holes
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.1
+// @version      1.3
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
@@ -74,11 +74,24 @@
         return wrapped;
     }
 
+    // 🚪 For same-sector wormholes
+    async function resolveSameSectorPortalExit(currentSector, beaconName){
+        // Future logic: Find the "matching" wormhole in the same sector
+        // For now: block all same-sector portals
+        logDebug(`Same-sector portal found in ${currentSector} at ${beaconName}, but not supported yet.`);
+        return null;
+    }
+
     async function resolveWormholeExit(currentSector, beaconName){
-        
         const destSector = baseSectorName(beaconName);
-        const destMap = await loadSector(destSector);
         const wantBase = baseSectorName(currentSector);
+
+        // Same-sector portal case
+        if(normalizeSectorName(destSector) === normalizeSectorName(wantBase)){
+            return resolveSameSectorPortalExit(currentSector, beaconName);
+        }
+
+        const destMap = await loadSector(destSector);
         let candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
 
         if(candidates.length===1) return {sector:destSector,x:candidates[0].x,y:candidates[0].y};
@@ -95,6 +108,12 @@
         if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
         if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
         return null;
+    }
+
+    // 🔑 Control portal rules here
+    function canUseSameWorldPortal(currentSector, targetSector){
+        // For now: block portals that lead to the same sector
+        return normalizeSectorName(currentSector) !== normalizeSectorName(targetSector);
     }
 
     async function multiSectorPath(start,end){
@@ -153,8 +172,7 @@
 
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
-                
-                if(exit){
+                if(exit && canUseSameWorldPortal(sector, exit.sector)){
                     const nKey = keyOf(exit.sector,exit.x,exit.y);
                     const wormholeCost = 23;
                     const alt = curDist + wormholeCost;
@@ -169,10 +187,9 @@
 
             if(beacon && beacon.type==="xh"){
                 for(const targetSector of XHOLE_SECTORS){
-                    if (targetSector === sector) continue;
+                    if(!canUseSameWorldPortal(sector, targetSector)) continue;
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
-                        if(targetSector===sector && target.x===x && target.y===y) continue;
                         const nKey = keyOf(targetSector,target.x,target.y);
                         const alt = curDist + XHOLE_COST;
                         if(alt < (dist.get(nKey) ?? Infinity)){
