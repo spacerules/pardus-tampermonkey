@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AP Pathfinder Core with X-holes + GM Storage
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.4
+// @version      1.5
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and GM storage for costs
 // @author       spacerules
 // @grant        GM_setValue
@@ -45,21 +45,12 @@
     // GM STORAGE CONFIG
     // --------------------------
     function saveConfig(){
-        //GM_setValue("config", { tileCosts: {...TILE_COST}, wormholeCost: WH_COST, xholeCost: XHOLE_COST });
         logInfo("try again later");
     }
 
     function loadConfig(){
-        //const cfg = GM_getValue("config", null);
-        //if(cfg){
-            //TILE_COST = {...cfg.tileCosts};
-            //WH_COST = cfg.wormholeCost;
-            //XHOLE_COST = cfg.xholeCost;
-            //logInfo("Config loaded from GM storage");
-        //} else {
-            //resetAll();
+        
             logInfo("No saved config, using defaults");
-        //}
     }
 
     function getConfig() {
