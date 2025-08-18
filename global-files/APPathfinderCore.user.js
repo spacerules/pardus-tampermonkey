@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Loops)
+// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector Directions)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.6
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, correctly handling same-sector directional wormholes and preventing X-hole loops
+// @version      1.7
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, handling same-sector wormholes correctly
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -19,6 +19,14 @@
     const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
     const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
+
+    class PQ {
+        constructor(){ this.q=[]; }
+        push(node,p){ this.q.push({node,priority:p}); }
+        pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; }
+        get length(){ return this.q.length; }
+    }
+
     const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
 
     function normalizeSectorName(name){
@@ -40,16 +48,20 @@
         return m ? m[1] : null;
     }
 
-    class PQ {
-        constructor(){ this.q=[]; }
-        push(node,p){ this.q.push({node,priority:p}); }
-        pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; }
-        get length(){ return this.q.length; }
-    }
-
     function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
 
     const mapCache = new Map();
+
+    // Explicit mapping for same-sector directional wormholes
+    const SAME_SECTOR_WHS = {
+        "Nex_0004": {
+            "SW": "West",
+            "SE": "East",
+            "NW": "North",
+            "NE": "East"
+        },
+        // Add other sectors if needed
+    };
 
     async function loadSector(sector){
         sector = normalizeSectorName(sector);
@@ -79,21 +91,9 @@
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
-        // Same-sector directional mapping
-        const dirPairs = {
-            "SW": "West",
-            "SE": "East",
-            "NW": "North",
-            "NE": "East",
-            "South": "South",
-            "North": "North",
-            "West": "West",
-            "East": "East"
-        };
-
-        // SAME-SECTOR PORTAL
+        // SAME-SECTOR directional mapping
         if(destSector === currentSector && srcDir){
-            const targetDir = dirPairs[srcDir];
+            const targetDir = SAME_SECTOR_WHS[destSector]?.[srcDir];
             if(targetDir){
                 const candidates = destMap.beaconList.filter(b=> 
                     b.type==="wh" && b.name !== beaconName && beaconDirection(b.name) === targetDir
@@ -188,7 +188,7 @@
             // X-hole handling: skip same-sector
             if(beacon && beacon.type==="xh"){
                 for(const targetSector of XHOLE_SECTORS){
-                    if(targetSector === sector) continue; // <- prevents same-sector loop
+                    if(targetSector === sector) continue; // prevents same-sector loop
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
                         const nKey = keyOf(targetSector,target.x,target.y);
