@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Bi-directional Same-Sector)
+// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector Only)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      2.2
-// @description  Multi-sector AP Pathfinder with X-hole and bi-directional same-sector wormholes
+// @version      2.3
+// @description  Multi-sector AP Pathfinder with X-hole and corrected same-sector wormholes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -65,7 +65,7 @@
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
-        // Same-sector wormhole logic
+        // SAME-SECTOR WH ONLY
         if(destSector === currentSector && srcDir){
             const targetDir = SAME_SECTOR_MAP[srcDir];
             if(targetDir){
@@ -75,9 +75,11 @@
                 );
                 if(candidates.length>0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
             }
+            // If no match, return null instead of picking wrong WH
+            return null;
         }
 
-        // Cross-sector fallback
+        // CROSS-SECTOR fallback
         const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
         if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
@@ -163,7 +165,7 @@
                 for(const targetSector of XHOLE_SECTORS){
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
-                        if(targetSector === sector && target.x === x && target.y === y) continue; // prevent loops
+                        if(targetSector === sector && target.x === x && target.y === y) continue;
                         const nKey = keyOf(targetSector,target.x,target.y);
                         const alt = curDist + XHOLE_COST;
                         if(alt < (dist.get(nKey) ?? Infinity)){
