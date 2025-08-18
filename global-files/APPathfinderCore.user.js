@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Same-Sector Directional)
+// @name         AP Pathfinder Core with X-holes (Dynamic Same-Sector)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.3
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and same-sector directional wormholes
+// @version      1.4
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and dynamic same-sector directional wormholes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -79,19 +79,33 @@
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
-        // Handle same-sector directional wormholes
+        // Dynamic directional mapping for same-sector wormholes
+        const dirPairs = {
+            "SW": "West",
+            "SE": "East",
+            "NW": "North",
+            "NE": "East",
+            "South": "South",
+            "North": "North",
+            "West": "West",
+            "East": "East"
+        };
+
+        // Same-sector directional teleport
         if(destSector === currentSector && srcDir){
-            const candidates = destMap.beaconList.filter(b => {
-                if(baseSectorName(b.name) !== destSector) return false;
-                const dir = beaconDirection(b.name);
-                return dir && dir !== srcDir;
-            });
-            if(candidates.length > 0){
-                return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
+            const targetDir = dirPairs[srcDir] || null;
+            if(targetDir){
+                const candidates = destMap.beaconList.filter(b=>{
+                    return baseSectorName(b.name) === destSector &&
+                           beaconDirection(b.name) === targetDir;
+                });
+                if(candidates.length > 0){
+                    return {sector: destSector, x: candidates[0].x, y: candidates[0].y};
+                }
             }
         }
 
-        // Fallback to normal cross-sector or generic WH
+        // Fallback: cross-sector or generic WH
         const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
         if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
