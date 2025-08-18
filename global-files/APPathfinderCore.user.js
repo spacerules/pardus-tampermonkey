@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AP Pathfinder Core with X-holes (Bi-directional Same-Sector)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      2.1
+// @version      2.2
 // @description  Multi-sector AP Pathfinder with X-hole and bi-directional same-sector wormholes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
@@ -17,15 +17,6 @@
     const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
     const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
-
-    // Diagonal → primary mapping
-    const DIAGONAL_TO_PRIMARY = { SW: "West", SE: "East", NW: "West", NE: "East" };
-    // Primary → diagonals (reverse mapping)
-    const PRIMARY_TO_DIAGONALS = {};
-    for (const [diag, prim] of Object.entries(DIAGONAL_TO_PRIMARY)) {
-        if (!PRIMARY_TO_DIAGONALS[prim]) PRIMARY_TO_DIAGONALS[prim] = [];
-        PRIMARY_TO_DIAGONALS[prim].push(diag);
-    }
 
     class PQ { constructor(){ this.q=[]; } push(node,p){ this.q.push({node,priority:p}); } pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; } get length(){ return this.q.length; } }
     function normalizeSectorName(name){ return name.trim().replace(/\s+/g,"_"); }
@@ -59,35 +50,40 @@
         return wrapped;
     }
 
+    // Bi-directional same-sector mapping
+    const SAME_SECTOR_MAP = {
+        SW: "West",
+        SE: "East",
+        NW: "West",
+        NE: "East",
+        West: "SW",
+        East: "SE"
+    };
+
     async function resolveWormholeExit(currentSector, beaconName){
         const destSector = baseSectorName(beaconName);
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
+        // Same-sector wormhole logic
         if(destSector === currentSector && srcDir){
-            // Determine target directions for bi-directional mapping
-            let targetDirs = [];
-            if(DIAGONAL_TO_PRIMARY[srcDir]) targetDirs = [DIAGONAL_TO_PRIMARY[srcDir]]; // diagonal → primary
-            else if(PRIMARY_TO_DIAGONALS[srcDir]) targetDirs = PRIMARY_TO_DIAGONALS[srcDir]; // primary → diagonals
-            else targetDirs = [srcDir];
-
-            const candidates = destMap.beaconList.filter(b =>
-                b.type === "wh" && b.name !== beaconName &&
-                targetDirs.some(dir => b.name.trim().endsWith(`(${dir})`))
-            );
-
-            if(candidates.length > 0){
-                return {sector: destSector, x: candidates[0].x, y: candidates[0].y};
+            const targetDir = SAME_SECTOR_MAP[srcDir];
+            if(targetDir){
+                const candidates = destMap.beaconList.filter(b =>
+                    b.type === "wh" && b.name !== beaconName &&
+                    b.name.trim().endsWith(`(${targetDir})`)
+                );
+                if(candidates.length>0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
             }
         }
 
-        // Fallback: cross-sector
+        // Cross-sector fallback
         const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
         if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
         const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
-        if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
-        if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
+        if(anyWH.length>0) return {sector:destSector, x:anyWH[0].x, y:anyWH[0].y};
+        if(destMap.beaconList.length>0) return {sector:destSector, x:destMap.beaconList[0].x, y:destMap.beaconList[0].y};
         return null;
     }
 
