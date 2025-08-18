@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Destination)
+// @name         AP Pathfinder Core with X-holes
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.4
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and destination sector lock
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation (fixed X-hole loops)
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -74,6 +74,7 @@
         return wrapped;
     }
 
+    // 🚪 For same-sector wormholes
     async function resolveSameSectorPortalExit(currentSector, beaconName){
         logDebug(`Same-sector portal found in ${currentSector} at ${beaconName}, but not supported yet.`);
         return null;
@@ -83,6 +84,7 @@
         const destSector = baseSectorName(beaconName);
         const wantBase = baseSectorName(currentSector);
 
+        // Same-sector portal case
         if(normalizeSectorName(destSector) === normalizeSectorName(wantBase)){
             return resolveSameSectorPortalExit(currentSector, beaconName);
         }
@@ -146,7 +148,6 @@
             const mapData = await loadSector(sector);
             const {width,height,grid,beaconsByCoord} = mapData;
 
-            // WALKING MOVES
             for(const [dx,dy] of DIRS){
                 const nx=x+dx, ny=y+dy;
                 if(nx<0||ny<0||nx>=width||ny>=height) continue;
@@ -163,14 +164,15 @@
                 }
             }
 
-            // PORTALS AND XHOLES ONLY IF NOT IN DESTINATION
-            if(sector !== end.sector){
-                const beacon = beaconsByCoord.get(`${x},${y}`);
+            const beacon = beaconsByCoord.get(`${x},${y}`);
 
-                if(beacon && beacon.type==="wh"){
-                    const exit = await resolveWormholeExit(sector,beacon.name);
-                    if(exit && canUseSameWorldPortal(sector, exit.sector)){
-                        const nKey = keyOf(exit.sector,exit.x,exit.y);
+            if(beacon && beacon.type==="wh"){
+                const exit = await resolveWormholeExit(sector,beacon.name);
+                if(exit && canUseSameWorldPortal(sector, exit.sector)){
+                    const nKey = keyOf(exit.sector,exit.x,exit.y);
+
+                    // Prevent immediate return
+                    if(prev.get(curKey) !== nKey){
                         const wormholeCost = 23;
                         const alt = curDist + wormholeCost;
                         if(alt<(dist.get(nKey)??Infinity)){
@@ -181,29 +183,34 @@
                         }
                     }
                 }
+            }
 
-                if(beacon && beacon.type==="xh"){
-                    for(const targetSector of XHOLE_SECTORS){
-                        if(!canUseSameWorldPortal(sector, targetSector)) continue;
-                        const targetMap = await loadSector(targetSector);
-                        for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
-                            const nKey = keyOf(targetSector,target.x,target.y);
-                            const alt = curDist + XHOLE_COST;
-                            if(alt < (dist.get(nKey) ?? Infinity)){
-                                dist.set(nKey,alt);
-                                prev.set(nKey,curKey);
-                                jumpsMap.set(nKey,curJumps+1);
-                                pq.push({sector:targetSector,x:target.x,y:target.y,jumps:curJumps+1},alt);
-                            }
+            if(beacon && beacon.type==="xh"){
+                for(const targetSector of XHOLE_SECTORS){
+                    if(!canUseSameWorldPortal(sector, targetSector)) continue;
+                    const targetMap = await loadSector(targetSector);
+                    for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
+                        const nKey = keyOf(targetSector,target.x,target.y);
+
+                        // Prevent immediate return to the previous sector+coord
+                        if(prev.get(curKey) === nKey) continue;
+
+                        const alt = curDist + XHOLE_COST;
+                        if(alt < (dist.get(nKey) ?? Infinity)){
+                            dist.set(nKey,alt);
+                            prev.set(nKey,curKey);
+                            jumpsMap.set(nKey,curJumps+1);
+                            pq.push({sector:targetSector,x:target.x,y:target.y,jumps:curJumps+1},alt);
                         }
                     }
                 }
-            } // end sector !== end.sector
+            }
         }
 
         throw new Error("No path found");
     }
 
+    // Expose globally
     window.multiSectorPath = multiSectorPath;
 
 })();
