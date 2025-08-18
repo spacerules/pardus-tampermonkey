@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Same-Sector Name Mapping)
+// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector & X-hole)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.8
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, automatically mapping same-sector wormholes by name
+// @version      2.0
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, auto same-sector wormholes, fixed X-holes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -19,9 +19,8 @@
     const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
     const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
-    const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
 
-    // Map diagonal directions to primary cardinal directions
+    // Map diagonal directions to primary cardinal directions for same-sector WHs
     const DIAGONAL_TO_PRIMARY = {
         SW: "West",
         SE: "East",
@@ -87,18 +86,22 @@
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
-        // SAME-SECTOR automatic mapping by name
+        // SAME-SECTOR mapping: diagonal → cardinal
         if(destSector === currentSector && srcDir){
-            const mappedDir = DIAGONAL_TO_PRIMARY[srcDir] || OPPOSITE[srcDir];
-            const candidates = destMap.beaconList.filter(b => 
-                b.type==="wh" && b.name !== beaconName && beaconDirection(b.name) === mappedDir
+            const targetDir = DIAGONAL_TO_PRIMARY[srcDir] || srcDir;
+
+            // Match any beacon whose name ends with the targetDir in parentheses
+            const candidates = destMap.beaconList.filter(b =>
+                b.type==="wh" && b.name !== beaconName &&
+                b.name.trim().endsWith(`(${targetDir})`)
             );
+
             if(candidates.length > 0){
                 return {sector: destSector, x: candidates[0].x, y: candidates[0].y};
             }
         }
 
-        // Fallback: cross-sector
+        // Fallback cross-sector or any WH
         const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
         if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
@@ -145,6 +148,7 @@
             const mapData = await loadSector(sector);
             const {width,height,grid,beaconsByCoord} = mapData;
 
+            // Normal movement
             for(const [dx,dy] of DIRS){
                 const nx=x+dx, ny=y+dy;
                 if(nx<0||ny<0||nx>=width||ny>=height) continue;
@@ -163,7 +167,7 @@
 
             const beacon = beaconsByCoord.get(`${x},${y}`);
 
-            // Same-sector wormhole handling
+            // WH handling
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
                 if(exit){
@@ -179,12 +183,12 @@
                 }
             }
 
-            // X-hole handling: skip same-sector
+            // X-hole handling
             if(beacon && beacon.type==="xh"){
                 for(const targetSector of XHOLE_SECTORS){
-                    if(targetSector === sector) continue; // prevents same-sector loop
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
+                        if(targetSector === sector && target.x === x && target.y === y) continue; // prevent loops
                         const nKey = keyOf(targetSector,target.x,target.y);
                         const alt = curDist + XHOLE_COST;
                         if(alt < (dist.get(nKey) ?? Infinity)){
