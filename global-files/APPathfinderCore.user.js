@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes
+// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.1
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation
+// @version      1.2
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, including same-sector wormholes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -78,10 +78,10 @@
         const destSector = baseSectorName(beaconName);
         const destMap = await loadSector(destSector);
         const wantBase = baseSectorName(currentSector);
+
         let candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
 
-        if(candidates.length===1) return {sector:destSector,x:candidates[0].x,y:candidates[0].y};
-        if(candidates.length>1){
+        if(candidates.length>0){
             const hereDir = beaconDirection(beaconName);
             if(hereDir && OPPOSITE[hereDir]){
                 const exact = candidates.find(b=>beaconDirection(b.name)===OPPOSITE[hereDir]);
@@ -169,7 +169,7 @@
                 for(const targetSector of XHOLE_SECTORS){
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
-                        if(targetSector===sector && target.x===x && target.y===y) continue;
+                        // allow same-sector jumps
                         const nKey = keyOf(targetSector,target.x,target.y);
                         const alt = curDist + XHOLE_COST;
                         if(alt < (dist.get(nKey) ?? Infinity)){
