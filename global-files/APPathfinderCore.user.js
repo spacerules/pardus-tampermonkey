@@ -20,7 +20,13 @@
     // --------------------------
     // DEFAULT COSTS
     // --------------------------
-    const DEFAULT_TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
+    const DEFAULT_TILE_COST = { b: Infinity, // blocked (hard energy)
+                                e: 19,       // energy
+                                f: 10,       // fuel
+                                g: 15,       // nitrogen gas
+                                o: 24,       // ore
+                                m: 35,       // exotic mater
+                                v: 10 };     // viral (see pardus core sector)
     const DEFAULT_WH_COST = 22;
     const DEFAULT_XHOLE_COST = 2200;
 
@@ -56,6 +62,22 @@
         }
     }
 
+    function getConfig() {
+        return {
+            tileCosts: {...TILE_COST},
+            wormholeCost: WH_COST,
+            xholeCost: XHOLE_COST
+        };
+    }
+    
+    function getDefaults() {
+        return {
+            tileCosts: {...DEFAULT_TILE_COST},
+            wormholeCost: DEFAULT_WH_COST,
+            xholeCost: DEFAULT_XHOLE_COST
+        };
+    }
+
     function setTileCost(tileCode,cost){ TILE_COST[tileCode]=cost; saveConfig(); logInfo(`Tile '${tileCode}' set to ${cost}`); }
     function resetTileCosts(){ TILE_COST={...DEFAULT_TILE_COST}; saveConfig(); logInfo("Tile costs reset"); }
     function setWHCost(cost){ WH_COST=cost; saveConfig(); logInfo(`WH cost set to ${cost}`); }
@@ -65,7 +87,7 @@
     function resetAll(){ resetTileCosts(); resetWHCost(); resetXholeCost(); }
 
     // Expose config functions globally
-    window.PathfinderConfig = { setTileCost, resetTileCosts, setWHCost, resetWHCost, setXholeCost, resetXholeCost, resetAll };
+    window.PathfinderConfig = { setTileCost, resetTileCosts, setWHCost, resetWHCost, setXholeCost, resetXholeCost, resetAll, getConfig, getDefaults };
 
     // --------------------------
     // SECTOR HELPERS
