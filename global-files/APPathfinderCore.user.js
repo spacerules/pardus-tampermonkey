@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AP Pathfinder Core with X-holes + GM Storage
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.3
+// @version      1.4
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and GM storage for costs
 // @author       spacerules
 // @grant        GM_setValue
