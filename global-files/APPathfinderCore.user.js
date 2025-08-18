@@ -75,7 +75,11 @@
     }
 
     async function resolveWormholeExit(currentSector, beaconName){
+        
         const destSector = baseSectorName(beaconName);
+        
+        if (destSector === currentSector) continue;
+        
         const destMap = await loadSector(destSector);
         const wantBase = baseSectorName(currentSector);
         let candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
