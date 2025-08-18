@@ -45,20 +45,20 @@
     // GM STORAGE CONFIG
     // --------------------------
     function saveConfig(){
-        GM_setValue("config", { tileCosts: {...TILE_COST}, wormholeCost: WH_COST, xholeCost: XHOLE_COST });
+        //GM_setValue("config", { tileCosts: {...TILE_COST}, wormholeCost: WH_COST, xholeCost: XHOLE_COST });
     }
 
     function loadConfig(){
-        const cfg = GM_getValue("config", null);
-        if(cfg){
-            TILE_COST = {...cfg.tileCosts};
-            WH_COST = cfg.wormholeCost;
-            XHOLE_COST = cfg.xholeCost;
-            logInfo("Config loaded from GM storage");
-        } else {
-            resetAll();
+        //const cfg = GM_getValue("config", null);
+        //if(cfg){
+            //TILE_COST = {...cfg.tileCosts};
+            //WH_COST = cfg.wormholeCost;
+            //XHOLE_COST = cfg.xholeCost;
+            //logInfo("Config loaded from GM storage");
+        //} else {
+            //resetAll();
             logInfo("No saved config, using defaults");
-        }
+        //}
     }
 
     function getConfig() {
