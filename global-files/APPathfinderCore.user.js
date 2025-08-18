@@ -120,7 +120,7 @@
         pq.push({...start,jumps:0},0);
 
         const XHOLE_SECTORS = ["Nex_0001","Nex_0002","Nex_0003","Nex_0004","Nex_0005","Nex_Kataam"];
-        const XHOLE_COST = 2200;
+        const XHOLE_COST = 2000;
 
         while(pq.length){
             const current = pq.pop();
