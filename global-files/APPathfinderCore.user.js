@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector)
+// @name         AP Pathfinder Core with X-holes (Same-Sector Directional)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.2
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, including same-sector wormholes
+// @version      1.3
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and same-sector directional wormholes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -36,8 +36,8 @@
     }
 
     function beaconDirection(label){
-        const m = label.match(/\((North|South|East|West)\)/i);
-        return m ? (m[1][0].toUpperCase() + m[1].slice(1).toLowerCase()) : null;
+        const m = label.match(/\((North|South|East|West|NE|NW|SE|SW)\)/i);
+        return m ? m[1] : null;
     }
 
     class PQ {
@@ -77,22 +77,28 @@
     async function resolveWormholeExit(currentSector, beaconName){
         const destSector = baseSectorName(beaconName);
         const destMap = await loadSector(destSector);
-        const wantBase = baseSectorName(currentSector);
+        const srcDir = beaconDirection(beaconName);
 
-        let candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
-
-        if(candidates.length>0){
-            const hereDir = beaconDirection(beaconName);
-            if(hereDir && OPPOSITE[hereDir]){
-                const exact = candidates.find(b=>beaconDirection(b.name)===OPPOSITE[hereDir]);
-                if(exact) return {sector:destSector,x:exact.x,y:exact.y};
+        // Handle same-sector directional wormholes
+        if(destSector === currentSector && srcDir){
+            const candidates = destMap.beaconList.filter(b => {
+                if(baseSectorName(b.name) !== destSector) return false;
+                const dir = beaconDirection(b.name);
+                return dir && dir !== srcDir;
+            });
+            if(candidates.length > 0){
+                return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
             }
-            return {sector:destSector,x:candidates[0].x,y:candidates[0].y};
         }
+
+        // Fallback to normal cross-sector or generic WH
+        const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
+        if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
         const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
         if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
         if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
+
         return null;
     }
 
@@ -169,7 +175,6 @@
                 for(const targetSector of XHOLE_SECTORS){
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
-                        // allow same-sector jumps
                         const nKey = keyOf(targetSector,target.x,target.y);
                         const alt = curDist + XHOLE_COST;
                         if(alt < (dist.get(nKey) ?? Infinity)){
