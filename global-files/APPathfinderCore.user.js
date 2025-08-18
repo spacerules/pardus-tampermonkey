@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         AP Pathfinder Core with X-holes
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.4
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation (fixed X-hole loops)
+// @version      1.3
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -76,6 +76,8 @@
 
     // 🚪 For same-sector wormholes
     async function resolveSameSectorPortalExit(currentSector, beaconName){
+        // Future logic: Find the "matching" wormhole in the same sector
+        // For now: block all same-sector portals
         logDebug(`Same-sector portal found in ${currentSector} at ${beaconName}, but not supported yet.`);
         return null;
     }
@@ -108,7 +110,9 @@
         return null;
     }
 
+    // 🔑 Control portal rules here
     function canUseSameWorldPortal(currentSector, targetSector){
+        // For now: block portals that lead to the same sector
         return normalizeSectorName(currentSector) !== normalizeSectorName(targetSector);
     }
 
@@ -170,17 +174,13 @@
                 const exit = await resolveWormholeExit(sector,beacon.name);
                 if(exit && canUseSameWorldPortal(sector, exit.sector)){
                     const nKey = keyOf(exit.sector,exit.x,exit.y);
-
-                    // Prevent immediate return
-                    if(prev.get(curKey) !== nKey){
-                        const wormholeCost = 23;
-                        const alt = curDist + wormholeCost;
-                        if(alt<(dist.get(nKey)??Infinity)){
-                            dist.set(nKey,alt);
-                            prev.set(nKey,curKey);
-                            jumpsMap.set(nKey,curJumps+1);
-                            pq.push({sector:exit.sector,x:exit.x,y:exit.y,jumps:curJumps+1},alt);
-                        }
+                    const wormholeCost = 23;
+                    const alt = curDist + wormholeCost;
+                    if(alt<(dist.get(nKey)??Infinity)){
+                        dist.set(nKey,alt);
+                        prev.set(nKey,curKey);
+                        jumpsMap.set(nKey,curJumps+1);
+                        pq.push({sector:exit.sector,x:exit.x,y:exit.y,jumps:curJumps+1},alt);
                     }
                 }
             }
@@ -191,10 +191,6 @@
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
                         const nKey = keyOf(targetSector,target.x,target.y);
-
-                        // Prevent immediate return to the previous sector+coord
-                        if(prev.get(curKey) === nKey) continue;
-
                         const alt = curDist + XHOLE_COST;
                         if(alt < (dist.get(nKey) ?? Infinity)){
                             dist.set(nKey,alt);
