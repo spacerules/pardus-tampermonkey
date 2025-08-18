@@ -4,7 +4,6 @@
 // @version      1.3
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and GM storage for costs
 // @author       spacerules
-// @match        http*://*.pardus.at/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // ==/UserScript==
