@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder Bulletin Board
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.8
+// @version      0.9
 // @description  Show multi-sector AP path info for missions on bulletin board with progress and jump filter
 // @match        http*://*.pardus.at/bulletin_board.php
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
@@ -245,7 +245,7 @@
             // take the second row (index 1)
             const imgEl = rows[1].querySelector("td img");
             r.imageLink = imgEl ? imgEl.getAttribute("src") : "";
-            console.log(r.imageLink, imgEl);
+            logInfo(r.imageLink, imgEl);
           } else {
             r.imageLink = "";
           }
@@ -287,7 +287,6 @@
         applyJumpFilter();
         refreshHidden();
 
-results.forEach(r => console.log(JSON.stringify(r.imageLink)));
         const counterSpan = document.getElementById("mission-progress");
         if (counterSpan) counterSpan.remove();
       });
