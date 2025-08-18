@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector)
+// @name         AP Pathfinder Core with X-holes (Fixed Loops)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.5
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, correctly handling same-sector directional wormholes
+// @version      1.6
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, correctly handling same-sector directional wormholes and preventing X-hole loops
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -169,6 +169,7 @@
 
             const beacon = beaconsByCoord.get(`${x},${y}`);
 
+            // Same-sector wormhole handling
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
                 if(exit){
@@ -184,8 +185,10 @@
                 }
             }
 
+            // X-hole handling: skip same-sector
             if(beacon && beacon.type==="xh"){
                 for(const targetSector of XHOLE_SECTORS){
+                    if(targetSector === sector) continue; // <- prevents same-sector loop
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
                         const nKey = keyOf(targetSector,target.x,target.y);
