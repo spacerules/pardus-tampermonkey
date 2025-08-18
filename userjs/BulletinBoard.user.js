@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder Bulletin Board
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.7
+// @version      0.8
 // @description  Show multi-sector AP path info for missions on bulletin board with progress and jump filter
 // @match        http*://*.pardus.at/bulletin_board.php
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
@@ -239,22 +239,42 @@
 
       Promise.all(promises).then(results => {
         results.forEach(r => {
-          const imgEl = r.table.querySelector("tr:nth-of-type(2) td img");
-          r.imageLink = imgEl ? imgEl.getAttribute("src") : "";
+          // get all rows inside r.table
+          const rows = r.table.querySelectorAll("tr");
+          if (rows.length > 1) {
+            // take the second row (index 1)
+            const imgEl = rows[1].querySelector("td img");
+            r.imageLink = imgEl ? imgEl.getAttribute("src") : "";
+            console.log(r.imageLink, imgEl);
+          } else {
+            r.imageLink = "";
+          }
         });
 
         results.sort((a, b) => {
-          if (a.borderColor < b.borderColor) return 1;
-          if (a.borderColor > b.borderColor) return -1;
-          if (!a.result && !b.result) return a.imageLink.localeCompare(b.imageLink);
+          // 1. borderColor
+          if (a.borderColor !== b.borderColor) {
+            return b.borderColor.localeCompare(a.borderColor);
+          }
+
+          // 2. missing results go first
           if (!a.result && b.result) return -1;
           if (a.result && !b.result) return 1;
-          if (a.result.jumps === b.result.jumps) {
-            const cmp = a.imageLink.localeCompare(b.imageLink);
-            if (cmp !== 0) return cmp;
-            return a.result.cost - b.result.cost;
+          if (!a.result && !b.result) {
+            return a.imageLink.localeCompare(b.imageLink);
           }
-          return a.result.jumps - b.result.jumps;
+
+          // 3. jumps
+          if (a.result.jumps !== b.result.jumps) {
+            return a.result.jumps - b.result.jumps;
+          }
+
+          // 4. imageLink as tiebreaker
+          const cmp = a.imageLink.localeCompare(b.imageLink);
+          if (cmp !== 0) return cmp;
+
+          // 5. cost
+          return a.result.cost - b.result.cost;
         });
 
         document.querySelectorAll("#div_missions > br").forEach(br => br.remove());
@@ -267,6 +287,7 @@
         applyJumpFilter();
         refreshHidden();
 
+results.forEach(r => console.log(JSON.stringify(r.imageLink)));
         const counterSpan = document.getElementById("mission-progress");
         if (counterSpan) counterSpan.remove();
       });
