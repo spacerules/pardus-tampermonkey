@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Same-Sector Directional)
+// @name         AP Pathfinder Core with X-holes (Fixed WH Triggers)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
 // @version      1.3
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and same-sector directional wormholes
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, fixing same-sector and cross-sector wormhole triggers
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -21,23 +21,18 @@
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
     const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
 
-    function normalizeSectorName(name){
-        return name.trim().replace(/\s+/g,"_");
-    }
-
+    function normalizeSectorName(name){ return name.trim().replace(/\s+/g,"_"); }
     function sectorToUrl(sector){
         const file = normalizeSectorName(sector);
         return `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`;
     }
-
     function baseSectorName(label){
         const idx = label.indexOf(" (");
         return (idx>=0)? label.slice(0,idx).trim() : label.trim();
     }
-
     function beaconDirection(label){
-        const m = label.match(/\((North|South|East|West|NE|NW|SE|SW)\)/i);
-        return m ? m[1] : null;
+        const m = label.match(/\((North|South|East|West)\)/i);
+        return m ? (m[1][0].toUpperCase() + m[1].slice(1).toLowerCase()) : null;
     }
 
     class PQ {
@@ -48,7 +43,6 @@
     }
 
     function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
-
     const mapCache = new Map();
 
     async function loadSector(sector){
@@ -77,28 +71,40 @@
     async function resolveWormholeExit(currentSector, beaconName){
         const destSector = baseSectorName(beaconName);
         const destMap = await loadSector(destSector);
-        const srcDir = beaconDirection(beaconName);
 
-        // Handle same-sector directional wormholes
-        if(destSector === currentSector && srcDir){
-            const candidates = destMap.beaconList.filter(b => {
-                if(baseSectorName(b.name) !== destSector) return false;
-                const dir = beaconDirection(b.name);
-                return dir && dir !== srcDir;
-            });
-            if(candidates.length > 0){
-                return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
+        // Same-sector mappings
+        const sameSectorMap = {
+            "SW":"West",
+            "SE":"East",
+            "West":"SW",
+            "East":"SE"
+        };
+
+        if(currentSector === destSector){
+            const dir = beaconDirection(beaconName);
+            const mappedDir = sameSectorMap[dir];
+            if(mappedDir){
+                const target = destMap.beaconList.find(b=>beaconDirection(b.name)===mappedDir);
+                if(target) return {sector:destSector,x:target.x,y:target.y};
             }
         }
 
-        // Fallback to normal cross-sector or generic WH
-        const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
-        if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
+        // Cross-sector
+        const wantBase = baseSectorName(currentSector);
+        const candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
+
+        if(candidates.length>0){
+            const hereDir = beaconDirection(beaconName);
+            if(hereDir && OPPOSITE[hereDir]){
+                const exact = candidates.find(b=>beaconDirection(b.name)===OPPOSITE[hereDir]);
+                if(exact) return {sector:destSector,x:exact.x,y:exact.y};
+            }
+            return {sector:destSector,x:candidates[0].x,y:candidates[0].y};
+        }
 
         const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
         if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
         if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
-
         return null;
     }
 
@@ -154,34 +160,36 @@
                 }
             }
 
+            // Only trigger wormhole if standing on its exact coordinates
             const beacon = beaconsByCoord.get(`${x},${y}`);
-
-            if(beacon && beacon.type==="wh"){
-                const exit = await resolveWormholeExit(sector,beacon.name);
-                if(exit){
-                    const nKey = keyOf(exit.sector,exit.x,exit.y);
-                    const wormholeCost = 23;
-                    const alt = curDist + wormholeCost;
-                    if(alt<(dist.get(nKey)??Infinity)){
-                        dist.set(nKey,alt);
-                        prev.set(nKey,curKey);
-                        jumpsMap.set(nKey,curJumps+1);
-                        pq.push({sector:exit.sector,x:exit.x,y:exit.y,jumps:curJumps+1},alt);
-                    }
-                }
-            }
-
-            if(beacon && beacon.type==="xh"){
-                for(const targetSector of XHOLE_SECTORS){
-                    const targetMap = await loadSector(targetSector);
-                    for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
-                        const nKey = keyOf(targetSector,target.x,target.y);
-                        const alt = curDist + XHOLE_COST;
-                        if(alt < (dist.get(nKey) ?? Infinity)){
+            if(beacon){
+                if(beacon.type==="wh"){
+                    const exit = await resolveWormholeExit(sector,beacon.name);
+                    if(exit){
+                        const nKey = keyOf(exit.sector,exit.x,exit.y);
+                        const wormholeCost = 23;
+                        const alt = curDist + wormholeCost;
+                        if(alt<(dist.get(nKey)??Infinity)){
                             dist.set(nKey,alt);
                             prev.set(nKey,curKey);
                             jumpsMap.set(nKey,curJumps+1);
-                            pq.push({sector:targetSector,x:target.x,y:target.y,jumps:curJumps+1},alt);
+                            pq.push({sector:exit.sector,x:exit.x,y:exit.y,jumps:curJumps+1},alt);
+                        }
+                    }
+                }
+                else if(beacon.type==="xh"){
+                    for(const targetSector of XHOLE_SECTORS){
+                        const targetMap = await loadSector(targetSector);
+                        for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
+                            if(targetSector===sector && target.x===x && target.y===y) continue;
+                            const nKey = keyOf(targetSector,target.x,target.y);
+                            const alt = curDist + XHOLE_COST;
+                            if(alt < (dist.get(nKey) ?? Infinity)){
+                                dist.set(nKey,alt);
+                                prev.set(nKey,curKey);
+                                jumpsMap.set(nKey,curJumps+1);
+                                pq.push({sector:targetSector,x:target.x,y:target.y,jumps:curJumps+1},alt);
+                            }
                         }
                     }
                 }
