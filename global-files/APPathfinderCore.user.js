@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Correct WHs)
+// @name         AP Pathfinder Core with X-holes (Fixed WHs)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      2.4
+// @version      2.5
 // @description  Multi-sector AP Pathfinder with correct same-sector and cross-sector WHs
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
@@ -77,14 +77,17 @@
             return null; // don't pick wrong WH
         }
 
-        // CROSS-SECTOR WH (pick exact beacon by name)
+        // CROSS-SECTOR WH: pick exact beacon by name
         const candidate = destMap.beaconList.find(b => b.name === beaconName);
         if(candidate) return {sector:destSector, x:candidate.x, y:candidate.y};
 
-        // fallback
+        // fallback: pick any WH
         const anyWH = destMap.beaconList.find(b => b.type === "wh");
         if(anyWH) return {sector:destSector, x:anyWH.x, y:anyWH.y};
+
+        // fallback: pick any beacon
         if(destMap.beaconList.length>0) return {sector:destSector, x:destMap.beaconList[0].x, y:destMap.beaconList[0].y};
+
         return null;
     }
 
@@ -179,5 +182,4 @@
     }
 
     window.multiSectorPath = multiSectorPath;
-
 })();
