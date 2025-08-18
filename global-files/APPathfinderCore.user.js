@@ -1,76 +1,100 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes
+// @name         AP Pathfinder Core with X-holes + GM Storage
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.1
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation
+// @version      1.3
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and GM storage for costs
 // @author       spacerules
-// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
-// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
-// @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
+// @match        http*://*.pardus.at/*
+// @grant        GM_setValue
+// @grant        GM_getValue
 // ==/UserScript==
-
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
 
 (function(){
     'use strict';
 
     const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
-    const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
     const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
+    const XHOLE_SECTORS = ["Nex_0001","Nex_0002","Nex_0003","Nex_0004","Nex_0005","Nex_Kataam"];
 
-    function normalizeSectorName(name){
-        return name.trim().replace(/\s+/g,"_");
+    // --------------------------
+    // DEFAULT COSTS
+    // --------------------------
+    const DEFAULT_TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
+    const DEFAULT_WH_COST = 22;
+    const DEFAULT_XHOLE_COST = 2200;
+
+    // --------------------------
+    // CURRENT COSTS (mutable)
+    // --------------------------
+    let TILE_COST = {};
+    let WH_COST = 22;
+    let XHOLE_COST = 2200;
+
+    // --------------------------
+    // LOGGING HELPER
+    // --------------------------
+    function logInfo(msg){ console.log("[Pathfinder] " + msg); }
+
+    // --------------------------
+    // GM STORAGE CONFIG
+    // --------------------------
+    function saveConfig(){
+        GM_setValue("config", { tileCosts: {...TILE_COST}, wormholeCost: WH_COST, xholeCost: XHOLE_COST });
     }
 
-    function sectorToUrl(sector){
-        const file = normalizeSectorName(sector);
-        return `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`;
+    function loadConfig(){
+        const cfg = GM_getValue("config", null);
+        if(cfg){
+            TILE_COST = {...cfg.tileCosts};
+            WH_COST = cfg.wormholeCost;
+            XHOLE_COST = cfg.xholeCost;
+            logInfo("Config loaded from GM storage");
+        } else {
+            resetAll();
+            logInfo("No saved config, using defaults");
+        }
     }
 
-    function baseSectorName(label){
-        const idx = label.indexOf(" (");
-        return (idx>=0)? label.slice(0,idx).trim() : label.trim();
-    }
+    function setTileCost(tileCode,cost){ TILE_COST[tileCode]=cost; saveConfig(); logInfo(`Tile '${tileCode}' set to ${cost}`); }
+    function resetTileCosts(){ TILE_COST={...DEFAULT_TILE_COST}; saveConfig(); logInfo("Tile costs reset"); }
+    function setWHCost(cost){ WH_COST=cost; saveConfig(); logInfo(`WH cost set to ${cost}`); }
+    function resetWHCost(){ WH_COST=DEFAULT_WH_COST; saveConfig(); logInfo(`WH cost reset to ${DEFAULT_WH_COST}`); }
+    function setXholeCost(cost){ XHOLE_COST=cost; saveConfig(); logInfo(`X-hole cost set to ${cost}`); }
+    function resetXholeCost(){ XHOLE_COST=DEFAULT_XHOLE_COST; saveConfig(); logInfo(`X-hole cost reset to ${DEFAULT_XHOLE_COST}`); }
+    function resetAll(){ resetTileCosts(); resetWHCost(); resetXholeCost(); }
 
-    function beaconDirection(label){
-        const m = label.match(/\((North|South|East|West)\)/i);
-        return m ? (m[1][0].toUpperCase() + m[1].slice(1).toLowerCase()) : null;
-    }
+    // Expose config functions globally
+    window.PathfinderConfig = { setTileCost, resetTileCosts, setWHCost, resetWHCost, setXholeCost, resetXholeCost, resetAll };
 
-    class PQ {
-        constructor(){ this.q=[]; }
-        push(node,p){ this.q.push({node,priority:p}); }
-        pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; }
-        get length(){ return this.q.length; }
-    }
+    // --------------------------
+    // SECTOR HELPERS
+    // --------------------------
+    function normalizeSectorName(name){ return name.trim().replace(/\s+/g,"_"); }
+    function sectorToUrl(sector){ const file=normalizeSectorName(sector); return `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`; }
+    function baseSectorName(label){ const idx=label.indexOf(" ("); return (idx>=0)? label.slice(0,idx).trim() : label.trim(); }
+    function beaconDirection(label){ const m=label.match(/\((North|South|East|West)\)/i); return m ? (m[1][0].toUpperCase()+m[1].slice(1).toLowerCase()) : null; }
 
+    class PQ { constructor(){ this.q=[]; } push(node,p){ this.q.push({node,priority:p}); } pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; } get length(){ return this.q.length; } }
     function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
 
     const mapCache = new Map();
-
     async function loadSector(sector){
         sector = normalizeSectorName(sector);
         if(mapCache.has(sector)) return mapCache.get(sector);
-
         const res = await fetch(sectorToUrl(sector));
         if(!res.ok) throw new Error(`Failed to fetch ${sector}: ${res.status}`);
-
         const data = await res.json();
         const grid = Array.from({length:data.height},(_,y)=>Array.from({length:data.width},(_,x)=>data.tiles[y*data.width+x]));
         const beaconsByCoord = new Map();
         const beaconList = [];
-
         for(const [name,b] of Object.entries(data.beacons||{})){
-            const item = {name,type:b.type,x:b.x,y:b.y};
+            const item={name,type:b.type,x:b.x,y:b.y};
             beaconList.push(item);
-            beaconsByCoord.set(`${b.x},${b.y}`, item);
+            beaconsByCoord.set(`${b.x},${b.y}`,item);
         }
-
-        const wrapped = {...data, grid, beaconList, beaconsByCoord};
-        mapCache.set(sector, wrapped);
+        const wrapped={...data,grid,beaconList,beaconsByCoord};
+        mapCache.set(sector,wrapped);
         return wrapped;
     }
 
@@ -79,7 +103,6 @@
         const destMap = await loadSector(destSector);
         const wantBase = baseSectorName(currentSector);
         let candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
-
         if(candidates.length===1) return {sector:destSector,x:candidates[0].x,y:candidates[0].y};
         if(candidates.length>1){
             const hereDir = beaconDirection(beaconName);
@@ -89,7 +112,6 @@
             }
             return {sector:destSector,x:candidates[0].x,y:candidates[0].y};
         }
-
         const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
         if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
         if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
@@ -99,16 +121,11 @@
     async function multiSectorPath(start,end){
         await loadSector(start.sector);
         await loadSector(end.sector);
-
-        const dist = new Map(), prev = new Map(), jumpsMap = new Map();
-        const startKey = keyOf(start.sector,start.x,start.y);
+        const dist=new Map(), prev=new Map(), jumpsMap=new Map();
+        const startKey=keyOf(start.sector,start.x,start.y);
         dist.set(startKey,0); jumpsMap.set(startKey,0);
-
-        const pq = new PQ();
+        const pq=new PQ();
         pq.push({...start,jumps:0},0);
-
-        const XHOLE_SECTORS = ["Nex_0001","Nex_0002","Nex_0003","Nex_0004","Nex_0005","Nex_Kataam"];
-        const XHOLE_COST = 2200;
 
         while(pq.length){
             const current = pq.pop();
@@ -116,10 +133,9 @@
             const curKey = keyOf(sector,x,y);
             const curDist = dist.get(curKey) ?? Infinity;
             const curJumps = jumpsMap.get(curKey) ?? 0;
-
             if(sector===end.sector && x===end.x && y===end.y){
                 const path=[];
-                let k = curKey;
+                let k=curKey;
                 while(k){
                     const [sec,rest] = k.split("::");
                     const [cx,cy] = rest.split(",").map(Number);
@@ -149,13 +165,11 @@
             }
 
             const beacon = beaconsByCoord.get(`${x},${y}`);
-
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
                 if(exit){
                     const nKey = keyOf(exit.sector,exit.x,exit.y);
-                    const wormholeCost = 23;
-                    const alt = curDist + wormholeCost;
+                    const alt = curDist + WH_COST;
                     if(alt<(dist.get(nKey)??Infinity)){
                         dist.set(nKey,alt);
                         prev.set(nKey,curKey);
@@ -182,11 +196,17 @@
                 }
             }
         }
-
         throw new Error("No path found");
     }
 
-    // Expose globally
+    // --------------------------
+    // INITIALIZE CONFIG
+    // --------------------------
+    loadConfig();
+
+    // --------------------------
+    // EXPOSE GLOBALS
+    // --------------------------
     window.multiSectorPath = multiSectorPath;
 
 })();
