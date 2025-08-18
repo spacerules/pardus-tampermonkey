@@ -46,6 +46,7 @@
     // --------------------------
     function saveConfig(){
         //GM_setValue("config", { tileCosts: {...TILE_COST}, wormholeCost: WH_COST, xholeCost: XHOLE_COST });
+        logInfo("try again later");
     }
 
     function loadConfig(){
