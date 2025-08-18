@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector Directions)
+// @name         AP Pathfinder Core with X-holes (Same-Sector Name Mapping)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.7
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, handling same-sector wormholes correctly
+// @version      1.8
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, automatically mapping same-sector wormholes by name
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -19,6 +19,15 @@
     const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
     const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
+    const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
+
+    // Map diagonal directions to primary cardinal directions
+    const DIAGONAL_TO_PRIMARY = {
+        SW: "West",
+        SE: "East",
+        NW: "West",
+        NE: "East"
+    };
 
     class PQ {
         constructor(){ this.q=[]; }
@@ -26,8 +35,6 @@
         pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; }
         get length(){ return this.q.length; }
     }
-
-    const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
 
     function normalizeSectorName(name){
         return name.trim().replace(/\s+/g,"_");
@@ -51,17 +58,6 @@
     function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
 
     const mapCache = new Map();
-
-    // Explicit mapping for same-sector directional wormholes
-    const SAME_SECTOR_WHS = {
-        "Nex_0004": {
-            "SW": "West",
-            "SE": "East",
-            "NW": "North",
-            "NE": "East"
-        },
-        // Add other sectors if needed
-    };
 
     async function loadSector(sector){
         sector = normalizeSectorName(sector);
@@ -91,20 +87,18 @@
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
-        // SAME-SECTOR directional mapping
+        // SAME-SECTOR automatic mapping by name
         if(destSector === currentSector && srcDir){
-            const targetDir = SAME_SECTOR_WHS[destSector]?.[srcDir];
-            if(targetDir){
-                const candidates = destMap.beaconList.filter(b=> 
-                    b.type==="wh" && b.name !== beaconName && beaconDirection(b.name) === targetDir
-                );
-                if(candidates.length > 0){
-                    return {sector: destSector, x: candidates[0].x, y: candidates[0].y};
-                }
+            const mappedDir = DIAGONAL_TO_PRIMARY[srcDir] || OPPOSITE[srcDir];
+            const candidates = destMap.beaconList.filter(b => 
+                b.type==="wh" && b.name !== beaconName && beaconDirection(b.name) === mappedDir
+            );
+            if(candidates.length > 0){
+                return {sector: destSector, x: candidates[0].x, y: candidates[0].y};
             }
         }
 
-        // Cross-sector fallback
+        // Fallback: cross-sector
         const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
         if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
@@ -207,7 +201,6 @@
         throw new Error("No path found");
     }
 
-    // Expose globally
     window.multiSectorPath = multiSectorPath;
 
 })();
