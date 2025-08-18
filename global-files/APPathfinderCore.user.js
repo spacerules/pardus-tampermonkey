@@ -167,6 +167,7 @@
 
             if(beacon && beacon.type==="xh"){
                 for(const targetSector of XHOLE_SECTORS){
+                    if (targetSector === sector) continue;
                     const targetMap = await loadSector(targetSector);
                     for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
                         if(targetSector===sector && target.x===x && target.y===y) continue;
