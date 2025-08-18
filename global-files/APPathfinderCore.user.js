@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name         AP Pathfinder Core with X-holes + GM Storage
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.5
+// @version      1.3
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and GM storage for costs
 // @author       spacerules
-// @grant        GM_setValue
-// @grant        GM_getValue
+// @match        http*://*.pardus.at/*
 // ==/UserScript==
 
 (function(){
@@ -45,12 +44,11 @@
     // GM STORAGE CONFIG
     // --------------------------
     function saveConfig(){
-        logInfo("try again later");
+         logInfo("TODO");
     }
 
     function loadConfig(){
-        
-            logInfo("No saved config, using defaults");
+        logInfo("TODO");
     }
 
     function getConfig() {
@@ -131,116 +129,86 @@
         return null;
     }
 
-    async function multiSectorPath(start, end){
-    if(!window.sectorData) throw new Error("sectorData not loaded");
+    async function multiSectorPath(start,end){
+        await loadSector(start.sector);
+        await loadSector(end.sector);
+        const dist=new Map(), prev=new Map(), jumpsMap=new Map();
+        const startKey=keyOf(start.sector,start.x,start.y);
+        dist.set(startKey,0); jumpsMap.set(startKey,0);
+        const pq=new PQ();
+        pq.push({...start,jumps:0},0);
 
-    const visited = new Set();
-    const queue = [{sector: start.sector, x: start.x, y: start.y, path: [{...start}], cost: 0}];
-    let finalResult = null;
+        while(pq.length){
+            const current = pq.pop();
+            const {sector,x,y,jumps} = current;
+            const curKey = keyOf(sector,x,y);
+            const curDist = dist.get(curKey) ?? Infinity;
+            const curJumps = jumpsMap.get(curKey) ?? 0;
+            if(sector===end.sector && x===end.x && y===end.y){
+                const path=[];
+                let k=curKey;
+                while(k){
+                    const [sec,rest] = k.split("::");
+                    const [cx,cy] = rest.split(",").map(Number);
+                    path.unshift({sector:sec,x:cx,y:cy});
+                    k = prev.get(k) || null;
+                }
+                return {cost:curDist, path, jumps: curJumps};
+            }
 
-    while(queue.length > 0){
-        const current = queue.shift();
-        const key = `${current.sector}:${current.x},${current.y}`;
-        if(visited.has(key)) continue;
-        visited.add(key);
+            const mapData = await loadSector(sector);
+            const {width,height,grid,beaconsByCoord} = mapData;
 
-        if(current.sector === end.sector && current.x === end.x && current.y === end.y){
-            finalResult = current;
-            break;
+            for(const [dx,dy] of DIRS){
+                const nx=x+dx, ny=y+dy;
+                if(nx<0||ny<0||nx>=width||ny>=height) continue;
+                const code = grid[ny][nx];
+                const stepCost = TILE_COST[code] ?? 10;
+                if(!isFinite(stepCost)) continue;
+                const nKey = keyOf(sector,nx,ny);
+                const alt = curDist + stepCost;
+                if(alt < (dist.get(nKey) ?? Infinity)){
+                    dist.set(nKey,alt);
+                    prev.set(nKey,curKey);
+                    jumpsMap.set(nKey,curJumps);
+                    pq.push({sector,x:nx,y:ny,jumps:curJumps},alt);
+                }
+            }
+
+            const beacon = beaconsByCoord.get(`${x},${y}`);
+            if(beacon && beacon.type==="wh"){
+                const exit = await resolveWormholeExit(sector,beacon.name);
+                if(exit){
+                    const nKey = keyOf(exit.sector,exit.x,exit.y);
+                    const alt = curDist + WH_COST;
+                    if(alt<(dist.get(nKey)??Infinity)){
+                        dist.set(nKey,alt);
+                        prev.set(nKey,curKey);
+                        jumpsMap.set(nKey,curJumps+1);
+                        pq.push({sector:exit.sector,x:exit.x,y:exit.y,jumps:curJumps+1},alt);
+                    }
+                }
+            }
+
+            if(beacon && beacon.type==="xh"){
+                for(const targetSector of XHOLE_SECTORS){
+                    const targetMap = await loadSector(targetSector);
+                    for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
+                        if(targetSector===sector && target.x===x && target.y===y) continue;
+                        const nKey = keyOf(targetSector,target.x,target.y);
+                        const alt = curDist + XHOLE_COST;
+                        if(alt < (dist.get(nKey) ?? Infinity)){
+                            dist.set(nKey,alt);
+                            prev.set(nKey,curKey);
+                            jumpsMap.set(nKey,curJumps+1);
+                            pq.push({sector:targetSector,x:target.x,y:target.y,jumps:curJumps+1},alt);
+                        }
+                    }
+                }
+            }
         }
-
-        const sectorInfo = window.sectorData[current.sector];
-        if(!sectorInfo) continue;
-
-        // -------------------
-        // Neighbor tiles (8 directions)
-        // -------------------
-        const dirs = [
-            {dx:1,dy:0},{dx:-1,dy:0},{dx:0,dy:1},{dx:0,dy:-1},
-            {dx:1,dy:1},{dx:-1,dy:-1},{dx:1,dy:-1},{dx:-1,dy:1}
-        ];
-
-        for(const d of dirs){
-            const nx = current.x + d.dx;
-            const ny = current.y + d.dy;
-            if(nx < 0 || ny < 0 || nx >= sectorInfo.width || ny >= sectorInfo.height) continue;
-
-            const tile = sectorInfo.tiles[ny*sectorInfo.width + nx];
-            if(tile === 'b') continue;
-
-            const nKey = `${current.sector}:${nx},${ny}`;
-            if(visited.has(nKey)) continue;
-
-            queue.push({
-                sector: current.sector,
-                x: nx,
-                y: ny,
-                path: [...current.path, {sector: current.sector, x: nx, y: ny}],
-                cost: current.cost + 1
-            });
-        }
-
-        // -------------------
-        // Wormholes
-        // -------------------
-        for(const [name, wh] of Object.entries(sectorInfo.beacons)){
-            if(wh.type !== "wh") continue;
-
-            const whTargetSector = current.sector; // self-sector WH
-            const whKey = `${whTargetSector}:${wh.x},${wh.y}`;
-            if(visited.has(whKey)) continue;
-
-            // Only allow if moving closer to destination
-            const curDist = Math.abs(current.x - end.x) + Math.abs(current.y - end.y);
-            const whDist = Math.abs(wh.x - end.x) + Math.abs(wh.y - end.y);
-            if(whDist >= curDist) continue;
-
-            queue.push({
-                sector: whTargetSector,
-                x: wh.x,
-                y: wh.y,
-                path: [...current.path, {sector: whTargetSector, x: wh.x, y: wh.y}],
-                cost: current.cost + 10 // wormhole AP
-            });
-        }
-
-        // -------------------
-        // X-holes (global)
-        // -------------------
-        for(const [name, wh] of Object.entries(sectorInfo.beacons)){
-            if(wh.type !== "xh") continue;
-            if(!wh.destination) continue;
-
-            const xhKey = `${wh.destination.sector}:${wh.destination.x},${wh.destination.y}`;
-            if(visited.has(xhKey)) continue;
-
-            queue.push({
-                sector: wh.destination.sector,
-                x: wh.destination.x,
-                y: wh.destination.y,
-                path: [...current.path, {sector: wh.destination.sector, x: wh.destination.x, y: wh.destination.y}],
-                cost: current.cost + 2200
-            });
-        }
+        throw new Error("No path found");
     }
-
-    if(!finalResult) throw new Error("No path found");
-
-    // Deduplicate consecutive coordinates
-    const dedupedPath = [];
-    for(const step of finalResult.path){
-        const last = dedupedPath[dedupedPath.length-1];
-        if(!last || last.x !== step.x || last.y !== step.y || last.sector !== step.sector){
-            dedupedPath.push(step);
-        }
-    }
-
-    return {
-        path: dedupedPath,
-        cost: dedupedPath.length, // approximate AP; can sum costs if desired
-        jumps: dedupedPath.filter(s => s.sector !== start.sector).length
-    };
-};
 
     // --------------------------
     // INITIALIZE CONFIG
