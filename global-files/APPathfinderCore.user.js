@@ -1,91 +1,197 @@
 // ==UserScript==
-// @name         Pardus Multi-Sector Pathfinder with Wormholes
+// @name         AP Pathfinder Core with X-holes (Same-Sector Directional)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0
-// @description  Pathfinder with same-sector WHs and X-holes
-// @match        http*://*.pardus.at/*
+// @version      1.3
+// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and same-sector directional wormholes
+// @author       spacerules
+// @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @icon         https://avatars.githubusercontent.com/u/2374313?v=4
+// @grant        none
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
 // ==/UserScript==
 
-class Pathfinder {
-    constructor(sectors) {
-        this.sectors = sectors;
+/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
+
+(function(){
+    'use strict';
+
+    const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
+    const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
+    const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
+    const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
+
+    function normalizeSectorName(name){
+        return name.trim().replace(/\s+/g,"_");
     }
 
-    isWalkable(sector, x, y) {
-        const w = this.sectors[sector].width;
-        const h = this.sectors[sector].height;
-        if (x < 0 || y < 0 || x >= w || y >= h) return false;
-        const tile = this.sectors[sector].tiles[y * w + x];
-        return tile !== 'b'; // b = blocked
+    function sectorToUrl(sector){
+        const file = normalizeSectorName(sector);
+        return `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`;
     }
 
-    getNeighbors(sector, x, y) {
-        const neighbors = [];
-        const moves = [
-            [1,0],[0,1],[-1,0],[0,-1],
-            [1,1],[1,-1],[-1,1],[-1,-1]
-        ];
-        for (const [dx,dy] of moves) {
-            const nx = x+dx, ny=y+dy;
-            if (this.isWalkable(sector,nx,ny)) neighbors.push({sector, x:nx, y:ny, cost:1});
+    function baseSectorName(label){
+        const idx = label.indexOf(" (");
+        return (idx>=0)? label.slice(0,idx).trim() : label.trim();
+    }
+
+    function beaconDirection(label){
+        const m = label.match(/\((North|South|East|West|NE|NW|SE|SW)\)/i);
+        return m ? m[1] : null;
+    }
+
+    class PQ {
+        constructor(){ this.q=[]; }
+        push(node,p){ this.q.push({node,priority:p}); }
+        pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; }
+        get length(){ return this.q.length; }
+    }
+
+    function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
+
+    const mapCache = new Map();
+
+    async function loadSector(sector){
+        sector = normalizeSectorName(sector);
+        if(mapCache.has(sector)) return mapCache.get(sector);
+
+        const res = await fetch(sectorToUrl(sector));
+        if(!res.ok) throw new Error(`Failed to fetch ${sector}: ${res.status}`);
+
+        const data = await res.json();
+        const grid = Array.from({length:data.height},(_,y)=>Array.from({length:data.width},(_,x)=>data.tiles[y*data.width+x]));
+        const beaconsByCoord = new Map();
+        const beaconList = [];
+
+        for(const [name,b] of Object.entries(data.beacons||{})){
+            const item = {name,type:b.type,x:b.x,y:b.y};
+            beaconList.push(item);
+            beaconsByCoord.set(`${b.x},${b.y}`, item);
         }
 
-        // Same-sector wormholes
-        const whs = Object.entries(this.sectors[sector].beacons || {});
-        for (const [name, beacon] of whs) {
-            if (beacon.type === 'wh' && (beacon.x !== x || beacon.y !== y)) {
-                neighbors.push({sector, x:beacon.x, y:beacon.y, cost:50});
+        const wrapped = {...data, grid, beaconList, beaconsByCoord};
+        mapCache.set(sector, wrapped);
+        return wrapped;
+    }
+
+    async function resolveWormholeExit(currentSector, beaconName){
+        const destSector = baseSectorName(beaconName);
+        const destMap = await loadSector(destSector);
+        const srcDir = beaconDirection(beaconName);
+
+        // Handle same-sector directional wormholes
+        if(destSector === currentSector && srcDir){
+            const candidates = destMap.beaconList.filter(b => {
+                if(baseSectorName(b.name) !== destSector) return false;
+                const dir = beaconDirection(b.name);
+                return dir && dir !== srcDir;
+            });
+            if(candidates.length > 0){
+                return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
             }
         }
 
-        // X-holes
-        for (const [sName, sData] of Object.entries(this.sectors)) {
-            for (const [bName, bData] of Object.entries(sData.beacons || {})) {
-                if (bData.type === 'xh' && (sName!==sector || bData.x!==x || bData.y!==y)) {
-                    neighbors.push({sector:sName, x:bData.x, y:bData.y, cost:2200});
+        // Fallback to normal cross-sector or generic WH
+        const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
+        if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
+
+        const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
+        if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
+        if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
+
+        return null;
+    }
+
+    async function multiSectorPath(start,end){
+        await loadSector(start.sector);
+        await loadSector(end.sector);
+
+        const dist = new Map(), prev = new Map(), jumpsMap = new Map();
+        const startKey = keyOf(start.sector,start.x,start.y);
+        dist.set(startKey,0); jumpsMap.set(startKey,0);
+
+        const pq = new PQ();
+        pq.push({...start,jumps:0},0);
+
+        const XHOLE_SECTORS = ["Nex_0001","Nex_0002","Nex_0003","Nex_0004","Nex_0005","Nex_Kataam"];
+        const XHOLE_COST = 2200;
+
+        while(pq.length){
+            const current = pq.pop();
+            const {sector,x,y,jumps} = current;
+            const curKey = keyOf(sector,x,y);
+            const curDist = dist.get(curKey) ?? Infinity;
+            const curJumps = jumpsMap.get(curKey) ?? 0;
+
+            if(sector===end.sector && x===end.x && y===end.y){
+                const path=[];
+                let k = curKey;
+                while(k){
+                    const [sec,rest] = k.split("::");
+                    const [cx,cy] = rest.split(",").map(Number);
+                    path.unshift({sector:sec,x:cx,y:cy});
+                    k = prev.get(k) || null;
+                }
+                return {cost:curDist, path, jumps: curJumps};
+            }
+
+            const mapData = await loadSector(sector);
+            const {width,height,grid,beaconsByCoord} = mapData;
+
+            for(const [dx,dy] of DIRS){
+                const nx=x+dx, ny=y+dy;
+                if(nx<0||ny<0||nx>=width||ny>=height) continue;
+                const code = grid[ny][nx];
+                const stepCost = TILE_COST[code] ?? 10;
+                if(!isFinite(stepCost)) continue;
+                const nKey = keyOf(sector,nx,ny);
+                const alt = curDist + stepCost;
+                if(alt < (dist.get(nKey) ?? Infinity)){
+                    dist.set(nKey,alt);
+                    prev.set(nKey,curKey);
+                    jumpsMap.set(nKey,curJumps);
+                    pq.push({sector,x:nx,y:ny,jumps:curJumps},alt);
+                }
+            }
+
+            const beacon = beaconsByCoord.get(`${x},${y}`);
+
+            if(beacon && beacon.type==="wh"){
+                const exit = await resolveWormholeExit(sector,beacon.name);
+                if(exit){
+                    const nKey = keyOf(exit.sector,exit.x,exit.y);
+                    const wormholeCost = 23;
+                    const alt = curDist + wormholeCost;
+                    if(alt<(dist.get(nKey)??Infinity)){
+                        dist.set(nKey,alt);
+                        prev.set(nKey,curKey);
+                        jumpsMap.set(nKey,curJumps+1);
+                        pq.push({sector:exit.sector,x:exit.x,y:exit.y,jumps:curJumps+1},alt);
+                    }
+                }
+            }
+
+            if(beacon && beacon.type==="xh"){
+                for(const targetSector of XHOLE_SECTORS){
+                    const targetMap = await loadSector(targetSector);
+                    for(const target of targetMap.beaconList.filter(b=>b.type==="xh")){
+                        const nKey = keyOf(targetSector,target.x,target.y);
+                        const alt = curDist + XHOLE_COST;
+                        if(alt < (dist.get(nKey) ?? Infinity)){
+                            dist.set(nKey,alt);
+                            prev.set(nKey,curKey);
+                            jumpsMap.set(nKey,curJumps+1);
+                            pq.push({sector:targetSector,x:target.x,y:target.y,jumps:curJumps+1},alt);
+                        }
+                    }
                 }
             }
         }
 
-        return neighbors;
+        throw new Error("No path found");
     }
 
-    multiSectorPath(startSector, startX, startY, endSector, endX, endY) {
-        const open = [{sector:startSector, x:startX, y:startY, g:0, f:0, cameFrom:null}];
-        const closed = new Set();
+    // Expose globally
+    window.multiSectorPath = multiSectorPath;
 
-        const hash = (s,x,y) => `${s}|${x}|${y}`;
-
-        while(open.length) {
-            open.sort((a,b)=>a.f-b.f);
-            const current = open.shift();
-            if(current.sector===endSector && current.x===endX && current.y===endY) {
-                const path = [];
-                let c = current;
-                while(c){ path.unshift({sector:c.sector,x:c.x,y:c.y}); c=c.cameFrom; }
-                return path;
-            }
-
-            closed.add(hash(current.sector,current.x,current.y));
-
-            const neighbors = this.getNeighbors(current.sector,current.x,current.y);
-            for(const n of neighbors){
-                const nHash = hash(n.sector,n.x,n.y);
-                if(closed.has(nHash)) continue;
-                const g = current.g + n.cost;
-                const existing = open.find(o=>hash(o.sector,o.x,o.y)===nHash);
-                if(!existing || g<existing.g){
-                    if(existing){ existing.g=g; existing.f=g; existing.cameFrom=current; }
-                    else open.push({sector:n.sector,x:n.x,y:n.y,g:g,f:g,cameFrom:current});
-                }
-            }
-        }
-        return null; // no path
-    }
-}
-
-// Expose multiSectorPath on window
-window.multiSectorPath = function(sectors, startSector, startX, startY, endSector, endX, endY){
-    const pf = new Pathfinder(sectors);
-    return pf.multiSectorPath(startSector, startX, startY, endSector, endX, endY);
-};
+})();
