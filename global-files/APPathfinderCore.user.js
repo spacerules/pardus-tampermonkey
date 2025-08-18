@@ -77,9 +77,6 @@
     async function resolveWormholeExit(currentSector, beaconName){
         
         const destSector = baseSectorName(beaconName);
-        
-        if (destSector === currentSector) return;
-        
         const destMap = await loadSector(destSector);
         const wantBase = baseSectorName(currentSector);
         let candidates = destMap.beaconList.filter(b=>baseSectorName(b.name)===wantBase);
@@ -156,6 +153,8 @@
 
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
+                
+                if (exit.sector === sector) continue;
                 if(exit){
                     const nKey = keyOf(exit.sector,exit.x,exit.y);
                     const wormholeCost = 23;
