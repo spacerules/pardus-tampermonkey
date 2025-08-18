@@ -1,150 +1,91 @@
 // ==UserScript==
-// @name         Pardus Multi-Sector Pathfinder Core with Multipath
+// @name         Pardus Multi-Sector Pathfinder with Wormholes
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.2
-// @description  Multi-sector AP pathfinder with X-hole and same-sector wormhole support
+// @version      1.0
+// @description  Pathfinder with same-sector WHs and X-holes
 // @match        http*://*.pardus.at/*
-// @grant        none
 // ==/UserScript==
 
-(function() {
-    'use strict';
-
-    class Pathfinder {
-        constructor(sectors) {
-            this.sectors = sectors;
-        }
-
-        findPath(sectorData, startX, startY, endX, endY) {
-            const width = sectorData.width;
-            const height = sectorData.height;
-            const tiles = sectorData.tiles.split('');
-            const inBounds = (x, y) => x >= 0 && x < width && y >= 0 && y < height;
-            const walkable = (x, y) => tiles[y*width + x] !== 'b';
-
-            const openList = [{x:startX, y:startY, g:0, f:Math.abs(endX-startX)+Math.abs(endY-startY), parent:null}];
-            const closedSet = new Set();
-
-            while(openList.length > 0){
-                openList.sort((a,b)=>a.f-b.f);
-                const current = openList.shift();
-                if(current.x === endX && current.y === endY){
-                    const path = [];
-                    let c = current;
-                    while(c){
-                        path.unshift({x:c.x, y:c.y});
-                        c = c.parent;
-                    }
-                    return path;
-                }
-                closedSet.add(current.y*width+current.x);
-
-                [[1,0],[-1,0],[0,1],[0,-1]].forEach(([dx,dy])=>{
-                    const nx = current.x+dx, ny=current.y+dy;
-                    if(inBounds(nx,ny) && walkable(nx,ny) && !closedSet.has(ny*width+nx)){
-                        const g = current.g + 1;
-                        const f = g + Math.abs(endX-nx)+Math.abs(endY-ny);
-                        openList.push({x:nx, y:ny, g, f, parent:current});
-                    }
-                });
-            }
-
-            return null; // no path
-        }
-
-        multiSectorPath(startSector, startX, startY, endSector, endX, endY){
-            const path = [];
-            let currentSector = startSector;
-            let currentX = startX;
-            let currentY = startY;
-            const visitedSectors = new Set();
-
-            while(true){
-                const sectorData = this.sectors[currentSector];
-                if(!sectorData) break;
-
-                // If destination is in same sector
-                if(currentSector === endSector){
-                    const singlePath = this.findPath(sectorData, currentX, currentY, endX, endY);
-                    if(singlePath) singlePath.forEach(p => path.push({sector:currentSector, x:p.x, y:p.y}));
-                    break;
-                }
-
-                // Check for same-sector wormhole to next sector
-                let whFound = null;
-                for(const [name, beacon] of Object.entries(sectorData.beacons)){
-                    if(beacon.type==='wh' && !visitedSectors.has(name)){
-                        const destSector = this.whDestination(name);
-                        if(destSector === endSector || this.sectorConnects(name, currentSector, endSector)){
-                            whFound = beacon;
-                            break;
-                        }
-                    }
-                }
-
-                if(whFound){
-                    const toWH = this.findPath(sectorData, currentX, currentY, whFound.x, whFound.y);
-                    if(toWH) toWH.forEach(p=>path.push({sector:currentSector, x:p.x, y:p.y}));
-
-                    currentSector = this.whDestination(whFound.name);
-                    currentX = whFound.x;
-                    currentY = whFound.y;
-                    visitedSectors.add(whFound.name);
-                    continue;
-                }
-
-                // If no WH, check for X-hole
-                let xhole = null;
-                for(const [name, beacon] of Object.entries(sectorData.beacons)){
-                    if(beacon.type==='xh' && !visitedSectors.has(name)){
-                        xhole = beacon;
-                        break;
-                    }
-                }
-
-                if(xhole){
-                    const toXH = this.findPath(sectorData, currentX, currentY, xhole.x, xhole.y);
-                    if(toXH) toXH.forEach(p => path.push({sector:currentSector, x:p.x, y:p.y}));
-
-                    currentSector = this.findXHoleDestination(xhole);
-                    currentX = xhole.x;
-                    currentY = xhole.y;
-                    visitedSectors.add(xhole);
-                    continue;
-                }
-
-                break; // cannot progress
-            }
-
-            return path;
-        }
-
-        sectorConnects(whName, fromSector, toSector){
-            const mapping = {
-                "Nex 0004 (SW)":"Nex 0004 (West)",
-                "Nex 0004 (SE)":"Nex 0004 (East)"
-            };
-            return mapping[whName] === toSector || mapping[whName] === fromSector;
-        }
-
-        whDestination(whName){
-            const mapping = {
-                "Nex 0004 (SW)":"Nex 0004 (West)",
-                "Nex 0004 (SE)":"Nex 0004 (East)"
-            };
-            return mapping[whName];
-        }
-
-        findXHoleDestination(xhole){
-            for(const [sectorName, sector] of Object.entries(this.sectors)){
-                for(const [name, b] of Object.entries(sector.beacons)){
-                    if(b.type==='xh' && b!==xhole) return sectorName;
-                }
-            }
-            return null;
-        }
+class Pathfinder {
+    constructor(sectors) {
+        this.sectors = sectors;
     }
 
-    window.Pathfinder = Pathfinder;
+    isWalkable(sector, x, y) {
+        const w = this.sectors[sector].width;
+        const h = this.sectors[sector].height;
+        if (x < 0 || y < 0 || x >= w || y >= h) return false;
+        const tile = this.sectors[sector].tiles[y * w + x];
+        return tile !== 'b'; // b = blocked
+    }
 
-})();
+    getNeighbors(sector, x, y) {
+        const neighbors = [];
+        const moves = [
+            [1,0],[0,1],[-1,0],[0,-1],
+            [1,1],[1,-1],[-1,1],[-1,-1]
+        ];
+        for (const [dx,dy] of moves) {
+            const nx = x+dx, ny=y+dy;
+            if (this.isWalkable(sector,nx,ny)) neighbors.push({sector, x:nx, y:ny, cost:1});
+        }
+
+        // Same-sector wormholes
+        const whs = Object.entries(this.sectors[sector].beacons || {});
+        for (const [name, beacon] of whs) {
+            if (beacon.type === 'wh' && (beacon.x !== x || beacon.y !== y)) {
+                neighbors.push({sector, x:beacon.x, y:beacon.y, cost:50});
+            }
+        }
+
+        // X-holes
+        for (const [sName, sData] of Object.entries(this.sectors)) {
+            for (const [bName, bData] of Object.entries(sData.beacons || {})) {
+                if (bData.type === 'xh' && (sName!==sector || bData.x!==x || bData.y!==y)) {
+                    neighbors.push({sector:sName, x:bData.x, y:bData.y, cost:2200});
+                }
+            }
+        }
+
+        return neighbors;
+    }
+
+    multiSectorPath(startSector, startX, startY, endSector, endX, endY) {
+        const open = [{sector:startSector, x:startX, y:startY, g:0, f:0, cameFrom:null}];
+        const closed = new Set();
+
+        const hash = (s,x,y) => `${s}|${x}|${y}`;
+
+        while(open.length) {
+            open.sort((a,b)=>a.f-b.f);
+            const current = open.shift();
+            if(current.sector===endSector && current.x===endX && current.y===endY) {
+                const path = [];
+                let c = current;
+                while(c){ path.unshift({sector:c.sector,x:c.x,y:c.y}); c=c.cameFrom; }
+                return path;
+            }
+
+            closed.add(hash(current.sector,current.x,current.y));
+
+            const neighbors = this.getNeighbors(current.sector,current.x,current.y);
+            for(const n of neighbors){
+                const nHash = hash(n.sector,n.x,n.y);
+                if(closed.has(nHash)) continue;
+                const g = current.g + n.cost;
+                const existing = open.find(o=>hash(o.sector,o.x,o.y)===nHash);
+                if(!existing || g<existing.g){
+                    if(existing){ existing.g=g; existing.f=g; existing.cameFrom=current; }
+                    else open.push({sector:n.sector,x:n.x,y:n.y,g:g,f:g,cameFrom:current});
+                }
+            }
+        }
+        return null; // no path
+    }
+}
+
+// Expose multiSectorPath on window
+window.multiSectorPath = function(sectors, startSector, startX, startY, endSector, endX, endY){
+    const pf = new Pathfinder(sectors);
+    return pf.multiSectorPath(startSector, startX, startY, endSector, endX, endY);
+};
