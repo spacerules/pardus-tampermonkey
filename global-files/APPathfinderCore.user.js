@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with Wormholes + X-holes (Safe v1.5)
+// @name         AP Pathfinder Core with Wormholes + X-holes (Safe v1.6)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.5
+// @version      1.6
 // @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with wormholes and X-hole teleportation, fully safe
 // @author       spacerules
 // @match        http*://*.pardus.at/*
@@ -11,16 +11,17 @@
 (function(){
     'use strict';
 
+    const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
     const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
-    const OPPOSITE = { N:"S", S:"N", E:"W", W:"E" };
+    const OPPOSITE = { North:"South", South:"North", East:"West", West:"East" };
     const mapCache = new Map();
 
     function normalizeSectorName(name){ return name.trim().replace(/\s+/g,"_"); }
-    function baseSectorName(label){ return label.split(" ")[0]; }
+    function baseSectorName(label){ const idx=label.indexOf(" ("); return idx>=0? label.slice(0,idx).trim() : label.trim(); }
     function beaconDirection(label){
-        const m = label.match(/\((N|S|E|W)\)/i);
-        return m ? m[1].toUpperCase() : null;
+        const m = label.match(/\((North|South|East|West)\)/i);
+        return m ? (m[1][0].toUpperCase() + m[1].slice(1).toLowerCase()) : null;
     }
     function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
 
@@ -35,7 +36,7 @@
         sector = normalizeSectorName(sector);
         if(mapCache.has(sector)) return mapCache.get(sector);
 
-        const url = `https://raw.githubusercontent.com/spacerules/pardus-map-data/main/${sector}.json`;
+        const url = `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${sector[0]}/${sector}.json`;
         const res = await fetch(url);
         if(!res.ok) throw new Error(`Failed to fetch ${sector}: ${res.status}`);
         const data = await res.json();
@@ -108,17 +109,16 @@
         return null;
     }
 
-    // Example multi-sector path skeleton (implement your BFS/A* here)
     async function multiSectorPath(start,end){
-        const startMap = await loadSector(start.sector);
-        const endMap = await loadSector(end.sector);
-
         const dist = new Map(), prev = new Map(), jumpsMap = new Map();
         const startKey = keyOf(start.sector,start.x,start.y);
         dist.set(startKey,0); jumpsMap.set(startKey,0);
 
         const pq = new PQ();
         pq.push({...start,jumps:0},0);
+
+        const XHOLE_SECTORS = ["Nex_0001","Nex_0002","Nex_0003","Nex_0004","Nex_0005","Nex_Kataam"];
+        const XHOLE_COST = 2200;
 
         while(pq.length){
             const current = pq.pop();
@@ -175,8 +175,6 @@
             }
 
             if(beacon && beacon.type==="xh"){
-                const XHOLE_SECTORS = ["Nex_0001","Nex_0002","Nex_0003","Nex_0004","Nex_0005","Nex_Kataam"];
-                const XHOLE_COST = 2200;
                 for(const targetSector of XHOLE_SECTORS){
                     const targetMap = await loadSector(targetSector);
                     const xholes = Array.isArray(targetMap?.beaconList) ? targetMap.beaconList.filter(b=>b.type==="xh") : [];
