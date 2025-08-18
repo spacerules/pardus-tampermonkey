@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector Only)
+// @name         AP Pathfinder Core with X-holes (Correct WHs)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      2.3
-// @description  Multi-sector AP Pathfinder with X-hole and corrected same-sector wormholes
+// @version      2.4
+// @description  Multi-sector AP Pathfinder with correct same-sector and cross-sector WHs
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -50,7 +50,6 @@
         return wrapped;
     }
 
-    // Bi-directional same-sector mapping
     const SAME_SECTOR_MAP = {
         SW: "West",
         SE: "East",
@@ -75,16 +74,16 @@
                 );
                 if(candidates.length>0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
             }
-            // If no match, return null instead of picking wrong WH
-            return null;
+            return null; // don't pick wrong WH
         }
 
-        // CROSS-SECTOR fallback
-        const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
-        if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
+        // CROSS-SECTOR WH (pick exact beacon by name)
+        const candidate = destMap.beaconList.find(b => b.name === beaconName);
+        if(candidate) return {sector:destSector, x:candidate.x, y:candidate.y};
 
-        const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
-        if(anyWH.length>0) return {sector:destSector, x:anyWH[0].x, y:anyWH[0].y};
+        // fallback
+        const anyWH = destMap.beaconList.find(b => b.type === "wh");
+        if(anyWH) return {sector:destSector, x:anyWH.x, y:anyWH.y};
         if(destMap.beaconList.length>0) return {sector:destSector, x:destMap.beaconList[0].x, y:destMap.beaconList[0].y};
         return null;
     }
@@ -125,7 +124,6 @@
             const mapData = await loadSector(sector);
             const {width,height,grid,beaconsByCoord} = mapData;
 
-            // Normal movement
             for(const [dx,dy] of DIRS){
                 const nx=x+dx, ny=y+dy;
                 if(nx<0||ny<0||nx>=width||ny>=height) continue;
@@ -144,7 +142,6 @@
 
             const beacon = beaconsByCoord.get(`${x},${y}`);
 
-            // WH handling
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
                 if(exit){
@@ -160,7 +157,6 @@
                 }
             }
 
-            // X-hole handling
             if(beacon && beacon.type==="xh"){
                 for(const targetSector of XHOLE_SECTORS){
                     const targetMap = await loadSector(targetSector);
