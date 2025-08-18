@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Pardus Multi-Sector Pathfinder with Hybrid WH/XH
+// @name         Pardus Multi-Sector Pathfinder with X-holes
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.6
-// @description  Pathfinding with cheapest path using same-sector wormholes + X-holes
-// @match        https://*.pardus.at/*
+// @version      1.3
+// @description  Multi-sector AP pathfinding with X-holes and same-sector wormholes
+// @match        http*://*.pardus.at/*
 // @grant        none
 // ==/UserScript==
 
@@ -15,147 +15,139 @@
             this.sectors = sectors;
         }
 
-        findPath(startSector, startX, startY, endSector, endX, endY) {
-            const openSet = [];
-            const cameFrom = new Map();
-            const gScore = new Map();
-
-            const nodeKey = (sector, x, y) => `${sector}:${x}:${y}`;
-            const addNode = (sector, x, y, cost) => {
-                const key = nodeKey(sector, x, y);
-                if (!gScore.has(key) || cost < gScore.get(key)) {
-                    gScore.set(key, cost);
-                    openSet.push({ sector, x, y, cost });
-                }
+        findPath(sectorData, startX, startY, endX, endY) {
+            const width = sectorData.width;
+            const height = sectorData.height;
+            const tiles = sectorData.tiles.split('');
+            const inBounds = (x, y) => x >= 0 && x < width && y >= 0 && y < height;
+            const walkable = (x, y) => {
+                const t = tiles[y * width + x];
+                return t !== 'b'; // 'b' = blocked
             };
 
-            addNode(startSector, startX, startY, 0);
+            const openList = [{x:startX, y:startY, g:0, f:Math.abs(endX-startX)+Math.abs(endY-startY), parent:null}];
+            const closedSet = new Set();
 
-            while (openSet.length) {
-                openSet.sort((a,b)=>a.cost-b.cost);
-                const current = openSet.shift();
-                const keyCurrent = nodeKey(current.sector, current.x, current.y);
-
-                if (current.sector === endSector && current.x === endX && current.y === endY) {
-                    return this.reconstructPath(cameFrom, keyCurrent);
-                }
-
-                const sectorData = this.sectors[current.sector];
-
-                // 1. Normal neighbors
-                for (let n of this.getNeighbors(sectorData, current.x, current.y)) {
-                    const neighborKey = nodeKey(current.sector, n.x, n.y);
-                    const tentativeG = current.cost + n.cost;
-                    if (!gScore.has(neighborKey) || tentativeG < gScore.get(neighborKey)) {
-                        gScore.set(neighborKey, tentativeG);
-                        cameFrom.set(neighborKey, keyCurrent);
-                        openSet.push({ sector: current.sector, x: n.x, y: n.y, cost: tentativeG });
+            while(openList.length > 0){
+                openList.sort((a,b) => a.f - b.f);
+                const current = openList.shift();
+                if(current.x === endX && current.y === endY){
+                    const path = [];
+                    let c = current;
+                    while(c){
+                        path.unshift({x:c.x, y:c.y});
+                        c = c.parent;
                     }
+                    return path;
                 }
-
-                // 2. Same-sector wormholes
-                for (let [name, wh] of Object.entries(sectorData.beacons)) {
-                    if (wh.type === 'wh' && wh.x === current.x && wh.y === current.y) {
-                        const destName = this.getPairedWormhole(current.sector, name);
-                        if (destName) {
-                            const dest = sectorData.beacons[destName];
-                            const whCost = 50;
-                            const destKey = nodeKey(current.sector, dest.x, dest.y);
-                            const tentativeG = current.cost + whCost;
-                            if (!gScore.has(destKey) || tentativeG < gScore.get(destKey)) {
-                                gScore.set(destKey, tentativeG);
-                                cameFrom.set(destKey, keyCurrent);
-                                openSet.push({ sector: current.sector, x: dest.x, y: dest.y, cost: tentativeG });
-
-                                // 3. Hybrid: same-sector wormhole -> X-hole
-                                for (let [xname, xh] of Object.entries(sectorData.beacons)) {
-                                    if (xh.type === 'xh') {
-                                        const xhCost = 2200;
-                                        const xhKey = nodeKey(current.sector, xh.x, xh.y);
-                                        const combinedG = tentativeG + xhCost;
-                                        if (!gScore.has(xhKey) || combinedG < gScore.get(xhKey)) {
-                                            gScore.set(xhKey, combinedG);
-                                            cameFrom.set(xhKey, destKey);
-                                            openSet.push({ sector: current.sector, x: xh.x, y: xh.y, cost: combinedG });
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                closedSet.add(current.y*width + current.x);
+                [[1,0],[-1,0],[0,1],[0,-1]].forEach(([dx,dy])=>{
+                    const nx = current.x + dx, ny = current.y + dy;
+                    if(inBounds(nx,ny) && walkable(nx,ny) && !closedSet.has(ny*width+nx)){
+                        const g = current.g + 1;
+                        const f = g + Math.abs(endX - nx) + Math.abs(endY - ny);
+                        openList.push({x:nx, y:ny, g, f, parent:current});
                     }
-                }
-
-                // 4. Normal X-hole jumps to other sectors
-                for (let [name, xh] of Object.entries(sectorData.beacons)) {
-                    if (xh.type === 'xh' && xh.x === current.x && xh.y === current.y) {
-                        for (let targetSector of Object.keys(this.sectors)) {
-                            if (targetSector === current.sector) continue;
-                            const targetData = this.sectors[targetSector];
-                            for (let [tname, tXH] of Object.entries(targetData.beacons)) {
-                                if (tXH.type === 'xh') {
-                                    const xhCost = 2200;
-                                    const tKey = nodeKey(targetSector, tXH.x, tXH.y);
-                                    const tentativeG = current.cost + xhCost;
-                                    if (!gScore.has(tKey) || tentativeG < gScore.get(tKey)) {
-                                        gScore.set(tKey, tentativeG);
-                                        cameFrom.set(tKey, keyCurrent);
-                                        openSet.push({ sector: targetSector, x: tXH.x, y: tXH.y, cost: tentativeG });
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                });
             }
 
-            return null;
+            return null; // no path
         }
 
-        reconstructPath(cameFrom, key) {
+        multiSectorPath(startSectorName, startX, startY, endSectorName, endX, endY) {
             const path = [];
-            let current = key;
-            while (current) {
-                const [sector, x, y] = current.split(':');
-                path.unshift({ sector, x: parseInt(x), y: parseInt(y) });
-                current = cameFrom.get(current);
+            let currentSectorName = startSectorName;
+            let currentX = startX;
+            let currentY = startY;
+            const visitedSectors = new Set();
+
+            while(true){
+                const sectorData = this.sectors[currentSectorName];
+                if(!sectorData) break;
+
+                // Find if end is in same sector
+                if(currentSectorName === endSectorName){
+                    const singlePath = this.findPath(sectorData, currentX, currentY, endX, endY);
+                    if(singlePath) singlePath.forEach(p => path.push({sector:currentSectorName, x:p.x, y:p.y}));
+                    break;
+                }
+
+                // Look for X-hole in current sector to go closer to target sector
+                let xholeFound = null;
+                for(const [name, beacon] of Object.entries(sectorData.beacons)){
+                    if(beacon.type === 'xh' && !visitedSectors.has(name)){
+                        xholeFound = beacon;
+                        break;
+                    }
+                }
+
+                if(xholeFound){
+                    const toXH = this.findPath(sectorData, currentX, currentY, xholeFound.x, xholeFound.y);
+                    if(toXH) toXH.forEach(p => path.push({sector:currentSectorName, x:p.x, y:p.y}));
+
+                    // Jump to next sector via X-hole
+                    currentSectorName = this.findXHoleDestination(xholeFound);
+                    const dest = this.sectors[currentSectorName];
+                    currentX = xholeFound.x; // approximate entry point, adjust if needed
+                    currentY = xholeFound.y;
+                    visitedSectors.add(xholeFound);
+                    continue;
+                }
+
+                // Look for wormhole to next sector
+                let whFound = null;
+                for(const [name, beacon] of Object.entries(sectorData.beacons)){
+                    if(beacon.type === 'wh' && this.sectorConnects(name, currentSectorName, endSectorName)){
+                        whFound = beacon;
+                        break;
+                    }
+                }
+
+                if(whFound){
+                    const toWH = this.findPath(sectorData, currentX, currentY, whFound.x, whFound.y);
+                    if(toWH) toWH.forEach(p => path.push({sector:currentSectorName, x:p.x, y:p.y}));
+
+                    currentSectorName = this.whDestination(whFound.name);
+                    currentX = whFound.x;
+                    currentY = whFound.y;
+                    continue;
+                }
+
+                break; // can't progress further
             }
+
             return path;
         }
 
-        getNeighbors(sectorData, x, y) {
-            const dirs = [
-                [1,0],[0,1],[-1,0],[0,-1],
-                [1,1],[-1,1],[1,-1],[-1,-1]
-            ];
-            const result = [];
-            for (let [dx,dy] of dirs) {
-                const nx = x+dx;
-                const ny = y+dy;
-                if (nx>=0 && ny>=0 && nx<sectorData.width && ny<sectorData.height) {
-                    const tile = sectorData.tiles[ny*sectorData.width + nx];
-                    let cost = 1;
-                    if (tile==='b') cost=1;
-                    else if (tile==='e') cost=2;
-                    else if (tile==='f') cost=3;
-                    else if (tile==='o') cost=5;
-                    result.push({x:nx,y:ny,cost});
+        findXHoleDestination(xhole) {
+            // Implement sector selection logic for X-hole
+            // For simplicity, pick first other sector with X-hole
+            for(const [sectorName, sector] of Object.entries(this.sectors)){
+                for(const [name, b] of Object.entries(sector.beacons)){
+                    if(b.type==='xh' && b!==xhole) return sectorName;
                 }
             }
-            return result;
+            return null;
         }
 
-        getPairedWormhole(sector, whName) {
-            const sameSectorPairs = {
+        sectorConnects(whName, fromSector, toSector) {
+            // Return true if this wormhole connects current sector to target sector
+            const mapping = {
                 "Nex 0004 (SW)": "Nex 0004 (West)",
-                "Nex 0004 (West)": "Nex 0004 (SW)",
-                "Nex 0004 (SE)": "Nex 0004 (East)",
-                "Nex 0004 (East)": "Nex 0004 (SE)",
-                "HW 3-863": "Mebsuta",
-                "Mebsuta": "HW 3-863"
+                "Nex 0004 (SE)": "Nex 0004 (East)"
             };
-            return sameSectorPairs[whName] || null;
+            return mapping[whName] === toSector || mapping[whName] === fromSector;
+        }
+
+        whDestination(whName) {
+            const mapping = {
+                "Nex 0004 (SW)": "Nex 0004 (West)",
+                "Nex 0004 (SE)": "Nex 0004 (East)"
+            };
+            return mapping[whName];
         }
     }
 
     window.Pathfinder = Pathfinder;
+
 })();
