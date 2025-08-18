@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AP Pathfinder Core with X-holes (Fixed Same-Sector & X-hole)
+// @name         AP Pathfinder Core with X-holes (Bi-directional Same-Sector)
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      2.0
-// @description  Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation, auto same-sector wormholes, fixed X-holes
+// @version      2.1
+// @description  Multi-sector AP Pathfinder with X-hole and bi-directional same-sector wormholes
 // @author       spacerules
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
@@ -11,8 +11,6 @@
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/refs/heads/main/global-files/APPathfinderCore.user.js
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
-
 (function(){
     'use strict';
 
@@ -20,40 +18,20 @@
     const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
     const DIRS = [[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,-1],[1,-1],[-1,1]];
 
-    // Map diagonal directions to primary cardinal directions for same-sector WHs
-    const DIAGONAL_TO_PRIMARY = {
-        SW: "West",
-        SE: "East",
-        NW: "West",
-        NE: "East"
-    };
-
-    class PQ {
-        constructor(){ this.q=[]; }
-        push(node,p){ this.q.push({node,priority:p}); }
-        pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; }
-        get length(){ return this.q.length; }
+    // Diagonal → primary mapping
+    const DIAGONAL_TO_PRIMARY = { SW: "West", SE: "East", NW: "West", NE: "East" };
+    // Primary → diagonals (reverse mapping)
+    const PRIMARY_TO_DIAGONALS = {};
+    for (const [diag, prim] of Object.entries(DIAGONAL_TO_PRIMARY)) {
+        if (!PRIMARY_TO_DIAGONALS[prim]) PRIMARY_TO_DIAGONALS[prim] = [];
+        PRIMARY_TO_DIAGONALS[prim].push(diag);
     }
 
-    function normalizeSectorName(name){
-        return name.trim().replace(/\s+/g,"_");
-    }
-
-    function sectorToUrl(sector){
-        const file = normalizeSectorName(sector);
-        return `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`;
-    }
-
-    function baseSectorName(label){
-        const idx = label.indexOf(" (");
-        return (idx>=0)? label.slice(0,idx).trim() : label.trim();
-    }
-
-    function beaconDirection(label){
-        const m = label.match(/\((North|South|East|West|NE|NW|SE|SW)\)/i);
-        return m ? m[1] : null;
-    }
-
+    class PQ { constructor(){ this.q=[]; } push(node,p){ this.q.push({node,priority:p}); } pop(){ this.q.sort((a,b)=>a.priority-b.priority); return this.q.shift()?.node; } get length(){ return this.q.length; } }
+    function normalizeSectorName(name){ return name.trim().replace(/\s+/g,"_"); }
+    function sectorToUrl(sector){ const file = normalizeSectorName(sector); return `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`; }
+    function baseSectorName(label){ const idx = label.indexOf(" ("); return (idx>=0)? label.slice(0,idx).trim() : label.trim(); }
+    function beaconDirection(label){ const m = label.match(/\((North|South|East|West|NE|NW|SE|SW)\)/i); return m ? m[1] : null; }
     function keyOf(sector,x,y){ return `${sector}::${x},${y}`; }
 
     const mapCache = new Map();
@@ -86,14 +64,16 @@
         const destMap = await loadSector(destSector);
         const srcDir = beaconDirection(beaconName);
 
-        // SAME-SECTOR mapping: diagonal → cardinal
         if(destSector === currentSector && srcDir){
-            const targetDir = DIAGONAL_TO_PRIMARY[srcDir] || srcDir;
+            // Determine target directions for bi-directional mapping
+            let targetDirs = [];
+            if(DIAGONAL_TO_PRIMARY[srcDir]) targetDirs = [DIAGONAL_TO_PRIMARY[srcDir]]; // diagonal → primary
+            else if(PRIMARY_TO_DIAGONALS[srcDir]) targetDirs = PRIMARY_TO_DIAGONALS[srcDir]; // primary → diagonals
+            else targetDirs = [srcDir];
 
-            // Match any beacon whose name ends with the targetDir in parentheses
             const candidates = destMap.beaconList.filter(b =>
-                b.type==="wh" && b.name !== beaconName &&
-                b.name.trim().endsWith(`(${targetDir})`)
+                b.type === "wh" && b.name !== beaconName &&
+                targetDirs.some(dir => b.name.trim().endsWith(`(${dir})`))
             );
 
             if(candidates.length > 0){
@@ -101,14 +81,13 @@
             }
         }
 
-        // Fallback cross-sector or any WH
+        // Fallback: cross-sector
         const candidates = destMap.beaconList.filter(b => baseSectorName(b.name) === destSector);
         if(candidates.length > 0) return {sector:destSector, x:candidates[0].x, y:candidates[0].y};
 
         const anyWH = destMap.beaconList.filter(b=>b.type==="wh");
         if(anyWH.length>0) return {sector:destSector,x:anyWH[0].x,y:anyWH[0].y};
         if(destMap.beaconList.length>0) return {sector:destSector,x:destMap.beaconList[0].x,y:destMap.beaconList[0].y};
-
         return null;
     }
 
