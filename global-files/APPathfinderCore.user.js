@@ -154,7 +154,6 @@
             if(beacon && beacon.type==="wh"){
                 const exit = await resolveWormholeExit(sector,beacon.name);
                 
-                if (exit.sector === sector) continue;
                 if(exit){
                     const nKey = keyOf(exit.sector,exit.x,exit.y);
                     const wormholeCost = 23;
