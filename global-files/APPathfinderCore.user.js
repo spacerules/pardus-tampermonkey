@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Pardus Multi-Sector Pathfinder with X-Hole Optimization
+// @name         Pardus Multi-Sector Pathfinder with Hybrid WH/XH
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.5
-// @description  Pathfinding that considers same-sector wormholes + X-holes as combined steps
+// @version      1.6
+// @description  Pathfinding with cheapest path using same-sector wormholes + X-holes
 // @match        https://*.pardus.at/*
 // @grant        none
 // ==/UserScript==
@@ -12,7 +12,7 @@
 
     class Pathfinder {
         constructor(sectors) {
-            this.sectors = sectors; // sector data with tiles and beacons
+            this.sectors = sectors;
         }
 
         findPath(startSector, startX, startY, endSector, endX, endY) {
@@ -32,7 +32,7 @@
             addNode(startSector, startX, startY, 0);
 
             while (openSet.length) {
-                openSet.sort((a, b) => a.cost - b.cost);
+                openSet.sort((a,b)=>a.cost-b.cost);
                 const current = openSet.shift();
                 const keyCurrent = nodeKey(current.sector, current.x, current.y);
 
@@ -41,12 +41,11 @@
                 }
 
                 const sectorData = this.sectors[current.sector];
-                const neighbors = this.getNeighbors(sectorData, current.x, current.y);
 
-                for (let n of neighbors) {
+                // 1. Normal neighbors
+                for (let n of this.getNeighbors(sectorData, current.x, current.y)) {
                     const neighborKey = nodeKey(current.sector, n.x, n.y);
                     const tentativeG = current.cost + n.cost;
-
                     if (!gScore.has(neighborKey) || tentativeG < gScore.get(neighborKey)) {
                         gScore.set(neighborKey, tentativeG);
                         cameFrom.set(neighborKey, keyCurrent);
@@ -54,7 +53,7 @@
                     }
                 }
 
-                // Same-sector wormhole jumps
+                // 2. Same-sector wormholes
                 for (let [name, wh] of Object.entries(sectorData.beacons)) {
                     if (wh.type === 'wh' && wh.x === current.x && wh.y === current.y) {
                         const destName = this.getPairedWormhole(current.sector, name);
@@ -63,13 +62,12 @@
                             const whCost = 50;
                             const destKey = nodeKey(current.sector, dest.x, dest.y);
                             const tentativeG = current.cost + whCost;
-
                             if (!gScore.has(destKey) || tentativeG < gScore.get(destKey)) {
                                 gScore.set(destKey, tentativeG);
                                 cameFrom.set(destKey, keyCurrent);
                                 openSet.push({ sector: current.sector, x: dest.x, y: dest.y, cost: tentativeG });
 
-                                // Consider X-hole jumps immediately after same-sector wormhole
+                                // 3. Hybrid: same-sector wormhole -> X-hole
                                 for (let [xname, xh] of Object.entries(sectorData.beacons)) {
                                     if (xh.type === 'xh') {
                                         const xhCost = 2200;
@@ -87,7 +85,7 @@
                     }
                 }
 
-                // Normal X-hole jumps
+                // 4. Normal X-hole jumps to other sectors
                 for (let [name, xh] of Object.entries(sectorData.beacons)) {
                     if (xh.type === 'xh' && xh.x === current.x && xh.y === current.y) {
                         for (let targetSector of Object.keys(this.sectors)) {
@@ -130,17 +128,17 @@
                 [1,1],[-1,1],[1,-1],[-1,-1]
             ];
             const result = [];
-            for (let [dx, dy] of dirs) {
-                const nx = x + dx;
-                const ny = y + dy;
-                if (nx >= 0 && ny >= 0 && nx < sectorData.width && ny < sectorData.height) {
-                    const tile = sectorData.tiles[ny * sectorData.width + nx];
+            for (let [dx,dy] of dirs) {
+                const nx = x+dx;
+                const ny = y+dy;
+                if (nx>=0 && ny>=0 && nx<sectorData.width && ny<sectorData.height) {
+                    const tile = sectorData.tiles[ny*sectorData.width + nx];
                     let cost = 1;
-                    if (tile === 'b') cost = 1;
-                    else if (tile === 'e') cost = 2;
-                    else if (tile === 'f') cost = 3;
-                    else if (tile === 'o') cost = 5;
-                    result.push({ x: nx, y: ny, cost });
+                    if (tile==='b') cost=1;
+                    else if (tile==='e') cost=2;
+                    else if (tile==='f') cost=3;
+                    else if (tile==='o') cost=5;
+                    result.push({x:nx,y:ny,cost});
                 }
             }
             return result;
@@ -159,5 +157,5 @@
         }
     }
 
-    window.Pathfinder = Pathfinder; // expose for other scripts
+    window.Pathfinder = Pathfinder;
 })();
