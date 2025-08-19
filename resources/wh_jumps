@@ -1,0 +1,8994 @@
+[
+  {
+    "src": "Aandti",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Baar",
+    "destX": 15,
+    "destY": 8
+  },
+  {
+    "src": "Aandti",
+    "srcX": 21,
+    "srcY": 6,
+    "dest": "Hooth",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "Aandti",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "Vecelia",
+    "destX": 7,
+    "destY": 23
+  },
+  {
+    "src": "Aandti",
+    "srcX": 6,
+    "srcY": 11,
+    "dest": "Waolex",
+    "destX": 2,
+    "destY": 0
+  },
+  {
+    "src": "AB 5-848",
+    "srcX": 9,
+    "srcY": 7,
+    "dest": "Cegreeth (East)",
+    "destX": 17,
+    "destY": 11
+  },
+  {
+    "src": "AB 5-848",
+    "srcX": 1,
+    "srcY": 1,5
+    "dest": "Cegreeth (North)",
+    "destX": 17,
+    "destY": 2
+  },
+  {
+    "src": "AB 5-848",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "Cegreeth (South)",
+    "destX": 16,
+    "destY": 20
+  },
+  {
+    "src": "AB 5-848",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "Elnath",
+    "destX": 0,
+    "destY": 21
+  },
+  {
+    "src": "AB 5-848",
+    "srcX": 15,
+    "srcY": 12,
+    "dest": "Vecelia",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Abeho",
+    "srcX": 24,
+    "srcY": 8,
+    "dest": "Olaso",
+    "destX": 8,
+    "destY": 6
+  },
+  {
+    "src": "Abeho",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "PA 2-013",
+    "destX": 10,
+    "destY": 15
+  },
+  {
+    "src": "Achird",
+    "srcX": 6,
+    "srcY": 19,
+    "dest": "Phaet",
+    "destX": 15,
+    "destY": 0
+  },
+  {
+    "src": "Achird",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "UG 5-093",
+    "destX": 17,
+    "destY": 22
+  },
+  {
+    "src": "Ackandso",
+    "srcX": 24,
+    "srcY": 18,
+    "dest": "Exackcan",
+    "destX": 1,
+    "destY": 0
+  },
+  {
+    "src": "Ackandso",
+    "srcX": 18,
+    "srcY": 0,
+    "dest": "Fomalhaut (East)",
+    "destX": 7,
+    "destY": 19
+  },
+  {
+    "src": "Ackandso",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Fomalhaut (West)",
+    "destX": 17,
+    "destY": 19
+  },
+  {
+    "src": "Ackandso",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Pass EMP-03",
+    "destX": 23,
+    "destY": 4
+  },
+  {
+    "src": "Ackarack",
+    "srcX": 1,
+    "srcY": 4,
+    "dest": "Beeday",
+    "destX": 15,
+    "destY": 3
+  },
+  {
+    "src": "Ackarack",
+    "srcX": 3,
+    "srcY": 18,
+    "dest": "Watibe",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Ackarack",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Zearla",
+    "destX": 5,
+    "destY": 15
+  },
+  {
+    "src": "Ackexa",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Omicron Eridani",
+    "destX": 14,
+    "destY": 10
+  },
+  {
+    "src": "Ackexa",
+    "srcX": 10,
+    "srcY": 13,
+    "dest": "Pass FED-05",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Ackexa",
+    "srcX": 19,
+    "srcY": 4,
+    "dest": "YC 3-268",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Ackwada",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "Daured",
+    "destX": 17,
+    "destY": 11
+  },
+  {
+    "src": "Ackwada",
+    "srcX": 21,
+    "srcY": 9,
+    "dest": "Menkent",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Ackwada",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Vega",
+    "destX": 23,
+    "destY": 23
+  },
+  {
+    "src": "Adaa",
+    "srcX": 21,
+    "srcY": 2,
+    "dest": "Olbea",
+    "destX": 2,
+    "destY": 21
+  },
+  {
+    "src": "Adaa",
+    "srcX": 12,
+    "srcY": 24,
+    "dest": "Ska",
+    "destX": 24,
+    "destY": 1
+  },
+  {
+    "src": "Adaa",
+    "srcX": 7,
+    "srcY": 2,
+    "dest": "Zeolen",
+    "destX": 2,
+    "destY": 11
+  },
+  {
+    "src": "Adara",
+    "srcX": 7,
+    "srcY": 20,
+    "dest": "Seginus",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Adara",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "Thabit",
+    "destX": 14,
+    "destY": 24
+  },
+  {
+    "src": "Aedce",
+    "srcX": 16,
+    "srcY": 7,
+    "dest": "RA 3-124",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Aedce",
+    "srcX": 1,
+    "srcY": 18,
+    "dest": "Tiafa",
+    "destX": 21,
+    "destY": 2
+  },
+  {
+    "src": "Aeg",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Cassand",
+    "destX": 12,
+    "destY": 9
+  },
+  {
+    "src": "Aeg",
+    "srcX": 20,
+    "srcY": 0,
+    "dest": "Greandin",
+    "destX": 0,
+    "destY": 22
+  },
+  {
+    "src": "Aeg",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Regulus (SW)",
+    "destX": 15,
+    "destY": 15
+  },
+  {
+    "src": "Alfirk",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "EH 5-382 (East)",
+    "destX": 8,
+    "destY": 13
+  },
+  {
+    "src": "Alfirk",
+    "srcX": 5,
+    "srcY": 1,
+    "dest": "EH 5-382 (West)",
+    "destX": 2,
+    "destY": 13
+  },
+  {
+    "src": "Algol",
+    "srcX": 6,
+    "srcY": 1,
+    "dest": "Elnath",
+    "destX": 8,
+    "destY": 23
+  },
+  {
+    "src": "Algol",
+    "srcX": 14,
+    "srcY": 11,
+    "dest": "Pass UNI-09",
+    "destX": 0,
+    "destY": 12
+  },
+  {
+    "src": "Algol",
+    "srcX": 8,
+    "srcY": 24,
+    "dest": "Vecelia",
+    "destX": 4,
+    "destY": 1
+  },
+  {
+    "src": "Alioth",
+    "srcX": 5,
+    "srcY": 0,
+    "dest": "Inena",
+    "destX": 5,
+    "destY": 19
+  },
+  {
+    "src": "Alioth",
+    "srcX": 15,
+    "srcY": 13,
+    "dest": "JS 2-090",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Alioth",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Pass FED-03",
+    "destX": 15,
+    "destY": 10
+  },
+  {
+    "src": "Alpha Centauri",
+    "srcX": 3,
+    "srcY": 11,
+    "dest": "Ericon",
+    "destX": 3,
+    "destY": 0
+  },
+  {
+    "src": "Alpha Centauri",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Faexze",
+    "destX": 21,
+    "destY": 14
+  },
+  {
+    "src": "Alpha Centauri",
+    "srcX": 17,
+    "srcY": 1,
+    "dest": "Sol",
+    "destX": 1,
+    "destY": 27
+  },
+  {
+    "src": "AN 2-956",
+    "srcX": 13,
+    "srcY": 19,
+    "dest": "Pass EMP-04",
+    "destX": 7,
+    "destY": 2
+  },
+  {
+    "src": "AN 2-956",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Tiliala",
+    "destX": 24,
+    "destY": 10
+  },
+  {
+    "src": "An Dzeve",
+    "srcX": 9,
+    "srcY": 17,
+    "dest": "Canaab",
+    "destX": 12,
+    "destY": 0
+  },
+  {
+    "src": "An Dzeve",
+    "srcX": 0,
+    "srcY": 10,
+    "dest": "Urandack",
+    "destX": 19,
+    "destY": 7
+  },
+  {
+    "src": "Anaam",
+    "srcX": 0,
+    "srcY": 19,
+    "dest": "Retho",
+    "destX": 16,
+    "destY": 2
+  },
+  {
+    "src": "Anayed",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Ayinti",
+    "destX": 17,
+    "destY": 2
+  },
+  {
+    "src": "Anayed",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "Pass EMP-10",
+    "destX": 9,
+    "destY": 23
+  },
+  {
+    "src": "Anayed",
+    "srcX": 13,
+    "srcY": 14,
+    "dest": "RX 3-129",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Andexa",
+    "srcX": 19,
+    "srcY": 0,
+    "dest": "Daceess",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Andexa",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "Olexti",
+    "destX": 5,
+    "destY": 15
+  },
+  {
+    "src": "Andexa",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Ook",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "Andexa",
+    "srcX": 0,
+    "srcY": 2,
+    "dest": "Orerve",
+    "destX": 16,
+    "destY": 14
+  },
+  {
+    "src": "Andsoled",
+    "srcX": 3,
+    "srcY": 22,
+    "dest": "Enwaand",
+    "destX": 19,
+    "destY": 10
+  },
+  {
+    "src": "Andsoled",
+    "srcX": 1,
+    "srcY": 17,
+    "dest": "Liaackti",
+    "destX": 18,
+    "destY": 16
+  },
+  {
+    "src": "Andsoled",
+    "srcX": 17,
+    "srcY": 13,
+    "dest": "Tivea (North)",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "Andsoled",
+    "srcX": 14,
+    "srcY": 20,
+    "dest": "Tivea (South)",
+    "destX": 1,
+    "destY": 17
+  },
+  {
+    "src": "Anphiex",
+    "srcX": 0,
+    "srcY": 19,
+    "dest": "Becanol",
+    "destX": 18,
+    "destY": 16
+  },
+  {
+    "src": "Anphiex",
+    "srcX": 7,
+    "srcY": 29,
+    "dest": "Lasolia",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "Anphiex",
+    "srcX": 14,
+    "srcY": 23,
+    "dest": "Pass UNI-01",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Anphiex",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "Waolex",
+    "destX": 13,
+    "destY": 24
+  },
+  {
+    "src": "Arexack",
+    "srcX": 3,
+    "srcY": 15,
+    "dest": "Dadaex",
+    "destX": 6,
+    "destY": 2
+  },
+  {
+    "src": "Arexack",
+    "srcX": 16,
+    "srcY": 11,
+    "dest": "GT 3-328",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "Atlas",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Hooth",
+    "destX": 24,
+    "destY": 6
+  },
+  {
+    "src": "Atlas",
+    "srcX": 20,
+    "srcY": 5,
+    "dest": "Qumia",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Aveed",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Dainfa",
+    "destX": 15,
+    "destY": 1
+  },
+  {
+    "src": "Aveed",
+    "srcX": 15,
+    "srcY": 5,
+    "dest": "Exiool",
+    "destX": 1,
+    "destY": 7
+  },
+  {
+    "src": "Aveed",
+    "srcX": 3,
+    "srcY": 14,
+    "dest": "Ioliaa",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Aya",
+    "srcX": 5,
+    "srcY": 6,
+    "dest": "Mintaka",
+    "destX": 37,
+    "destY": 21
+  },
+  {
+    "src": "Aya",
+    "srcX": 34,
+    "srcY": 6,
+    "dest": "Nari",
+    "destX": 3,
+    "destY": 10
+  },
+  {
+    "src": "Ayargre",
+    "srcX": 17,
+    "srcY": 17,
+    "dest": "Begreze",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Ayargre",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Grefaho",
+    "destX": 4,
+    "destY": 19
+  },
+  {
+    "src": "Ayargre",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Pass FED-02",
+    "destX": 12,
+    "destY": 17
+  },
+  {
+    "src": "Ayinti",
+    "srcX": 17,
+    "srcY": 2,
+    "dest": "Anayed",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Ayinti",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "YS 3-386",
+    "destX": 13,
+    "destY": 5
+  },
+  {
+    "src": "Ayqugre",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "Qumiin",
+    "destX": 17,
+    "destY": 19
+  },
+  {
+    "src": "Ayqugre",
+    "srcX": 9,
+    "srcY": 12,
+    "dest": "RA 3-124",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Ayqugre",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Ureneth",
+    "destX": 9,
+    "destY": 15
+  },
+  {
+    "src": "Ayqugre",
+    "srcX": 1,
+    "srcY": 10,
+    "dest": "Xewao",
+    "destX": 15,
+    "destY": 13
+  },
+  {
+    "src": "Baar",
+    "srcX": 15,
+    "srcY": 8,
+    "dest": "Aandti",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Baar",
+    "srcX": 10,
+    "srcY": 11,
+    "dest": "UZ 8-466",
+    "destX": 13,
+    "destY": 4
+  },
+  {
+    "src": "Baham",
+    "srcX": 10,
+    "srcY": 1,
+    "dest": "Nhandu",
+    "destX": 11,
+    "destY": 39
+  },
+  {
+    "src": "Baham",
+    "srcX": 23,
+    "srcY": 35,
+    "dest": "Rigel",
+    "destX": 26,
+    "destY": 1
+  },
+  {
+    "src": "BE 3-702",
+    "srcX": 10,
+    "srcY": 19,
+    "dest": "Cebalrai",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "BE 3-702",
+    "srcX": 16,
+    "srcY": 1,
+    "dest": "Nekkar",
+    "destX": 0,
+    "destY": 21
+  },
+  {
+    "src": "BE 3-702",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Pass UNI-05",
+    "destX": 23,
+    "destY": 15
+  },
+  {
+    "src": "Becanin",
+    "srcX": 1,
+    "srcY": 13,
+    "dest": "GM 4-572",
+    "destX": 13,
+    "destY": 3
+  },
+  {
+    "src": "Becanin",
+    "srcX": 16,
+    "srcY": 13,
+    "dest": "Tiliala",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Becanol",
+    "srcX": 18,
+    "srcY": 16,
+    "dest": "Anphiex",
+    "destX": 0,
+    "destY": 19
+  },
+  {
+    "src": "Becanol",
+    "srcX": 9,
+    "srcY": 1,
+    "dest": "BL 6-511",
+    "destX": 9,
+    "destY": 28
+  },
+  {
+    "src": "Becanol",
+    "srcX": 10,
+    "srcY": 24,
+    "dest": "Zelada",
+    "destX": 5,
+    "destY": 1
+  },
+  {
+    "src": "Bedaho",
+    "srcX": 11,
+    "srcY": 2,
+    "dest": "Capella",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Bedaho",
+    "srcX": 9,
+    "srcY": 16,
+    "dest": "Micanex",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Bedaho",
+    "srcX": 19,
+    "srcY": 9,
+    "dest": "Phekda",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "Bedaho",
+    "srcX": 1,
+    "srcY": 16,
+    "dest": "Zeaex",
+    "destX": 10,
+    "destY": 4
+  },
+  {
+    "src": "Beeday",
+    "srcX": 15,
+    "srcY": 3,
+    "dest": "Ackarack",
+    "destX": 1,
+    "destY": 4
+  },
+  {
+    "src": "Beeday",
+    "srcX": 13,
+    "srcY": 14,
+    "dest": "Watibe",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Beethti",
+    "srcX": 0,
+    "srcY": 19,
+    "dest": "Olphize",
+    "destX": 15,
+    "destY": 5
+  },
+  {
+    "src": "Begreze",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Ayargre",
+    "destX": 17,
+    "destY": 17
+  },
+  {
+    "src": "Begreze",
+    "srcX": 4,
+    "srcY": 13,
+    "dest": "Usube",
+    "destX": 3,
+    "destY": 0
+  },
+  {
+    "src": "Begreze",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Zirr",
+    "destX": 7,
+    "destY": 17
+  },
+  {
+    "src": "Belati",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Edvea",
+    "destX": 28,
+    "destY": 19
+  },
+  {
+    "src": "Belati",
+    "srcX": 16,
+    "srcY": 2,
+    "dest": "ZS 3-798 (North)",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Belati",
+    "srcX": 24,
+    "srcY": 14,
+    "dest": "ZS 3-798 (South)",
+    "destX": 1,
+    "destY": 16
+  },
+  {
+    "src": "Bellatrix",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Lazebe",
+    "destX": 27,
+    "destY": 13
+  },
+  {
+    "src": "Bellatrix",
+    "srcX": 23,
+    "srcY": 14,
+    "dest": "Sirius",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Bellatrix",
+    "srcX": 16,
+    "srcY": 1,
+    "dest": "Turais",
+    "destX": 3,
+    "destY": 21
+  },
+  {
+    "src": "Besoex",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Cassand",
+    "destX": 4,
+    "destY": 17
+  },
+  {
+    "src": "Besoex",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Pollux",
+    "destX": 19,
+    "destY": 6
+  },
+  {
+    "src": "Besoex",
+    "srcX": 7,
+    "srcY": 15,
+    "dest": "Wolf",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Beta Hydri",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Edethex",
+    "destX": 23,
+    "destY": 19
+  },
+  {
+    "src": "Beta Hydri",
+    "srcX": 1,
+    "srcY": 0,
+    "dest": "Exiool",
+    "destX": 14,
+    "destY": 13
+  },
+  {
+    "src": "Beta Hydri",
+    "srcX": 22,
+    "srcY": 6,
+    "dest": "Naos",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Beta Hydri",
+    "srcX": 3,
+    "srcY": 19,
+    "dest": "Vega",
+    "destX": 27,
+    "destY": 7
+  },
+  {
+    "src": "Beta Proxima",
+    "srcX": 11,
+    "srcY": 17,
+    "dest": "BL 3961",
+    "destX": 1,
+    "destY": 0
+  },
+  {
+    "src": "Beta Proxima",
+    "srcX": 6,
+    "srcY": 17,
+    "dest": "Lalande",
+    "destX": 5,
+    "destY": 1
+  },
+  {
+    "src": "Beta Proxima",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "SA 2779",
+    "destX": 14,
+    "destY": 2
+  },
+  {
+    "src": "Beta Proxima",
+    "srcX": 17,
+    "srcY": 1,
+    "dest": "ZZ 2986",
+    "destX": 1,
+    "destY": 4
+  },
+  {
+    "src": "Betelgeuse",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "GV 4-652",
+    "destX": 5,
+    "destY": 11
+  },
+  {
+    "src": "Betelgeuse",
+    "srcX": 15,
+    "srcY": 21,
+    "dest": "Rashkan",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "Betelgeuse",
+    "srcX": 30,
+    "srcY": 1,
+    "dest": "Sohoa",
+    "destX": 1,
+    "destY": 14
+  },
+  {
+    "src": "Betelgeuse",
+    "srcX": 31,
+    "srcY": 11,
+    "dest": "Tiacan",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "Betiess",
+    "srcX": 6,
+    "srcY": 1,
+    "dest": "Ururur",
+    "destX": 10,
+    "destY": 12
+  },
+  {
+    "src": "Beurso",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "FR 3-328",
+    "destX": 1,
+    "destY": 18
+  },
+  {
+    "src": "Beurso",
+    "srcX": 1,
+    "srcY": 7,
+    "dest": "Pass FED-11",
+    "destX": 21,
+    "destY": 9
+  },
+  {
+    "src": "Beurso",
+    "srcX": 17,
+    "srcY": 10,
+    "dest": "Stein",
+    "destX": 2,
+    "destY": 5
+  },
+  {
+    "src": "Bewaack",
+    "srcX": 2,
+    "srcY": 10,
+    "dest": "JO 4-132",
+    "destX": 13,
+    "destY": 12
+  },
+  {
+    "src": "Bewaack",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Miayda (North)",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Bewaack",
+    "srcX": 9,
+    "srcY": 22,
+    "dest": "Miayda (South)",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "BL 3961",
+    "srcX": 1,
+    "srcY": 0,
+    "dest": "Beta Proxima",
+    "destX": 11,
+    "destY": 17
+  },
+  {
+    "src": "BL 3961",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Siberion",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "BL 3961",
+    "srcX": 18,
+    "srcY": 6,
+    "dest": "Tau Ceti",
+    "destX": 1,
+    "destY": 7
+  },
+  {
+    "src": "BL 6-511",
+    "srcX": 9,
+    "srcY": 28,
+    "dest": "Becanol",
+    "destX": 9,
+    "destY": 1
+  },
+  {
+    "src": "BL 6-511",
+    "srcX": 16,
+    "srcY": 2,
+    "dest": "Nex 0001 (East)",
+    "destX": 21,
+    "destY": 23
+  },
+  {
+    "src": "BL 6-511",
+    "srcX": 3,
+    "srcY": 1,
+    "dest": "Nex 0001 (West)",
+    "destX": 0,
+    "destY": 23
+  },
+  {
+    "src": "BQ 3-927",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "Canopus",
+    "destX": 6,
+    "destY": 21
+  },
+  {
+    "src": "BQ 3-927",
+    "srcX": 14,
+    "srcY": 7,
+    "dest": "Ross",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "BQ 3-927",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Ururur",
+    "destX": 19,
+    "destY": 5
+  },
+  {
+    "src": "BU 5-773",
+    "srcX": 10,
+    "srcY": 6,
+    "dest": "Pass UNI-07",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "BU 5-773",
+    "srcX": 19,
+    "srcY": 1,
+    "dest": "Sobein (East)",
+    "destX": 3,
+    "destY": 10
+  },
+  {
+    "src": "BU 5-773",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "Sobein (West)",
+    "destX": 12,
+    "destY": 11
+  },
+  {
+    "src": "BU 5-773",
+    "srcX": 0,
+    "srcY": 1,
+    "dest": "Tigrecan",
+    "destX": 14,
+    "destY": 9
+  },
+  {
+    "src": "BU 5-773",
+    "srcX": 23,
+    "srcY": 1,
+    "dest": "Zeaay",
+    "destX": 3,
+    "destY": 12
+  },
+  {
+    "src": "Cabard",
+    "srcX": 8,
+    "srcY": 10,
+    "dest": "Paan",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Cabard",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "ZP 2-989",
+    "destX": 12,
+    "destY": 13
+  },
+  {
+    "src": "Canaab",
+    "srcX": 12,
+    "srcY": 0,
+    "dest": "An Dzeve",
+    "destX": 9,
+    "destY": 17
+  },
+  {
+    "src": "Canaab",
+    "srcX": 4,
+    "srcY": 12,
+    "dest": "Grecein",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Canaab",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Lamice",
+    "destX": 24,
+    "destY": 0
+  },
+  {
+    "src": "Canexin",
+    "srcX": 13,
+    "srcY": 24,
+    "dest": "Laolla",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Canexin",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Olphize",
+    "destX": 8,
+    "destY": 20
+  },
+  {
+    "src": "Canexin",
+    "srcX": 23,
+    "srcY": 9,
+    "dest": "Retho",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Canexin",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Zirr",
+    "destX": 24,
+    "destY": 7
+  },
+  {
+    "src": "Canolin",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Nex 0005 (East)",
+    "destX": 20,
+    "destY": 21
+  },
+  {
+    "src": "Canolin",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "Nex 0005 (West)",
+    "destX": 24,
+    "destY": 2
+  },
+  {
+    "src": "Canolin",
+    "srcX": 4,
+    "srcY": 14,
+    "dest": "Phiandgre",
+    "destX": 2,
+    "destY": 3
+  },
+  {
+    "src": "Canolin",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "Quexho",
+    "destX": 16,
+    "destY": 12
+  },
+  {
+    "src": "Canopus",
+    "srcX": 6,
+    "srcY": 21,
+    "dest": "BQ 3-927",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "Canopus",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Pass FED-05",
+    "destX": 7,
+    "destY": 20
+  },
+  {
+    "src": "Capella",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Bedaho",
+    "destX": 11,
+    "destY": 2
+  },
+  {
+    "src": "Capella",
+    "srcX": 17,
+    "srcY": 3,
+    "dest": "Nebul",
+    "destX": 1,
+    "destY": 19
+  },
+  {
+    "src": "Cassand",
+    "srcX": 12,
+    "srcY": 9,
+    "dest": "Aeg",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Cassand",
+    "srcX": 4,
+    "srcY": 17,
+    "dest": "Besoex",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Cassand",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Regulus",
+    "destX": 7,
+    "destY": 15
+  },
+  {
+    "src": "CC 3-771",
+    "srcX": 19,
+    "srcY": 9,
+    "dest": "Oldain",
+    "destX": 0,
+    "destY": 16
+  },
+  {
+    "src": "CC 3-771",
+    "srcX": 18,
+    "srcY": 2,
+    "dest": "Watibe",
+    "destX": 8,
+    "destY": 12
+  },
+  {
+    "src": "Ceanze",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Soolti (North)",
+    "destX": 19,
+    "destY": 1
+  },
+  {
+    "src": "Ceanze",
+    "srcX": 1,
+    "srcY": 13,
+    "dest": "Soolti (South)",
+    "destX": 18,
+    "destY": 12
+  },
+  {
+    "src": "Cebalrai",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "BE 3-702",
+    "destX": 10,
+    "destY": 19
+  },
+  {
+    "src": "Cebalrai",
+    "srcX": 1,
+    "srcY": 13,
+    "dest": "Keid",
+    "destX": 17,
+    "destY": 10
+  },
+  {
+    "src": "Cebalrai",
+    "srcX": 19,
+    "srcY": 11,
+    "dest": "Subra",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Cebece",
+    "srcX": 24,
+    "srcY": 16,
+    "dest": "Etamin",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "Cebece",
+    "srcX": 12,
+    "srcY": 0,
+    "dest": "Gomeisa",
+    "destX": 21,
+    "destY": 17
+  },
+  {
+    "src": "Cebece",
+    "srcX": 2,
+    "srcY": 14,
+    "dest": "Nhandu",
+    "destX": 18,
+    "destY": 2
+  },
+  {
+    "src": "Cegreeth",
+    "srcX": 17,
+    "srcY": 11,
+    "dest": "AB 5-848",
+    "destX": 9,
+    "destY": 7
+  },
+  {
+    "src": "Cegreeth",
+    "srcX": 17,
+    "srcY": 2,
+    "dest": "AB 5-848 (North)",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Cegreeth",
+    "srcX": 16,
+    "srcY": 20,
+    "dest": "AB 5-848 (South)",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "Cegreeth",
+    "srcX": 7,
+    "srcY": 21,
+    "dest": "Edmial",
+    "destX": 12,
+    "destY": 2
+  },
+  {
+    "src": "Cegreeth",
+    "srcX": 4,
+    "srcY": 2,
+    "dest": "Fadaphi",
+    "destX": 18,
+    "destY": 22
+  },
+  {
+    "src": "Ceina",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "Edqueth",
+    "destX": 6,
+    "destY": 8
+  },
+  {
+    "src": "Ceina",
+    "srcX": 6,
+    "srcY": 13,
+    "dest": "Pass EMP-10",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Ceina",
+    "srcX": 15,
+    "srcY": 13,
+    "dest": "Sowace",
+    "destX": 4,
+    "destY": 16
+  },
+  {
+    "src": "Cemiess",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Encea",
+    "destX": 5,
+    "destY": 8
+  },
+  {
+    "src": "Cemiess",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Paan",
+    "destX": 23,
+    "destY": 12
+  },
+  {
+    "src": "Cesoho",
+    "srcX": 1,
+    "srcY": 0,
+    "dest": "Ook",
+    "destX": 14,
+    "destY": 13
+  },
+  {
+    "src": "Cor Caroli",
+    "srcX": 35,
+    "srcY": 11,
+    "dest": "Gomeisa",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Cor Caroli",
+    "srcX": 10,
+    "srcY": 2,
+    "dest": "Labela",
+    "destX": 33,
+    "destY": 2
+  },
+  {
+    "src": "CP 2-197",
+    "srcX": 2,
+    "srcY": 6,
+    "dest": "Naos",
+    "destX": 16,
+    "destY": 8
+  },
+  {
+    "src": "CP 2-197",
+    "srcX": 5,
+    "srcY": 9,
+    "dest": "Zaurak",
+    "destX": 3,
+    "destY": 6
+  },
+  {
+    "src": "Daaya",
+    "srcX": 1,
+    "srcY": 23,
+    "dest": "Laedgre",
+    "destX": 13,
+    "destY": 3
+  },
+  {
+    "src": "Daaya",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "Nex 0002",
+    "destX": 10,
+    "destY": 23
+  },
+  {
+    "src": "Daaya",
+    "srcX": 25,
+    "srcY": 1,
+    "dest": "Ururur",
+    "destX": 6,
+    "destY": 13
+  },
+  {
+    "src": "Daaya",
+    "srcX": 2,
+    "srcY": 4,
+    "dest": "WO 3-290",
+    "destX": 15,
+    "destY": 8
+  },
+  {
+    "src": "Daaze",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "Pass FED-12",
+    "destX": 20,
+    "destY": 8
+  },
+  {
+    "src": "Daaze",
+    "srcX": 13,
+    "srcY": 2,
+    "dest": "Stein",
+    "destX": 1,
+    "destY": 14
+  },
+  {
+    "src": "Daceess",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Andexa",
+    "destX": 19,
+    "destY": 0
+  },
+  {
+    "src": "Daceess",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Siberion",
+    "destX": 15,
+    "destY": 14
+  },
+  {
+    "src": "Dadaex",
+    "srcX": 6,
+    "srcY": 2,
+    "dest": "Arexack",
+    "destX": 3,
+    "destY": 15
+  },
+  {
+    "src": "Dadaex",
+    "srcX": 9,
+    "srcY": 17,
+    "dest": "Pass UNI-06",
+    "destX": 3,
+    "destY": 0
+  },
+  {
+    "src": "Dadaex",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Pass UNI-09",
+    "destX": 18,
+    "destY": 9
+  },
+  {
+    "src": "Dainfa",
+    "srcX": 15,
+    "srcY": 1,
+    "dest": "Aveed",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Dainfa",
+    "srcX": 2,
+    "srcY": 16,
+    "dest": "Ioliaa",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "Datiack",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Faphida",
+    "destX": 12,
+    "destY": 13
+  },
+  {
+    "src": "Datiack",
+    "srcX": 10,
+    "srcY": 14,
+    "dest": "Pass EMP-02",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Daured",
+    "srcX": 17,
+    "srcY": 11,
+    "dest": "Ackwada",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "Daured",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "DI 9-486",
+    "destX": 23,
+    "destY": 14
+  },
+  {
+    "src": "Daured",
+    "srcX": 8,
+    "srcY": 14,
+    "dest": "Wainze",
+    "destX": 14,
+    "destY": 3
+  },
+  {
+    "src": "Daurlia",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Pass EMP-04",
+    "destX": 12,
+    "destY": 24
+  },
+  {
+    "src": "Daurlia",
+    "srcX": 13,
+    "srcY": 7,
+    "dest": "PI 4-669",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Daurlia",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Quator",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Delta Pavonis",
+    "srcX": 13,
+    "srcY": 2,
+    "dest": "Eta Cassiopeia",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Delta Pavonis",
+    "srcX": 5,
+    "srcY": 26,
+    "dest": "Keldon",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Delta Pavonis",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "PI 4-669",
+    "destX": 2,
+    "destY": 9
+  },
+  {
+    "src": "Delta Pavonis",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Quator",
+    "destX": 16,
+    "destY": 10
+  },
+  {
+    "src": "DH 3-625",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Exbeur",
+    "destX": 24,
+    "destY": 0
+  },
+  {
+    "src": "DH 3-625",
+    "srcX": 13,
+    "srcY": 6,
+    "dest": "Rotanev",
+    "destX": 1,
+    "destY": 15
+  },
+  {
+    "src": "DH 3-625",
+    "srcX": 7,
+    "srcY": 12,
+    "dest": "Veareth",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "DI 9-486",
+    "srcX": 23,
+    "srcY": 14,
+    "dest": "Daured",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "DI 9-486",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Sophilia",
+    "destX": 22,
+    "destY": 8
+  },
+  {
+    "src": "DI 9-486",
+    "srcX": 14,
+    "srcY": 15,
+    "dest": "Spica",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "DI 9-486",
+    "srcX": 23,
+    "srcY": 7,
+    "dest": "Vega",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Diphda",
+    "srcX": 5,
+    "srcY": 7,
+    "dest": "EH 5-382",
+    "destX": 12,
+    "destY": 7
+  },
+  {
+    "src": "Diphda",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "Pass UNI-03",
+    "destX": 10,
+    "destY": 18
+  },
+  {
+    "src": "Diphda",
+    "srcX": 11,
+    "srcY": 19,
+    "dest": "Phao",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Diphda",
+    "srcX": 18,
+    "srcY": 6,
+    "dest": "Thabit",
+    "destX": 1,
+    "destY": 12
+  },
+  {
+    "src": "DP 2-354",
+    "srcX": 1,
+    "srcY": 12,
+    "dest": "Fawaol",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "DP 2-354",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Pass EMP-08",
+    "destX": 1,
+    "destY": 15
+  },
+  {
+    "src": "Dsiban",
+    "srcX": 9,
+    "srcY": 16,
+    "dest": "Nashira",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Dsiban",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Pass UNI-04",
+    "destX": 24,
+    "destY": 10
+  },
+  {
+    "src": "Dubhe",
+    "srcX": 18,
+    "srcY": 4,
+    "dest": "Enif",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Dubhe",
+    "srcX": 1,
+    "srcY": 22,
+    "dest": "Mintaka",
+    "destX": 38,
+    "destY": 1
+  },
+  {
+    "src": "Edbeeth",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Olphize",
+    "destX": 18,
+    "destY": 10
+  },
+  {
+    "src": "Edeneth",
+    "srcX": 0,
+    "srcY": 3,
+    "dest": "VH 3-344",
+    "destX": 7,
+    "destY": 7
+  },
+  {
+    "src": "Edenve",
+    "srcX": 23,
+    "srcY": 22,
+    "dest": "Faarfa",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Edenve",
+    "srcX": 4,
+    "srcY": 12,
+    "dest": "Famiso",
+    "destX": 20,
+    "destY": 8
+  },
+  {
+    "src": "Edenve",
+    "srcX": 19,
+    "srcY": 4,
+    "dest": "Lasolia",
+    "destX": 1,
+    "destY": 14
+  },
+  {
+    "src": "Edenve",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "Zelada",
+    "destX": 6,
+    "destY": 18
+  },
+  {
+    "src": "Edethex",
+    "srcX": 23,
+    "srcY": 19,
+    "dest": "Beta Hydri",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Edethex",
+    "srcX": 15,
+    "srcY": 2,
+    "dest": "Exiool",
+    "destX": 5,
+    "destY": 17
+  },
+  {
+    "src": "Edmial",
+    "srcX": 12,
+    "srcY": 2,
+    "dest": "Cegreeth",
+    "destX": 7,
+    "destY": 21
+  },
+  {
+    "src": "Edmial",
+    "srcX": 1,
+    "srcY": 0,
+    "dest": "Xeho",
+    "destX": 12,
+    "destY": 16
+  },
+  {
+    "src": "Edmize",
+    "srcX": 15,
+    "srcY": 4,
+    "dest": "Faphida",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Edmize",
+    "srcX": 9,
+    "srcY": 15,
+    "dest": "TG 2-143",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Edmize",
+    "srcX": 12,
+    "srcY": 0,
+    "dest": "Tiacken",
+    "destX": 11,
+    "destY": 25
+  },
+  {
+    "src": "Edmize",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Usube",
+    "destX": 11,
+    "destY": 29
+  },
+  {
+    "src": "Edqueth",
+    "srcX": 6,
+    "srcY": 8,
+    "dest": "Ceina",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "Edqueth",
+    "srcX": 8,
+    "srcY": 4,
+    "dest": "PP 5-713 (West)",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Edvea",
+    "srcX": 28,
+    "srcY": 19,
+    "dest": "Belati",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Edvea",
+    "srcX": 1,
+    "srcY": 22,
+    "dest": "Miackio",
+    "destX": 21,
+    "destY": 2
+  },
+  {
+    "src": "Edvea",
+    "srcX": 28,
+    "srcY": 1,
+    "dest": "RX 3-129",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "EH 5-382",
+    "srcX": 8,
+    "srcY": 13,
+    "dest": "Alfirk (East)",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "EH 5-382",
+    "srcX": 2,
+    "srcY": 13,
+    "dest": "Alfirk (West)",
+    "destX": 5,
+    "destY": 1
+  },
+  {
+    "src": "EH 5-382",
+    "srcX": 12,
+    "srcY": 7,
+    "dest": "Diphda",
+    "destX": 5,
+    "destY": 7
+  },
+  {
+    "src": "EH 5-382",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Kitalpha",
+    "destX": 15,
+    "destY": 6
+  },
+  {
+    "src": "EH 5-382",
+    "srcX": 6,
+    "srcY": 1,
+    "dest": "Pass UNI-02",
+    "destX": 4,
+    "destY": 7
+  },
+  {
+    "src": "Electra",
+    "srcX": 1,
+    "srcY": 7,
+    "dest": "Iozeio",
+    "destX": 17,
+    "destY": 6
+  },
+  {
+    "src": "Electra",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "Laedgre",
+    "destX": 10,
+    "destY": 19
+  },
+  {
+    "src": "Elnath",
+    "srcX": 0,
+    "srcY": 21,
+    "dest": "AB 5-848",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "Elnath",
+    "srcX": 8,
+    "srcY": 23,
+    "dest": "Algol",
+    "destX": 6,
+    "destY": 1
+  },
+  {
+    "src": "Elnath",
+    "srcX": 10,
+    "srcY": 1,
+    "dest": "Propus",
+    "destX": 3,
+    "destY": 17
+  },
+  {
+    "src": "Enaness",
+    "srcX": 19,
+    "srcY": 1,
+    "dest": "Ross",
+    "destX": 2,
+    "destY": 12
+  },
+  {
+    "src": "Enaness",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Ururur",
+    "destX": 13,
+    "destY": 12
+  },
+  {
+    "src": "Encea",
+    "srcX": 5,
+    "srcY": 8,
+    "dest": "Cemiess",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Encea",
+    "srcX": 11,
+    "srcY": 4,
+    "dest": "GM 4-572",
+    "destX": 7,
+    "destY": 12
+  },
+  {
+    "src": "Enif",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Dubhe",
+    "destX": 18,
+    "destY": 4
+  },
+  {
+    "src": "Enif",
+    "srcX": 13,
+    "srcY": 23,
+    "dest": "Nari",
+    "destX": 10,
+    "destY": 4
+  },
+  {
+    "src": "Enif",
+    "srcX": 32,
+    "srcY": 9,
+    "dest": "Pardus (West)",
+    "destX": 4,
+    "destY": 43
+  },
+  {
+    "src": "Enif",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Ras Elased",
+    "destX": 12,
+    "destY": 37
+  },
+  {
+    "src": "Enioar",
+    "srcX": 12,
+    "srcY": 12,
+    "dest": "Liaface",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Enioar",
+    "srcX": 20,
+    "srcY": 7,
+    "dest": "Pass FED-09",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Enwaand",
+    "srcX": 19,
+    "srcY": 10,
+    "dest": "Andsoled",
+    "destX": 3,
+    "destY": 22
+  },
+  {
+    "src": "Enwaand",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Liaackti",
+    "destX": 5,
+    "destY": 22
+  },
+  {
+    "src": "Enwaand",
+    "srcX": 8,
+    "srcY": 13,
+    "dest": "Stein",
+    "destX": 8,
+    "destY": 9
+  },
+  {
+    "src": "Epsilon Eridani",
+    "srcX": 0,
+    "srcY": 30,
+    "dest": "Faexze",
+    "destX": 21,
+    "destY": 0
+  },
+  {
+    "src": "Epsilon Eridani",
+    "srcX": 16,
+    "srcY": 2,
+    "dest": "PJ 3373",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Epsilon Eridani",
+    "srcX": 17,
+    "srcY": 23,
+    "dest": "Quurze",
+    "destX": 0,
+    "destY": 16
+  },
+  {
+    "src": "Epsilon Eridani",
+    "srcX": 17,
+    "srcY": 30,
+    "dest": "Sol",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Epsilon Indi",
+    "srcX": 7,
+    "srcY": 11,
+    "dest": "LO 2-014",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "Epsilon Indi",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Phekda",
+    "destX": 7,
+    "destY": 12
+  },
+  {
+    "src": "Epsilon Indi",
+    "srcX": 18,
+    "srcY": 0,
+    "dest": "Rashkan",
+    "destX": 4,
+    "destY": 27
+  },
+  {
+    "src": "Ericon",
+    "srcX": 3,
+    "srcY": 0,
+    "dest": "Alpha Centauri",
+    "destX": 3,
+    "destY": 11
+  },
+  {
+    "src": "Ericon",
+    "srcX": 14,
+    "srcY": 23,
+    "dest": "XH 3819",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "Essaa",
+    "srcX": 10,
+    "srcY": 13,
+    "dest": "Pass FED-07",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Essaa",
+    "srcX": 1,
+    "srcY": 13,
+    "dest": "Tiacan",
+    "destX": 14,
+    "destY": 10
+  },
+  {
+    "src": "Essaa",
+    "srcX": 6,
+    "srcY": 20,
+    "dest": "YC 3-268",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Eta Cassiopeia",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Delta Pavonis",
+    "destX": 13,
+    "destY": 2
+  },
+  {
+    "src": "Eta Cassiopeia",
+    "srcX": 5,
+    "srcY": 32,
+    "dest": "Keldon",
+    "destX": 24,
+    "destY": 1
+  },
+  {
+    "src": "Eta Cassiopeia",
+    "srcX": 5,
+    "srcY": 0,
+    "dest": "PI 4-669",
+    "destX": 8,
+    "destY": 9
+  },
+  {
+    "src": "Eta Cassiopeia",
+    "srcX": 14,
+    "srcY": 3,
+    "dest": "SZ 4-419 (North)",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Eta Cassiopeia",
+    "srcX": 14,
+    "srcY": 30,
+    "dest": "SZ 4-419 (South)",
+    "destX": 0,
+    "destY": 4
+  },
+  {
+    "src": "Etamin",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "Cebece",
+    "destX": 24,
+    "destY": 16
+  },
+  {
+    "src": "Etamin",
+    "srcX": 30,
+    "srcY": 14,
+    "dest": "Kitalpha",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Exackcan",
+    "srcX": 1,
+    "srcY": 0,
+    "dest": "Ackandso",
+    "destX": 24,
+    "destY": 18
+  },
+  {
+    "src": "Exackcan",
+    "srcX": 13,
+    "srcY": 2,
+    "dest": "Vewaa",
+    "destX": 1,
+    "destY": 13
+  },
+  {
+    "src": "Exbeur",
+    "srcX": 24,
+    "srcY": 0,
+    "dest": "DH 3-625",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Exbeur",
+    "srcX": 2,
+    "srcY": 22,
+    "dest": "Tiliala",
+    "destX": 23,
+    "destY": 2
+  },
+  {
+    "src": "Exbeur",
+    "srcX": 18,
+    "srcY": 16,
+    "dest": "Veareth",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Exinfa",
+    "srcX": 9,
+    "srcY": 3,
+    "dest": "Lamice",
+    "destX": 0,
+    "destY": 10
+  },
+  {
+    "src": "Exinfa",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Miayack",
+    "destX": 23,
+    "destY": 8
+  },
+  {
+    "src": "Exiool",
+    "srcX": 1,
+    "srcY": 7,
+    "dest": "Aveed",
+    "destX": 15,
+    "destY": 5
+  },
+  {
+    "src": "Exiool",
+    "srcX": 14,
+    "srcY": 13,
+    "dest": "Beta Hydri",
+    "destX": 1,
+    "destY": 0
+  },
+  {
+    "src": "Exiool",
+    "srcX": 5,
+    "srcY": 17,
+    "dest": "Edethex",
+    "destX": 15,
+    "destY": 2
+  },
+  {
+    "src": "Faarfa",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Edenve",
+    "destX": 23,
+    "destY": 22
+  },
+  {
+    "src": "Faarfa",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Lasolia",
+    "destX": 15,
+    "destY": 14
+  },
+  {
+    "src": "Facece",
+    "srcX": 15,
+    "srcY": 7,
+    "dest": "Lahola",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Facece",
+    "srcX": 9,
+    "srcY": 22,
+    "dest": "Ophiuchi",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "Facece",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Sodaack",
+    "destX": 13,
+    "destY": 8
+  },
+  {
+    "src": "Fadaphi",
+    "srcX": 18,
+    "srcY": 22,
+    "dest": "Cegreeth",
+    "destX": 4,
+    "destY": 2
+  },
+  {
+    "src": "Fadaphi",
+    "srcX": 22,
+    "srcY": 4,
+    "dest": "Greenso",
+    "destX": 1,
+    "destY": 14
+  },
+  {
+    "src": "Fadaphi",
+    "srcX": 1,
+    "srcY": 22,
+    "dest": "Oucanfa",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Fadaphi",
+    "srcX": 2,
+    "srcY": 11,
+    "dest": "Silaad",
+    "destX": 23,
+    "destY": 13
+  },
+  {
+    "src": "Fadaphi",
+    "srcX": 12,
+    "srcY": 0,
+    "dest": "ZU 3-239",
+    "destX": 9,
+    "destY": 20
+  },
+  {
+    "src": "Faedho",
+    "srcX": 4,
+    "srcY": 24,
+    "dest": "JG 2-013",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "Faedho",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "Leesti",
+    "destX": 8,
+    "destY": 15
+  },
+  {
+    "src": "Faedho",
+    "srcX": 11,
+    "srcY": 3,
+    "dest": "Xewao",
+    "destX": 2,
+    "destY": 12
+  },
+  {
+    "src": "Faexze",
+    "srcX": 21,
+    "srcY": 14,
+    "dest": "Alpha Centauri",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Faexze",
+    "srcX": 21,
+    "srcY": 0,
+    "dest": "Epsilon Eridani",
+    "destX": 0,
+    "destY": 30
+  },
+  {
+    "src": "Faexze",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Pass FED-09",
+    "destX": 22,
+    "destY": 9
+  },
+  {
+    "src": "Famiay",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Nebul",
+    "destX": 11,
+    "destY": 15
+  },
+  {
+    "src": "Famiay",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Nionquat",
+    "destX": 1,
+    "destY": 18
+  },
+  {
+    "src": "Famiay",
+    "srcX": 7,
+    "srcY": 12,
+    "dest": "Phekda",
+    "destX": 3,
+    "destY": 0
+  },
+  {
+    "src": "Famida",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "GT 3-328",
+    "destX": 12,
+    "destY": 5
+  },
+  {
+    "src": "Famida",
+    "srcX": 23,
+    "srcY": 17,
+    "dest": "Let",
+    "destX": 5,
+    "destY": 3
+  },
+  {
+    "src": "Famiso",
+    "srcX": 20,
+    "srcY": 8,
+    "dest": "Edenve",
+    "destX": 4,
+    "destY": 12
+  },
+  {
+    "src": "Famiso",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Ross",
+    "destX": 16,
+    "destY": 6
+  },
+  {
+    "src": "Faphida",
+    "srcX": 12,
+    "srcY": 13,
+    "dest": "Datiack",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Faphida",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Edmize",
+    "destX": 15,
+    "destY": 4
+  },
+  {
+    "src": "Faphida",
+    "srcX": 21,
+    "srcY": 10,
+    "dest": "Mizar",
+    "destX": 0,
+    "destY": 16
+  },
+  {
+    "src": "Faphida",
+    "srcX": 17,
+    "srcY": 0,
+    "dest": "Zamith",
+    "destX": 1,
+    "destY": 16
+  },
+  {
+    "src": "Fawaol",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "DP 2-354",
+    "destX": 1,
+    "destY": 12
+  },
+  {
+    "src": "Fawaol",
+    "srcX": 18,
+    "srcY": 23,
+    "dest": "Iowagre",
+    "destX": 5,
+    "destY": 4
+  },
+  {
+    "src": "Fawaol",
+    "srcX": 4,
+    "srcY": 1,
+    "dest": "Tiurio",
+    "destX": 22,
+    "destY": 12
+  },
+  {
+    "src": "Fomalhaut",
+    "srcX": 17,
+    "srcY": 19,
+    "dest": "Ackandso (East)",
+    "destX": 18,
+    "destY": 0
+  },
+  {
+    "src": "Fomalhaut",
+    "srcX": 7,
+    "srcY": 19,
+    "dest": "Ackandso (West)",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Fomalhaut",
+    "srcX": 17,
+    "srcY": 2,
+    "dest": "Tianbe",
+    "destX": 1,
+    "destY": 13
+  },
+  {
+    "src": "Fornacis",
+    "srcX": 19,
+    "srcY": 28,
+    "dest": "Ras Elased (East)",
+    "destX": 38,
+    "destY": 1
+  },
+  {
+    "src": "Fornacis",
+    "srcX": 1,
+    "srcY": 29,
+    "dest": "Ras Elased (West)",
+    "destX": 5,
+    "destY": 0
+  },
+  {
+    "src": "Fornacis",
+    "srcX": 20,
+    "srcY": 10,
+    "dest": "Sargas",
+    "destX": 2,
+    "destY": 10
+  },
+  {
+    "src": "FR 3-328",
+    "srcX": 1,
+    "srcY": 18,
+    "dest": "Beurso",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "FR 3-328",
+    "srcX": 11,
+    "srcY": 6,
+    "dest": "Liaackti",
+    "destX": 5,
+    "destY": 16
+  },
+  {
+    "src": "FR 3-328",
+    "srcX": 5,
+    "srcY": 1,
+    "dest": "Pass FED-08",
+    "destX": 8,
+    "destY": 22
+  },
+  {
+    "src": "Furud",
+    "srcX": 1,
+    "srcY": 7,
+    "dest": "Subra",
+    "destX": 18,
+    "destY": 12
+  },
+  {
+    "src": "Gienah Cygni",
+    "srcX": 2,
+    "srcY": 4,
+    "dest": "Sirius",
+    "destX": 29,
+    "destY": 16
+  },
+  {
+    "src": "Gienah Cygni",
+    "srcX": 3,
+    "srcY": 20,
+    "dest": "UG 5-093",
+    "destX": 16,
+    "destY": 3
+  },
+  {
+    "src": "Gilo",
+    "srcX": 16,
+    "srcY": 19,
+    "dest": "Nex 0001 (East)",
+    "destX": 20,
+    "destY": 0
+  },
+  {
+    "src": "Gilo",
+    "srcX": 3,
+    "srcY": 19,
+    "dest": "Nex 0001 (West)",
+    "destX": 5,
+    "destY": 0
+  },
+  {
+    "src": "Gilo",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "UZ 8-466",
+    "destX": 10,
+    "destY": 11
+  },
+  {
+    "src": "GM 4-572",
+    "srcX": 13,
+    "srcY": 3,
+    "dest": "Becanin",
+    "destX": 1,
+    "destY": 13
+  },
+  {
+    "src": "GM 4-572",
+    "srcX": 7,
+    "srcY": 12,
+    "dest": "Encea",
+    "destX": 11,
+    "destY": 4
+  },
+  {
+    "src": "GM 4-572",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Lahola",
+    "destX": 24,
+    "destY": 13
+  },
+  {
+    "src": "GM 4-572",
+    "srcX": 14,
+    "srcY": 7,
+    "dest": "Urioed",
+    "destX": 0,
+    "destY": 4
+  },
+  {
+    "src": "Gomeisa",
+    "srcX": 21,
+    "srcY": 17,
+    "dest": "Cebece",
+    "destX": 12,
+    "destY": 0
+  },
+  {
+    "src": "Gomeisa",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Cor Caroli",
+    "destX": 35,
+    "destY": 11
+  },
+  {
+    "src": "Greandin",
+    "srcX": 0,
+    "srcY": 22,
+    "dest": "Aeg",
+    "destX": 20,
+    "destY": 0
+  },
+  {
+    "src": "Greandin",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Iniolol",
+    "destX": 7,
+    "destY": 13
+  },
+  {
+    "src": "Greandin",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Regulus",
+    "destX": 15,
+    "destY": 8
+  },
+  {
+    "src": "Grecein",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Canaab",
+    "destX": 4,
+    "destY": 12
+  },
+  {
+    "src": "Grecein",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "Lamice",
+    "destX": 22,
+    "destY": 14
+  },
+  {
+    "src": "Grecein",
+    "srcX": 12,
+    "srcY": 12,
+    "dest": "Pass EMP-03",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Greenso",
+    "srcX": 1,
+    "srcY": 14,
+    "dest": "Fadaphi",
+    "destX": 22,
+    "destY": 4
+  },
+  {
+    "src": "Greenso",
+    "srcX": 15,
+    "srcY": 2,
+    "dest": "Nex 0006 (North)",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Greenso",
+    "srcX": 19,
+    "srcY": 14,
+    "dest": "Nex 0006 (South)",
+    "destX": 0,
+    "destY": 14
+  },
+  {
+    "src": "Grefaho",
+    "srcX": 4,
+    "srcY": 19,
+    "dest": "Ayargre",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Grefaho",
+    "srcX": 20,
+    "srcY": 0,
+    "dest": "Olphize",
+    "destX": 4,
+    "destY": 2
+  },
+  {
+    "src": "Grefaho",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Pass FED-01",
+    "destX": 17,
+    "destY": 15
+  },
+  {
+    "src": "Grefaho",
+    "srcX": 20,
+    "srcY": 19,
+    "dest": "Zirr",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Greliai",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Pass EMP-08",
+    "destX": 0,
+    "destY": 4
+  },
+  {
+    "src": "Greliai",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Pass EMP-11",
+    "destX": 12,
+    "destY": 20
+  },
+  {
+    "src": "Greliai",
+    "srcX": 13,
+    "srcY": 18,
+    "dest": "Tiurio (East)",
+    "destX": 19,
+    "destY": 0
+  },
+  {
+    "src": "Greliai",
+    "srcX": 6,
+    "srcY": 18,
+    "dest": "Tiurio (West)",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Gresoin",
+    "srcX": 22,
+    "srcY": 19,
+    "dest": "PA 2-013",
+    "destX": 1,
+    "destY": 0
+  },
+  {
+    "src": "Gresoin",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Uv Seti",
+    "destX": 20,
+    "destY": 6
+  },
+  {
+    "src": "Gretiay",
+    "srcX": 10,
+    "srcY": 1,
+    "dest": "Ioliaa",
+    "destX": 10,
+    "destY": 14
+  },
+  {
+    "src": "Gretiay",
+    "srcX": 10,
+    "srcY": 19,
+    "dest": "Liaququ",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Gretiay",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Pass UNI-01",
+    "destX": 24,
+    "destY": 7
+  },
+  {
+    "src": "Gretiay",
+    "srcX": 19,
+    "srcY": 10,
+    "dest": "Sophilia",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "GT 3-328",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "Arexack",
+    "destX": 16,
+    "destY": 11
+  },
+  {
+    "src": "GT 3-328",
+    "srcX": 12,
+    "srcY": 5,
+    "dest": "Famida",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "GV 4-652",
+    "srcX": 5,
+    "srcY": 11,
+    "dest": "Betelgeuse (West)",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "GV 4-652",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Nionquat",
+    "destX": 14,
+    "destY": 8
+  },
+  {
+    "src": "GV 4-652",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Pass FED-13",
+    "destX": 10,
+    "destY": 20
+  },
+  {
+    "src": "GV 4-652",
+    "srcX": 11,
+    "srcY": 4,
+    "dest": "Sohoa",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "HC 4-962",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Micanex",
+    "destX": 11,
+    "destY": 19
+  },
+  {
+    "src": "HC 4-962",
+    "srcX": 11,
+    "srcY": 6,
+    "dest": "Pass FED-04",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "HC 4-962",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Waayan",
+    "destX": 24,
+    "destY": 9
+  },
+  {
+    "src": "HC 4-962",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Waayan (South)",
+    "destX": 24,
+    "destY": 14
+  },
+  {
+    "src": "Heze",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Nari (North)",
+    "destX": 31,
+    "destY": 7
+  },
+  {
+    "src": "Heze",
+    "srcX": 4,
+    "srcY": 30,
+    "dest": "Nari (South)",
+    "destX": 31,
+    "destY": 35
+  },
+  {
+    "src": "Heze",
+    "srcX": 22,
+    "srcY": 38,
+    "dest": "Nunki",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "Heze",
+    "srcX": 33,
+    "srcY": 6,
+    "dest": "Procyon",
+    "destX": 6,
+    "destY": 7
+  },
+  {
+    "src": "HO 2-296",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Iozeio",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "HO 2-296",
+    "srcX": 8,
+    "srcY": 10,
+    "dest": "Olphize",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "Hoanda",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Quurze",
+    "destX": 12,
+    "destY": 15
+  },
+  {
+    "src": "Hoanda",
+    "srcX": 15,
+    "srcY": 8,
+    "dest": "ZZ 2986",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Hobeex",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "JG 2-013",
+    "destX": 3,
+    "destY": 5
+  },
+  {
+    "src": "Hobeex",
+    "srcX": 7,
+    "srcY": 13,
+    "dest": "SF 5-674",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "Hobeex",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "Tiafa",
+    "destX": 0,
+    "destY": 26
+  },
+  {
+    "src": "Hocancan",
+    "srcX": 9,
+    "srcY": 18,
+    "dest": "Laedgre",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Hocancan",
+    "srcX": 8,
+    "srcY": 2,
+    "dest": "WO 3-290",
+    "destX": 9,
+    "destY": 10
+  },
+  {
+    "src": "Homam",
+    "srcX": 16,
+    "srcY": 13,
+    "dest": "Matar",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Homam",
+    "srcX": 6,
+    "srcY": 20,
+    "dest": "Pass UNI-05",
+    "destX": 18,
+    "destY": 1
+  },
+  {
+    "src": "Homam",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "WW 2-934",
+    "destX": 4,
+    "destY": 9
+  },
+  {
+    "src": "Hooth",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "Aandti",
+    "destX": 21,
+    "destY": 6
+  },
+  {
+    "src": "Hooth",
+    "srcX": 24,
+    "srcY": 6,
+    "dest": "Atlas",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Hource",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Iowagre",
+    "destX": 17,
+    "destY": 7
+  },
+  {
+    "src": "Hource",
+    "srcX": 18,
+    "srcY": 6,
+    "dest": "Pass EMP-09",
+    "destX": 0,
+    "destY": 14
+  },
+  {
+    "src": "HW 3-863",
+    "srcX": 15,
+    "srcY": 6,
+    "dest": "Nex 0004",
+    "destX": 4,
+    "destY": 3
+  },
+  {
+    "src": "HW 3-863",
+    "srcX": 7,
+    "srcY": 18,
+    "dest": "Rotanev",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "HW 3-863",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Wasat",
+    "destX": 10,
+    "destY": 18
+  },
+  {
+    "src": "Iceo",
+    "srcX": 19,
+    "srcY": 6,
+    "dest": "IP 3-251",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Iceo",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Pass EMP-01",
+    "destX": 1,
+    "destY": 24
+  },
+  {
+    "src": "Iceo",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Quana",
+    "destX": 14,
+    "destY": 7
+  },
+  {
+    "src": "Inena",
+    "srcX": 5,
+    "srcY": 19,
+    "dest": "Alioth",
+    "destX": 5,
+    "destY": 0
+  },
+  {
+    "src": "Inena",
+    "srcX": 13,
+    "srcY": 8,
+    "dest": "Maia",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Inioen",
+    "srcX": 12,
+    "srcY": 0,
+    "dest": "Liaface (East)",
+    "destX": 16,
+    "destY": 19
+  },
+  {
+    "src": "Inioen",
+    "srcX": 0,
+    "srcY": 1,
+    "dest": "Liaface (West)",
+    "destX": 2,
+    "destY": 18
+  },
+  {
+    "src": "Inioen",
+    "srcX": 3,
+    "srcY": 12,
+    "dest": "VM 3-326",
+    "destX": 11,
+    "destY": 2
+  },
+  {
+    "src": "Iniolol",
+    "srcX": 7,
+    "srcY": 13,
+    "dest": "Greandin",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Iniolol",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "WG 3-288",
+    "destX": 8,
+    "destY": 11
+  },
+  {
+    "src": "Inliaa",
+    "srcX": 11,
+    "srcY": 9,
+    "dest": "Kenlada",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Inliaa",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Phicanho",
+    "destX": 10,
+    "destY": 23
+  },
+  {
+    "src": "Iohofa",
+    "srcX": 16,
+    "srcY": 14,
+    "dest": "Lagreen",
+    "destX": 5,
+    "destY": 1
+  },
+  {
+    "src": "Iohofa",
+    "srcX": 21,
+    "srcY": 10,
+    "dest": "Olaso",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Iohofa",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Zeaay",
+    "destX": 20,
+    "destY": 12
+  },
+  {
+    "src": "Ioliaa",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Aveed",
+    "destX": 3,
+    "destY": 14
+  },
+  {
+    "src": "Ioliaa",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "Dainfa",
+    "destX": 2,
+    "destY": 16
+  },
+  {
+    "src": "Ioliaa",
+    "srcX": 10,
+    "srcY": 14,
+    "dest": "Gretiay",
+    "destX": 10,
+    "destY": 1
+  },
+  {
+    "src": "Ioquex",
+    "srcX": 14,
+    "srcY": 8,
+    "dest": "Pass UNI-07",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Ioquex",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "Polaris",
+    "destX": 4,
+    "destY": 12
+  },
+  {
+    "src": "Ioquex",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Solaqu",
+    "destX": 24,
+    "destY": 13
+  },
+  {
+    "src": "Iowagre",
+    "srcX": 5,
+    "srcY": 4,
+    "dest": "Fawaol",
+    "destX": 18,
+    "destY": 23
+  },
+  {
+    "src": "Iowagre",
+    "srcX": 17,
+    "srcY": 7,
+    "dest": "Hource",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Iowagre",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "Quaphi",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Iozeio",
+    "srcX": 17,
+    "srcY": 6,
+    "dest": "Electra",
+    "destX": 1,
+    "destY": 7
+  },
+  {
+    "src": "Iozeio",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "HO 2-296",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "IP 3-251",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Iceo",
+    "destX": 19,
+    "destY": 6
+  },
+  {
+    "src": "IP 3-251",
+    "srcX": 15,
+    "srcY": 7,
+    "dest": "Olbea",
+    "destX": 3,
+    "destY": 1
+  },
+  {
+    "src": "IP 3-251",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Pass EMP-02",
+    "destX": 12,
+    "destY": 19
+  },
+  {
+    "src": "Izar",
+    "srcX": 6,
+    "srcY": 17,
+    "dest": "Wezen",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "JG 2-013",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "Faedho",
+    "destX": 4,
+    "destY": 24
+  },
+  {
+    "src": "JG 2-013",
+    "srcX": 3,
+    "srcY": 5,
+    "dest": "Hobeex",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "JO 4-132",
+    "srcX": 13,
+    "srcY": 12,
+    "dest": "Bewaack",
+    "destX": 2,
+    "destY": 10
+  },
+  {
+    "src": "JO 4-132",
+    "srcX": 7,
+    "srcY": 18,
+    "dest": "Pass FED-13",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "JS 2-090",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Alioth",
+    "destX": 15,
+    "destY": 13
+  },
+  {
+    "src": "JS 2-090",
+    "srcX": 12,
+    "srcY": 5,
+    "dest": "Waayan",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Keid",
+    "srcX": 17,
+    "srcY": 10,
+    "dest": "Cebalrai",
+    "destX": 1,
+    "destY": 13
+  },
+  {
+    "src": "Keldon",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Delta Pavonis",
+    "destX": 5,
+    "destY": 26
+  },
+  {
+    "src": "Keldon",
+    "srcX": 24,
+    "srcY": 1,
+    "dest": "Eta Cassiopeia",
+    "destX": 5,
+    "destY": 32
+  },
+  {
+    "src": "Keldon",
+    "srcX": 13,
+    "srcY": 33,
+    "dest": "KU 3-616",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Kenlada",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Inliaa",
+    "destX": 11,
+    "destY": 9
+  },
+  {
+    "src": "Kenlada",
+    "srcX": 15,
+    "srcY": 19,
+    "dest": "Lianla",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Kenlada",
+    "srcX": 22,
+    "srcY": 0,
+    "dest": "PO 4-991",
+    "destX": 1,
+    "destY": 10
+  },
+  {
+    "src": "Kitalpha",
+    "srcX": 15,
+    "srcY": 6,
+    "dest": "EH 5-382",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Kitalpha",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Etamin",
+    "destX": 30,
+    "destY": 14
+  },
+  {
+    "src": "Kitalpha",
+    "srcX": 12,
+    "srcY": 14,
+    "dest": "Wasat (East)",
+    "destX": 22,
+    "destY": 0
+  },
+  {
+    "src": "Kitalpha",
+    "srcX": 1,
+    "srcY": 14,
+    "dest": "Wasat (West)",
+    "destX": 4,
+    "destY": 1
+  },
+  {
+    "src": "KU 3-616",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Keldon",
+    "destX": 13,
+    "destY": 33
+  },
+  {
+    "src": "KU 3-616",
+    "srcX": 2,
+    "srcY": 7,
+    "dest": "Laanex",
+    "destX": 13,
+    "destY": 3
+  },
+  {
+    "src": "KU 3-616",
+    "srcX": 11,
+    "srcY": 7,
+    "dest": "Pollux",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Laanex",
+    "srcX": 13,
+    "srcY": 3,
+    "dest": "KU 3-616",
+    "destX": 2,
+    "destY": 7
+  },
+  {
+    "src": "Laanex",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Tianbe",
+    "destX": 17,
+    "destY": 13
+  },
+  {
+    "src": "Laanex",
+    "srcX": 5,
+    "srcY": 15,
+    "dest": "Vewaa",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Labela",
+    "srcX": 33,
+    "srcY": 2,
+    "dest": "Cor Caroli",
+    "destX": 10,
+    "destY": 2
+  },
+  {
+    "src": "Labela",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "Quaack (North)",
+    "destX": 26,
+    "destY": 4
+  },
+  {
+    "src": "Labela",
+    "srcX": 0,
+    "srcY": 22,
+    "dest": "Quaack (South)",
+    "destX": 27,
+    "destY": 18
+  },
+  {
+    "src": "Ladaen",
+    "srcX": 19,
+    "srcY": 2,
+    "dest": "Phiandgre",
+    "destX": 20,
+    "destY": 17
+  },
+  {
+    "src": "Ladaen",
+    "srcX": 19,
+    "srcY": 14,
+    "dest": "PP 5-713 (East)",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "Ladaen",
+    "srcX": 7,
+    "srcY": 22,
+    "dest": "PP 5-713 (West)",
+    "destX": 2,
+    "destY": 0
+  },
+  {
+    "src": "Ladaen",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Veedfa",
+    "destX": 13,
+    "destY": 9
+  },
+  {
+    "src": "Laedgre",
+    "srcX": 13,
+    "srcY": 3,
+    "dest": "Daaya",
+    "destX": 1,
+    "destY": 23
+  },
+  {
+    "src": "Laedgre",
+    "srcX": 10,
+    "srcY": 19,
+    "dest": "Electra",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Laedgre",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Hocancan",
+    "destX": 9,
+    "destY": 18
+  },
+  {
+    "src": "Lagreen",
+    "srcX": 5,
+    "srcY": 1,
+    "dest": "Iohofa",
+    "destX": 16,
+    "destY": 14
+  },
+  {
+    "src": "Lagreen",
+    "srcX": 3,
+    "srcY": 13,
+    "dest": "Uressce",
+    "destX": 9,
+    "destY": 1
+  },
+  {
+    "src": "Lagreen",
+    "srcX": 14,
+    "srcY": 18,
+    "dest": "WI 4-329",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Lahola",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Facece",
+    "destX": 15,
+    "destY": 7
+  },
+  {
+    "src": "Lahola",
+    "srcX": 24,
+    "srcY": 13,
+    "dest": "GM 4-572",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Lahola",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Nunki",
+    "destX": 8,
+    "destY": 26
+  },
+  {
+    "src": "Lahola",
+    "srcX": 0,
+    "srcY": 20,
+    "dest": "Ophiuchi",
+    "destX": 20,
+    "destY": 3
+  },
+  {
+    "src": "Lalande",
+    "srcX": 5,
+    "srcY": 1,
+    "dest": "Beta Proxima",
+    "destX": 6,
+    "destY": 17
+  },
+  {
+    "src": "Lamice",
+    "srcX": 24,
+    "srcY": 0,
+    "dest": "Canaab",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Lamice",
+    "srcX": 0,
+    "srcY": 10,
+    "dest": "Exinfa",
+    "destX": 9,
+    "destY": 3
+  },
+  {
+    "src": "Lamice",
+    "srcX": 22,
+    "srcY": 14,
+    "dest": "Grecein",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "Laolla",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Canexin",
+    "destX": 13,
+    "destY": 24
+  },
+  {
+    "src": "Laolla",
+    "srcX": 11,
+    "srcY": 16,
+    "dest": "Tiacken",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Laolla",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Usube",
+    "destX": 12,
+    "destY": 4
+  },
+  {
+    "src": "Lasolia",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "Anphiex",
+    "destX": 7,
+    "destY": 29
+  },
+  {
+    "src": "Lasolia",
+    "srcX": 1,
+    "srcY": 14,
+    "dest": "Edenve",
+    "destX": 19,
+    "destY": 4
+  },
+  {
+    "src": "Lasolia",
+    "srcX": 15,
+    "srcY": 14,
+    "dest": "Faarfa",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Lave",
+    "srcX": 10,
+    "srcY": 15,
+    "dest": "Miarin",
+    "destX": 2,
+    "destY": 0
+  },
+  {
+    "src": "Lave",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Pass FED-10",
+    "destX": 18,
+    "destY": 6
+  },
+  {
+    "src": "Lave",
+    "srcX": 19,
+    "srcY": 0,
+    "dest": "XH 3819",
+    "destX": 5,
+    "destY": 11
+  },
+  {
+    "src": "Lavebe",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Pass UNI-06",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Lavebe",
+    "srcX": 22,
+    "srcY": 7,
+    "dest": "Tigrecan",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Lazebe",
+    "srcX": 27,
+    "srcY": 13,
+    "dest": "Bellatrix",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Lazebe",
+    "srcX": 26,
+    "srcY": 2,
+    "dest": "Nashira",
+    "destX": 1,
+    "destY": 19
+  },
+  {
+    "src": "Lazebe",
+    "srcX": 18,
+    "srcY": 17,
+    "dest": "Olaeth",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "Leesti",
+    "srcX": 8,
+    "srcY": 15,
+    "dest": "Faedho",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "Leesti",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "UF 3-555",
+    "destX": 2,
+    "destY": 10
+  },
+  {
+    "src": "Let",
+    "srcX": 5,
+    "srcY": 3,
+    "dest": "Famida",
+    "destX": 23,
+    "destY": 17
+  },
+  {
+    "src": "Let",
+    "srcX": 2,
+    "srcY": 32,
+    "dest": "Tigrecan",
+    "destX": 12,
+    "destY": 2
+  },
+  {
+    "src": "Let",
+    "srcX": 19,
+    "srcY": 1,
+    "dest": "Uv Seti",
+    "destX": 2,
+    "destY": 13
+  },
+  {
+    "src": "Let",
+    "srcX": 16,
+    "srcY": 25,
+    "dest": "Zeaay",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Liaackti",
+    "srcX": 18,
+    "srcY": 16,
+    "dest": "Andsoled",
+    "destX": 1,
+    "destY": 17
+  },
+  {
+    "src": "Liaackti",
+    "srcX": 5,
+    "srcY": 22,
+    "dest": "Enwaand",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Liaackti",
+    "srcX": 5,
+    "srcY": 16,
+    "dest": "FR 3-328",
+    "destX": 11,
+    "destY": 6
+  },
+  {
+    "src": "Liaface",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Enioar",
+    "destX": 12,
+    "destY": 12
+  },
+  {
+    "src": "Liaface",
+    "srcX": 16,
+    "srcY": 19,
+    "dest": "Inioen (East)",
+    "destX": 12,
+    "destY": 0
+  },
+  {
+    "src": "Liaface",
+    "srcX": 2,
+    "srcY": 18,
+    "dest": "Inioen (West)",
+    "destX": 0,
+    "destY": 1
+  },
+  {
+    "src": "Lianla",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Kenlada",
+    "destX": 15,
+    "destY": 19
+  },
+  {
+    "src": "Lianla",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Pass EMP-08",
+    "destX": 24,
+    "destY": 8
+  },
+  {
+    "src": "Lianla",
+    "srcX": 9,
+    "srcY": 19,
+    "dest": "XC 3-261",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Liaququ",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Gretiay",
+    "destX": 10,
+    "destY": 19
+  },
+  {
+    "src": "Liaququ",
+    "srcX": 16,
+    "srcY": 12,
+    "dest": "Spica",
+    "destX": 1,
+    "destY": 10
+  },
+  {
+    "src": "LN 3-141",
+    "srcX": 3,
+    "srcY": 0,
+    "dest": "Pass EMP-06",
+    "destX": 4,
+    "destY": 10
+  },
+  {
+    "src": "LN 3-141",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Urlafa",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "LN 3-141",
+    "srcX": 5,
+    "srcY": 5,
+    "dest": "WG 3-288",
+    "destX": 2,
+    "destY": 0
+  },
+  {
+    "src": "LO 2-014",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "Epsilon Indi",
+    "destX": 7,
+    "destY": 11
+  },
+  {
+    "src": "LO 2-014",
+    "srcX": 0,
+    "srcY": 1,
+    "dest": "Micanex",
+    "destX": 18,
+    "destY": 9
+  },
+  {
+    "src": "Maia",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Inena",
+    "destX": 13,
+    "destY": 8
+  },
+  {
+    "src": "Maia",
+    "srcX": 19,
+    "srcY": 6,
+    "dest": "Micanex",
+    "destX": 0,
+    "destY": 10
+  },
+  {
+    "src": "Maia",
+    "srcX": 19,
+    "srcY": 0,
+    "dest": "Zeaex",
+    "destX": 0,
+    "destY": 12
+  },
+  {
+    "src": "Matar",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Homam",
+    "destX": 16,
+    "destY": 13
+  },
+  {
+    "src": "Matar",
+    "srcX": 14,
+    "srcY": 5,
+    "dest": "UG 5-093",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "Mebsuta",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Nex 0004",
+    "destX": 20,
+    "destY": 4
+  },
+  {
+    "src": "Mebsuta",
+    "srcX": 5,
+    "srcY": 0,
+    "dest": "Phao",
+    "destX": 12,
+    "destY": 18
+  },
+  {
+    "src": "Mebsuta",
+    "srcX": 5,
+    "srcY": 17,
+    "dest": "Zaniah",
+    "destX": 4,
+    "destY": 1
+  },
+  {
+    "src": "Menkar",
+    "srcX": 1,
+    "srcY": 25,
+    "dest": "Procyon",
+    "destX": 34,
+    "destY": 19
+  },
+  {
+    "src": "Menkar",
+    "srcX": 26,
+    "srcY": 22,
+    "dest": "Rigel",
+    "destX": 2,
+    "destY": 28
+  },
+  {
+    "src": "Menkent",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Ackwada",
+    "destX": 21,
+    "destY": 9
+  },
+  {
+    "src": "Menkent",
+    "srcX": 19,
+    "srcY": 2,
+    "dest": "Zaurak",
+    "destX": 2,
+    "destY": 25
+  },
+  {
+    "src": "Meram",
+    "srcX": 18,
+    "srcY": 10,
+    "dest": "Mintaka",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Meram",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Retho",
+    "destX": 14,
+    "destY": 9
+  },
+  {
+    "src": "Miackio",
+    "srcX": 21,
+    "srcY": 2,
+    "dest": "Edvea",
+    "destX": 1,
+    "destY": 22
+  },
+  {
+    "src": "Miackio",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Oldain",
+    "destX": 14,
+    "destY": 16
+  },
+  {
+    "src": "Miarin",
+    "srcX": 2,
+    "srcY": 0,
+    "dest": "Lave",
+    "destX": 10,
+    "destY": 15
+  },
+  {
+    "src": "Miarin",
+    "srcX": 5,
+    "srcY": 19,
+    "dest": "Ook",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Miayack",
+    "srcX": 23,
+    "srcY": 8,
+    "dest": "Exinfa",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Miayack",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Sigma Draconis",
+    "destX": 24,
+    "destY": 7
+  },
+  {
+    "src": "Miayda",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Bewaack (North)",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Miayda",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Bewaack (South)",
+    "destX": 9,
+    "destY": 22
+  },
+  {
+    "src": "Miayda",
+    "srcX": 24,
+    "srcY": 3,
+    "dest": "Silaad",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Miayda",
+    "srcX": 24,
+    "srcY": 13,
+    "dest": "Xeho",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Micanex",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Bedaho",
+    "destX": 9,
+    "destY": 16
+  },
+  {
+    "src": "Micanex",
+    "srcX": 11,
+    "srcY": 19,
+    "dest": "HC 4-962",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Micanex",
+    "srcX": 18,
+    "srcY": 9,
+    "dest": "LO 2-014",
+    "destX": 0,
+    "destY": 1
+  },
+  {
+    "src": "Micanex",
+    "srcX": 0,
+    "srcY": 10,
+    "dest": "Maia",
+    "destX": 19,
+    "destY": 6
+  },
+  {
+    "src": "Mintaka",
+    "srcX": 37,
+    "srcY": 21,
+    "dest": "Aya",
+    "destX": 5,
+    "destY": 6
+  },
+  {
+    "src": "Mintaka",
+    "srcX": 38,
+    "srcY": 1,
+    "dest": "Dubhe",
+    "destX": 1,
+    "destY": 22
+  },
+  {
+    "src": "Mintaka",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Meram",
+    "destX": 18,
+    "destY": 10
+  },
+  {
+    "src": "Miola",
+    "srcX": 20,
+    "srcY": 17,
+    "dest": "Pass UNI-08",
+    "destX": 10,
+    "destY": 1
+  },
+  {
+    "src": "Miola",
+    "srcX": 0,
+    "srcY": 12,
+    "dest": "Uressce",
+    "destX": 19,
+    "destY": 8
+  },
+  {
+    "src": "Miola",
+    "srcX": 23,
+    "srcY": 7,
+    "dest": "WI 4-329",
+    "destX": 0,
+    "destY": 16
+  },
+  {
+    "src": "Miphimi",
+    "srcX": 10,
+    "srcY": 14,
+    "dest": "Olcanze",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "Miphimi",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Phiagre",
+    "destX": 19,
+    "destY": 4
+  },
+  {
+    "src": "Miphimi",
+    "srcX": 21,
+    "srcY": 9,
+    "dest": "WO 3-290",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Mizar",
+    "srcX": 0,
+    "srcY": 16,
+    "dest": "Faphida",
+    "destX": 21,
+    "destY": 10
+  },
+  {
+    "src": "Mizar",
+    "srcX": 15,
+    "srcY": 14,
+    "dest": "Quince",
+    "destX": 1,
+    "destY": 7
+  },
+  {
+    "src": "Naos",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Beta Hydri",
+    "destX": 22,
+    "destY": 6
+  },
+  {
+    "src": "Naos",
+    "srcX": 16,
+    "srcY": 8,
+    "dest": "CP 2-197",
+    "destX": 2,
+    "destY": 6
+  },
+  {
+    "src": "Naos",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Pass UNI-08",
+    "destX": 11,
+    "destY": 30
+  },
+  {
+    "src": "Nari",
+    "srcX": 3,
+    "srcY": 10,
+    "dest": "Aya",
+    "destX": 34,
+    "destY": 6
+  },
+  {
+    "src": "Nari",
+    "srcX": 10,
+    "srcY": 4,
+    "dest": "Enif",
+    "destX": 13,
+    "destY": 23
+  },
+  {
+    "src": "Nari",
+    "srcX": 31,
+    "srcY": 7,
+    "dest": "Heze (North)",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Nari",
+    "srcX": 31,
+    "srcY": 35,
+    "dest": "Heze (South)",
+    "destX": 4,
+    "destY": 30
+  },
+  {
+    "src": "Nashira",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Dsiban",
+    "destX": 9,
+    "destY": 16
+  },
+  {
+    "src": "Nashira",
+    "srcX": 1,
+    "srcY": 19,
+    "dest": "Lazebe",
+    "destX": 26,
+    "destY": 2
+  },
+  {
+    "src": "Nashira",
+    "srcX": 22,
+    "srcY": 18,
+    "dest": "Turais",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Nashira",
+    "srcX": 22,
+    "srcY": 3,
+    "dest": "Wezen",
+    "destX": 1,
+    "destY": 4
+  },
+  {
+    "src": "Nebul",
+    "srcX": 1,
+    "srcY": 19,
+    "dest": "Capella",
+    "destX": 17,
+    "destY": 3
+  },
+  {
+    "src": "Nebul",
+    "srcX": 11,
+    "srcY": 15,
+    "dest": "Famiay",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Nekkar",
+    "srcX": 0,
+    "srcY": 21,
+    "dest": "BE 3-702",
+    "destX": 16,
+    "destY": 1
+  },
+  {
+    "src": "Nekkar",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "UG 5-093",
+    "destX": 3,
+    "destY": 20
+  },
+  {
+    "src": "Nex 0001",
+    "srcX": 21,
+    "srcY": 23,
+    "dest": "BL 6-511 (East)",
+    "destX": 16,
+    "destY": 2
+  },
+  {
+    "src": "Nex 0001",
+    "srcX": 0,
+    "srcY": 24,
+    "dest": "BL 6-511 (West)",
+    "destX": 3,
+    "destY": 1
+  },
+  {
+    "src": "Nex 0001",
+    "srcX": 20,
+    "srcY": 0,
+    "dest": "Gilo (East)",
+    "destX": 16,
+    "destY": 19
+  },
+  {
+    "src": "Nex 0001",
+    "srcX": 5,
+    "srcY": 0,
+    "dest": "Gilo (West)",
+    "destX": 3,
+    "destY": 19
+  },
+  {
+    "src": "Nex 0002",
+    "srcX": 10,
+    "srcY": 23,
+    "dest": "Daaya",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "Nex 0003",
+    "srcX": 13,
+    "srcY": 18,
+    "dest": "Paan",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Nex 0004",
+    "srcX": 4,
+    "srcY": 3,
+    "dest": "HW 3-863",
+    "destX": 15,
+    "destY": 6
+  },
+  {
+    "src": "Nex 0004",
+    "srcX": 20,
+    "srcY": 4,
+    "dest": "Mebsuta",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Nex 0004",
+    "srcX": 23,
+    "srcY": 17,
+    "dest": "Nex 0004 (East)",
+    "destX": 22,
+    "destY": 13
+  },
+  {
+    "src": "Nex 0004",
+    "srcX": 22,
+    "srcY": 13,
+    "dest": "Nex 0004 (SE)",
+    "destX": 23,
+    "destY": 17
+  },
+  {
+    "src": "Nex 0004",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Nex 0004 (SW)",
+    "destX": 0,
+    "destY": 15
+  },
+  {
+    "src": "Nex 0004",
+    "srcX": 0,
+    "srcY": 15,
+    "dest": "Nex 0004 (West)",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Nex 0005",
+    "srcX": 20,
+    "srcY": 21,
+    "dest": "Canolin (East)",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "Nex 0005",
+    "srcX": 2,
+    "srcY": 24,
+    "dest": "Canolin (West)",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Nex 0006",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Greenso (North)",
+    "destX": 15,
+    "destY": 2
+  },
+  {
+    "src": "Nex 0006",
+    "srcX": 0,
+    "srcY": 14,
+    "dest": "Greenso (South)",
+    "destX": 19,
+    "destY": 14
+  },
+  {
+    "src": "Nex 0006",
+    "srcX": 24,
+    "srcY": 19,
+    "dest": "Propus",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Nex Kataam",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "Retho",
+    "destX": 20,
+    "destY": 20
+  },
+  {
+    "src": "Nex Kataam",
+    "srcX": 1,
+    "srcY": 20,
+    "dest": "Tiacken",
+    "destX": 16,
+    "destY": 8
+  },
+  {
+    "src": "Nhandu",
+    "srcX": 11,
+    "srcY": 39,
+    "dest": "Baham",
+    "destX": 10,
+    "destY": 1
+  },
+  {
+    "src": "Nhandu",
+    "srcX": 18,
+    "srcY": 2,
+    "dest": "Cebece",
+    "destX": 2,
+    "destY": 14
+  },
+  {
+    "src": "Nhandu",
+    "srcX": 0,
+    "srcY": 21,
+    "dest": "Pardus (NE)",
+    "destX": 92,
+    "destY": 23
+  },
+  {
+    "src": "Nionquat",
+    "srcX": 1,
+    "srcY": 18,
+    "dest": "Famiay",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Nionquat",
+    "srcX": 14,
+    "srcY": 8,
+    "dest": "GV 4-652",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Nunki",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "Heze (South)",
+    "destX": 22,
+    "destY": 38
+  },
+  {
+    "src": "Nunki",
+    "srcX": 8,
+    "srcY": 26,
+    "dest": "Lahola",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Nusakan",
+    "srcX": 23,
+    "srcY": 10,
+    "dest": "Pass UNI-05",
+    "destX": 0,
+    "destY": 16
+  },
+  {
+    "src": "Nusakan",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Seginus",
+    "destX": 9,
+    "destY": 17
+  },
+  {
+    "src": "Nusakan",
+    "srcX": 10,
+    "srcY": 18,
+    "dest": "Yildun",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Oauress",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "PP 5-713 (East)",
+    "destX": 6,
+    "destY": 11
+  },
+  {
+    "src": "Oauress",
+    "srcX": 18,
+    "srcY": 13,
+    "dest": "Sowace",
+    "destX": 17,
+    "destY": 5
+  },
+  {
+    "src": "Olaeth",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "Lazebe",
+    "destX": 18,
+    "destY": 17
+  },
+  {
+    "src": "Olaeth",
+    "srcX": 15,
+    "srcY": 11,
+    "dest": "WW 2-934",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "Olaso",
+    "srcX": 8,
+    "srcY": 6,
+    "dest": "Abeho",
+    "destX": 24,
+    "destY": 8
+  },
+  {
+    "src": "Olaso",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Iohofa",
+    "destX": 21,
+    "destY": 10
+  },
+  {
+    "src": "Olaso",
+    "srcX": 21,
+    "srcY": 18,
+    "dest": "Veliace",
+    "destX": 4,
+    "destY": 2
+  },
+  {
+    "src": "Olbea",
+    "srcX": 2,
+    "srcY": 21,
+    "dest": "Adaa",
+    "destX": 21,
+    "destY": 2
+  },
+  {
+    "src": "Olbea",
+    "srcX": 3,
+    "srcY": 1,
+    "dest": "IP 3-251",
+    "destX": 15,
+    "destY": 7
+  },
+  {
+    "src": "Olbea",
+    "srcX": 20,
+    "srcY": 20,
+    "dest": "RV 2-578",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Olcanze",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "Miphimi",
+    "destX": 10,
+    "destY": 14
+  },
+  {
+    "src": "Olcanze",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Phiagre",
+    "destX": 19,
+    "destY": 11
+  },
+  {
+    "src": "Oldain",
+    "srcX": 0,
+    "srcY": 16,
+    "dest": "CC 3-771",
+    "destX": 19,
+    "destY": 9
+  },
+  {
+    "src": "Oldain",
+    "srcX": 14,
+    "srcY": 16,
+    "dest": "Miackio",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Oldain",
+    "srcX": 1,
+    "srcY": 3,
+    "dest": "Watibe",
+    "destX": 20,
+    "destY": 14
+  },
+  {
+    "src": "Olexti",
+    "srcX": 5,
+    "srcY": 15,
+    "dest": "Andexa",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "Olexti",
+    "srcX": 2,
+    "srcY": 0,
+    "dest": "Sol",
+    "destX": 14,
+    "destY": 28
+  },
+  {
+    "src": "Ollaffa",
+    "srcX": 2,
+    "srcY": 12,
+    "dest": "SF 5-674",
+    "destX": 12,
+    "destY": 2
+  },
+  {
+    "src": "Ollaffa",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "Tiafa",
+    "destX": 13,
+    "destY": 23
+  },
+  {
+    "src": "Olphize",
+    "srcX": 15,
+    "srcY": 5,
+    "dest": "Beethti",
+    "destX": 0,
+    "destY": 19
+  },
+  {
+    "src": "Olphize",
+    "srcX": 8,
+    "srcY": 20,
+    "dest": "Canexin",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Olphize",
+    "srcX": 18,
+    "srcY": 10,
+    "dest": "Edbeeth",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Olphize",
+    "srcX": 4,
+    "srcY": 2,
+    "dest": "Grefaho",
+    "destX": 20,
+    "destY": 0
+  },
+  {
+    "src": "Olphize",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "HO 2-296",
+    "destX": 8,
+    "destY": 10
+  },
+  {
+    "src": "Omicron Eridani",
+    "srcX": 14,
+    "srcY": 10,
+    "dest": "Ackexa",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Omicron Eridani",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Rashkan",
+    "destX": 24,
+    "destY": 13
+  },
+  {
+    "src": "Ook",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "Andexa",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Ook",
+    "srcX": 14,
+    "srcY": 13,
+    "dest": "Cesoho",
+    "destX": 1,
+    "destY": 0
+  },
+  {
+    "src": "Ook",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Miarin",
+    "destX": 5,
+    "destY": 19
+  },
+  {
+    "src": "Ook",
+    "srcX": 4,
+    "srcY": 14,
+    "dest": "Pass FED-08",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Ophiuchi",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "Facece (South)",
+    "destX": 9,
+    "destY": 22
+  },
+  {
+    "src": "Ophiuchi",
+    "srcX": 20,
+    "srcY": 3,
+    "dest": "Lahola",
+    "destX": 0,
+    "destY": 20
+  },
+  {
+    "src": "Ophiuchi",
+    "srcX": 1,
+    "srcY": 3,
+    "dest": "Sodaack",
+    "destX": 13,
+    "destY": 14
+  },
+  {
+    "src": "Orerve",
+    "srcX": 16,
+    "srcY": 14,
+    "dest": "Andexa",
+    "destX": 0,
+    "destY": 2
+  },
+  {
+    "src": "Orerve",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "XH 3819",
+    "destX": 11,
+    "destY": 11
+  },
+  {
+    "src": "Oucanfa",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Fadaphi",
+    "destX": 1,
+    "destY": 22
+  },
+  {
+    "src": "Oucanfa",
+    "srcX": 0,
+    "srcY": 4,
+    "dest": "Xeho",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "PA 2-013",
+    "srcX": 10,
+    "srcY": 15,
+    "dest": "Abeho",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "PA 2-013",
+    "srcX": 1,
+    "srcY": 0,
+    "dest": "Gresoin",
+    "destX": 22,
+    "destY": 19
+  },
+  {
+    "src": "Paan",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Cabard",
+    "destX": 8,
+    "destY": 10
+  },
+  {
+    "src": "Paan",
+    "srcX": 23,
+    "srcY": 12,
+    "dest": "Cemiess",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Paan",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Nex 0003",
+    "destX": 13,
+    "destY": 18
+  },
+  {
+    "src": "Paan",
+    "srcX": 19,
+    "srcY": 15,
+    "dest": "Paan (East)",
+    "destX": 21,
+    "destY": 16
+  },
+  {
+    "src": "Paan",
+    "srcX": 21,
+    "srcY": 16,
+    "dest": "Paan (Inner East)",
+    "destX": 19,
+    "destY": 15
+  },
+  {
+    "src": "Paan",
+    "srcX": 3,
+    "srcY": 15,
+    "dest": "Paan (Inner West)",
+    "destX": 5,
+    "destY": 16
+  },
+  {
+    "src": "Paan",
+    "srcX": 5,
+    "srcY": 16,
+    "dest": "Paan (West)",
+    "destX": 3,
+    "destY": 15
+  },
+  {
+    "src": "Pardus",
+    "srcX": 4,
+    "srcY": 43,
+    "dest": "Enif",
+    "destX": 32,
+    "destY": 9
+  },
+  {
+    "src": "Pardus",
+    "srcX": 92,
+    "srcY": 23,
+    "dest": "Nhandu",
+    "destX": 0,
+    "destY": 21
+  },
+  {
+    "src": "Pardus",
+    "srcX": 17,
+    "srcY": 54,
+    "dest": "Pardus (16,60)",
+    "destX": 16,
+    "destY": 60
+  },
+  {
+    "src": "Pardus",
+    "srcX": 16,
+    "srcY": 60,
+    "dest": "Pardus (17,54)",
+    "destX": 17,
+    "destY": 54
+  },
+  {
+    "src": "Pardus",
+    "srcX": 38,
+    "srcY": 15,
+    "dest": "Pardus (36,16)",
+    "destX": 36,
+    "destY": 16
+  },
+  {
+    "src": "Pardus",
+    "srcX": 36,
+    "srcY": 16,
+    "dest": "Pardus (38,15)",
+    "destX": 38,
+    "destY": 15
+  },
+  {
+    "src": "Pardus",
+    "srcX": 89,
+    "srcY": 8,
+    "dest": "Pardus (87,6)",
+    "destX": 87,
+    "destY": 6
+  },
+  {
+    "src": "Pardus",
+    "srcX": 87,
+    "srcY": 6,
+    "dest": "Pardus (89,8)",
+    "destX": 89,
+    "destY": 8
+  },
+  {
+    "src": "Pardus",
+    "srcX": 85,
+    "srcY": 85,
+    "dest": "Procyon",
+    "destX": 18,
+    "destY": 1
+  },
+  {
+    "src": "Pardus",
+    "srcX": 52,
+    "srcY": 7,
+    "dest": "Quaack",
+    "destX": 10,
+    "destY": 23
+  },
+  {
+    "src": "Pass EMP-01",
+    "srcX": 1,
+    "srcY": 24,
+    "dest": "Iceo",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Pass EMP-01",
+    "srcX": 5,
+    "srcY": 0,
+    "dest": "TG 2-143",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Pass EMP-02",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Datiack",
+    "destX": 10,
+    "destY": 14
+  },
+  {
+    "src": "Pass EMP-02",
+    "srcX": 12,
+    "srcY": 19,
+    "dest": "IP 3-251",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Pass EMP-03",
+    "srcX": 23,
+    "srcY": 4,
+    "dest": "Ackandso",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Pass EMP-03",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Grecein",
+    "destX": 12,
+    "destY": 12
+  },
+  {
+    "src": "Pass EMP-04",
+    "srcX": 7,
+    "srcY": 2,
+    "dest": "AN 2-956",
+    "destX": 13,
+    "destY": 19
+  },
+  {
+    "src": "Pass EMP-04",
+    "srcX": 12,
+    "srcY": 24,
+    "dest": "Daurlia",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Pass EMP-05",
+    "srcX": 6,
+    "srcY": 19,
+    "dest": "PI 4-669",
+    "destX": 4,
+    "destY": 1
+  },
+  {
+    "src": "Pass EMP-05",
+    "srcX": 6,
+    "srcY": 1,
+    "dest": "Waarze",
+    "destX": 10,
+    "destY": 11
+  },
+  {
+    "src": "Pass EMP-06",
+    "srcX": 4,
+    "srcY": 10,
+    "dest": "LN 3-141",
+    "destX": 3,
+    "destY": 0
+  },
+  {
+    "src": "Pass EMP-06",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "Zuben Elakrab",
+    "destX": 12,
+    "destY": 15
+  },
+  {
+    "src": "Pass EMP-07",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "PP 5-713 (East)",
+    "destX": 13,
+    "destY": 5
+  },
+  {
+    "src": "Pass EMP-07",
+    "srcX": 24,
+    "srcY": 9,
+    "dest": "Quana",
+    "destX": 0,
+    "destY": 12
+  },
+  {
+    "src": "Pass EMP-08",
+    "srcX": 1,
+    "srcY": 15,
+    "dest": "DP 2-354",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Pass EMP-08",
+    "srcX": 0,
+    "srcY": 4,
+    "dest": "Greliai",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Pass EMP-08",
+    "srcX": 24,
+    "srcY": 8,
+    "dest": "Lianla",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Pass EMP-09",
+    "srcX": 0,
+    "srcY": 14,
+    "dest": "Hource",
+    "destX": 18,
+    "destY": 6
+  },
+  {
+    "src": "Pass EMP-09",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "XC 3-261",
+    "destX": 1,
+    "destY": 12
+  },
+  {
+    "src": "Pass EMP-10",
+    "srcX": 9,
+    "srcY": 23,
+    "dest": "Anayed",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "Pass EMP-10",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Ceina",
+    "destX": 6,
+    "destY": 13
+  },
+  {
+    "src": "Pass EMP-10",
+    "srcX": 24,
+    "srcY": 16,
+    "dest": "Pass EMP-11",
+    "destX": 2,
+    "destY": 20
+  },
+  {
+    "src": "Pass EMP-11",
+    "srcX": 12,
+    "srcY": 20,
+    "dest": "Greliai",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Pass EMP-11",
+    "srcX": 2,
+    "srcY": 20,
+    "dest": "Pass EMP-10",
+    "destX": 24,
+    "destY": 16
+  },
+  {
+    "src": "Pass EMP-11",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Sowace",
+    "destX": 8,
+    "destY": 19
+  },
+  {
+    "src": "Pass FED-01",
+    "srcX": 17,
+    "srcY": 15,
+    "dest": "Grefaho",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Pass FED-01",
+    "srcX": 0,
+    "srcY": 1,
+    "dest": "Tau Ceti",
+    "destX": 24,
+    "destY": 8
+  },
+  {
+    "src": "Pass FED-02",
+    "srcX": 12,
+    "srcY": 17,
+    "dest": "Ayargre",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Pass FED-02",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "WP 3155",
+    "destX": 16,
+    "destY": 5
+  },
+  {
+    "src": "Pass FED-03",
+    "srcX": 15,
+    "srcY": 10,
+    "dest": "Alioth",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Pass FED-03",
+    "srcX": 10,
+    "srcY": 14,
+    "dest": "PJ 3373",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-04",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "HC 4-962",
+    "destX": 11,
+    "destY": 6
+  },
+  {
+    "src": "Pass FED-04",
+    "srcX": 24,
+    "srcY": 10,
+    "dest": "Phiagre",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Pass FED-05",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Ackexa",
+    "destX": 10,
+    "destY": 13
+  },
+  {
+    "src": "Pass FED-05",
+    "srcX": 7,
+    "srcY": 20,
+    "dest": "Canopus",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-06",
+    "srcX": 9,
+    "srcY": 22,
+    "dest": "SD 3-562",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-06",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "YC 3-268",
+    "destX": 8,
+    "destY": 14
+  },
+  {
+    "src": "Pass FED-07",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Essaa",
+    "destX": 10,
+    "destY": 13
+  },
+  {
+    "src": "Pass FED-07",
+    "srcX": 25,
+    "srcY": 8,
+    "dest": "UZ 8-466",
+    "destX": 1,
+    "destY": 4
+  },
+  {
+    "src": "Pass FED-08",
+    "srcX": 8,
+    "srcY": 22,
+    "dest": "FR 3-328",
+    "destX": 5,
+    "destY": 1
+  },
+  {
+    "src": "Pass FED-08",
+    "srcX": 7,
+    "srcY": 0,
+    "dest": "Ook",
+    "destX": 4,
+    "destY": 14
+  },
+  {
+    "src": "Pass FED-09",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Enioar",
+    "destX": 20,
+    "destY": 7
+  },
+  {
+    "src": "Pass FED-09",
+    "srcX": 22,
+    "srcY": 9,
+    "dest": "Faexze",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Pass FED-09",
+    "srcX": 18,
+    "srcY": 16,
+    "dest": "Pass FED-10",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-10",
+    "srcX": 18,
+    "srcY": 6,
+    "dest": "Lave",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Pass FED-10",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Pass FED-09",
+    "destX": 18,
+    "destY": 16
+  },
+  {
+    "src": "Pass FED-10",
+    "srcX": 5,
+    "srcY": 19,
+    "dest": "Ureneth",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-10",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "Wamien",
+    "destX": 24,
+    "destY": 5
+  },
+  {
+    "src": "Pass FED-11",
+    "srcX": 21,
+    "srcY": 9,
+    "dest": "Beurso",
+    "destX": 1,
+    "destY": 7
+  },
+  {
+    "src": "Pass FED-11",
+    "srcX": 17,
+    "srcY": 15,
+    "dest": "Pass FED-12",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-11",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "RA 3-124",
+    "destX": 6,
+    "destY": 11
+  },
+  {
+    "src": "Pass FED-12",
+    "srcX": 20,
+    "srcY": 8,
+    "dest": "Daaze",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "Pass FED-12",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "Pass FED-11",
+    "destX": 17,
+    "destY": 15
+  },
+  {
+    "src": "Pass FED-12",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "SF 5-674",
+    "destX": 12,
+    "destY": 12
+  },
+  {
+    "src": "Pass FED-13",
+    "srcX": 10,
+    "srcY": 20,
+    "dest": "GV 4-652",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Pass FED-13",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "JO 4-132",
+    "destX": 7,
+    "destY": 18
+  },
+  {
+    "src": "Pass UNI-01",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Anphiex",
+    "destX": 14,
+    "destY": 23
+  },
+  {
+    "src": "Pass UNI-01",
+    "srcX": 24,
+    "srcY": 7,
+    "dest": "Gretiay",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Pass UNI-02",
+    "srcX": 4,
+    "srcY": 7,
+    "dest": "EH 5-382",
+    "destX": 6,
+    "destY": 1
+  },
+  {
+    "src": "Pass UNI-02",
+    "srcX": 5,
+    "srcY": 4,
+    "dest": "Urfaa",
+    "destX": 12,
+    "destY": 19
+  },
+  {
+    "src": "Pass UNI-03",
+    "srcX": 10,
+    "srcY": 18,
+    "dest": "Diphda",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "Pass UNI-03",
+    "srcX": 8,
+    "srcY": 2,
+    "dest": "Quexce",
+    "destX": 6,
+    "destY": 23
+  },
+  {
+    "src": "Pass UNI-04",
+    "srcX": 24,
+    "srcY": 10,
+    "dest": "Dsiban",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Pass UNI-04",
+    "srcX": 0,
+    "srcY": 14,
+    "dest": "YV 3-386",
+    "destX": 11,
+    "destY": 10
+  },
+  {
+    "src": "Pass UNI-05",
+    "srcX": 23,
+    "srcY": 15,
+    "dest": "BE 3-702",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Pass UNI-05",
+    "srcX": 18,
+    "srcY": 1,
+    "dest": "Homam",
+    "destX": 6,
+    "destY": 20
+  },
+  {
+    "src": "Pass UNI-05",
+    "srcX": 0,
+    "srcY": 16,
+    "dest": "Nusakan",
+    "destX": 23,
+    "destY": 10
+  },
+  {
+    "src": "Pass UNI-06",
+    "srcX": 3,
+    "srcY": 0,
+    "dest": "Dadaex",
+    "destX": 9,
+    "destY": 17
+  },
+  {
+    "src": "Pass UNI-06",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "Lavebe",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Pass UNI-06",
+    "srcX": 6,
+    "srcY": 18,
+    "dest": "Qumia",
+    "destX": 4,
+    "destY": 1
+  },
+  {
+    "src": "Pass UNI-06",
+    "srcX": 13,
+    "srcY": 6,
+    "dest": "Tigrecan",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Pass UNI-07",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "BU 5-773",
+    "destX": 10,
+    "destY": 6
+  },
+  {
+    "src": "Pass UNI-07",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Ioquex",
+    "destX": 14,
+    "destY": 8
+  },
+  {
+    "src": "Pass UNI-07",
+    "srcX": 22,
+    "srcY": 7,
+    "dest": "Uressce",
+    "destX": 2,
+    "destY": 8
+  },
+  {
+    "src": "Pass UNI-08",
+    "srcX": 10,
+    "srcY": 1,
+    "dest": "Miola",
+    "destX": 20,
+    "destY": 17
+  },
+  {
+    "src": "Pass UNI-08",
+    "srcX": 11,
+    "srcY": 30,
+    "dest": "Naos",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Pass UNI-08",
+    "srcX": 17,
+    "srcY": 2,
+    "dest": "WI 4-329",
+    "destX": 8,
+    "destY": 14
+  },
+  {
+    "src": "Pass UNI-09",
+    "srcX": 0,
+    "srcY": 12,
+    "dest": "Algol",
+    "destX": 14,
+    "destY": 11
+  },
+  {
+    "src": "Pass UNI-09",
+    "srcX": 18,
+    "srcY": 9,
+    "dest": "Dadaex",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Phaet",
+    "srcX": 15,
+    "srcY": 0,
+    "dest": "Achird",
+    "destX": 6,
+    "destY": 19
+  },
+  {
+    "src": "Phaet",
+    "srcX": 8,
+    "srcY": 12,
+    "dest": "Subra",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Phao",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Diphda",
+    "destX": 11,
+    "destY": 19
+  },
+  {
+    "src": "Phao",
+    "srcX": 12,
+    "srcY": 18,
+    "dest": "Mebsuta",
+    "destX": 5,
+    "destY": 0
+  },
+  {
+    "src": "Phao",
+    "srcX": 16,
+    "srcY": 17,
+    "dest": "Seginus",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Phao",
+    "srcX": 17,
+    "srcY": 4,
+    "dest": "Thabit",
+    "destX": 1,
+    "destY": 21
+  },
+  {
+    "src": "Phekda",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "Bedaho",
+    "destX": 19,
+    "destY": 9
+  },
+  {
+    "src": "Phekda",
+    "srcX": 7,
+    "srcY": 12,
+    "dest": "Epsilon Indi",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Phekda",
+    "srcX": 3,
+    "srcY": 0,
+    "dest": "Famiay",
+    "destX": 7,
+    "destY": 12
+  },
+  {
+    "src": "Phiagre",
+    "srcX": 19,
+    "srcY": 4,
+    "dest": "Miphimi",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Phiagre",
+    "srcX": 19,
+    "srcY": 11,
+    "dest": "Olcanze",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Phiagre",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Pass FED-04",
+    "destX": 24,
+    "destY": 10
+  },
+  {
+    "src": "Phiandgre",
+    "srcX": 2,
+    "srcY": 3,
+    "dest": "Canolin",
+    "destX": 4,
+    "destY": 14
+  },
+  {
+    "src": "Phiandgre",
+    "srcX": 20,
+    "srcY": 17,
+    "dest": "Ladaen",
+    "destX": 19,
+    "destY": 2
+  },
+  {
+    "src": "Phicanho",
+    "srcX": 10,
+    "srcY": 23,
+    "dest": "Inliaa",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Phicanho",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Quana",
+    "destX": 5,
+    "destY": 25
+  },
+  {
+    "src": "PI 4-669",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Daurlia",
+    "destX": 13,
+    "destY": 7
+  },
+  {
+    "src": "PI 4-669",
+    "srcX": 2,
+    "srcY": 9,
+    "dest": "Delta Pavonis",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "PI 4-669",
+    "srcX": 8,
+    "srcY": 9,
+    "dest": "Eta Cassiopeia",
+    "destX": 5,
+    "destY": 0
+  },
+  {
+    "src": "PI 4-669",
+    "srcX": 4,
+    "srcY": 1,
+    "dest": "Pass EMP-05",
+    "destX": 6,
+    "destY": 19
+  },
+  {
+    "src": "PJ 3373",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Epsilon Eridani",
+    "destX": 16,
+    "destY": 2
+  },
+  {
+    "src": "PJ 3373",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Pass FED-03",
+    "destX": 10,
+    "destY": 14
+  },
+  {
+    "src": "PJ 3373",
+    "srcX": 9,
+    "srcY": 4,
+    "dest": "Quurze",
+    "destX": 3,
+    "destY": 0
+  },
+  {
+    "src": "PO 4-991",
+    "srcX": 1,
+    "srcY": 10,
+    "dest": "Kenlada",
+    "destX": 22,
+    "destY": 0
+  },
+  {
+    "src": "PO 4-991",
+    "srcX": 18,
+    "srcY": 13,
+    "dest": "Sigma Draconis",
+    "destX": 0,
+    "destY": 2
+  },
+  {
+    "src": "PO 4-991",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Ska",
+    "destX": 34,
+    "destY": 20
+  },
+  {
+    "src": "PO 4-991",
+    "srcX": 18,
+    "srcY": 1,
+    "dest": "Urandack",
+    "destX": 0,
+    "destY": 14
+  },
+  {
+    "src": "Polaris",
+    "srcX": 4,
+    "srcY": 12,
+    "dest": "Ioquex",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "Polaris",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Qumia",
+    "destX": 18,
+    "destY": 8
+  },
+  {
+    "src": "Pollux",
+    "srcX": 19,
+    "srcY": 6,
+    "dest": "Besoex",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Pollux",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "KU 3-616",
+    "destX": 11,
+    "destY": 7
+  },
+  {
+    "src": "PP 5-713",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Edqueth",
+    "destX": 8,
+    "destY": 4
+  },
+  {
+    "src": "PP 5-713",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "Ladaen (East)",
+    "destX": 19,
+    "destY": 14
+  },
+  {
+    "src": "PP 5-713",
+    "srcX": 2,
+    "srcY": 0,
+    "dest": "Ladaen (West)",
+    "destX": 7,
+    "destY": 22
+  },
+  {
+    "src": "PP 5-713",
+    "srcX": 6,
+    "srcY": 11,
+    "dest": "Oauress",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "PP 5-713",
+    "srcX": 13,
+    "srcY": 5,
+    "dest": "Pass EMP-07",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Procyon",
+    "srcX": 6,
+    "srcY": 7,
+    "dest": "Heze (North)",
+    "destX": 33,
+    "destY": 6
+  },
+  {
+    "src": "Procyon",
+    "srcX": 34,
+    "srcY": 19,
+    "dest": "Menkar",
+    "destX": 1,
+    "destY": 25
+  },
+  {
+    "src": "Procyon",
+    "srcX": 18,
+    "srcY": 1,
+    "dest": "Pardus",
+    "destX": 85,
+    "destY": 85
+  },
+  {
+    "src": "Propus",
+    "srcX": 3,
+    "srcY": 17,
+    "dest": "Elnath",
+    "destX": 10,
+    "destY": 1
+  },
+  {
+    "src": "Propus",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Nex 0006",
+    "destX": 24,
+    "destY": 19
+  },
+  {
+    "src": "Quaack",
+    "srcX": 26,
+    "srcY": 4,
+    "dest": "Labela (North)",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "Quaack",
+    "srcX": 27,
+    "srcY": 18,
+    "dest": "Labela (South)",
+    "destX": 0,
+    "destY": 22
+  },
+  {
+    "src": "Quaack",
+    "srcX": 10,
+    "srcY": 23,
+    "dest": "Pardus (North)",
+    "destX": 52,
+    "destY": 7
+  },
+  {
+    "src": "Quaack",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Sargas",
+    "destX": 27,
+    "destY": 2
+  },
+  {
+    "src": "Quana",
+    "srcX": 14,
+    "srcY": 7,
+    "dest": "Iceo",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Quana",
+    "srcX": 0,
+    "srcY": 12,
+    "dest": "Pass EMP-07",
+    "destX": 24,
+    "destY": 9
+  },
+  {
+    "src": "Quana",
+    "srcX": 5,
+    "srcY": 25,
+    "dest": "Phicanho",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Quana",
+    "srcX": 15,
+    "srcY": 23,
+    "dest": "Tiexen",
+    "destX": 0,
+    "destY": 3
+  },
+  {
+    "src": "Quaphi",
+    "srcX": 14,
+    "srcY": 1,
+    "dest": "Iowagre",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "Quaphi",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "ZS 3-798",
+    "destX": 12,
+    "destY": 6
+  },
+  {
+    "src": "Quator",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Daurlia",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "Quator",
+    "srcX": 16,
+    "srcY": 10,
+    "dest": "Delta Pavonis",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Quator",
+    "srcX": 1,
+    "srcY": 16,
+    "dest": "Zezela",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "Quexce",
+    "srcX": 6,
+    "srcY": 23,
+    "dest": "Pass UNI-03",
+    "destX": 8,
+    "destY": 2
+  },
+  {
+    "src": "Quexce",
+    "srcX": 4,
+    "srcY": 7,
+    "dest": "Urfaa",
+    "destX": 22,
+    "destY": 7
+  },
+  {
+    "src": "Quexce",
+    "srcX": 11,
+    "srcY": 6,
+    "dest": "YV 3-386",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Quexho",
+    "srcX": 16,
+    "srcY": 12,
+    "dest": "Canolin",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "Quexho",
+    "srcX": 2,
+    "srcY": 12,
+    "dest": "Tivea",
+    "destX": 22,
+    "destY": 1
+  },
+  {
+    "src": "Quexho",
+    "srcX": 8,
+    "srcY": 13,
+    "dest": "Veedfa",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Quince",
+    "srcX": 1,
+    "srcY": 7,
+    "dest": "Mizar",
+    "destX": 15,
+    "destY": 14
+  },
+  {
+    "src": "Quince",
+    "srcX": 12,
+    "srcY": 10,
+    "dest": "Sodaack",
+    "destX": 2,
+    "destY": 4
+  },
+  {
+    "src": "Qumia",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Atlas",
+    "destX": 20,
+    "destY": 5
+  },
+  {
+    "src": "Qumia",
+    "srcX": 4,
+    "srcY": 1,
+    "dest": "Pass UNI-06",
+    "destX": 6,
+    "destY": 18
+  },
+  {
+    "src": "Qumia",
+    "srcX": 18,
+    "srcY": 8,
+    "dest": "Polaris",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Qumia",
+    "srcX": 11,
+    "srcY": 13,
+    "dest": "Solaqu",
+    "destX": 7,
+    "destY": 5
+  },
+  {
+    "src": "Qumiin",
+    "srcX": 17,
+    "srcY": 19,
+    "dest": "Ayqugre",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "Qumiin",
+    "srcX": 0,
+    "srcY": 10,
+    "dest": "UF 3-555",
+    "destX": 13,
+    "destY": 10
+  },
+  {
+    "src": "Qumiin",
+    "srcX": 17,
+    "srcY": 5,
+    "dest": "Ureneth",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Qumiin",
+    "srcX": 5,
+    "srcY": 18,
+    "dest": "Xewao",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Quurze",
+    "srcX": 0,
+    "srcY": 16,
+    "dest": "Epsilon Eridani",
+    "destX": 17,
+    "destY": 23
+  },
+  {
+    "src": "Quurze",
+    "srcX": 12,
+    "srcY": 15,
+    "dest": "Hoanda",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Quurze",
+    "srcX": 3,
+    "srcY": 0,
+    "dest": "PJ 3373",
+    "destX": 9,
+    "destY": 4
+  },
+  {
+    "src": "QW 2-014",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "Retho",
+    "destX": 20,
+    "destY": 14
+  },
+  {
+    "src": "QW 2-014",
+    "srcX": 0,
+    "srcY": 8,
+    "dest": "Zamith",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "RA 3-124",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Aedce",
+    "destX": 16,
+    "destY": 7
+  },
+  {
+    "src": "RA 3-124",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Ayqugre",
+    "destX": 9,
+    "destY": 12
+  },
+  {
+    "src": "RA 3-124",
+    "srcX": 6,
+    "srcY": 11,
+    "dest": "Pass FED-11",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Ras Elased",
+    "srcX": 12,
+    "srcY": 37,
+    "dest": "Enif",
+    "destX": 9,
+    "destY": 0
+  },
+  {
+    "src": "Ras Elased",
+    "srcX": 38,
+    "srcY": 1,
+    "dest": "Fornacis (East)",
+    "destX": 19,
+    "destY": 28
+  },
+  {
+    "src": "Ras Elased",
+    "srcX": 5,
+    "srcY": 0,
+    "dest": "Fornacis (West)",
+    "destX": 1,
+    "destY": 29
+  },
+  {
+    "src": "Rashkan",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "Betelgeuse (West)",
+    "destX": 15,
+    "destY": 21
+  },
+  {
+    "src": "Rashkan",
+    "srcX": 4,
+    "srcY": 27,
+    "dest": "Epsilon Indi",
+    "destX": 18,
+    "destY": 0
+  },
+  {
+    "src": "Rashkan",
+    "srcX": 24,
+    "srcY": 13,
+    "dest": "Omicron Eridani",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Regulus",
+    "srcX": 15,
+    "srcY": 15,
+    "dest": "Aeg",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Regulus",
+    "srcX": 7,
+    "srcY": 15,
+    "dest": "Cassand",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Regulus",
+    "srcX": 15,
+    "srcY": 8,
+    "dest": "Greandin",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Regulus",
+    "srcX": 0,
+    "srcY": 1,
+    "dest": "SZ 4-419",
+    "destX": 10,
+    "destY": 5
+  },
+  {
+    "src": "Remo",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Ross",
+    "destX": 11,
+    "destY": 13
+  },
+  {
+    "src": "Remo",
+    "srcX": 10,
+    "srcY": 24,
+    "dest": "Sargas",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Retho",
+    "srcX": 16,
+    "srcY": 2,
+    "dest": "Anaam",
+    "destX": 0,
+    "destY": 19
+  },
+  {
+    "src": "Retho",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Canexin",
+    "destX": 23,
+    "destY": 9
+  },
+  {
+    "src": "Retho",
+    "srcX": 14,
+    "srcY": 9,
+    "dest": "Meram",
+    "destX": 1,
+    "destY": 9
+  },
+  {
+    "src": "Retho",
+    "srcX": 20,
+    "srcY": 20,
+    "dest": "Nex Kataam",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Retho",
+    "srcX": 20,
+    "srcY": 14,
+    "dest": "QW 2-014",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "Rigel",
+    "srcX": 26,
+    "srcY": 1,
+    "dest": "Baham",
+    "destX": 23,
+    "destY": 35
+  },
+  {
+    "src": "Rigel",
+    "srcX": 2,
+    "srcY": 28,
+    "dest": "Menkar",
+    "destX": 26,
+    "destY": 22
+  },
+  {
+    "src": "Ross",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "BQ 3-927",
+    "destX": 14,
+    "destY": 7
+  },
+  {
+    "src": "Ross",
+    "srcX": 2,
+    "srcY": 12,
+    "dest": "Enaness",
+    "destX": 19,
+    "destY": 1
+  },
+  {
+    "src": "Ross",
+    "srcX": 16,
+    "srcY": 6,
+    "dest": "Famiso",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Ross",
+    "srcX": 11,
+    "srcY": 13,
+    "dest": "Remo",
+    "destX": 13,
+    "destY": 1
+  },
+  {
+    "src": "Ross",
+    "srcX": 12,
+    "srcY": 2,
+    "dest": "SD 3-562 (East)",
+    "destX": 16,
+    "destY": 17
+  },
+  {
+    "src": "Ross",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "SD 3-562 (West)",
+    "destX": 12,
+    "destY": 18
+  },
+  {
+    "src": "Rotanev",
+    "srcX": 1,
+    "srcY": 15,
+    "dest": "DH 3-625",
+    "destX": 13,
+    "destY": 6
+  },
+  {
+    "src": "Rotanev",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "HW 3-863",
+    "destX": 7,
+    "destY": 18
+  },
+  {
+    "src": "RV 2-578",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Olbea",
+    "destX": 20,
+    "destY": 20
+  },
+  {
+    "src": "RV 2-578",
+    "srcX": 7,
+    "srcY": 11,
+    "dest": "Urandack",
+    "destX": 12,
+    "destY": 0
+  },
+  {
+    "src": "RX 3-129",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Anayed",
+    "destX": 13,
+    "destY": 14
+  },
+  {
+    "src": "RX 3-129",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Edvea",
+    "destX": 28,
+    "destY": 1
+  },
+  {
+    "src": "RX 3-129",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Tiurio",
+    "destX": 0,
+    "destY": 13
+  },
+  {
+    "src": "SA 2779",
+    "srcX": 14,
+    "srcY": 2,
+    "dest": "Beta Proxima",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "SA 2779",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Sol",
+    "destX": 22,
+    "destY": 8
+  },
+  {
+    "src": "Sargas",
+    "srcX": 2,
+    "srcY": 10,
+    "dest": "Fornacis",
+    "destX": 20,
+    "destY": 10
+  },
+  {
+    "src": "Sargas",
+    "srcX": 27,
+    "srcY": 2,
+    "dest": "Quaack",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Sargas",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Remo",
+    "destX": 10,
+    "destY": 24
+  },
+  {
+    "src": "SD 3-562",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Pass FED-06",
+    "destX": 9,
+    "destY": 22
+  },
+  {
+    "src": "SD 3-562",
+    "srcX": 12,
+    "srcY": 18,
+    "dest": "Ross",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "SD 3-562",
+    "srcX": 16,
+    "srcY": 17,
+    "dest": "Ross (East)",
+    "destX": 12,
+    "destY": 2
+  },
+  {
+    "src": "Seginus",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Adara",
+    "destX": 7,
+    "destY": 20
+  },
+  {
+    "src": "Seginus",
+    "srcX": 9,
+    "srcY": 17,
+    "dest": "Nusakan",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Seginus",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Phao",
+    "destX": 16,
+    "destY": 17
+  },
+  {
+    "src": "SF 5-674",
+    "srcX": 7,
+    "srcY": 1,
+    "dest": "Hobeex",
+    "destX": 7,
+    "destY": 13
+  },
+  {
+    "src": "SF 5-674",
+    "srcX": 12,
+    "srcY": 2,
+    "dest": "Ollaffa",
+    "destX": 2,
+    "destY": 12
+  },
+  {
+    "src": "SF 5-674",
+    "srcX": 12,
+    "srcY": 12,
+    "dest": "Pass FED-12",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "SF 5-674",
+    "srcX": 10,
+    "srcY": 19,
+    "dest": "Soolti",
+    "destX": 1,
+    "destY": 3
+  },
+  {
+    "src": "Siberion",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "BL 3961",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Siberion",
+    "srcX": 15,
+    "srcY": 14,
+    "dest": "Daceess",
+    "destX": 14,
+    "destY": 1
+  },
+  {
+    "src": "Siberion",
+    "srcX": 24,
+    "srcY": 14,
+    "dest": "WP 3155",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Sigma Draconis",
+    "srcX": 24,
+    "srcY": 7,
+    "dest": "Miayack",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Sigma Draconis",
+    "srcX": 0,
+    "srcY": 2,
+    "dest": "PO 4-991",
+    "destX": 18,
+    "destY": 13
+  },
+  {
+    "src": "Sigma Draconis",
+    "srcX": 14,
+    "srcY": 19,
+    "dest": "VH 3-344",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "Silaad",
+    "srcX": 23,
+    "srcY": 13,
+    "dest": "Fadaphi",
+    "destX": 2,
+    "destY": 11
+  },
+  {
+    "src": "Silaad",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Miayda",
+    "destX": 24,
+    "destY": 3
+  },
+  {
+    "src": "Silaad",
+    "srcX": 23,
+    "srcY": 2,
+    "dest": "ZU 3-239",
+    "destX": 0,
+    "destY": 17
+  },
+  {
+    "src": "Sirius",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Bellatrix",
+    "destX": 23,
+    "destY": 14
+  },
+  {
+    "src": "Sirius",
+    "srcX": 29,
+    "srcY": 16,
+    "dest": "Gienah Cygni",
+    "destX": 2,
+    "destY": 4
+  },
+  {
+    "src": "Sirius",
+    "srcX": 28,
+    "srcY": 22,
+    "dest": "UG 5-093",
+    "destX": 3,
+    "destY": 1
+  },
+  {
+    "src": "Ska",
+    "srcX": 24,
+    "srcY": 1,
+    "dest": "Adaa",
+    "destX": 12,
+    "destY": 24
+  },
+  {
+    "src": "Ska",
+    "srcX": 34,
+    "srcY": 20,
+    "dest": "PO 4-991",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "Ska",
+    "srcX": 3,
+    "srcY": 4,
+    "dest": "Tiexen",
+    "destX": 18,
+    "destY": 17
+  },
+  {
+    "src": "Sobein",
+    "srcX": 12,
+    "srcY": 11,
+    "dest": "BU 5-773 (East)",
+    "destX": 19,
+    "destY": 1
+  },
+  {
+    "src": "Sobein",
+    "srcX": 3,
+    "srcY": 10,
+    "dest": "BU 5-773 (West)",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "Sodaack",
+    "srcX": 13,
+    "srcY": 8,
+    "dest": "Facece",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Sodaack",
+    "srcX": 13,
+    "srcY": 14,
+    "dest": "Ophiuchi",
+    "destX": 1,
+    "destY": 3
+  },
+  {
+    "src": "Sodaack",
+    "srcX": 2,
+    "srcY": 4,
+    "dest": "Quince",
+    "destX": 12,
+    "destY": 10
+  },
+  {
+    "src": "Sodaack",
+    "srcX": 7,
+    "srcY": 15,
+    "dest": "ZP 2-989",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Soessze",
+    "srcX": 0,
+    "srcY": 9,
+    "dest": "Tiacken",
+    "destX": 18,
+    "destY": 11
+  },
+  {
+    "src": "Sohoa",
+    "srcX": 1,
+    "srcY": 14,
+    "dest": "Betelgeuse (East)",
+    "destX": 30,
+    "destY": 1
+  },
+  {
+    "src": "Sohoa",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "GV 4-652",
+    "destX": 11,
+    "destY": 4
+  },
+  {
+    "src": "Sol",
+    "srcX": 1,
+    "srcY": 27,
+    "dest": "Alpha Centauri",
+    "destX": 17,
+    "destY": 1
+  },
+  {
+    "src": "Sol",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Epsilon Eridani",
+    "destX": 17,
+    "destY": 30
+  },
+  {
+    "src": "Sol",
+    "srcX": 14,
+    "srcY": 28,
+    "dest": "Olexti",
+    "destX": 2,
+    "destY": 0
+  },
+  {
+    "src": "Sol",
+    "srcX": 22,
+    "srcY": 8,
+    "dest": "SA 2779",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Solaqu",
+    "srcX": 24,
+    "srcY": 13,
+    "dest": "Ioquex",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Solaqu",
+    "srcX": 7,
+    "srcY": 5,
+    "dest": "Qumia",
+    "destX": 11,
+    "destY": 13
+  },
+  {
+    "src": "Solaqu",
+    "srcX": 1,
+    "srcY": 14,
+    "dest": "Waolex",
+    "destX": 24,
+    "destY": 9
+  },
+  {
+    "src": "Soolti",
+    "srcX": 19,
+    "srcY": 1,
+    "dest": "Ceanze (North)",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Soolti",
+    "srcX": 18,
+    "srcY": 12,
+    "dest": "Ceanze (South)",
+    "destX": 1,
+    "destY": 13
+  },
+  {
+    "src": "Soolti",
+    "srcX": 1,
+    "srcY": 3,
+    "dest": "SF 5-674",
+    "destX": 10,
+    "destY": 19
+  },
+  {
+    "src": "Sophilia",
+    "srcX": 22,
+    "srcY": 8,
+    "dest": "DI 9-486",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Sophilia",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "Gretiay",
+    "destX": 19,
+    "destY": 10
+  },
+  {
+    "src": "Sowace",
+    "srcX": 4,
+    "srcY": 16,
+    "dest": "Ceina",
+    "destX": 15,
+    "destY": 13
+  },
+  {
+    "src": "Sowace",
+    "srcX": 17,
+    "srcY": 5,
+    "dest": "Oauress",
+    "destX": 18,
+    "destY": 13
+  },
+  {
+    "src": "Sowace",
+    "srcX": 8,
+    "srcY": 19,
+    "dest": "Pass EMP-11",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Spica",
+    "srcX": 11,
+    "srcY": 1,
+    "dest": "DI 9-486",
+    "destX": 14,
+    "destY": 15
+  },
+  {
+    "src": "Spica",
+    "srcX": 1,
+    "srcY": 10,
+    "dest": "Liaququ",
+    "destX": 16,
+    "destY": 12
+  },
+  {
+    "src": "Spica",
+    "srcX": 11,
+    "srcY": 21,
+    "dest": "Wainze",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "Stein",
+    "srcX": 2,
+    "srcY": 5,
+    "dest": "Beurso",
+    "destX": 17,
+    "destY": 10
+  },
+  {
+    "src": "Stein",
+    "srcX": 1,
+    "srcY": 14,
+    "dest": "Daaze",
+    "destX": 13,
+    "destY": 2
+  },
+  {
+    "src": "Stein",
+    "srcX": 8,
+    "srcY": 9,
+    "dest": "Enwaand",
+    "destX": 8,
+    "destY": 13
+  },
+  {
+    "src": "Subra",
+    "srcX": 1,
+    "srcY": 9,
+    "dest": "Cebalrai",
+    "destX": 19,
+    "destY": 11
+  },
+  {
+    "src": "Subra",
+    "srcX": 18,
+    "srcY": 12,
+    "dest": "Furud",
+    "destX": 1,
+    "destY": 7
+  },
+  {
+    "src": "Subra",
+    "srcX": 10,
+    "srcY": 0,
+    "dest": "Phaet",
+    "destX": 8,
+    "destY": 12
+  },
+  {
+    "src": "SZ 4-419",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Eta Cassiopeia (North)",
+    "destX": 14,
+    "destY": 3
+  },
+  {
+    "src": "SZ 4-419",
+    "srcX": 0,
+    "srcY": 4,
+    "dest": "Eta Cassiopeia (South)",
+    "destX": 14,
+    "destY": 30
+  },
+  {
+    "src": "SZ 4-419",
+    "srcX": 10,
+    "srcY": 5,
+    "dest": "Regulus",
+    "destX": 0,
+    "destY": 1
+  },
+  {
+    "src": "SZ 4-419",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Urlafa",
+    "destX": 2,
+    "destY": 12
+  },
+  {
+    "src": "Tau Ceti",
+    "srcX": 1,
+    "srcY": 7,
+    "dest": "BL 3961",
+    "destX": 18,
+    "destY": 6
+  },
+  {
+    "src": "Tau Ceti",
+    "srcX": 24,
+    "srcY": 8,
+    "dest": "Pass FED-01",
+    "destX": 0,
+    "destY": 1
+  },
+  {
+    "src": "Tau Ceti",
+    "srcX": 21,
+    "srcY": 13,
+    "dest": "WP 3155",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "TG 2-143",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Edmize",
+    "destX": 9,
+    "destY": 15
+  },
+  {
+    "src": "TG 2-143",
+    "srcX": 0,
+    "srcY": 11,
+    "dest": "Pass EMP-01",
+    "destX": 5,
+    "destY": 0
+  },
+  {
+    "src": "Thabit",
+    "srcX": 14,
+    "srcY": 24,
+    "dest": "Adara",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "Thabit",
+    "srcX": 1,
+    "srcY": 12,
+    "dest": "Diphda",
+    "destX": 18,
+    "destY": 6
+  },
+  {
+    "src": "Thabit",
+    "srcX": 1,
+    "srcY": 21,
+    "dest": "Phao",
+    "destX": 17,
+    "destY": 4
+  },
+  {
+    "src": "Tiacan",
+    "srcX": 1,
+    "srcY": 8,
+    "dest": "Betelgeuse (East)",
+    "destX": 31,
+    "destY": 11
+  },
+  {
+    "src": "Tiacan",
+    "srcX": 14,
+    "srcY": 10,
+    "dest": "Essaa",
+    "destX": 1,
+    "destY": 13
+  },
+  {
+    "src": "Tiacken",
+    "srcX": 11,
+    "srcY": 25,
+    "dest": "Edmize",
+    "destX": 12,
+    "destY": 0
+  },
+  {
+    "src": "Tiacken",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "Laolla",
+    "destX": 11,
+    "destY": 16
+  },
+  {
+    "src": "Tiacken",
+    "srcX": 16,
+    "srcY": 8,
+    "dest": "Nex Kataam",
+    "destX": 1,
+    "destY": 20
+  },
+  {
+    "src": "Tiacken",
+    "srcX": 18,
+    "srcY": 11,
+    "dest": "Soessze",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Tiafa",
+    "srcX": 21,
+    "srcY": 2,
+    "dest": "Aedce",
+    "destX": 1,
+    "destY": 18
+  },
+  {
+    "src": "Tiafa",
+    "srcX": 0,
+    "srcY": 26,
+    "dest": "Hobeex",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "Tiafa",
+    "srcX": 13,
+    "srcY": 23,
+    "dest": "Ollaffa",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "Tianbe",
+    "srcX": 1,
+    "srcY": 13,
+    "dest": "Fomalhaut",
+    "destX": 17,
+    "destY": 2
+  },
+  {
+    "src": "Tianbe",
+    "srcX": 17,
+    "srcY": 13,
+    "dest": "Laanex",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Tianbe",
+    "srcX": 3,
+    "srcY": 1,
+    "dest": "Zezela",
+    "destX": 13,
+    "destY": 8
+  },
+  {
+    "src": "Tiexen",
+    "srcX": 0,
+    "srcY": 3,
+    "dest": "Quana",
+    "destX": 15,
+    "destY": 23
+  },
+  {
+    "src": "Tiexen",
+    "srcX": 18,
+    "srcY": 17,
+    "dest": "Ska",
+    "destX": 3,
+    "destY": 4
+  },
+  {
+    "src": "Tigrecan",
+    "srcX": 14,
+    "srcY": 9,
+    "dest": "BU 5-773",
+    "destX": 0,
+    "destY": 1
+  },
+  {
+    "src": "Tigrecan",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Lavebe",
+    "destX": 22,
+    "destY": 7
+  },
+  {
+    "src": "Tigrecan",
+    "srcX": 12,
+    "srcY": 2,
+    "dest": "Let",
+    "destX": 2,
+    "destY": 32
+  },
+  {
+    "src": "Tigrecan",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Pass UNI-06",
+    "destX": 13,
+    "destY": 6
+  },
+  {
+    "src": "Tiliala",
+    "srcX": 24,
+    "srcY": 10,
+    "dest": "AN 2-956",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Tiliala",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Becanin",
+    "destX": 16,
+    "destY": 13
+  },
+  {
+    "src": "Tiliala",
+    "srcX": 23,
+    "srcY": 2,
+    "dest": "Exbeur",
+    "destX": 2,
+    "destY": 22
+  },
+  {
+    "src": "Tiliala",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Urioed",
+    "destX": 20,
+    "destY": 4
+  },
+  {
+    "src": "Tiurio",
+    "srcX": 22,
+    "srcY": 12,
+    "dest": "Fawaol",
+    "destX": 4,
+    "destY": 1
+  },
+  {
+    "src": "Tiurio",
+    "srcX": 19,
+    "srcY": 0,
+    "dest": "Greliai (East)",
+    "destX": 13,
+    "destY": 18
+  },
+  {
+    "src": "Tiurio",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Greliai (West)",
+    "destX": 6,
+    "destY": 18
+  },
+  {
+    "src": "Tiurio",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "RX 3-129",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Tivea",
+    "srcX": 1,
+    "srcY": 5,
+    "dest": "Andsoled (North)",
+    "destX": 17,
+    "destY": 13
+  },
+  {
+    "src": "Tivea",
+    "srcX": 1,
+    "srcY": 17,
+    "dest": "Andsoled (South)",
+    "destX": 14,
+    "destY": 20
+  },
+  {
+    "src": "Tivea",
+    "srcX": 22,
+    "srcY": 1,
+    "dest": "Quexho",
+    "destX": 2,
+    "destY": 12
+  },
+  {
+    "src": "Tivea",
+    "srcX": 23,
+    "srcY": 12,
+    "dest": "Veedfa",
+    "destX": 1,
+    "destY": 6
+  },
+  {
+    "src": "Turais",
+    "srcX": 3,
+    "srcY": 21,
+    "dest": "Bellatrix",
+    "destX": 16,
+    "destY": 1
+  },
+  {
+    "src": "Turais",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Nashira",
+    "destX": 22,
+    "destY": 18
+  },
+  {
+    "src": "Turais",
+    "srcX": 19,
+    "srcY": 1,
+    "dest": "Wezen",
+    "destX": 2,
+    "destY": 19
+  },
+  {
+    "src": "UF 3-555",
+    "srcX": 2,
+    "srcY": 10,
+    "dest": "Leesti",
+    "destX": 14,
+    "destY": 0
+  },
+  {
+    "src": "UF 3-555",
+    "srcX": 13,
+    "srcY": 10,
+    "dest": "Qumiin",
+    "destX": 0,
+    "destY": 10
+  },
+  {
+    "src": "UF 3-555",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "Wamien",
+    "destX": 15,
+    "destY": 13
+  },
+  {
+    "src": "UG 5-093",
+    "srcX": 17,
+    "srcY": 22,
+    "dest": "Achird",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "UG 5-093",
+    "srcX": 16,
+    "srcY": 3,
+    "dest": "Gienah Cygni",
+    "destX": 3,
+    "destY": 20
+  },
+  {
+    "src": "UG 5-093",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "Matar",
+    "destX": 14,
+    "destY": 5
+  },
+  {
+    "src": "UG 5-093",
+    "srcX": 3,
+    "srcY": 20,
+    "dest": "Nekkar",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "UG 5-093",
+    "srcX": 3,
+    "srcY": 1,
+    "dest": "Sirius",
+    "destX": 28,
+    "destY": 22
+  },
+  {
+    "src": "Urandack",
+    "srcX": 19,
+    "srcY": 7,
+    "dest": "An Dzeve",
+    "destX": 0,
+    "destY": 10
+  },
+  {
+    "src": "Urandack",
+    "srcX": 0,
+    "srcY": 14,
+    "dest": "PO 4-991",
+    "destX": 18,
+    "destY": 1
+  },
+  {
+    "src": "Urandack",
+    "srcX": 12,
+    "srcY": 0,
+    "dest": "RV 2-578",
+    "destX": 7,
+    "destY": 11
+  },
+  {
+    "src": "Ureneth",
+    "srcX": 9,
+    "srcY": 15,
+    "dest": "Ayqugre",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Ureneth",
+    "srcX": 11,
+    "srcY": 0,
+    "dest": "Pass FED-10",
+    "destX": 5,
+    "destY": 19
+  },
+  {
+    "src": "Ureneth",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Qumiin",
+    "destX": 17,
+    "destY": 5
+  },
+  {
+    "src": "Uressce",
+    "srcX": 9,
+    "srcY": 1,
+    "dest": "Lagreen",
+    "destX": 3,
+    "destY": 13
+  },
+  {
+    "src": "Uressce",
+    "srcX": 19,
+    "srcY": 8,
+    "dest": "Miola",
+    "destX": 0,
+    "destY": 12
+  },
+  {
+    "src": "Uressce",
+    "srcX": 2,
+    "srcY": 8,
+    "dest": "Pass UNI-07",
+    "destX": 22,
+    "destY": 7
+  },
+  {
+    "src": "Urfaa",
+    "srcX": 12,
+    "srcY": 19,
+    "dest": "Pass UNI-02",
+    "destX": 5,
+    "destY": 4
+  },
+  {
+    "src": "Urfaa",
+    "srcX": 22,
+    "srcY": 7,
+    "dest": "Quexce",
+    "destX": 4,
+    "destY": 7
+  },
+  {
+    "src": "Urhoho",
+    "srcX": 17,
+    "srcY": 0,
+    "dest": "Usube",
+    "destX": 3,
+    "destY": 28
+  },
+  {
+    "src": "Urioed",
+    "srcX": 0,
+    "srcY": 4,
+    "dest": "GM 4-572",
+    "destX": 14,
+    "destY": 7
+  },
+  {
+    "src": "Urioed",
+    "srcX": 20,
+    "srcY": 4,
+    "dest": "Tiliala",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Urlafa",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "LN 3-141",
+    "destX": 0,
+    "destY": 5
+  },
+  {
+    "src": "Urlafa",
+    "srcX": 2,
+    "srcY": 12,
+    "dest": "SZ 4-419",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "Urlafa",
+    "srcX": 16,
+    "srcY": 9,
+    "dest": "WG 3-288",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "Ururur",
+    "srcX": 10,
+    "srcY": 12,
+    "dest": "Betiess",
+    "destX": 6,
+    "destY": 1
+  },
+  {
+    "src": "Ururur",
+    "srcX": 19,
+    "srcY": 5,
+    "dest": "BQ 3-927",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Ururur",
+    "srcX": 6,
+    "srcY": 13,
+    "dest": "Daaya",
+    "destX": 25,
+    "destY": 1
+  },
+  {
+    "src": "Ururur",
+    "srcX": 13,
+    "srcY": 12,
+    "dest": "Enaness",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "Usube",
+    "srcX": 3,
+    "srcY": 0,
+    "dest": "Begreze",
+    "destX": 4,
+    "destY": 13
+  },
+  {
+    "src": "Usube",
+    "srcX": 11,
+    "srcY": 29,
+    "dest": "Edmize",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Usube",
+    "srcX": 12,
+    "srcY": 4,
+    "dest": "Laolla",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Usube",
+    "srcX": 3,
+    "srcY": 28,
+    "dest": "Urhoho",
+    "destX": 17,
+    "destY": 0
+  },
+  {
+    "src": "Uv Seti",
+    "srcX": 20,
+    "srcY": 6,
+    "dest": "Gresoin",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Uv Seti",
+    "srcX": 2,
+    "srcY": 13,
+    "dest": "Let",
+    "destX": 19,
+    "destY": 1
+  },
+  {
+    "src": "Uv Seti",
+    "srcX": 20,
+    "srcY": 14,
+    "dest": "Zeaay",
+    "destX": 24,
+    "destY": 1
+  },
+  {
+    "src": "UZ 8-466",
+    "srcX": 13,
+    "srcY": 4,
+    "dest": "Baar",
+    "destX": 10,
+    "destY": 11
+  },
+  {
+    "src": "UZ 8-466",
+    "srcX": 10,
+    "srcY": 11,
+    "dest": "Gilo",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "UZ 8-466",
+    "srcX": 1,
+    "srcY": 4,
+    "dest": "Pass FED-07",
+    "destX": 25,
+    "destY": 8
+  },
+  {
+    "src": "UZ 8-466",
+    "srcX": 19,
+    "srcY": 4,
+    "dest": "Waolex",
+    "destX": 0,
+    "destY": 3
+  },
+  {
+    "src": "Veareth",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "DH 3-625",
+    "destX": 7,
+    "destY": 12
+  },
+  {
+    "src": "Veareth",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "Exbeur",
+    "destX": 18,
+    "destY": 16
+  },
+  {
+    "src": "Veareth",
+    "srcX": 8,
+    "srcY": 24,
+    "dest": "Waarze",
+    "destX": 12,
+    "destY": 4
+  },
+  {
+    "src": "Vecelia",
+    "srcX": 7,
+    "srcY": 23,
+    "dest": "Aandti",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "Vecelia",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "AB 5-848",
+    "destX": 15,
+    "destY": 12
+  },
+  {
+    "src": "Vecelia",
+    "srcX": 4,
+    "srcY": 1,
+    "dest": "Algol",
+    "destX": 8,
+    "destY": 24
+  },
+  {
+    "src": "Veedfa",
+    "srcX": 13,
+    "srcY": 9,
+    "dest": "Ladaen",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Veedfa",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Quexho",
+    "destX": 8,
+    "destY": 13
+  },
+  {
+    "src": "Veedfa",
+    "srcX": 1,
+    "srcY": 6,
+    "dest": "Tivea",
+    "destX": 23,
+    "destY": 12
+  },
+  {
+    "src": "Vega",
+    "srcX": 23,
+    "srcY": 23,
+    "dest": "Ackwada",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Vega",
+    "srcX": 27,
+    "srcY": 7,
+    "dest": "Beta Hydri",
+    "destX": 3,
+    "destY": 19
+  },
+  {
+    "src": "Vega",
+    "srcX": 0,
+    "srcY": 13,
+    "dest": "DI 9-486",
+    "destX": 23,
+    "destY": 7
+  },
+  {
+    "src": "Veliace",
+    "srcX": 4,
+    "srcY": 2,
+    "dest": "Olaso",
+    "destX": 21,
+    "destY": 18
+  },
+  {
+    "src": "Veliace",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "WI 4-329",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "Vewaa",
+    "srcX": 1,
+    "srcY": 13,
+    "dest": "Exackcan",
+    "destX": 13,
+    "destY": 2
+  },
+  {
+    "src": "Vewaa",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Laanex",
+    "destX": 5,
+    "destY": 15
+  },
+  {
+    "src": "Vewaa",
+    "srcX": 21,
+    "srcY": 8,
+    "dest": "Wolf",
+    "destX": 0,
+    "destY": 10
+  },
+  {
+    "src": "VH 3-344",
+    "srcX": 7,
+    "srcY": 7,
+    "dest": "Edeneth",
+    "destX": 0,
+    "destY": 3
+  },
+  {
+    "src": "VH 3-344",
+    "srcX": 4,
+    "srcY": 0,
+    "dest": "Sigma Draconis",
+    "destX": 14,
+    "destY": 19
+  },
+  {
+    "src": "VH 3-344",
+    "srcX": 0,
+    "srcY": 14,
+    "dest": "Waiophi",
+    "destX": 16,
+    "destY": 0
+  },
+  {
+    "src": "VM 3-326",
+    "srcX": 11,
+    "srcY": 2,
+    "dest": "Inioen",
+    "destX": 3,
+    "destY": 12
+  },
+  {
+    "src": "VM 3-326",
+    "srcX": 11,
+    "srcY": 9,
+    "dest": "Wamien",
+    "destX": 2,
+    "destY": 1
+  },
+  {
+    "src": "Waarze",
+    "srcX": 10,
+    "srcY": 11,
+    "dest": "Pass EMP-05",
+    "destX": 6,
+    "destY": 1
+  },
+  {
+    "src": "Waarze",
+    "srcX": 12,
+    "srcY": 4,
+    "dest": "Veareth",
+    "destX": 8,
+    "destY": 24
+  },
+  {
+    "src": "Waayan",
+    "srcX": 24,
+    "srcY": 9,
+    "dest": "HC 4-962 (North)",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Waayan",
+    "srcX": 24,
+    "srcY": 14,
+    "dest": "HC 4-962 (South)",
+    "destX": 0,
+    "destY": 11
+  },
+  {
+    "src": "Waayan",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "JS 2-090",
+    "destX": 12,
+    "destY": 5
+  },
+  {
+    "src": "Wainze",
+    "srcX": 14,
+    "srcY": 3,
+    "dest": "Daured",
+    "destX": 8,
+    "destY": 14
+  },
+  {
+    "src": "Wainze",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "Spica",
+    "destX": 11,
+    "destY": 21
+  },
+  {
+    "src": "Wainze",
+    "srcX": 8,
+    "srcY": 15,
+    "dest": "YV 3-386",
+    "destX": 6,
+    "destY": 0
+  },
+  {
+    "src": "Waiophi",
+    "srcX": 16,
+    "srcY": 0,
+    "dest": "VH 3-344",
+    "destX": 0,
+    "destY": 14
+  },
+  {
+    "src": "Waiophi",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "XC 3-261",
+    "destX": 15,
+    "destY": 5
+  },
+  {
+    "src": "Wamien",
+    "srcX": 24,
+    "srcY": 5,
+    "dest": "Pass FED-10",
+    "destX": 1,
+    "destY": 5
+  },
+  {
+    "src": "Wamien",
+    "srcX": 15,
+    "srcY": 13,
+    "dest": "UF 3-555",
+    "destX": 4,
+    "destY": 0
+  },
+  {
+    "src": "Wamien",
+    "srcX": 2,
+    "srcY": 1,
+    "dest": "VM 3-326",
+    "destX": 11,
+    "destY": 9
+  },
+  {
+    "src": "Waolex",
+    "srcX": 2,
+    "srcY": 0,
+    "dest": "Aandti",
+    "destX": 6,
+    "destY": 11
+  },
+  {
+    "src": "Waolex",
+    "srcX": 13,
+    "srcY": 24,
+    "dest": "Anphiex",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "Waolex",
+    "srcX": 24,
+    "srcY": 9,
+    "dest": "Solaqu",
+    "destX": 1,
+    "destY": 14
+  },
+  {
+    "src": "Waolex",
+    "srcX": 0,
+    "srcY": 3,
+    "dest": "UZ 8-466",
+    "destX": 19,
+    "destY": 4
+  },
+  {
+    "src": "Wasat",
+    "srcX": 10,
+    "srcY": 18,
+    "dest": "HW 3-863",
+    "destX": 7,
+    "destY": 0
+  },
+  {
+    "src": "Wasat",
+    "srcX": 22,
+    "srcY": 0,
+    "dest": "Kitalpha (East)",
+    "destX": 12,
+    "destY": 14
+  },
+  {
+    "src": "Wasat",
+    "srcX": 4,
+    "srcY": 1,
+    "dest": "Kitalpha (West)",
+    "destX": 1,
+    "destY": 14
+  },
+  {
+    "src": "Watibe",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Ackarack",
+    "destX": 3,
+    "destY": 18
+  },
+  {
+    "src": "Watibe",
+    "srcX": 1,
+    "srcY": 2,
+    "dest": "Beeday",
+    "destX": 13,
+    "destY": 14
+  },
+  {
+    "src": "Watibe",
+    "srcX": 8,
+    "srcY": 12,
+    "dest": "CC 3-771",
+    "destX": 18,
+    "destY": 2
+  },
+  {
+    "src": "Watibe",
+    "srcX": 20,
+    "srcY": 14,
+    "dest": "Oldain",
+    "destX": 1,
+    "destY": 3
+  },
+  {
+    "src": "Watibe",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "YS 3-386",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "Wezen",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "Izar",
+    "destX": 6,
+    "destY": 17
+  },
+  {
+    "src": "Wezen",
+    "srcX": 1,
+    "srcY": 4,
+    "dest": "Nashira",
+    "destX": 22,
+    "destY": 3
+  },
+  {
+    "src": "Wezen",
+    "srcX": 2,
+    "srcY": 19,
+    "dest": "Turais",
+    "destX": 19,
+    "destY": 1
+  },
+  {
+    "src": "WG 3-288",
+    "srcX": 8,
+    "srcY": 11,
+    "dest": "Iniolol",
+    "destX": 2,
+    "destY": 2
+  },
+  {
+    "src": "WG 3-288",
+    "srcX": 2,
+    "srcY": 0,
+    "dest": "LN 3-141",
+    "destX": 5,
+    "destY": 5
+  },
+  {
+    "src": "WG 3-288",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Urlafa",
+    "destX": 16,
+    "destY": 9
+  },
+  {
+    "src": "WI 4-329",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Lagreen",
+    "destX": 14,
+    "destY": 18
+  },
+  {
+    "src": "WI 4-329",
+    "srcX": 0,
+    "srcY": 16,
+    "dest": "Miola",
+    "destX": 23,
+    "destY": 7
+  },
+  {
+    "src": "WI 4-329",
+    "srcX": 8,
+    "srcY": 14,
+    "dest": "Pass UNI-08",
+    "destX": 17,
+    "destY": 2
+  },
+  {
+    "src": "WI 4-329",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "Veliace",
+    "destX": 1,
+    "destY": 11
+  },
+  {
+    "src": "WO 3-290",
+    "srcX": 15,
+    "srcY": 8,
+    "dest": "Daaya",
+    "destX": 2,
+    "destY": 4
+  },
+  {
+    "src": "WO 3-290",
+    "srcX": 9,
+    "srcY": 10,
+    "dest": "Hocancan",
+    "destX": 8,
+    "destY": 2
+  },
+  {
+    "src": "WO 3-290",
+    "srcX": 0,
+    "srcY": 5,
+    "dest": "Miphimi",
+    "destX": 21,
+    "destY": 9
+  },
+  {
+    "src": "Wolf",
+    "srcX": 9,
+    "srcY": 0,
+    "dest": "Besoex",
+    "destX": 7,
+    "destY": 15
+  },
+  {
+    "src": "Wolf",
+    "srcX": 0,
+    "srcY": 10,
+    "dest": "Vewaa",
+    "destX": 21,
+    "destY": 8
+  },
+  {
+    "src": "WP 3155",
+    "srcX": 16,
+    "srcY": 5,
+    "dest": "Pass FED-02",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "WP 3155",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Siberion",
+    "destX": 24,
+    "destY": 14
+  },
+  {
+    "src": "WP 3155",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "Tau Ceti",
+    "destX": 21,
+    "destY": 13
+  },
+  {
+    "src": "WW 2-934",
+    "srcX": 4,
+    "srcY": 9,
+    "dest": "Homam",
+    "destX": 13,
+    "destY": 0
+  },
+  {
+    "src": "WW 2-934",
+    "srcX": 12,
+    "srcY": 1,
+    "dest": "Olaeth",
+    "destX": 15,
+    "destY": 11
+  },
+  {
+    "src": "XC 3-261",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Lianla",
+    "destX": 9,
+    "destY": 19
+  },
+  {
+    "src": "XC 3-261",
+    "srcX": 1,
+    "srcY": 12,
+    "dest": "Pass EMP-09",
+    "destX": 11,
+    "destY": 0
+  },
+  {
+    "src": "XC 3-261",
+    "srcX": 15,
+    "srcY": 5,
+    "dest": "Waiophi",
+    "destX": 0,
+    "destY": 7
+  },
+  {
+    "src": "Xeho",
+    "srcX": 12,
+    "srcY": 16,
+    "dest": "Edmial",
+    "destX": 1,
+    "destY": 0
+  },
+  {
+    "src": "Xeho",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Miayda",
+    "destX": 24,
+    "destY": 13
+  },
+  {
+    "src": "Xeho",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Oucanfa",
+    "destX": 0,
+    "destY": 4
+  },
+  {
+    "src": "Xewao",
+    "srcX": 15,
+    "srcY": 13,
+    "dest": "Ayqugre",
+    "destX": 1,
+    "destY": 10
+  },
+  {
+    "src": "Xewao",
+    "srcX": 2,
+    "srcY": 12,
+    "dest": "Faedho",
+    "destX": 11,
+    "destY": 3
+  },
+  {
+    "src": "Xewao",
+    "srcX": 13,
+    "srcY": 1,
+    "dest": "Qumiin",
+    "destX": 5,
+    "destY": 18
+  },
+  {
+    "src": "XH 3819",
+    "srcX": 14,
+    "srcY": 0,
+    "dest": "Ericon",
+    "destX": 14,
+    "destY": 23
+  },
+  {
+    "src": "XH 3819",
+    "srcX": 5,
+    "srcY": 11,
+    "dest": "Lave",
+    "destX": 19,
+    "destY": 0
+  },
+  {
+    "src": "XH 3819",
+    "srcX": 11,
+    "srcY": 11,
+    "dest": "Orerve",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "YC 3-268",
+    "srcX": 0,
+    "srcY": 7,
+    "dest": "Ackexa",
+    "destX": 19,
+    "destY": 4
+  },
+  {
+    "src": "YC 3-268",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Essaa",
+    "destX": 6,
+    "destY": 20
+  },
+  {
+    "src": "YC 3-268",
+    "srcX": 8,
+    "srcY": 14,
+    "dest": "Pass FED-06",
+    "destX": 8,
+    "destY": 0
+  },
+  {
+    "src": "Yildun",
+    "srcX": 8,
+    "srcY": 0,
+    "dest": "Nusakan",
+    "destX": 10,
+    "destY": 18
+  },
+  {
+    "src": "Yildun",
+    "srcX": 0,
+    "srcY": 12,
+    "dest": "Zuben Elakrab",
+    "destX": 24,
+    "destY": 11
+  },
+  {
+    "src": "YS 3-386",
+    "srcX": 13,
+    "srcY": 5,
+    "dest": "Ayinti",
+    "destX": 1,
+    "destY": 8
+  },
+  {
+    "src": "YS 3-386",
+    "srcX": 1,
+    "srcY": 11,
+    "dest": "Watibe",
+    "destX": 12,
+    "destY": 1
+  },
+  {
+    "src": "YS 3-386",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Zearla",
+    "destX": 14,
+    "destY": 14
+  },
+  {
+    "src": "YV 3-386",
+    "srcX": 11,
+    "srcY": 10,
+    "dest": "Pass UNI-04",
+    "destX": 0,
+    "destY": 14
+  },
+  {
+    "src": "YV 3-386",
+    "srcX": 0,
+    "srcY": 6,
+    "dest": "Quexce",
+    "destX": 11,
+    "destY": 6
+  },
+  {
+    "src": "YV 3-386",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Wainze",
+    "destX": 8,
+    "destY": 15
+  },
+  {
+    "src": "Zamith",
+    "srcX": 1,
+    "srcY": 16,
+    "dest": "Faphida",
+    "destX": 17,
+    "destY": 0
+  },
+  {
+    "src": "Zamith",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "QW 2-014",
+    "destX": 0,
+    "destY": 8
+  },
+  {
+    "src": "Zaniah",
+    "srcX": 4,
+    "srcY": 1,
+    "dest": "Mebsuta",
+    "destX": 5,
+    "destY": 17
+  },
+  {
+    "src": "Zaniah",
+    "srcX": 4,
+    "srcY": 15,
+    "dest": "Zuben Elakrab",
+    "destX": 8,
+    "destY": 1
+  },
+  {
+    "src": "Zaurak",
+    "srcX": 3,
+    "srcY": 6,
+    "dest": "CP 2-197",
+    "destX": 5,
+    "destY": 9
+  },
+  {
+    "src": "Zaurak",
+    "srcX": 2,
+    "srcY": 25,
+    "dest": "Menkent",
+    "destX": 19,
+    "destY": 2
+  },
+  {
+    "src": "Zeaay",
+    "srcX": 3,
+    "srcY": 12,
+    "dest": "BU 5-773",
+    "destX": 23,
+    "destY": 1
+  },
+  {
+    "src": "Zeaay",
+    "srcX": 20,
+    "srcY": 12,
+    "dest": "Iohofa",
+    "destX": 1,
+    "destY": 2
+  },
+  {
+    "src": "Zeaay",
+    "srcX": 1,
+    "srcY": 1,
+    "dest": "Let",
+    "destX": 16,
+    "destY": 25
+  },
+  {
+    "src": "Zeaay",
+    "srcX": 24,
+    "srcY": 1,
+    "dest": "Uv Seti",
+    "destX": 20,
+    "destY": 14
+  },
+  {
+    "src": "Zeaex",
+    "srcX": 10,
+    "srcY": 4,
+    "dest": "Bedaho",
+    "destX": 1,
+    "destY": 16
+  },
+  {
+    "src": "Zeaex",
+    "srcX": 0,
+    "srcY": 12,
+    "dest": "Maia",
+    "destX": 19,
+    "destY": 0
+  },
+  {
+    "src": "Zearla",
+    "srcX": 5,
+    "srcY": 15,
+    "dest": "Ackarack",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Zearla",
+    "srcX": 14,
+    "srcY": 14,
+    "dest": "YS 3-386",
+    "destX": 0,
+    "destY": 0
+  },
+  {
+    "src": "Zelada",
+    "srcX": 5,
+    "srcY": 1,
+    "dest": "Becanol",
+    "destX": 10,
+    "destY": 24
+  },
+  {
+    "src": "Zelada",
+    "srcX": 6,
+    "srcY": 18,
+    "dest": "Edenve",
+    "destX": 11,
+    "destY": 1
+  },
+  {
+    "src": "Zeolen",
+    "srcX": 2,
+    "srcY": 11,
+    "dest": "Adaa",
+    "destX": 7,
+    "destY": 2
+  },
+  {
+    "src": "Zezela",
+    "srcX": 13,
+    "srcY": 0,
+    "dest": "Quator",
+    "destX": 1,
+    "destY": 16
+  },
+  {
+    "src": "Zezela",
+    "srcX": 13,
+    "srcY": 8,
+    "dest": "Tianbe",
+    "destX": 3,
+    "destY": 1
+  },
+  {
+    "src": "Zirr",
+    "srcX": 7,
+    "srcY": 17,
+    "dest": "Begreze",
+    "destX": 10,
+    "destY": 0
+  },
+  {
+    "src": "Zirr",
+    "srcX": 24,
+    "srcY": 7,
+    "dest": "Canexin",
+    "destX": 0,
+    "destY": 9
+  },
+  {
+    "src": "Zirr",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Grefaho",
+    "destX": 20,
+    "destY": 19
+  },
+  {
+    "src": "ZP 2-989",
+    "srcX": 12,
+    "srcY": 13,
+    "dest": "Cabard",
+    "destX": 1,
+    "destY": 1
+  },
+  {
+    "src": "ZP 2-989",
+    "srcX": 6,
+    "srcY": 0,
+    "dest": "Sodaack",
+    "destX": 7,
+    "destY": 15
+  },
+  {
+    "src": "ZS 3-798",
+    "srcX": 2,
+    "srcY": 2,
+    "dest": "Belati (North)",
+    "destX": 16,
+    "destY": 2
+  },
+  {
+    "src": "ZS 3-798",
+    "srcX": 1,
+    "srcY": 16,
+    "dest": "Belati (South)",
+    "destX": 24,
+    "destY": 14
+  },
+  {
+    "src": "ZS 3-798",
+    "srcX": 12,
+    "srcY": 6,
+    "dest": "Quaphi",
+    "destX": 0,
+    "destY": 6
+  },
+  {
+    "src": "ZU 3-239",
+    "srcX": 9,
+    "srcY": 20,
+    "dest": "Fadaphi",
+    "destX": 12,
+    "destY": 0
+  },
+  {
+    "src": "ZU 3-239",
+    "srcX": 0,
+    "srcY": 17,
+    "dest": "Silaad",
+    "destX": 23,
+    "destY": 2
+  },
+  {
+    "src": "Zuben Elakrab",
+    "srcX": 12,
+    "srcY": 15,
+    "dest": "Pass EMP-06",
+    "destX": 7,
+    "destY": 1
+  },
+  {
+    "src": "Zuben Elakrab",
+    "srcX": 24,
+    "srcY": 11,
+    "dest": "Yildun",
+    "destX": 0,
+    "destY": 12
+  },
+  {
+    "src": "Zuben Elakrab",
+    "srcX": 8,
+    "srcY": 1,
+    "dest": "Zaniah",
+    "destX": 4,
+    "destY": 15
+  },
+  {
+    "src": "ZZ 2986",
+    "srcX": 1,
+    "srcY": 4,
+    "dest": "Beta Proxima",
+    "destX": 17,
+    "destY": 1
+  },
+  {
+    "src": "ZZ 2986",
+    "srcX": 0,
+    "srcY": 0,
+    "dest": "Hoanda",
+    "destX": 15,
+    "destY": 8
+  }
+]
