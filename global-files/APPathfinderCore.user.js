@@ -1,9 +1,8 @@
 // ==UserScript==
 // @name         AP Pathfinder Core Optimized with X-holes and Straight Paths
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0
-// @description  Optimized Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and straighter paths
-// @author       spacerules
+// @version      1.1
+// @description  Optimized Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and straighter paths (lazy, cached promises)
 // @grant        none
 // ==/UserScript==
 
@@ -93,83 +92,81 @@ class MinHeap {
 }
 
 async function multiSectorPath(start,end){
-    const visited=new Map();
-    const frontier=new MinHeap();
-    frontier.push({sector:start.sector,x:start.x,y:start.y,cost:0,path:[],jumps:0,totalCost:0,lastDir:null});
-    const jumpsData=await fetchJumps();
-    const sectorCache=new Map();
+    const jumpsData = await fetchJumps();
+    const sectorCache = new Map();   // stores Promise or data
+    const portalCache = new Map();
 
     async function getSectorCached(name){
-        if(sectorCache.has(name)) return sectorCache.get(name);
-        const data=await fetchSector(name);
-        sectorCache.set(name,data);
-        return data;
+        if(sectorCache.has(name)) return sectorCache.get(name); // promise or data
+        const promise = fetchSector(name).then(data=>{
+            sectorCache.set(name,data); // replace promise with data
+            return data;
+        });
+        sectorCache.set(name,promise);
+        return promise;
     }
 
+    function getPortalsCached(sector){
+        if(portalCache.has(sector.sector)) return portalCache.get(sector.sector);
+        const links = buildPortalLinks(sector,jumpsData);
+        portalCache.set(sector.sector,links);
+        return links;
+    }
+
+    class Node {
+        constructor(sector,x,y,cost,jumps,parent,lastDir){
+            this.sector=sector; this.x=x; this.y=y;
+            this.cost=cost; this.jumps=jumps;
+            this.parent=parent; this.lastDir=lastDir;
+            this.totalCost=0;
+        }
+    }
+
+    const visited = new Map();
+    const frontier = new MinHeap();
+    const startNode = new Node(start.sector,start.x,start.y,0,0,null,null);
+    frontier.push(startNode);
+
     while(frontier.size()>0){
-        const node=frontier.pop();
-        const key=`${node.sector}_${node.x}_${node.y}`;
-        if(visited.has(key)) continue;
+        const node = frontier.pop();
+        const key = `${node.sector}_${node.x}_${node.y}`;
+        if(visited.has(key) && visited.get(key) <= node.cost) continue;
         visited.set(key,node.cost);
 
         if(node.sector===end.sector && node.x===end.x && node.y===end.y){
-            return {cost:node.cost,path:[...node.path,{sector:node.sector,x:node.x,y:node.y}],jumps:node.jumps};
+            const path=[];
+            let cur=node;
+            while(cur){ path.push({sector:cur.sector,x:cur.x,y:cur.y}); cur=cur.parent; }
+            path.reverse();
+            return {cost:node.cost,path,jumps:node.jumps};
         }
 
-        const sectorData=await getSectorCached(node.sector);
-        const neighbors=getNeighbors(sectorData,node.x,node.y);
+        const sectorData = await getSectorCached(node.sector);
+        const neighbors = getNeighbors(sectorData,node.x,node.y);
         for(const n of neighbors){
-            const dx = n.x - node.x;
-            const dy = n.y - node.y;
-            const dirChange = (node.lastDir && (node.lastDir.x !== dx || node.lastDir.y !== dy)) ? 0.00001 : 0;
-            const heur = Math.max(Math.abs(end.x-n.x),Math.abs(end.y-n.y)) + dirChange;
-            frontier.push({
-                sector: node.sector,
-                x: n.x,
-                y: n.y,
-                cost: node.cost + n.cost,
-                path: [...node.path,{sector:node.sector,x:node.x,y:node.y}],
-                jumps: node.jumps,
-                totalCost: node.cost + n.cost + heur,
-                lastDir: {x:dx,y:dy}
-            });
+            const heur=Math.max(Math.abs(end.x-n.x),Math.abs(end.y-n.y));
+            const child = new Node(node.sector,n.x,n.y,node.cost+n.cost,node.jumps,node,{x:n.x-node.x,y:n.y-node.y});
+            child.totalCost=child.cost+heur;
+            frontier.push(child);
         }
 
-        const portals=buildPortalLinks(sectorData,jumpsData);
+        const portals = getPortalsCached(sectorData);
         for(const p of portals){
             if(p.from.x===node.x && p.from.y===node.y){
-                const dx = p.to.x - node.x;
-                const dy = p.to.y - node.y;
-                const dirChange = (node.lastDir && (node.lastDir.x !== dx || node.lastDir.y !== dy)) ? 0.00001 : 0;
-                const heur = Math.max(Math.abs(end.x - p.to.x), Math.abs(end.y - p.to.y)) + dirChange;
-
-                if(p.sameSector){
-                    frontier.push({
-                        sector: node.sector,
-                        x: p.to.x,
-                        y: p.to.y,
-                        cost: node.cost + p.cost,
-                        path: [...node.path,{sector:node.sector,x:node.x,y:node.y}],
-                        jumps: node.jumps,
-                        totalCost: node.cost + p.cost + heur,
-                        lastDir: {x:dx,y:dy}
-                    });
-                } else {
-                    frontier.push({
-                        sector: p.to.sector,
-                        x: p.to.x,
-                        y: p.to.y,
-                        cost: node.cost + p.cost,
-                        path: [...node.path,{sector:node.sector,x:node.x,y:node.y}],
-                        jumps: node.jumps + 1,
-                        totalCost: node.cost + p.cost + heur,
-                        lastDir: {x:dx,y:dy}
-                    });
-                }
+                const heur=Math.max(Math.abs(end.x-p.to.x),Math.abs(end.y-p.to.y));
+                const child = new Node(
+                    p.sameSector?node.sector:p.to.sector,
+                    p.to.x,p.to.y,
+                    node.cost+p.cost,
+                    p.sameSector?node.jumps:node.jumps+1,
+                    node,null
+                );
+                child.totalCost=child.cost+heur;
+                frontier.push(child);
             }
         }
     }
     throw new Error("No path found");
 }
 
-window.multiSectorPath=multiSectorPath;
+window.multiSectorPath = multiSectorPath;
