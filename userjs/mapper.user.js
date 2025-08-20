@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder UI
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.3
-// @description  UI for multi-sector AP Pathfinder with fixed Ctrl/Shift click
+// @version      0.5
+// @description  UI for multi-sector AP Pathfinder with cached path restore
 // @match        http*://pardusmapper.com/*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/APPathfinderCore.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
+// @tag          Pardus
+// @tag          Spacerules
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/mapper.user.js
-// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/mapper.user.js
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
@@ -20,10 +20,18 @@
 (function(){
     'use strict';
 
-  logEnabled(false);
-  logGroupStart(`File: ${GM_info.script.name}`);
-  
+    logEnabled(false);
+    logGroupStart(`File: ${GM_info.script.name}`);
+
     let lastHighlightedPath = [];
+
+    // Load cached path from localStorage
+    let cachedPath = [];
+    try {
+        const stored = localStorage.getItem("pfCachedPath");
+        if(stored) cachedPath = JSON.parse(stored);
+    } catch(e){ logWarn("Failed to parse cached path", e); }
+
     // ----------------------------
     // Utility: Wait for DOM element
     // ----------------------------
@@ -68,55 +76,55 @@
     // Highlight path on the map
     // ----------------------------
     function highlightPathOnCurrentPage(path){
-    waitForElement("#sectorTableMap", table => {
-        const rows = table.querySelectorAll("tbody tr");
-        const currentSector = decodeURIComponent(location.pathname.split("/").pop() || "")
-            .replace(/_/g, " ")
-            .trim();
+        if(!path || !path.length) return;
+        waitForElement("#sectorTableMap", table => {
+            const rows = table.querySelectorAll("tbody tr");
+            const currentSector = decodeURIComponent(location.pathname.split("/").pop() || "")
+                .replace(/_/g, " ")
+                .trim();
 
-        // Clear previous highlights in the current sector
-        lastHighlightedPath.forEach(step => {
-            if(step.sector !== currentSector) return;
-            const tr = rows[step.y];
-            if(!tr) return;
-            const td = tr.querySelectorAll("td.grid")[step.x];
-            if(!td) return;
-            td.style.outline = "";
-            td.style.backgroundColor = "";
-        });
-
-        // Group path steps by sector
-        const sectors = {};
-        path.forEach((step, idx) => {
-            if(!sectors[step.sector]) sectors[step.sector] = [];
-            sectors[step.sector].push({step, idx});
-        });
-
-        // Highlight steps for the current sector
-        if(sectors[currentSector]){
-            sectors[currentSector].forEach(({step, idx}, i, arr) => {
+            // Clear previous highlights in the current sector
+            lastHighlightedPath.forEach(step => {
+                if(step.sector !== currentSector) return;
                 const tr = rows[step.y];
                 if(!tr) return;
                 const td = tr.querySelectorAll("td.grid")[step.x];
                 if(!td) return;
-
-                if(i === 0) {
-                    td.style.outline = "2px solid limegreen";
-                    td.style.backgroundColor = "rgba(0,255,0,0.3)";
-                } else if(i === arr.length - 1) {
-                    td.style.outline = "2px solid red";
-                    td.style.backgroundColor = "rgba(255,0,0,0.3)";
-                } else {
-                    td.style.outline = "2px solid yellow";
-                    td.style.backgroundColor = "rgba(255,255,0,0.3)";
-                }
+                td.style.outline = "";
+                td.style.backgroundColor = "";
             });
-        }
 
-        lastHighlightedPath = path;
-    });
-}
+            // Group path steps by sector
+            const sectors = {};
+            path.forEach((step, idx) => {
+                if(!sectors[step.sector]) sectors[step.sector] = [];
+                sectors[step.sector].push({step, idx});
+            });
 
+            // Highlight steps for the current sector
+            if(sectors[currentSector]){
+                sectors[currentSector].forEach(({step, idx}, i, arr) => {
+                    const tr = rows[step.y];
+                    if(!tr) return;
+                    const td = tr.querySelectorAll("td.grid")[step.x];
+                    if(!td) return;
+
+                    if(i === 0) {
+                        td.style.outline = "2px solid limegreen";
+                        td.style.backgroundColor = "rgba(0,255,0,0.3)";
+                    } else if(i === arr.length - 1) {
+                        td.style.outline = "2px solid red";
+                        td.style.backgroundColor = "rgba(255,0,0,0.3)";
+                    } else {
+                        td.style.outline = "2px solid yellow";
+                        td.style.backgroundColor = "rgba(255,255,0,0.3)";
+                    }
+                });
+            }
+
+            lastHighlightedPath = path;
+        });
+    }
 
     // ----------------------------
     // Run Pathfinder
@@ -142,9 +150,13 @@
 
         window.multiSectorPath({sector:sSec, x:sX, y:sY}, {sector:eSec, x:eX, y:eY})
             .then(result => {
+                cachedPath = result.path || [];
+                localStorage.setItem("pfCachedPath", JSON.stringify(cachedPath));
+
                 let text = `Total APs used: ${result.cost}\nSteps: ${result.path.length-1}\nJumps: ${result.jumps}\n\nPath:\n`;
                 for(const step of result.path) text += `${step.sector}: (${step.x},${step.y})\n`;
                 out.textContent = text;
+
                 highlightPathOnCurrentPage(result.path);
                 status.textContent = "done";
                 setTimeout(()=>{status.textContent = "";}, 1500);
@@ -154,18 +166,6 @@
                 status.textContent = "";
                 logError(err);
             });
-    }
-
-    function runPathfinderIfReady(panel){
-        const sSec = panel.querySelector("#pf-start-sector").value.trim();
-        const sX = panel.querySelector("#pf-start-x").value;
-        const sY = panel.querySelector("#pf-start-y").value;
-        const eSec = panel.querySelector("#pf-end-sector").value.trim();
-        const eX = panel.querySelector("#pf-end-x").value;
-        const eY = panel.querySelector("#pf-end-y").value;
-        if(sSec && sX && sY && eSec && eX && eY){
-            runPathfinder(panel);
-        }
     }
 
     // ----------------------------
@@ -188,19 +188,17 @@
                         if (!panel) return;
 
                         if (e.shiftKey) {
-                            // Shift click sets the END position
                             panel.querySelector("#pf-end-sector").value = currentSector;
                             panel.querySelector("#pf-end-x").value = x;
                             panel.querySelector("#pf-end-y").value = y;
                         } else if (e.ctrlKey || e.metaKey) {
-                            // Ctrl (or Command on Mac) sets the START position
                             panel.querySelector("#pf-start-sector").value = currentSector;
                             panel.querySelector("#pf-start-x").value = x;
                             panel.querySelector("#pf-start-y").value = y;
                         }
 
                         savePathfinderInputs(panel);
-                        runPathfinderIfReady(panel);
+                        runPathfinder(panel);
                     });
                 });
             });
@@ -252,14 +250,21 @@
         });
 
         loadPathfinderInputs(panel);
-        runPathfinderIfReady(panel);
+
+        // Restore cached path into the panel output and highlight it
+        if(cachedPath && cachedPath.length){
+            const out = panel.querySelector("#pf-output");
+            let text = "";
+            cachedPath.forEach(step => { text += `${step.sector}: (${step.x},${step.y})\n`; });
+            out.textContent = text;
+            highlightPathOnCurrentPage(cachedPath);
+        }
 
         ["#pf-start-sector","#pf-start-x","#pf-start-y","#pf-end-sector","#pf-end-x","#pf-end-y"]
-            .forEach(sel => panel.querySelector(sel).addEventListener("input", ()=>runPathfinderIfReady(panel)));
+            .forEach(sel => panel.querySelector(sel).addEventListener("input", ()=>runPathfinder(panel)));
 
         panel.querySelector("#pf-run").addEventListener("click", ()=>runPathfinder(panel));
 
-        // Add fixed Ctrl / Shift click handlers
         addGridClickHandlers();
     }
 
