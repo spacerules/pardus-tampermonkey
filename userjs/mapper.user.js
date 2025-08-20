@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder UI
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.5
-// @description  UI for multi-sector AP Pathfinder with cached path restore
+// @version      0.6
+// @description  UI for multi-sector AP Pathfinder with cached path restore and panel minimize persistence
 // @match        http*://pardusmapper.com/*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
@@ -13,7 +13,7 @@
 // @grant        none
 // ==/UserScript==
 
-/* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
+/* global logSuccess, logError, logInfo, logWarn, logGroupStart, logGroupEnd, logEnabled, logTable */
 /* global readCookie, writeCookie */
 /* global multiSectorPath */
 
@@ -26,7 +26,7 @@
     let lastHighlightedPath = [];
 
     // Load cached path from localStorage
-    let cachedPath = [];
+    let cachedPath = {};
     try {
         const stored = localStorage.getItem("pfCachedPath");
         if(stored) cachedPath = JSON.parse(stored);
@@ -150,10 +150,14 @@
 
         window.multiSectorPath({sector:sSec, x:sX, y:sY}, {sector:eSec, x:eX, y:eY})
             .then(result => {
-                cachedPath = result.path || [];
+                cachedPath = {
+                    path: result.path || [],
+                    cost: result.cost || 0,
+                    jumps: result.jumps || 0
+                };
                 localStorage.setItem("pfCachedPath", JSON.stringify(cachedPath));
 
-                let text = `Total APs used: ${result.cost}\nSteps: ${result.path.length-1}\nJumps: ${result.jumps}\n\nPath:\n`;
+                let text = `Total APs used: ${Math.round(result.cost)}\nSteps: ${result.path.length-1}\nJumps: ${result.jumps}\n\nPath:\n`;
                 for(const step of result.path) text += `${step.sector}: (${step.x},${step.y})\n`;
                 out.textContent = text;
 
@@ -244,20 +248,28 @@
 
         const toggleBtn = panel.querySelector("#pf-toggle");
         const mainDiv = panel.querySelector("#pf-main");
+
+        // Load previous minimize state
+        const minimized = localStorage.getItem("pfPanelMinimized") === "true";
+        if(minimized){ mainDiv.style.display="none"; toggleBtn.textContent="◯"; }
+
         toggleBtn.addEventListener("click", ()=>{
-            if(mainDiv.style.display==="none"){ mainDiv.style.display="block"; toggleBtn.textContent="_"; }
-            else { mainDiv.style.display="none"; toggleBtn.textContent="◯"; }
+            if(mainDiv.style.display==="none"){
+                mainDiv.style.display="block"; toggleBtn.textContent="_"; localStorage.setItem("pfPanelMinimized","false");
+            } else {
+                mainDiv.style.display="none"; toggleBtn.textContent="◯"; localStorage.setItem("pfPanelMinimized","true");
+            }
         });
 
         loadPathfinderInputs(panel);
 
         // Restore cached path into the panel output and highlight it
-        if(cachedPath && cachedPath.length){
+        if(cachedPath && cachedPath.path && cachedPath.path.length){
             const out = panel.querySelector("#pf-output");
-            let text = "";
-            cachedPath.forEach(step => { text += `${step.sector}: (${step.x},${step.y})\n`; });
+            let text = `Total APs used: ${Math.round(cachedPath.cost)}\nSteps: ${cachedPath.path.length-1}\nJumps: ${cachedPath.jumps}\n\nPath:\n`;
+            cachedPath.path.forEach(step => { text += `${step.sector}: (${step.x},${step.y})\n`; });
             out.textContent = text;
-            highlightPathOnCurrentPage(cachedPath);
+            highlightPathOnCurrentPage(cachedPath.path);
         }
 
         ["#pf-start-sector","#pf-start-x","#pf-start-y","#pf-end-sector","#pf-end-x","#pf-end-y"]
