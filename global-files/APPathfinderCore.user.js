@@ -47,13 +47,21 @@ function buildPortalLinks(sector, jumps){
 
 function getNeighbors(tileMap,x,y){
     const neighbors = [];
-    const directions = [{dx:-1,dy:0},{dx:1,dy:0},{dx:0,dy:-1},{dx:0,dy:1},{dx:-1,dy:-1},{dx:-1,dy:1},{dx:1,dy:-1},{dx:1,dy:1}];
+    // directions: orthogonal first, diagonals last
+    const directions = [
+        {dx:-1,dy:0},{dx:1,dy:0},{dx:0,dy:-1},{dx:0,dy:1},
+        {dx:-1,dy:-1},{dx:-1,dy:1},{dx:1,dy:-1},{dx:1,dy:1}
+    ];
     for(const d of directions){
         const nx = x+d.dx, ny=y+d.dy;
         if(nx>=0 && ny>=0 && nx<tileMap.width && ny<tileMap.height){
             const t = tileMap.tiles[ny*tileMap.width + nx];
-            const cost = TILE_COST[t] ?? Infinity;
-            if(cost<Infinity) neighbors.push({x:nx,y:ny,cost});
+            let cost = TILE_COST[t] ?? Infinity;
+            if(cost<Infinity){
+                // increase diagonal cost slightly
+                if(d.dx!==0 && d.dy!==0) cost += 0.0001;
+                neighbors.push({x:nx,y:ny,cost});
+            }
         }
     }
     return neighbors;
