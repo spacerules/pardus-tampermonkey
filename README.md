@@ -5,13 +5,13 @@
 ## Contents
 
 - **TamperMonkeyImport**  
-  Scripts or modules used for importing dependencies or shared components across different user scripts.
+  Script to import all setting for tampermonkey
 
 - **global-files**  
-  Shared assets such as CSS, images, configuration files, or helper scripts used by multiple user scripts.
+  Shared javascript files used for the userjs such as a global logging, ap route planner, and cookie access
 
 - **resources**  
-  Static resources (e.g., icons, JSON files, templates) used by the scripts.
+  Static resources (e.g., images, JSON files, templates) used by the scripts.
 
 - **userjs**  
   Main Tampermonkey user scripts intended to run on the Pardus website.
@@ -33,6 +33,7 @@
 - After installation, the scripts will run automatically when browsing the Pardus web interface.
 - Configure any settings (if applicable) via the Tampermonkey dashboard or within the scripts themselves.
 
+<!--
 ## Configuration
 
 If there's a config file or customizable parameters, describe them here. For example:
@@ -40,7 +41,7 @@ If there's a config file or customizable parameters, describe them here. For exa
 | File / Variable       | Description                                      | Default |
 |-----------------------|--------------------------------------------------|---------|
 | `config.js` (in userjs) | API endpoint for resource loading               | `https://...` |
-
+-->
 ## Development
 
 1. Clone the repo:
