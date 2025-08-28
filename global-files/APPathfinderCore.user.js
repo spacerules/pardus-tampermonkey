@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AP Pathfinder Core Optimized with X-holes and Straight Paths
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.1
+// @version      1.2
 // @description  Optimized Multi-sector AP Pathfinder logic (Chebyshev) for Pardus with X-hole teleportation and straighter paths (lazy, cached promises)
 // @grant        none
 // ==/UserScript==
@@ -16,7 +16,7 @@ function cleanSectorName(name){ return name.replace(/\s*\(.*?\)/g,"").trim(); }
 async function fetchSector(sectorName){
     const SWEETENER_REF = "9af82720543b8464aeab27af589c53c6a6c774ec";
     const file = normalizeSectorName(sectorName);
-    const url = `https://raw.githubusercontent.com/Tsunder/Pardus-Sweetener/${SWEETENER_REF}/chrome/map/${file[0]}/${file}.json`;
+    const url = `https://raw.githubusercontent.com/valitas/Pardus-Sweetener/refs/heads/master/src/map/${file[0]}/${file}.json`;
     const res = await fetch(url);
     if(!res.ok) throw new Error(`Failed to load sector ${sectorName}`);
     return await res.json();
