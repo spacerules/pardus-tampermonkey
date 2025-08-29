@@ -6,7 +6,9 @@
 // @grant        none
 // ==/UserScript==
 
-const TILE_COST = { b: Infinity, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
+//the tile cost b is set to 99,000,000 because when it was set to inifinity we found some places the map was wrong.
+//now we can use the map and be notified that we needed to use a blocked area
+const TILE_COST = { b: 99000000, e: 19, f: 10, g: 15, o: 24, m: 35, v: 10 };
 const WH_COST = 22;
 const XH_COST = 2200;
 
