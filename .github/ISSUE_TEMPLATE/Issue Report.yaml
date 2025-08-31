@@ -21,7 +21,7 @@ body:
       options:
         - "Yes"
         - "No"
-      default: "No"
+      default: 2
   - type: textarea
     id: what-happened
     attributes:
