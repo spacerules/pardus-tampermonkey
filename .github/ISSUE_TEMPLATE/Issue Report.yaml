@@ -1,11 +1,22 @@
 name: Bug Report
 description: File a bug report.
 title: "[Bug]: "
-labels: ["bug", "triage"]
+labels: ["Bug", "Change Request"]
 projects: ["octo-org/1", "octo-org/44"]
 assignees:
-  - octocat
+  - Spacerules
 body:
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
+      options:
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+      default: 0
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: |
@@ -25,17 +36,6 @@ body:
       description: Also tell us, what did you expect to happen?
       placeholder: Tell us what you see!
       value: "A bug happened!"
-    validations:
-      required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
     validations:
       required: true
   - type: dropdown
