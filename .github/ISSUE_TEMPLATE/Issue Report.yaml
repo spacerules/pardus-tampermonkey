@@ -19,9 +19,9 @@ body:
       label: Do you have a premium Pardus Account?
       multiple: true
       options:
-        - Yes
-        - No
-      default: No
+        - "Yes"
+        - "No"
+      default: "No"
   - type: textarea
     id: what-happened
     attributes:
