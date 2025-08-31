@@ -11,21 +11,17 @@ body:
     attributes:
       label: Version
       description: What version of our software are you running?
-      enabled: false
     validations:
       required: true
-  - type: markdown
+  - type: dropdown
+    id: premium
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
+      label: Do you have a premium Pardus Account?
+      multiple: true
+      options:
+        - Yes
+        - No
+      defualt: No
   - type: textarea
     id: what-happened
     attributes:
@@ -45,12 +41,24 @@ body:
         - Chrome
         - Safari
         - Microsoft Edge
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
   - type: textarea
     id: logs
     attributes:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
   - type: checkboxes
     id: terms
     attributes:
