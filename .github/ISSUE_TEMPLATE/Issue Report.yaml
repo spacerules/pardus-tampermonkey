@@ -6,15 +6,11 @@ projects: ["octo-org/1", "octo-org/44"]
 assignees:
   - Spacerules
 body:
-  - type: dropdown
+  - type: input
     id: version
     attributes:
       label: Version
       description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
     validations:
       required: true
   - type: markdown
