@@ -13,7 +13,7 @@ body:
       description: What version of our software are you running?
     validations:
       required: true
-    enabled: false
+      enabled: false
   - type: markdown
     attributes:
       value: |
