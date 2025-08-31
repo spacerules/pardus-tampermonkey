@@ -1,10 +1,7 @@
 name: Bug Report
 description: File a bug report.
 title: "[Bug]: "
-labels: ["Bug", "Change Request"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - Spacerules
+labels: ["bug", "Change Request"]
 body:
   - type: input
     id: version
