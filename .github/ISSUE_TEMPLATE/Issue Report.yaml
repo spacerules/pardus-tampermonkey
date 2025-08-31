@@ -21,7 +21,7 @@ body:
       options:
         - Yes
         - No
-      defualt: No
+      default: No
   - type: textarea
     id: what-happened
     attributes:
