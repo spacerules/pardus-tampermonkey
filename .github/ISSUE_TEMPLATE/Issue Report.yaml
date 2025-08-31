@@ -11,9 +11,9 @@ body:
     attributes:
       label: Version
       description: What version of our software are you running?
+      enabled: false
     validations:
       required: true
-      enabled: false
   - type: markdown
     attributes:
       value: |
