@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Building List Accurate Max Ticks
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.2.1
+// @version      1.2.2
 // @description  Accurate production/upkeep tick simulation with stored inventory display, floating Pardus-themed settings button, single parentheses display included/excluded, preserves original numbers and links, fixes info duplication, panel closes only on outside click
 // @author       Spacerules
 // @match        http://*.pardus.at/overview_buildings.php
 // @match        https://*.pardus.at/overview_buildings.php
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
+// @tag          Pardus
+// @tag          Spacerules
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @grant        GM_registerMenuCommand
