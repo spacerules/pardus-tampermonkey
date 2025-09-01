@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Monster Skill Finder
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.3
+// @version      1.0.4
 // @description  try to take over the world!
 // @author       Spacerules
 // @match        http://*.pardus.at/overview_stats.php
@@ -10,10 +10,13 @@
 // @match        https://pardus.maxisoft.org/monsterskillfinder.html
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
+// @tag          Pardus
+// @tag          Spacerules
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/MonsterSkillFinder.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/MonsterSkillFinder.user.js
+// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Monster%20Skill%20Finder%20-%20&version=1.0.4
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
