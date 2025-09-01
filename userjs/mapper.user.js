@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Pardus Multi-Sector AP Pathfinder UI
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.6
+// @version      0.0.7
 // @description  UI for multi-sector AP Pathfinder with cached path restore and panel minimize persistence
 // @match        http*://pardusmapper.com/*
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
@@ -11,6 +11,9 @@
 // @tag          Pardus
 // @tag          Spacerules
 // @grant        none
+// @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/mapper.user.js
+// @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/mapper.user.js
+// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Pathfinder%20Mapper%20-%20&version=0.0.7
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logGroupStart, logGroupEnd, logEnabled, logTable */

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Quick Links
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.2
+// @version      1.0.3
 // @description  Quick Links
 // @author       Spacerules
 // @match        http://*.pardus.at/main.php
@@ -9,9 +9,12 @@
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
+// @tag          Pardus
+// @tag          Spacerules
 // @grant        none
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/quickLinks.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/quickLinks.user.js
+// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Quick%20Links%20-%20&version=1.0.3
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
