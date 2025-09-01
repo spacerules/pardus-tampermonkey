@@ -16,7 +16,7 @@
 // @grant        GM_getValue
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/DealMaker2000.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/DealMaker2000.user.js
-// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Log%20Total%20List%20-%20&version=0.1.8
+// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Deal%20Maker%202000%20-%20&version=0.1.8
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
