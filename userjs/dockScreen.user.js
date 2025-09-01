@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Dock screen updater
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      1.0.4
+// @version      1.0.5
 // @description  gives the calculated production upkeep for the buildings
 // @author       Spacerules
 // @match        http://*.pardus.at/logout.php
@@ -9,8 +9,11 @@
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @icon         https://avatars.githubusercontent.com/u/2374313?v=4
+// @tag          Pardus
+// @tag          Spacerules
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/dockScreen.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/dockScreen.user.js
+// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Dock%20Sreen%20-%20&version=1.0.5
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
