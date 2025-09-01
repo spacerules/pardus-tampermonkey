@@ -19,7 +19,7 @@
 (function(){
     'use strict';
 
-    logEnabled(true);
+    logEnabled(false);
     logGroupStart(`File: ${GM_info.script.name}`);
 
     /**
