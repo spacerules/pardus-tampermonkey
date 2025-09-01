@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DealMaker
 // @namespace    https://github.com/spacerules/pardus-tampermonkey
-// @version      0.1.7
+// @version      0.1.8
 // @description  try to take over the world!
 // @author       Sam Haffner
 // @match        https://*.pardus.at/index_buildings.php
@@ -10,10 +10,13 @@
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/Logger.user.js
 // @require      https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/global-files/cookies.user.js
 // @icon         https://avatars.githubusercontent.com/u/7820039?v=4
+// @tag          Pardus
+// @tag          Sam
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @updateURL    https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/DealMaker2000.user.js
 // @downloadURL  https://raw.githubusercontent.com/spacerules/pardus-tampermonkey/main/userjs/DealMaker2000.user.js
+// @supportURL   https://github.com/spacerules/pardus-tampermonkey/issues/new?template=Issue%20Report.yaml&title=Log%20Total%20List%20-%20&version=0.1.8
 // ==/UserScript==
 
 /* global logSuccess, logError, logInfo, logWarn, logDebug, logGroupStart, logGroupEnd, logEnabled, logTable */
